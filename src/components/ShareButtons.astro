@@ -5,14 +5,17 @@ import {
   RedditShareButton,
   SocialShare,
 } from "astro-social-share";
+import { getTranslations } from "../lib/translations";
 
 const { title } = Astro.props;
+const locale = Astro.locals.starlightRoute?.lang || "en";
+const t = getTranslations(locale as "en" | "ru");
 const pageUrl = new URL(Astro.url.pathname, Astro.site).href;
-const description = "Learn about agentic engineering";
+const description = t.shareButtons.description;
 ---
 
 <div class="share-buttons-container">
-  <h4 class="share-title">Share this page</h4>
+  <h4 class="share-title">{t.shareButtons.title}</h4>
   <SocialShare
     url={pageUrl}
     title={title}
