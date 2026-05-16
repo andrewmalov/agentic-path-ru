@@ -8,20 +8,31 @@ import sitemap from "@astrojs/sitemap";
 export default defineConfig({
   site: "https://path.kilo.ai",
   integrations: [
-    starlight({
-      head: [
-        {
-          tag: "script",
-          attrs: {
-            src: "/posthog.js",
-            defer: true,
-          },
-        },
-      ],
-      title: "Agentic Engineering",
-      editLink: {
-        baseUrl: "https://github.com/Kilo-Org/agentic-path/edit/main/",
-      },
+starlight({
+       head: [
+         {
+           tag: "script",
+           attrs: {
+             src: "/posthog.js",
+             defer: true,
+           },
+         },
+       ],
+       title: "Agentic Engineering",
+       defaultLocale: "root",
+       locales: {
+         root: {
+           label: "English",
+           lang: "en",
+         },
+         ru: {
+           label: "Русский",
+           lang: "ru",
+         },
+       },
+       editLink: {
+         baseUrl: "https://github.com/Kilo-Org/agentic-path/edit/main/",
+       },
       components: {
         Footer: "./src/components/Footer.astro",
         Header: "./src/components/Header.astro",
