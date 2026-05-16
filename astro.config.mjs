@@ -272,24 +272,42 @@ export default defineConfig({
           light: { flavor: "latte", accent: "peach" },
         }),
       ],
-      locales: {
-        en: {
-          label: "English",
-          title: "Agentic Engineering",
-          editLink: {
-            baseUrl: "https://github.com/Kilo-Org/agentic-path/edit/main/",
-          },
-          sidebar: enSidebar,
-        },
-        ru: {
-          label: "Русский",
-          title: "Агентная инженерия",
-          editLink: {
-            baseUrl: "https://github.com/Kilo-Org/agentic-path/edit/main/ru/",
-          },
-          sidebar: ruSidebar,
-        },
-      },
+       locales: {
+         en: {
+           label: "English",
+           title: "Agentic Engineering",
+           editLink: {
+             baseUrl: "https://github.com/Kilo-Org/agentic-path/edit/main/",
+           },
+           sidebar: enSidebar,
+         },
+         ru: {
+           label: "Русский",
+           title: "Агентная инженерия",
+           editLink: {
+             baseUrl: "https://github.com/Kilo-Org/agentic-path/edit/main/ru/",
+           },
+           sidebar: ruSidebar,
+           // Translations for UI components
+           translations: {
+             footer: {
+               communityDriven: "Это руководство создано сообществом.",
+               contribute: "Внести вклад",
+               joinConversation: "присоединиться к дискуссии"
+             },
+             contributeBanner: {
+               helpUsGrow: "Помогите нам расти!",
+               foundResource: "Нашли отличный ресурс? Поделитесь им с сообществом.",
+               contributeOnGitHub: "Внести вклад на GitHub →",
+               dismissBanner: "Закрыть баннер"
+             },
+             shareButtons: {
+               shareThisPage: "Поделитесь этой страницей",
+               description: "Узнайте об агентной инженерии"
+             }
+           }
+         },
+       },
     }),
     sitemap(),
   ],

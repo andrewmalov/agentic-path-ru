@@ -26,13 +26,13 @@ const showShareButtons = starlightRoute?.entry?.data;
   </div>
   <Pagination />
 
-  <div class="community-cta">
-    <p>
-      This guide is community-driven. <a href="/community/contributing/"
-        >Contribute</a
-      > or <a href="https://kilo.love/discord">join the conversation</a>.
-    </p>
-  </div>
+   <div class="community-cta">
+     <p>
+       {Astro.locals.t("footer.communityDriven")} <a href="/community/contributing/"
+         >{Astro.locals.t("footer.contribute")}</a
+       > или <a href="https://kilo.love/discord">{Astro.locals.t("footer.joinConversation")}</a>.
+     </p>
+   </div>
 
   {
     config.credits && (
