@@ -7,32 +7,36 @@ import sitemap from "@astrojs/sitemap";
 // https://astro.build/config
 export default defineConfig({
   site: "https://path.kilo.ai",
+  i18n: {
+    // The default locale code drives both Astro’s i18n middleware and,
+    // via Starlight’s auto-generation, the Starlight locale map.
+    defaultLocale: "en",
+    // Simple string array is fully supported by Astro 5.x. Each entry
+    // becomes a locale code in the Starlight auto-generated config:
+    //   "en" → "root" (available at / because prefixDefaultLocale is false)
+    //   "ru" → "ru"   (available at /ru/)
+    locales: ["en", "ru"],
+    routing: {
+      // English (default) pages live at / — do not add an /en/ prefix.
+      prefixDefaultLocale: false,
+      redirectToDefaultLocale: false,
+    },
+  },
   integrations: [
-starlight({
-       head: [
-         {
-           tag: "script",
-           attrs: {
-             src: "/posthog.js",
-             defer: true,
-           },
-         },
-       ],
-       title: "Agentic Engineering",
-       defaultLocale: "root",
-       locales: {
-         root: {
-           label: "English",
-           lang: "en",
-         },
-         ru: {
-           label: "Русский",
-           lang: "ru",
-         },
-       },
-       editLink: {
-         baseUrl: "https://github.com/Kilo-Org/agentic-path/edit/main/",
-       },
+    starlight({
+      head: [
+        {
+          tag: "script",
+          attrs: {
+            src: "/posthog.js",
+            defer: true,
+          },
+        },
+      ],
+      title: "Agentic Engineering",
+      editLink: {
+        baseUrl: "https://github.com/Kilo-Org/agentic-path/edit/main/",
+      },
       components: {
         Footer: "./src/components/Footer.astro",
         Header: "./src/components/Header.astro",
@@ -82,46 +86,49 @@ starlight({
             { label: "Best Practices", slug: "engineers/best-practices" },
           ],
         },
-         {
-           label: "For Team Leads",
-           items: [
-             {
-               label: "Adopting Agentic Tools",
-               slug: "team-leads/adopting-agentic-tools",
-             },
-             {
-               label: "Measuring Impact",
-               slug: "team-leads/measuring-impact",
-             },
-             {
-               label: "Quality Assurance",
-               slug: "team-leads/quality-assurance",
-             },
-             {
-               label: "The 1-Pizza Team",
-               slug: "team-leads/1-pizza-teams",
-             },
-           ],
-         },
-         {
-           label: "For Executives",
-           items: [
-             { label: "Strategic Vision", slug: "executives/strategic-vision" },
-             { label: "ROI Frameworks", slug: "executives/roi-frameworks" },
-             {
-               label: "Adoption Playbook",
-               slug: "executives/adoption-playbook",
-             },
-             {
-               label: "Security & Compliance",
-               slug: "executives/security-compliance",
-             },
-             {
-               label: "AI-Native Economics",
-               slug: "executives/ai-native-economics",
-             },
-           ],
-         },
+        {
+          label: "For Team Leads",
+          items: [
+            {
+              label: "Adopting Agentic Tools",
+              slug: "team-leads/adopting-agentic-tools",
+            },
+            {
+              label: "Measuring Impact",
+              slug: "team-leads/measuring-impact",
+            },
+            {
+              label: "Quality Assurance",
+              slug: "team-leads/quality-assurance",
+            },
+            {
+              label: "The 1-Pizza Team",
+              slug: "team-leads/1-pizza-teams",
+            },
+          ],
+        },
+        {
+          label: "For Executives",
+          items: [
+            {
+              label: "Strategic Vision",
+              slug: "executives/strategic-vision",
+            },
+            { label: "ROI Frameworks", slug: "executives/roi-frameworks" },
+            {
+              label: "Adoption Playbook",
+              slug: "executives/adoption-playbook",
+            },
+            {
+              label: "Security & Compliance",
+              slug: "executives/security-compliance",
+            },
+            {
+              label: "AI-Native Economics",
+              slug: "executives/ai-native-economics",
+            },
+          ],
+        },
         {
           label: "Use Cases by Phase",
           items: [
@@ -152,7 +159,10 @@ starlight({
           label: "Appendices",
           items: [
             { label: "Glossary", slug: "appendices/glossary" },
-            { label: "Recommended Reading", slug: "appendices/reading-list" },
+            {
+              label: "Recommended Reading",
+              slug: "appendices/reading-list",
+            },
             { label: "Prompt Templates", slug: "appendices/prompt-templates" },
           ],
         },
