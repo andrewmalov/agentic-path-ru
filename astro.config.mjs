@@ -238,6 +238,21 @@ const ruSidebar = [
 
 export default defineConfig({
   site: "https://path.kilo.ai",
+  i18n: {
+    // The default locale code drives both Astro’s i18n middleware and,
+    // via Starlight’s auto-generation, the Starlight locale map.
+    defaultLocale: "en",
+    // Simple string array is fully supported by Astro 5.x. Each entry
+    // becomes a locale code in the Starlight auto-generated config:
+    //   "en" → "root" (available at / because prefixDefaultLocale is false)
+    //   "ru" → "ru"   (available at /ru/)
+    locales: ["en", "ru"],
+    routing: {
+      // English (default) pages live at / — do not add an /en/ prefix.
+      prefixDefaultLocale: false,
+      redirectToDefaultLocale: false,
+    },
+  },
   integrations: [
     starlight({
       head: [
