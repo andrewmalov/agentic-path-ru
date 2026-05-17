@@ -240,6 +240,7 @@ export default defineConfig({
   site: "https://path.kilo.ai",
   integrations: [
     starlight({
+      title: "Agentic Engineering",
       head: [
         {
           tag: "script",
