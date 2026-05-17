@@ -240,6 +240,7 @@ export default defineConfig({
   site: "https://path.kilo.ai",
   integrations: [
     starlight({
+      title: "Agentic Engineering",
       head: [
         {
           tag: "script",
@@ -272,42 +273,39 @@ export default defineConfig({
           light: { flavor: "latte", accent: "peach" },
         }),
       ],
-       locales: {
-         en: {
-           label: "English",
-           title: "Agentic Engineering",
-           editLink: {
-             baseUrl: "https://github.com/Kilo-Org/agentic-path/edit/main/",
-           },
-           sidebar: enSidebar,
-         },
-         ru: {
-           label: "Русский",
-           title: "Агентная инженерия",
-           editLink: {
-             baseUrl: "https://github.com/Kilo-Org/agentic-path/edit/main/ru/",
-           },
-           sidebar: ruSidebar,
-           // Translations for UI components
-           translations: {
-             footer: {
-               communityDriven: "Это руководство создано сообществом.",
-               contribute: "Внести вклад",
-               joinConversation: "присоединиться к дискуссии"
-             },
-             contributeBanner: {
-               helpUsGrow: "Помогите нам расти!",
-               foundResource: "Нашли отличный ресурс? Поделитесь им с сообществом.",
-               contributeOnGitHub: "Внести вклад на GitHub →",
-               dismissBanner: "Закрыть баннер"
-             },
-             shareButtons: {
-               shareThisPage: "Поделитесь этой страницей",
-               description: "Узнайте об агентной инженерии"
-             }
-           }
-         },
-       },
+      editLink: {
+        baseUrl: "https://github.com/Kilo-Org/agentic-path/edit/main/",
+      },
+      defaultLocale: "en",
+      locales: {
+        en: {
+          label: "English",
+          lang: "en",
+        },
+        ru: {
+          label: "Русский",
+          lang: "ru",
+          sidebar: ruSidebar,
+          // Translations for UI components
+          translations: {
+            footer: {
+              communityDriven: "Это руководство создано сообществом.",
+              contribute: "Внести вклад",
+              joinConversation: "присоединиться к дискуссии"
+            },
+            contributeBanner: {
+              helpUsGrow: "Помогите нам расти!",
+              foundResource: "Нашли отличный ресурс? Поделитесь им с сообществом.",
+              contributeOnGitHub: "Внести вклад на GitHub →",
+              dismissBanner: "Закрыть баннер"
+            },
+            shareButtons: {
+              shareThisPage: "Поделитесь этой страницей",
+              description: "Узнайте об агентной инженерии"
+            }
+          }
+        },
+      },
     }),
     sitemap(),
   ],
