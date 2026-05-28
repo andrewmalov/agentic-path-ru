@@ -1,149 +1,149 @@
 ---
-title: Measuring Impact
-description: What to measure, what not to measure, and when to pull back
+title: Измерение влияния
+description: Что измерять, что не измерять, и когда отступить
 sidebar:
   order: 3
 ---
 
-Everyone wants to measure agent impact. Most measurements are wrong. And sometimes agents slow you down.
+Все хотят измерять влияние агентов. Большинство измерений неверны. И иногда агенты замедляют вас.
 
-## The Measurement Trap
+## Ловушка измерений
 
-When you measure wrong things, people optimize for metrics, not outcomes.
+Когда вы измеряете не то, люди оптимизируют метрики, а не результаты.
 
-| Bad metric                 | Gaming behavior                               |
+| Плохая метрика              | Поведение оптимизации                               |
 | -------------------------- | --------------------------------------------- |
-| Lines of code generated    | Verbose, less clean code                      |
-| Tasks completed per sprint | Task inflation, tiny pieces                   |
-| Time using AI tools        | Running agents on things faster done manually |
+| Строки сгенерированного кода    | Многословный, менее чистый код                      |
+| Задач за спринт | Инфляция задач, крошечные куски                   |
+| Время использования AI-инструментов        | Запуск агентов на том, что быстрее сделать вручную |
 
-## What to Actually Measure
+## Что на самом деле измерять
 
-### Leading Indicators (early signals)
+### Опережающие индикаторы (ранние сигналы)
 
-- **Acceptance rate:** What % of suggestions accepted vs. rejected? Low rates suggest poor fit or skill gaps.
-- **Iteration count:** How many prompt cycles before useful output? Decreasing = improving skills.
-- **Task scope:** Are engineers tackling larger tasks with agent help? Growing confidence.
-- **Review feedback:** Are reviewers catching fewer issues in agent-assisted PRs over time?
+- **Acceptance rate:** Какой % предложений принят против отклонён? Низкие показатели говорят о плохом соответствии или пробелах в навыках.
+- **Iteration count:** Сколько циклов промпта перед полезным output? Уменьшение = улучшение навыков.
+- **Scope задачи:** Берутся ли инженеры за более крупные задачи с помощью агента? Растущая уверенность.
+- **Обратная связь при ревью:** Ловят ли ревьюеры меньше проблем в PR с агентной поддержкой со временем?
 
-### Lagging Indicators (outcomes)
+### Запаздывающие индикаторы (результаты)
 
-- **Velocity:** Look at trends, not absolutes. Compare to teams not using agents. (Careful—gameable.)
-- **Bug rates:** Bugs per feature changing? Account for code attribution.
-- **Time to production:** Feature start to deploy. Harder to game.
-- **Developer satisfaction:** Survey your team. Happy devs are productive devs.
+- **Velocity:** Смотрите тренды, не абсолюты. Сравнивайте с командами без агентов. (Осторожно — можно накрутить.)
+- **Bug rates:** Баги на фичу? Учитывайте атрибуцию кода.
+- **Time to production:** От старта фичи до деплоя. Сложнее game-ить.
+- **Developer satisfaction:** Опросите команду. Счастливые разрабы — продуктивные разрабы.
 
-### What Not to Measure
+### Что не измерять
 
-- **Lines of code**—irrelevant and gameable
-- **Tool usage time**—usage ≠ value
-- **Cost of AI tools**—matters for ROI, not effectiveness
-- **Prompt count**—more prompts might mean learning
+- **Строки кода** — irrelevant и gameable
+- **Время использования инструментов** — использование ≠ ценность
+- **Стоимость AI-инструментов** — важно для ROI, не для эффективности
+- **Количество промптов** — больше промптов может означать обучение
 
-## The Attribution Problem
+## Проблема атрибуции
 
-Who gets credit for AI-generated code? Who takes blame?
+Кто получает заслугу за AI-сгенерированный код? Кто несёт ответственность?
 
-**Don't solve this.** Treat agent-assisted code like any other. The human who committed it owns it.
+**Не решайте это.** Относитесь к коду с агентной поддержкой как к любому другому. Человек, который его закоммитил, за него отвечает.
 
-This simplifies everything: no separate metrics, normal accountability, no need to track percentages.
+Это упрощает всё: никаких отдельных метрик, нормальная ответственность, не нужно отслеживать проценты.
 
-## Qualitative Signals
+## Качественные сигналы
 
-Numbers don't tell the whole story. Watch for:
+Цифры не рассказывают всю историю. Следите за:
 
-- **Team sentiment:** Excitement or frustration? Positive talk about agents?
-- **Adoption patterns:** Senior engineers using agents is a quality signal
-- **Knowledge sharing:** Organic prompt sharing indicates value
-- **Problem selection:** Engineers tackling harder problems is often the real win
+- **Настроением команды:** Волнение или фрустрация? Положительные разговоры об агентах?
+- **Паттернами adoption:** Senior-инженеры используют агентов — это сигнал качества
+- **Обменом знаний:** Органический обмен промптами указывает на ценность
+- **Выбором проблем:** Инженеры берутся за более сложные проблемы — часто это настоящая победа
 
-## Running an Experiment
+## Запуск эксперимента
 
-If you need rigorous measurement:
+Если вам нужна строгая измеримость:
 
-1. **Control group:** Some work happens without agents
-2. **Clear metrics:** Define before you start
-3. **Time bound:** 4-6 weeks to account for learning curves
-4. **Survey participants:** Qualitative data matters
+1. **Контрольная группа:** Некоторая работа происходит без агентов
+2. **Чёткие метрики:** Определите до начала
+3. **Ограничение по времени:** 4-6 недель для учёта кривых обучения
+4. **Опрос участников:** Качественные данные важны
 
-But most teams don't need academic proof—just signals that adoption is working.
+Но большинству команд не нужны академические доказательства — просто сигналы, что adoption работает.
 
-## The Real Question
+## Настоящий вопрос
 
-Don't ask "Are agents making us more productive?"
+Не спрашивайте "Делают ли агенты нас более продуктивными?"
 
-Ask **"Are we building what we need, at the quality we need, without burning out?"**
+Спрашивайте **"Создаём ли мы то, что нужно, того качества, что нужно, не выгорая?"**
 
-If yes, your approach is working.
+Если да — ваш подход работает.
 
 ---
 
-## When Agents Help
+## Когда агенты помогают
 
-### High-volume repetitive tasks
+### Высокообъёмные повторяющиеся задачи
 
-Tests for multiple functions, docs across files, API boilerplate, migration scripts. Same thing, many times—agents thrive.
+Тесты для нескольких функций, документы по файлам, API boilerplate, миграционные скрипты. Одно и то же, много раз — агенты процветают.
 
-### New territory exploration
+### Исследование новой территории
 
-Unfamiliar framework? Agent scaffolds while you learn. New language? Get working examples. Unknown API? Generate integration code to understand patterns.
+Незнакомый фреймворк? Агент создаёт scaffolding, пока вы учитесь. Новый язык? Получите рабочие примеры. Неизвестный API? Сгенерируйте integration-код для понимания паттернов.
 
-### Clear spec, straightforward implementation
+### Чёткая спецификация, прямая реализация
 
-CRUD with defined schemas, form validation with known rules, utilities with well-defined I/O. Low ambiguity, well-understood problem space.
+CRUD с определёнными схемами, валидация форм с известными правилами, утилиты с хорошо определённым I/O. Низкая неоднозначность, понятное пространство проблем.
 
-### Tedious but necessary
+### Утомительное, но необходимое
 
-Mocks and fixtures, logging and error handling, consistent formatting, config updates across many places. Takes time but not thought.
+Моки и fixtures, логирование и обработка ошибок, последовательное форматирование, обновление конфигов во многих местах. Занимает время, но не дума.
 
-## When Agents Slow You Down
+## Когда агенты замедляют
 
-### High-context tasks
+### Задачи с высоким контекстом
 
-If understanding requires reading complex business logic, historical decisions, or unwritten conventions—you'd have to explain it all anyway. Often faster to just do it.
+Если понимание требует чтения сложной бизнес-логики, исторических решений или неписаных соглашений — вам всё равно придётся всё это объяснять. Часто быстрее просто сделать самому.
 
-### Tasks faster done manually
+### Задачи, которые быстрее сделать вручную
 
-**Prompting + waiting + reviewing > manual coding?** Just code it. Especially true for single-line changes, familiar patterns, quick fixes.
+**Промпт + ожидание + ревью > ручное кодирование?** Просто напишите код. Особенно верно для однострочных изменений, знакомых паттернов, быстрых фиксов.
 
-Build intuition for your personal break-even point.
+Выработайте интуицию для вашей личной точки безубыточности.
 
-### Novel algorithms
+### Новые алгоритмы
 
-Agents pattern-match training data. New algorithmic approaches, domain-specific optimization, unusual data structures—solve it yourself, let agents help with boring parts around it.
+Агенты pattern-match на тренировочных данных. Новые алгоритмические подходы, domain-specific оптимизация, необычные структуры данных — решайте сами, позвольте агентам помочь со скучными частями вокруг.
 
-### Highly coupled changes
+### Сильно связанные изменения
 
-Changes touching many tightly-interdependent parts are hard for agents. They may not understand connections, errors compound, validation requires whole-system understanding. Break these apart or do manually.
+Изменения, затрагивающие множество тесно взаимозависимых частей, сложны для агентов. Они могут не понимать связи, ошибки накапливаются, валидация требует понимания всей системы. Разбивайте такие на части или делайте вручную.
 
-### Ambiguous requirements
+### Неоднозначные требования
 
-"Make it better" or "improve performance" without specifics wastes cycles. Agents need clear success criteria, defined constraints, specific scope. If you can't articulate these, you're not ready to delegate.
+"Сделай лучше" или "улучши производительность" без деталей тратит циклы. Агентам нужны чёткие критерии успеха, определённые ограничения, конкретная область. Если вы не можете это артикулировать, вы не готовы делегировать.
 
-## Team-Level Patterns
+## Паттерны на уровне команды
 
-**Task assignment:** Don't assign agent-hostile tasks expecting agents will help.
+**Назначение задач:** Не назначайте agent-hostile задачи в ожидании, что агенты помогут.
 
-**Sprint planning:** Don't assume agent help for all tasks. Call out which are agent-friendly. Account for validation overhead.
+**Sprint planning:** Не предполагайте агентную помощь для всех задач. Отмечайте, какие agent-friendly. Учитывайте overhead на валидацию.
 
-**Retrospectives:** Review where agents helped and hindered. What task types worked? Where did you waste time prompting?
+**Ретроспективы:** Анализируйте, где агенты помогли и где навредили. Какие типы задач работали? Где вы тратили время на промпты?
 
-## Building Team Judgment
+## Развитие командного суждения
 
-- **Share examples:** "This task would have been faster manually—here's why."
-- **Celebrate good choices:** Acknowledge when someone correctly decides _not_ to use an agent.
-- **Create a reference:** Maintain a guide of task types and recommended approaches.
-- **Review periodically:** As tools improve, patterns change.
+- **Делитесь примерами:** "Эта задача была бы быстрее вручную — вот почему."
+- **Празднуйте хорошие решения:** Признавайте, когда кто-то правильно решил НЕ использовать агента.
+- **Создайте справочник:** Ведите гайд по типам задач и рекомендуемым подходам.
+- **Периодически пересматривайте:** По мере улучшения инструментов паттерны меняются.
 
-## Resources
+## Ресурсы
 
-### Essential
+### Обязательное
 
-- [Does AI Actually Boost Developer Productivity? – Yegor Denisov-Blanch, Stanford](https://www.youtube.com/watch?v=tbDDYKRFjhk) - 100k developer study: ~20% average boost, significant variance
-- [Stop Looking for AI Coding Spending Caps](https://blog.kilo.ai/p/stop-looking-for-ai-coding-spending) - Why caps cost more than they save
-- [ML-Enhanced Code Completion – Google Research](https://research.google/blog/ml-enhanced-code-completion-improves-developer-productivity/) - Google's productivity impact research
+- [Does AI Actually Boost Developer Productivity? – Yegor Denisov-Blanch, Stanford](https://www.youtube.com/watch?v=tbDDYKRFjhk) - Исследование 100k разработчиков: ~20% средний буст, значительная дисперсия
+- [Stop Looking for AI Coding Spending Caps](https://blog.kilo.ai/p/stop-looking-for-ai-coding-spending) - Почему cap'ы стоят дороже, чем экономят
+- [ML-Enhanced Code Completion – Google Research](https://research.google.com/blog/ml-enhanced-code-completion-improves-developer-productivity/) - Исследование влияния на продуктивность от Google
 
-### Deep dives
+### Глубокие погружения
 
-- [The reality of AI-Assisted software engineering productivity](https://addyo.substack.com/p/the-reality-of-ai-assisted-software) - Balanced take on productivity claims
-- [Vibe coding is already dead](https://www.youtube.com/watch?v=tKPtZtsLgUA) - Critical perspective on when AI tools backfire
+- [The reality of AI-Assisted software engineering productivity](https://addyo.substack.com/p/the-reality-of-ai-assisted-software) - Сбалансированный взгляд на заявления о продуктивности
+- [Vibe coding is already dead](https://www.youtube.com/watch?v=tKPtZtsLgUA) - Критическая перспектива на случаи, когда AI-инструменты дают обратный эффект

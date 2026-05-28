@@ -1,90 +1,90 @@
 ---
-title: "The 1-Pizza Team: Why AI Makes Smaller Engineering Teams More Effective"
-description: How AI agents are enabling smaller teams to ship what once required much larger groups
+title: "Команда из одной пиццы: почему ИИ делает меньшие инженерные команды более эффективными"
+description: Как AI-агенты позволяют небольшим командам создавать то, что раньше требовало значительно больших групп
 sidebar:
   order: 4
 ---
 
-Amazon's "two-pizza team" rule has been gospel for decades: if you need more than two pizzas to feed a team, the team is too big. But something is shifting. Directors at traditional companies are now talking about "one-pizza teams." The math is changing.
+Правило команды из двух пицц от Amazon десятилетиями было аксиомой: если нужно больше двух пицц, чтобы накормить команду, команда слишком большая. Но что-то меняется. Директора в традиционных компаниях теперь говорят о командах из одной пиццы. Математика меняется.
 
-This isn't about layoffs or doing more with less in a grim, squeeze-the-workers sense. It's about what individuals can accomplish when they're managing AI agents alongside human collaborators.
+Речь не идёт о сокращениях или о том, чтобы делать больше с меньшими ресурсами в мрачном смысле выжимания из работников. Речь о том, чего могут достичь отдельные люди, управляя AI-агентами наряду с человеческими коллегами.
 
-## The research backs this up
+## Исследования подтверждают это
 
-A [Harvard and Wharton study at P&G](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5188231) found something striking: individuals using AI performed as well as teams without it. And teams with AI significantly outperformed teams without AI on producing top-tier ideas.
+[Исследование Гарварда и Уортона в P&G](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5188231) обнаружило поразительный факт: отдельные люди, использующие ИИ, показывали такие же результаты, как команды без него. А команды с ИИ значительно превосходили команды без ИИ в создании идей высшего качества.
 
-Read that again. One person with AI tools matched the output of a traditional team.
+Прочитайте ещё раз. Один человек с ИИ-инструментами соответствовал output традиционной команды.
 
-Microsoft's WorkLab research calls this the rise of the ["agent boss"](https://www.microsoft.com/en-us/worklab/ai-at-work-how-human-agent-teams-will-reshape-your-workforce)—everyone from interns to executives will manage their own constellation of AI agents. The hierarchy isn't flattening; it's extending into a new dimension where humans orchestrate machine intelligence.
+Исследование Microsoft WorkLab называет это ростом ["агент-босса"](https://www.microsoft.com/en-us/worklab/ai-at-work-how-human-agent-teams-will-reshape-your-workforce) — от стажёров до руководителей, каждый будет управлять своим созвездием AI-агентов. Иерархия не уплощается; она расширяется в новое измерение, где люди оркестрируют машинный интеллект.
 
-## What this looks like in practice
+## Как это выглядит на практике
 
-Kilo's engineering model is one example. Each engineer [owns an entire product area and a WAU metric](https://blog.kilo.ai/p/our-engineers-own-a-number), not just a codebase. They manage teams of AI agents to parallelize work that would traditionally require multiple people.
+Инженерная модель Kilo — один пример. Каждый инженер [владеет целой продуктовой областью и метрикой WAU](https://blog.kilo.ai/p/our-engineers-own-a-number), а не просто кодовой базой. Они управляют командами AI-агентов для распараллеливания работы, которая традиционно требовала бы нескольких человек.
 
-One engineer. One product area. One number to own. AI agents handling the parallelizable work.
+Один инженер. Одна продуктовая область. Один показатель для владения. AI-агенты выполняют параллелизуемую работу.
 
-[Anthropic's internal research](https://www.anthropic.com/research/how-ai-is-transforming-work-at-anthropic) shows their engineers now use Claude in 60% of their work, reporting a 50% productivity boost—a 2-3x increase from the previous year. More telling: 27% of their Claude-assisted work is tasks that wouldn't have been done otherwise. This isn't just efficiency. It's expanded capability.
+[Внутреннее исследование Anthropic](https://www.anthropic.com/research/how-ai-is-transforming-work-at-anthropic) показывает, что их инженеры теперь используют Claude в 60% своей работы, сообщая о 50% росте продуктивности — 2-3x увеличение по сравнению с предыдущим годом. Более показательно: 27% их работы с поддержкой Claude — это задачи, которые иначе не были бы выполнены. Это не просто эффективность. Это расширение возможностей.
 
-## The new mental model: engineers as agent managers
+## Новая ментальная модель: инженеры как менеджеры агентов
 
-The shift requires thinking about your team differently. It's not just "how many engineers do I need?" but "what's the optimal ratio of humans to agents for this work?"
+Этот сдвиг требует думать о своей команде по-другому. Это не просто "сколько инженеров мне нужно?", а "каково оптимальное соотношение людей и агентов для этой работы?"
 
-Microsoft is already calling this the ["human-agent ratio"](https://www.microsoft.com/en-us/worklab/ai-at-work-how-human-agent-teams-will-reshape-your-workforce)—a new metric that will vary by task, process, and industry. Get it wrong, and you miss out on AI's value or overwhelm your team. Get it right, and you unlock the performance demonstrated in that P&G study.
+Microsoft уже называет это ["человеко-агентным соотношением"](https://www.microsoft.com/en-us/worklab/ai-at-work-how-human-agent-teams-will-reshape-your-workforce) — новая метрика, которая будет варьироваться в зависимости от задачи, процесса и отрасли. Не угадаете — упустите ценность ИИ или перегрузите команду. Угадаете правильно — раскроете производительность, продемонстрированную в исследовании P&G.
 
-Your best engineers aren't just coding anymore. They're:
+Ваши лучшие инженеры уже не просто пишут код. Они:
 
-- **Decomposing work** into agent-appropriate chunks
-- **Reviewing agent output** for quality and correctness  
-- **Orchestrating parallel workstreams** across multiple agents
-- **Making judgment calls** agents can't handle
-- **Maintaining context** that agents lose between sessions
+- **Декомпозируют работу** на части, подходящие для агентов
+- **Проверяют результаты агентов** на качество и корректность
+- **Оркестрируют параллельные рабочие потоки** через нескольких агентов
+- **Принимают решения** с которыми агенты не справляются
+- **Поддерживают контекст**, который агенты теряют между сессиями
 
-These are management skills applied to AI systems. The job title stays "engineer," but the work looks more like coordination.
+Это менеджерские навыки, применённые к AI-системам. Должность остаётся "инженер", но работа больше похожа на координацию.
 
-## What this means for team structure
+## Что это означает для структуры команды
 
-Traditional team planning: "This project needs a frontend engineer, two backend engineers, a DevOps person, and a QA engineer. Five people."
+Традиционное планирование команды: "Этому проекту нужен фронтенд-инженер, два бэкенд-инженера, DevOps-инженер и QA-инженер. Пять человек."
 
-AI-native team planning: "This project needs two senior engineers who can each manage agent workstreams for their domain, plus one engineer focused on integration and quality. Three people, with explicit agent allocation."
+AI-native планирование команды: "Этому проекту нужны два senior-инженера, каждый из которых может управлять рабочими потоками агентов в своей области, плюс один инженер, фокусирующийся на интеграции и качестве. Три человека с явным распределением агентов."
 
-The [InsideAI News](https://insideainews.com/2024/04/24/artificial-intelligence-means-smaller-teams-doing-more-with-less-makes-the-small-autonomous-teams-structure-even-more-important/) analysis argues that AI actually makes small autonomous teams more necessary, not less. When individual contributors can have outsized impact through AI leverage, the overhead of large team coordination becomes even more costly.
+[Анализ InsideAI News](https://insideainews.com/2024/04/24/artificial-intelligence-means-smaller-teams-doing-more-with-less-makes-the-small-autonomous-teams-structure-even-more-important/) утверждает, что ИИ на самом деле делает небольшие автономные команды ещё более необходимыми, а не наоборот. Когда отдельные участники могут иметь огромное влияние через ИИ-рычаг, накладные расходы на координацию больших команд становятся ещё более дорогими.
 
-## The skill distribution shifts
+## Сдвиг в распределении навыков
 
-[Galileo's research on AI team dynamics](https://galileo.ai/blog/ai-engineering-team-dynamics) highlights how AI is blurring traditional role boundaries. Everyone shares responsibility for production outcomes, creating cross-functional teams that approach problems holistically.
+[Исследование Galileo об AI-динамике команд](https://galileo.ai/blog/ai-engineering-team-dynamics) подчёркивает, как ИИ размывает традиционные границы ролей. Все разделяют ответственность за продуктовые результаты, создавая кросс-функциональные команды, которые подходят к проблемам холистически.
 
-But this creates a new challenge: engineers must now cultivate expertise in analyzing production data, ensuring system observability, and managing complete software lifecycles—skills that extend beyond writing code. As Charity Majors puts it: "Software engineering is not about writing code. It's about solving business problems with technology."
+Но это создаёт новую проблему: инженеры должны теперь развивать экспертизу в анализе продуктовых данных, обеспечении наблюдаемости системы и управлении полным жизненным циклом ПО — навыки, которые выходят за рамки написания кода. Как говорит Charity Majors: "Software engineering — это не про написание кода. Это про решение бизнес-проблем с помощью технологий."
 
-Engineers who can orchestrate AI effectively become force multipliers. Those who can't risk being outpaced by smaller teams that can.
+Инженеры, которые могут эффективно оркестрировать ИИ, становятся мультипликаторами силы. Те, кто не может, рискуют быть обойдёнными меньшими командами, которые могут.
 
-## Practical steps for team leads
+## Практические шаги для тимлидов
 
-**Audit your team structure.** Where are you overstaffing because you're not accounting for AI leverage? A team of 8 doing what 4 people with good AI workflows could handle isn't sustainable when competitors figure this out.
+**Аудит структуры команды.** Где вы переstaffите, потому что не учитываете ИИ-рычаг? Команда из 8 человек, делающая то, что могут 4 человека с хорошими AI-workflows, не sustainable, когда конкуренты это поймут.
 
-**Define agent allocation explicitly.** Don't let AI usage be ad-hoc. Identify which workstreams benefit from agent parallelization and resource them accordingly.
+**Явно определите распределение агентов.** Не позволяйте использованию ИИ быть спонтанным. Определите, какие рабочие потоки выигрывают от параллелизации агентов, и выделите ресурсы соответственно.
 
-**Measure the human-agent ratio.** Start tracking it even informally. How much of your team's output comes from direct human work vs. agent-assisted work? This will become a key metric.
+**Измеряйте человеко-агентное соотношение.** Начните отслеживать хотя бы неформально. Какая часть output вашей команды приходится на прямой человеческий труд против агент-помощь? Это станет ключевой метрикой.
 
-**Train for orchestration, not just coding.** Your best engineers need to develop skills in prompt engineering, agent workflow design, and AI output validation. These are trainable skills with compounding returns.
+**Тренируйте оркестрированию, а не просто кодированию.** Вашим лучшим инженерам нужно развивать навыки в промпт-инженерии, дизайне агентских workflows и валидации AI-вывода. Это trainable навыки с compounding returns.
 
-**Watch for capability expansion.** Anthropic found 27% of AI-assisted work was new work that wouldn't have happened otherwise. Are your teams using AI to do the same work faster, or to do work that was previously impossible? The latter is where competitive advantage lives.
+**Следите за расширением возможностей.** Anthropic обнаружил, что 27% работы с ИИ-помощью — это новая работа, которая иначе не была бы сделана. Используют ли ваши команды ИИ, чтобы делать ту же работу быстрее, или чтобы делать работу, которая раньше была невозможна? Второе — это где живёт конкурентное преимущество.
 
-## The uncomfortable truth
+## Неудобная правда
 
-Teams are getting smaller because they can. The organizations that recognize this early gain compounding advantages—they attract engineers who want leverage, they ship faster, and they compound learnings about AI-native workflows.
+Команды становятся меньше, потому что могут. Организации, которые осознают это рано, получают compounding преимущества — они привлекают инженеров, которые хотят рычаг, они быстрее ship, и они compounding учатся об AI-native workflows.
 
-The question isn't whether this transition is happening. It's whether you're leading it or reacting to it.
+Вопрос не в том, происходит ли этот переход. Вопрос в том, ведёте ли вы его или реагируете на него.
 
-## Resources
+## Ресурсы
 
-### Essential reading
+### Обязательное чтение
 
-- [How human-agent teams will reshape your workforce](https://www.microsoft.com/en-us/worklab/ai-at-work-how-human-agent-teams-will-reshape-your-workforce) - Microsoft WorkLab on the "agent boss" concept
-- [How AI Is Transforming Work at Anthropic](https://www.anthropic.com/research/how-ai-is-transforming-work-at-anthropic) - Internal research on AI productivity gains
-- [Why Our Engineers Own a Number, Not Just a Codebase](https://blog.kilo.ai/p/our-engineers-own-a-number) - Kilo's product engineering model
-- [The Cybernetic Teammate (Harvard/Wharton)](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5188231) - P&G field study on AI team performance
+- [How human-agent teams will reshape your workforce](https://www.microsoft.com/en-us/worklab/ai-at-work-how-human-agent-teams-will-reshape-your-workforce) - Microsoft WorkLab о концепции "агент-босса"
+- [How AI Is Transforming Work at Anthropic](https://www.anthropic.com/research/how-ai-is-transforming-work-at-anthropic) - Внутреннее исследование о росте продуктивности ИИ
+- [Why Our Engineers Own a Number, Not Just a Codebase](https://blog.kilo.ai/p/our-engineers-own-a-number) - Продуктовая инженерная модель Kilo
+- [The Cybernetic Teammate (Harvard/Wharton)](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5188231) - Полевское исследование P&G о производительности AI-команд
 
-### Deep dives
+### Глубокие погружения
 
-- [How AI is Reshaping Engineering Teams](https://galileo.ai/blog/ai-engineering-team-dynamics) - Charity Majors on engineering management in the AI era
-- [AI means smaller teams](https://insideainews.com/2024/04/24/artificial-intelligence-means-smaller-teams-doing-more-with-less-makes-the-small-autonomous-teams-structure-even-more-important/) - Why small autonomous teams become more important with AI
+- [How AI is Reshaping Engineering Teams](https://galileo.ai/blog/ai-engineering-team-dynamics) - Charity Majors об управлении инженерией в эпоху ИИ
+- [AI means smaller teams](https://insideainews.com/2024/04/24/artificial-intelligence-means-smaller-teams-doing-more-with-less-makes-the-small-autonomous-teams-structure-even-more-important/) - Почему небольшие автономные команды становятся важнее с ИИ
