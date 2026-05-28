@@ -1,127 +1,127 @@
 ---
-title: Security Review
-description: Catching security issues in AI-generated code
+title: Проверка безопасности
+description: Выявление проблем безопасности в коде, сгенерированном ИИ
 sidebar:
   order: 3
 ---
 
-**AI-generated code can introduce security vulnerabilities.** Some are bugs humans write too; some are unique to AI patterns.
+**Код, сгенерированный ИИ, может вносить уязвимости безопасности.** Некоторые из них — обычные баги, которые пишут и люди; некоторые уникальны для паттернов ИИ.
 
-## AI-specific security concerns
+## Проблемы безопасности, специфичные для ИИ
 
-### Pattern-based vulnerabilities
+### Уязвимости на основе паттернов
 
-AI learns from patterns—including vulnerable ones in training data.
+ИИ обучается на паттернах, включая уязвимые из обучающих данных.
 
-**Common issues:**
+**Типичные проблемы:**
 
-- SQL/command injection
-- Insecure deserialization
-- Hardcoded credentials
-- Missing auth checks
-- Insecure defaults
+- SQL/командная инъекция
+- Небезопасная десериализация
+- Жёстко закодированные учётные данные
+- Отсутствующие проверки аутентификации
+- Небезопасные значения по умолчанию
 
-**Why:** Models optimize for "code that looks right," not "code that's secure."
+**Почему:** Модели оптимизируют "код, который выглядит правильно", а не "код, который безопасен".
 
-### Hallucinated security
+### Мнимая безопасность
 
-AI may implement security incorrectly:
+ИИ может неправильно реализовать механизмы безопасности:
 
-- Encryption using weak algorithms
-- Authentication that doesn't actually validate
-- Authorization checks that can be bypassed
-- Input validation missing edge cases
+- Шифрование со слабыми алгоритмами
+- Аутентификация, которая фактически не проверяет
+- Проверки авторизации, которые можно обойти
+- Проверка ввода без учёта граничных случаев
 
-Code _looks_ secure but isn't.
+Код _выглядит_ безопасным, но это не так.
 
-### Dependency risks
+### Риски зависимостей
 
-AI may suggest packages that:
+ИИ может предлагать пакеты, которые:
 
-- Don't exist (hallucinated—could be typosquatted)
-- Have known vulnerabilities
-- Are unmaintained
+- Не существуют (галлюцинация — возможно, это typosquatting)
+- Имеют известные уязвимости
+- Не поддерживаются
 
-## Security review checklist
+## Чек-лист проверки безопасности
 
-### Input handling
+### Обработка ввода
 
-- [ ] All user inputs validated
-- [ ] Input length limits enforced
-- [ ] Paths sanitized (no traversal)
-- [ ] URLs validated
+- [ ] Все входные данные от пользователей проверены
+- [ ] Ограничения длины ввода соблюдены
+- [ ] Пути очищены (без обхода каталогов)
+- [ ] URL проверены
 
-### Authentication & authorization
+### Аутентификация и авторизация
 
-- [ ] Auth properly implemented
-- [ ] Tokens validated correctly
-- [ ] Sessions managed securely
-- [ ] Access controls on sensitive operations
-- [ ] Authorization checked server-side
+- [ ] Аутентификация правильно реализована
+- [ ] Токены правильно проверены
+- [ ] Сессии безопасно управляются
+- [ ] Контроль доступа к чувствительным операциям
+- [ ] Авторизация проверена на стороне сервера
 
-### Data protection
+### Защита данных
 
-- [ ] Sensitive data encrypted at rest
-- [ ] TLS enforced
-- [ ] Secrets not hardcoded
-- [ ] No sensitive data in logs
+- [ ] Чувствительные данные зашифрованы при хранении
+- [ ] TLS обеспечен
+- [ ] Секреты не закодированы в исходном коде
+- [ ] Чувствительные данные не попадают в логи
 
-### Injection prevention
+### Предотвращение инъекций
 
-- [ ] Parameterized database queries
-- [ ] Shell commands properly escaped
-- [ ] No eval() with user input
-- [ ] Template injection prevented
+- [ ] Параметризованные запросы к базе данных
+- [ ] Shell-команды правильно экранированы
+- [ ] Нет eval() с пользовательским вводом
+- [ ] Предотвращена инъекция в шаблоны
 
-### Dependencies
+### Зависимости
 
-- [ ] All dependencies verified to exist
-- [ ] No known vulnerable versions
-- [ ] Lock files committed
+- [ ] Все зависимости проверены на существование
+- [ ] Нет известных уязвимых версий
+- [ ] Lock-файлы зафиксированы
 
-## Review by risk level
+## Проверка по уровню риска
 
-| Code Type          | Review Level                                          |
-| ------------------ | ----------------------------------------------------- |
-| Any AI change      | Skim for patterns, check inputs, verify deps exist    |
-| Security-sensitive | Full checklist, manual testing of boundaries          |
-| Auth/authz         | Line-by-line, threat modeling, senior security review |
+| Тип кода              | Уровень проверки                                              |
+| ---------------------- | ------------------------------------------------------------- |
+| Любое изменение ИИ     | Просмотр паттернов, проверка ввода, верификация зависимостей |
+| Чувствительный код    | Полный чек-лист, ручное тестирование границ                   |
+| Аутентификация/авториз.| Построчный анализ, моделирование угроз, проверка старшим специалистом по безопасности |
 
-## Automated tools
+## Автоматизированные инструменты
 
-**Static analysis (SAST):** Run on all code. Won't catch all AI-specific issues, but catches common vulnerabilities.
+**Статический анализ (SAST):** Запускать на всём коде. Не выявит все проблемы ИИ, но обнаружит распространённые уязвимости.
 
-**Dependency scanning:** Dependabot, Snyk. Check all deps exist before installing.
+**Сканирование зависимостей:** Dependabot, Snyk. Проверять существование всех зависимостей перед установкой.
 
-**Secret scanning:** Pre-commit hooks, repository scanning, CI/CD checks.
+**Сканирование секретов:** Pre-commit хуки, сканирование репозитория, проверки в CI/CD.
 
-## Team training
+## Обучение команды
 
-**AI-specific:**
+**Специфичное для ИИ:**
 
-- Common patterns AI gets wrong
-- How to spot hallucinated security
-- When to be extra suspicious
+- Типичные паттерны, которые ИИ неправильно реализует
+- Как распознать мнимую безопасность
+- Когда нужно быть особенно подозрительным
 
-**General security:**
+**Общая безопасность:**
 
 - OWASP Top 10
-- Language-specific issues
-- Secure coding guidelines
+- Проблемы, специфичные для языка
+- Рекомендации по безопасной разработке
 
-## Incident response
+## Реагирование на инциденты
 
-When AI-generated code causes a security issue:
+Когда код, сгенерированный ИИ, вызывает проблему безопасности:
 
-1. **Treat like any security incident**—don't minimize because "AI did it"
-2. **Document AI involvement:** Tool, prompt, what review happened
-3. **Root cause:** Was this AI-specific? Would human have caught it?
-4. **Process improvement:** What would have caught this earlier?
+1. **Относиться как к любому инциденту безопасности** — не преуменьшать из-за "это ИИ сделал"
+2. **Документировать участие ИИ:** Инструмент, промпт, какая проверка проводилась
+3. **Корневая причина:** Это специфично для ИИ? Человек бы это заметил?
+4. **Улучшение процесса:** Что должно было это выявить раньше?
 
-**Post-incident:** Update checklists, share learnings, consider tool-specific mitigations.
+**После инцидента:** Обновить чек-листы, поделиться выводами, рассмотреть специфичные для инструмента митигации.
 
-## Resources
+## Ресурсы
 
-### Videos
+### Видео
 
-- [Government Agents – Mark Myshatyn, Los Alamos](https://www.youtube.com/watch?v=example) - Security considerations for AI agents in government
+- [Government Agents – Mark Myshatyn, Los Alamos](https://www.youtube.com/watch?v=example) - Вопросы безопасности ИИ-агентов в государственном секторе

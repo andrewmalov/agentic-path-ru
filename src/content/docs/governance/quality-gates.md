@@ -1,111 +1,111 @@
 ---
-title: Quality Gates
-description: Where to require human approval in agentic workflows
+title: Контрольные точки качества
+description: Где требуется одобрение человека в агентных рабочих процессах
 sidebar:
   order: 2
 ---
 
-**Quality gates define where human approval is required.** As agents become more capable, gates prevent automation from bypassing critical checkpoints.
+**Контрольные точки качества определяют, где требуется одобрение человека.** По мере роста возможностей агентов, эти точки предотвращают автоматизацию от обхода критических контрольных этапов.
 
-## Types of gates
+## Типы контрольных точек
 
-### Merge gates
+### Точки слияния
 
-Requirements before code merges to main/production branches.
+Требования перед слиянием кода в основные/производственные ветки.
 
-**Standard:** Passing tests, code review approval, no conflicts, docs updated.
+**Стандартные:** Прохождение тестов, одобрение рецензента, отсутствие конфликтов, обновлённая документация.
 
-**AI-specific:** Different requirements for AI-heavy PRs? AI assist vs. replace review? Disclosure required?
+**Специфичные для ИИ:** Разные требования для PR с активным использованием ИИ? ИИ-помощь vs. замена рецензии? Требуется раскрытие?
 
-### Deployment gates
+### Точки деплоя
 
-Requirements before deploying to environments.
+Требования перед развёртыванием в средах.
 
-**Standard:** Pre-deployment tests pass, security scan clean, performance benchmarks met, production approval.
+**Стандартные:** Предварительные тесты пройдены, проверка безопасности чистая, бенчмарки производительности достигнуты, одобрение на прод.
 
-**AI-specific:** Extra scrutiny for first deploy of AI-generated code? Automated rollback triggers?
+**Специфичные для ИИ:** Дополнительная проверка первого деплоя кода, сгенерированного ИИ? Автоматический откат?
 
-### Design gates
+### Точки проектирования
 
-Approval required before significant architecture changes.
+Одобрение требуется перед значительными архитектурными изменениями.
 
-**Standard:** Design doc approved, security review for sensitive areas, architecture review.
+**Стандартные:** Дизайн-документ одобрен, проверка безопасности для чувствительных областей, архитектурная рецензия.
 
-**AI-specific:** AI can inform but not decide architecture. Human approval required for AI-suggested design changes.
+**Специфичные для ИИ:** ИИ может информировать, но не принимать архитектурные решения. Человеческое одобрение требуется для архитектурных изменений, предложенных ИИ.
 
-### Data gates
+### Точки данных
 
-Controls around data access and modification.
+Контроль доступа к данным и их модификации.
 
-**Standard:** Database migration reviewed, data deletion requires approval, PII access controlled.
+**Стандартные:** Миграции базы данных проверены, удаление данных требует одобрения, доступ к PII контролируется.
 
-**AI-specific:** AI-generated migrations need extra review. No direct AI access to production data.
+**Специфичные для ИИ:** Миграции, сгенерированные ИИ, требуют дополнительной проверки. Нет прямого доступа ИИ к продакшен-данным.
 
-## Implementation
+## Реализация
 
-### Technical enforcement
+### Техническое принуждение
 
-**CI/CD checks:** Automated testing, coverage thresholds, security scanning, linting.
+**CI/CD проверки:** Автоматическое тестирование, пороги покрытия, сканирование безопасности, линтинг.
 
-**Branch protection:** Required reviewers, status checks must pass, no direct pushes.
+**Защита веток:** Обязательные рецензенты, проверки статуса должны пройти, прямые пуши запрещены.
 
-### Process enforcement
+### Процессное принуждение
 
-**Required reviewers:** Minimum approvals, specific approvers for specific paths, CODEOWNERS configuration.
+**Обязательные рецензенты:** Минимальное количество одобрений, конкретные одобряющие для конкретных путей, настройка CODEOWNERS.
 
-**Checklists:** PR templates with required confirmations, security checkboxes, AI disclosure prompts.
+**Чек-листы:** Шаблоны PR с обязательными подтверждениями, чекбоксы безопасности, запросы на раскрытие использования ИИ.
 
-### Human checkpoints
+### Человеческие контрольные точки
 
-**Required human involvement:**
+**Обязательное участие человека:**
 
-- Production deployments
-- Database migrations
-- Security-sensitive changes
-- Customer-facing feature changes
+- Деплой в продакшен
+- Миграции базы данных
+- Изменения, затрагивающие безопасность
+- Изменения пользовательских функций
 
-**Cannot be automated:**
+**Нельзя автоматизировать:**
 
-- Final deployment approval (critical systems)
-- Architecture decisions
-- Security exception approvals
-- Compliance sign-off
+- Финальное одобрение деплоя (критические системы)
+- Архитектурные решения
+- Одобрения исключений безопасности
+- Подтверждение соответствия нормативным требованиям
 
-## Gate configuration by risk
+## Настройка контрольных точек по уровню риска
 
-| Risk Level   | Examples                          | Gates                                                      |
-| ------------ | --------------------------------- | ---------------------------------------------------------- |
-| **Low**      | Docs, tests, style fixes          | Automated checks, single reviewer, auto-merge              |
-| **Medium**   | Feature code, non-critical bugs   | Full automated checks, human review, standard approval     |
-| **High**     | Security, payments, data handling | Enhanced checks, senior reviewer, security review          |
-| **Critical** | Auth, encryption, compliance      | All gates + security team + lead approval + staged rollout |
+| Уровень риска | Примеры                              | Контрольные точки                                                            |
+| ------------ | ----------------------------------- | ---------------------------------------------------------------------------- |
+| **Низкий**   | Документация, тесты, стилистические исправления | Автоматические проверки, один рецензент, автослияние              |
+| **Средний**  | Функциональный код, некритичные баги   | Все автоматические проверки, человеческая рецензия, стандартное одобрение    |
+| **Высокий**  | Безопасность, платежи, обработка данных | Расширенные проверки, старший рецензент, проверка безопасности           |
+| **Критический** | Аутентификация, шифрование, соответствие нормативным требованиям | Все точки + проверка безопасности + одобрение лида + поэтапный rollout |
 
-## Agents and gates
+## Агенты и контрольные точки
 
-**Agents can:** Run automated checks, flag issues, suggest reviewers, generate artifacts (changelogs, migration scripts).
+**Агенты могут:** Запускать автоматические проверки, помечать проблемы, предлагать рецензентов, генерировать артефакты (changelogs, миграционные скрипты).
 
-**Agents shouldn't:** Approve their own output, bypass human checkpoints, deploy to production without human trigger, grant elevated permissions.
+**Агенты не должны:** Одобрять свой собственный вывод, обходить человеческие контрольные точки, деплоить в продакшен без человеческой инициации, предоставлять повышенные права.
 
-### Gate anti-patterns
+### Анти-паттерны контрольных точек
 
-- **Rubber-stamp gates:** Approval always granted without review
-- **Gate proliferation:** So many gates people game them
-- **Inconsistent enforcement:** Gates apply sometimes but not others
-- **AI gate avoidance:** Routing AI code around tighter reviews
+- **Формальные точки:** Одобрение всегда даётся без проверки
+- **Размножение точек:** Столько много точек, что люди начинают их обходить
+- **Непоследовательное принуждение:** Точки применяются иногда, но не всегда
+- **Обход ИИ-точек:** Маршрутизация кода ИИ вокруг более строгих проверок
 
-## Measuring effectiveness
+## Измерение эффективности
 
-| Metric          | Question                             |
-| --------------- | ------------------------------------ |
-| **Pass rate**   | Are legitimate changes passing?      |
-| **Catch rate**  | Are issues caught before production? |
-| **Latency**     | How much do gates slow the process?  |
-| **Bypass rate** | How often are gates skipped?         |
+| Метрика         | Вопрос                                          |
+| --------------- | ----------------------------------------------- |
+| **Процент прохождения** | Проходят ли легитимные изменения?            |
+| **Процент обнаружения** | Выявляются ли проблемы до продакшена?        |
+| **Задержка**    | Насколько точки замедляют процесс?             |
+| **Процент обхода** | Как часто точки пропускают?                   |
 
-Use these metrics to tune gates—neither too permissive nor too restrictive.
+Используйте эти метрики для настройки точек — не слишком разрешительно и не слишком строго.
 
-## Resources
+## Ресурсы
 
-### Videos
+### Видео
 
-- [Agent Readiness – Eno Reyes, Factory AI](https://www.youtube.com/watch?v=example) - Preparing organizations for agentic workflows
+- [Agent Readiness – Eno Reyes, Factory AI](https://www.youtube.com/watch?v=example) - Подготовка организаций к агентным рабочим процессам
