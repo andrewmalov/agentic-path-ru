@@ -1,168 +1,168 @@
-# Contributing to Agentic Engineering for Humans
+# Внесение вклада в Agentic Engineering for Humans
 
-First off—thanks for being here. This guide exists because people like you share what they've learned. Every contribution makes this resource better for the next person figuring out how to work with AI agents.
+Прежде всего — спасибо, что вы здесь. Это руководство существует потому, что такие люди, как вы, делятся тем, что узнали. Каждый вклад делает этот ресурс лучше для следующего человека, который разбирается, как работать с AI-агентами.
 
-## The short version
+## Короткая версия
 
-1. **Small fixes** (typos, broken links, minor clarifications) — Just open a PR
-2. **New content or major changes** — Open an issue first so we can discuss
-3. **Not sure?** — Ask in [Discord](https://kilo.love/discord) or open a discussion
+1. **Мелкие исправления** (опечатки, битые ссылки, небольшие уточнения) — Просто откройте PR
+2. **Новый контент или большие изменения** — Сначала откройте задачу, чтобы обсудить
+3. **Не уверены?** — Спросите в [Discord](https://kilo.love/discord) или откройте обсуждение
 
-## What we're looking for
+## Что мы ищем
 
-### High-value contributions
+### Высокоценные вклады
 
-- **Real-world experience** — What actually worked (or didn't) when you tried it
-- **Practical examples** — Code snippets, prompts, workflows that people can use
-- **Updated information** — This field moves fast; help us keep up
-- **Missing perspectives** — Different tools, languages, team sizes, industries
-- **Better explanations** — If something confused you, it probably confuses others
+- **Реальный опыт** — Что реально сработало (или нет), когда вы попробовали
+- **Практические примеры** — Сниппеты кода, промпты, воркфлоу, которые люди могут использовать
+- **Актуальная информация** — Эта сфера быстро меняется; помогите нам держать темп
+- **Недостающие перспективы** — Разные инструменты, языки, размеры команд, индустрии
+- **Лучшие объяснения** — Если что-то запутало вас, вероятно, это путает и других
 
-### Content we probably won't merge
+### Контент, который мы скорее всего не вольём
 
-- **Marketing content** — No product pitches disguised as guides
-- **Unverified claims** — "10x productivity" needs receipts
-- **AI-generated filler** — Ironic, we know, but we want human insight
-- **Duplicate content** — Check if we already cover it somewhere
+- **Маркетинговый контент** — Никаких рекламных интеграций под видом руководств
+- **Непроверенные заявления** — "10x продуктивность" требует доказательств
+- **AI-сгенерированный заполнитель** — Иронично, мы знаем, но нам нужен человеческий взгляд
+- **Дублирующий контент** — Проверьте, не освещаем ли мы это уже где-то
 
-## How to contribute
+## Как внести вклад
 
-### For documentation changes
+### Для изменений в документации
 
-1. Fork the repo
-2. Create a branch (`git checkout -b fix/typo-in-getting-started`)
-3. Make your changes
-4. Run `bun dev` to preview locally
-5. Commit with a clear message
-6. Open a PR
+1. Fork репозитория
+2. Создайте ветку (`git checkout -b fix/typo-in-getting-started`)
+3. Внесите изменения
+4. Запустите `bun dev` для локального просмотра
+5. Зафиксируйте с понятным сообщением
+6. Откройте PR
 
-### For new pages or sections
+### Для новых страниц или разделов
 
-1. **Open an issue first** — Describe what you want to add and why
-2. Wait for feedback (usually within a few days)
-3. Once approved, follow the steps above
+1. **Сначала откройте задачу** — Опишите, что вы хотите добавить и почему
+2. Дождитесь обратной связи (обычно в течение нескольких дней)
+3. После одобрения следуйте шагам выше
 
-### Writing style
+### Стиль написания
 
-Match the existing tone:
+Соответствуйте существующему тону:
 
-- **Direct and practical** — Get to the point
-- **Second person** — "You" not "the developer"
-- **Short paragraphs** — 3-5 sentences max
-- **Real examples** — Show, don't just tell
-- **No fluff** — Every sentence should earn its place
+- **Прямой и практичный** — Переходите к делу
+- **От второго лица** — "Вы" а не "разработчик"
+- **Короткие абзацы** — Максимум 3-5 предложений
+- **Реальные примеры** — Показывайте, не только рассказывайте
+- **Без воды** — Каждое предложение должно заслуживать своего места
 
-See existing pages for examples. When in doubt, read [Getting Started](/engineers/getting-started/) for the vibe we're going for.
+См. существующие страницы для примеров. Если сомневаетесь, прочитайте [Getting Started](/engineers/getting-started/), чтобы понять, к какому стилю мы стремимся.
 
-### File structure
+### Структура файлов
 
 ```
 src/content/docs/
-├── introduction/       # Core concepts
-├── engineers/          # Individual contributor content
-├── team-leads/         # Team management content
-├── executives/         # Strategic content
-├── use-cases/          # Phase-based guides
-├── governance/         # Risk and compliance
-├── appendices/         # Reference material
-└── community/          # Contributing, community info
+├── introduction/       # Базовые концепции
+├── engineers/          # Контент для индивидуальных контрибьюторов
+├── team-leads/         # Контент для управления командами
+├── executives/         # Стратегический контент
+├── use-cases/          # Руководства по фазам
+├── governance/         # Риски и комплаенс
+├── appendices/         # Справочный материал
+└── community/          # Содействие, информация о сообществе
 ```
 
 ### Frontmatter
 
-Every page needs frontmatter:
+Каждая страница требует frontmatter:
 
 ```yaml
 ---
-title: Your Page Title
-description: A one-sentence description for SEO and previews
+title: Название вашей страницы
+description: Одно предложение для SEO и превью
 sidebar:
-  order: 1 # Position in sidebar (optional)
+  order: 1 # Позиция в сайдбаре (опционально)
 ---
 ```
 
-## Issue tracking
+## Отслеживание задач
 
-We use [GitHub Issues](https://github.com/Kilo-Org/agentic-path/issues) for tracking work. Before starting on something:
+Мы используем [GitHub Issues](https://github.com/Kilo-Org/agentic-path/issues) для отслеживания работы. Перед началом:
 
-1. **Check existing issues** — Someone might already be working on it
-2. **Open an issue for larger changes** — Let's discuss before you invest time
-3. **Claim an issue** — Comment that you're working on it so others know
+1. **Проверьте существующие задачи** — Кто-то уже может работать над этим
+2. **Откройте задачу для больших изменений** — Давайте обсудим, прежде чем вы инвестируете время
+3. **Займите задачу** — Оставьте комментарий, что вы работаете над ней, чтобы другие знали
 
-Browse [open issues](https://github.com/Kilo-Org/agentic-path/issues) to find something to work on, or create a new one if you've found a gap.
+Просмотрите [открытые задачи](https://github.com/Kilo-Org/agentic-path/issues), чтобы найти что-то для работы, или создайте новую, если нашли пробел.
 
-## Pull request process
+## Процесс Pull Request
 
-1. **Keep PRs focused** — One logical change per PR
-2. **Write a clear description** — What changed and why
-3. **Link related issues** — Use "Fixes #123" or "Relates to #456"
-4. **Be patient** — We review within a week, usually faster
+1. **Делайте PR сфокусированным** — Одно логическое изменение на PR
+2. **Напишите понятное описание** — Что изменилось и почему
+3. **Свяжите связанные задачи** — Используйте "Fixes #123" или "Relates to #456"
+4. **Будьте терпеливы** — Мы проверяем в течение недели, обычно быстрее
 
-### What we check
+### Что мы проверяем
 
-- Does it match our style and tone?
-- Is the information accurate?
-- Does it add value for readers?
-- Does the build pass?
+- Соответствует ли это нашему стилю и тону?
+- Точна ли информация?
+- Добавляет ли это ценность для читателей?
+- Проходит ли сборка?
 
-## Local development
+## Локальная разработка
 
 ```bash
-# Clone your fork
+# Клонируйте ваш fork
 git clone https://github.com/YOUR-USERNAME/agentic-path.git
 cd agentic-path
 
-# Install dependencies
+# Установите зависимости
 bun install
 
-# Start dev server
+# Запустите dev server
 bun dev
 
-# Build to check for errors
+# Сборка для проверки ошибок
 bun build
 ```
 
-The site runs at `http://localhost:4321` by default.
+Сайт работает по умолчанию по адресу `http://localhost:4321`.
 
-## Community guidelines
+## Правила сообщества
 
-### Be excellent to each other
+### Будьте прекрасны друг к другу
 
-- Assume good intent
-- Respectful disagreement is welcome
-- Personal attacks are not
-- Help newcomers feel welcome
+- Исходите из добрых намерений
+- Уважительные разногласия приветствуются
+- Личные нападки не приемлемы
+- Помогайте новичкам чувствовать себя желанными
 
-### When reviewing others' work
+### При проверке чужой работы
 
-- Be constructive, not critical
-- Suggest improvements, don't just point out problems
-- Remember there's a human on the other end
+- Будьте конструктивны, а не критичны
+- Предлагайте улучшения, не только указывайте на проблемы
+- Помните, что на другом конце есть человек
 
-### When receiving feedback
+### При получении обратной связи
 
-- Don't take it personally
-- Ask clarifying questions if needed
-- It's okay to disagree—discuss it
+- Не принимайте на свой счёт
+- Задавайте уточняющие вопросы при необходимости
+- Можно не соглашаться — обсуждайте
 
-## Recognition
+## Признание
 
-Contributors are recognized in several ways:
+Контрибьюторы признаются несколькими способами:
 
-- Git history (your commits are permanent)
+- Git history (ваши коммиты постоянны)
 - GitHub contributors page
-- Shoutouts in release notes for significant contributions
+- Упоминания в release notes за значительный вклад
 
-## Questions?
+## Есть вопросы?
 
-- **Quick questions** — [Discord](https://kilo.love/discord)
-- **Longer discussions** — [GitHub Discussions](https://github.com/Kilo-Org/agentic-path/discussions)
-- **Bug reports** — [GitHub Issues](https://github.com/Kilo-Org/agentic-path/issues)
+- **Быстрые вопросы** — [Discord](https://kilo.love/discord)
+- **Более длинные обсуждения** — [GitHub Discussions](https://github.com/Kilo-Org/agentic-path/discussions)
+- **Сообщения об ошибках** — [GitHub Issues](https://github.com/Kilo-Org/agentic-path/issues)
 
-## License
+## Лицензия
 
-By contributing, you agree that your contributions will be licensed under the MIT License.
+Внося вклад, вы соглашаетесь с тем, что ваш вклад будет лицензирован под MIT License.
 
 ---
 
-Thanks again for contributing. Every improvement helps someone work better with AI agents. That's pretty cool.
+Ещё раз спасибо за вклад. Каждое улучшение помогает кому-то лучше работать с AI-агентами. Это круто.

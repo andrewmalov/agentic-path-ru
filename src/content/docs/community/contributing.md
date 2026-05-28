@@ -1,162 +1,162 @@
 ---
-title: Contributing
-description: How to contribute to Agentic Engineering for Humans—we want your help
+title: Содействие
+description: Как вносить вклад в Agentic Engineering for Humans — мы хотим вашу помощь
 sidebar:
   order: 1
 ---
 
-This guide exists because people share what they've learned. Every contribution makes it better for the next person figuring out how to work with AI agents.
+Это руководство существует потому, что люди делятся тем, что они узнали. Каждый вклад делает его лучше для следующего человека, который разбирается, как работать с AI-агентами.
 
-## Why contribute?
+## Зачем вносить вклад?
 
-The field moves fast. What worked six months ago might be outdated. What you learned last week might help someone tomorrow.
+Сфера развивается быстро. То, что работало полгода назад, может быть устаревшим. То, что вы узнали на прошлой неделе, может помочь кому-то завтра.
 
-**Your experience matters.** Whether you've been using AI tools for years or just started, you have perspective we don't. Different tools, different languages, different team sizes, different industries—all of it adds value.
+**Ваш опыт важен.** Независимо от того, используете ли вы AI-инструменты годами или только начали, у вас есть перспектива, которой у нас нет. Разные инструменты, разные языки, разные размеры команд, разные индустрии — всё это добавляет ценности.
 
-## Ways to contribute
+## Способы вклада
 
-### Quick wins (no issue needed)
+### Быстрые улучшения (задача не нужна)
 
-- **Fix typos or broken links** — Just open a PR
-- **Add a resource** — Found a great article or video? Add it to the relevant page
-- **Clarify confusing sections** — If something tripped you up, improve it
-- **Update outdated info** — Tools change constantly
+- **Исправьте опечатки или битые ссылки** — Просто откройте PR
+- **Добавьте ресурс** — Нашли отличную статью или видео? Добавьте на соответствующую страницу
+- **Уточните непонятные разделы** — Если что-то запутало вас, улучшите это
+- **Обновите устаревшую информацию** — Инструменты постоянно меняются
 
-### Bigger contributions (open an issue first)
+### Большие вклады (сначала откройте задачу)
 
-- **New pages or sections** — Have expertise we haven't covered? Let's talk
-- **Case studies** — Real-world stories of what worked (or didn't)
-- **Translations** — Help make this accessible to more people
-- **Tooling improvements** — Better search, navigation, accessibility
+- **Новые страницы или разделы** — Есть экспертиза, которую мы не покрыли? Давайте обсудим
+- **Примеры из практики** — Реальные истории о том, что сработало (или нет)
+- **Переводы** — Помогите сделать это доступным для большего числа людей
+- **Улучшения инструментов** — Лучший поиск, навигация, доступность
 
-## Getting started
+## С чего начать
 
-### 1. Find something to work on
+### 1. Найдите что-то для работы
 
-Check [open issues](https://github.com/Kilo-Org/agentic-path/issues) or look for pages that could use improvement. Not sure where to start? Ask in [Discord](https://kilo.love/discord).
+Проверьте [открытые задачи](https://github.com/Kilo-Org/agentic-path/issues) или найдите страницы, которые можно улучшить. Не знаете, с чего начать? Спросите в [Discord](https://kilo.love/discord).
 
-When you find something you want to work on, comment on the issue to let others know you're tackling it.
+Когда найдёте то, над чем хотите работать, оставьте комментарий к задаче, чтобы другие знали, что вы над ней работаете.
 
-### 2. Set up locally
+### 2. Настройте локально
 
 ```bash
-# Fork and clone
+# Fork и clone
 git clone https://github.com/YOUR-USERNAME/agentic-path.git
 cd agentic-path
 
-# Install dependencies
+# Установите зависимости
 bun install
 
-# Start dev server
+# Запустите dev server
 bun dev
 ```
 
-The site runs at `http://localhost:4321`.
+Сайт работает по адресу `http://localhost:4321`.
 
-### 3. Make your changes
+### 3. Внесите изменения
 
-Create a branch, make your edits, preview locally.
+Создайте ветку, внесите правки, просмотрите локально.
 
-### 4. Open a PR
+### 4. Откройте PR
 
-Push your branch and open a pull request. Include:
+Отправьте ветку и откройте pull request. Включите:
 
-- What you changed
-- Why you changed it
-- Any context reviewers need
+- Что вы изменили
+- Почему вы это изменили
+- Любой контекст, нужный рецензентам
 
-## Writing guidelines
+## Руководство по стилю
 
-Match the existing tone:
+Соответствуйте существующему тону:
 
-- **Direct and practical** — Get to the point
-- **Second person** — "You" not "the developer"
-- **Short paragraphs** — 3-5 sentences max
-- **Real examples** — Show, don't just tell
-- **No fluff** — Every sentence should earn its place
+- **Прямой и практичный** — Переходите к делу
+- **От второго лица** — "Вы" а не "разработчик"
+- **Короткие абзацы** — Максимум 3-5 предложений
+- **Реальные примеры** — Показывайте, не только рассказывайте
+- **Без воды** — Каждое предложение должно заслуживать своего места
 
-### What we want
+### Что мы хотим
 
-- Real-world experience over theory
-- Practical examples people can use
-- Honest assessments (including limitations)
-- Clear, scannable structure
+- Реальный опыт вместо теории
+- Практические примеры, которые люди могут использовать
+- Честные оценки (включая ограничения)
+- Чёткую, просматриваемую структуру
 
-### What we don't want
+### Что мы не хотим
 
-- Marketing speak or product pitches
-- Unverified "10x productivity" claims
-- AI-generated filler content
-- Duplicate coverage of existing topics
+- Маркетинговый язык или рекламу продуктов
+- Непроверенные заявления о "10x продуктивности"
+- Сгенерированный AI-заполнитель
+- Дублирование существующих тем
 
-## Page structure
+## Структура страницы
 
-Every page needs frontmatter:
+Каждая страница требует frontmatter:
 
 ```yaml
 ---
-title: Your Page Title
-description: A one-sentence description for SEO and previews
+title: Название вашей страницы
+description: Одно предложение для SEO и превью
 sidebar:
-  order: 1 # Position in sidebar (optional)
+  order: 1 # Позиция в сайдбаре (опционально)
 ---
 ```
 
-Use clear headings, short paragraphs, and include a Resources section at the bottom for further reading.
+Используйте чёткие заголовки, короткие абзацы и включайте раздел Ресурсы внизу для дальнейшего чтения.
 
-## Review process
+## Процесс проверки
 
-1. **Automated checks** — Build must pass
-2. **Human review** — Usually within a week
-3. **Feedback** — We might suggest changes
-4. **Merge** — Once approved, we'll merge it
+1. **Автоматические проверки** — Сборка должна пройти
+2. **Человеческая проверка** — Обычно в течение недели
+3. **Обратная связь** — Мы можем предложить изменения
+4. **Слияние** — После одобрения мы смержим
 
-We check for:
+Мы проверяем:
 
-- Accuracy of information
-- Match with existing style
-- Value for readers
-- No broken links or build errors
+- Точность информации
+- Соответствие существующему стилю
+- Ценность для читателей
+- Отсутствие битых ссылок или ошибок сборки
 
-## Community
+## Сообщество
 
-### Be excellent to each other
+### Будьте прекрасны друг к другу
 
-- Assume good intent
-- Respectful disagreement is welcome
-- Help newcomers feel welcome
-- Remember there's a human on the other end
+- Исходите из добрых намерений
+- Уважительные разногласия приветствуются
+- Помогайте новичкам чувствовать себя желанными
+- Помните, что на другом конце есть человек
 
-### When giving feedback
+### При предоставлении обратной связи
 
-- Be constructive, not just critical
-- Suggest improvements
-- Acknowledge what works well
+- Будьте конструктивны, а не только критичны
+- Предлагайте улучшения
+- Признавайте, что хорошо работает
 
-### When receiving feedback
+### При получении обратной связи
 
-- Don't take it personally
-- Ask clarifying questions
-- It's okay to disagree—discuss it
+- Не принимайте на свой счёт
+- Задавайте уточняющие вопросы
+- Можно не соглашаться — обсуждайте
 
-## Recognition
+## Признание
 
-Your contributions are recognized through:
+Ваш вклад признаётся через:
 
-- Git history (permanent record)
+- Git history (постоянная запись)
 - GitHub contributors page
-- Release notes for significant contributions
+- Release notes за значительный вклад
 
-## Questions?
+## Есть вопросы?
 
-- **Quick questions** — [Discord](https://kilo.love/discord)
-- **Longer discussions** — [GitHub Discussions](https://github.com/Kilo-Org/agentic-path/discussions)
-- **Bug reports** — [GitHub Issues](https://github.com/Kilo-Org/agentic-path/issues)
+- **Быстрые вопросы** — [Discord](https://kilo.love/discord)
+- **Более длинные обсуждения** — [GitHub Discussions](https://github.com/Kilo-Org/agentic-path/discussions)
+- **Сообщения об ошибках** — [GitHub Issues](https://github.com/Kilo-Org/agentic-path/issues)
 
-## License
+## Лицензия
 
-By contributing, you agree that your contributions will be licensed under the MIT License.
+Внося вклад, вы соглашаетесь с тем, что ваш вклад будет лицензирован под MIT License.
 
 ---
 
-Thanks for helping build this. Every improvement helps someone work better with AI agents.
+Спасибо за помощь в создании этого. Каждое улучшение помогает кому-то лучше работать с AI-агентами.
