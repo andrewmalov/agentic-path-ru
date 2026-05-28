@@ -1,1 +1,20 @@
-{}
+{
+  "search.label": "Поиск",
+  "search.placeholder": "Введите поисковый запрос...",
+  "search.cancel": "Отмена",
+  "search.devWarning": "Поиск доступен только в продакшн-сборке.",
+  "themeSelect.override": "Переопределить цветовую тему",
+  "themeSelect.dark": "Тёмная",
+  "themeSelect.light": "Светлая",
+  "themeSelect.different": "Другая",
+  "themeSelect.system": "Системная",
+  "editLink.editPage": "Редактировать эту страницу",
+  "editLink.text": "Предложить исправление",
+  "lastUpdated.lastUpdated": "Последнее обновление",
+  "lastUpdated.onDate": "Обновлено {date}",
+  "pagination.previousLink": "Предыдущая страница",
+  "pagination.nextLink": "Следующая страница",
+  "pagination.previous": "Назад",
+  "pagination.next": "Далее",
+  "builtWithStarlight.label": "Создано с помощью Starlight"
+}
