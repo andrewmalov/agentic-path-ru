@@ -1,149 +1,149 @@
 ---
-title: Overcoming Adoption Blockers
-description: Common resistance patterns and how to address them
+title: Преодоление барьеров внедрения
+description: Распространённые паттерны сопротивления и как их устранять
 sidebar:
   order: 3
 ---
 
-Adoption doesn't fail because of technology. It fails because of people, process, and organizational friction. Here are the common blockers and how to address them.
+Внедрение не проваливается из-за технологий. Оно проваливается из-за людей, процессов и организационного трения. Вот распространённые барьеры и как их устранить.
 
-## Resistance patterns
+## Паттерны сопротивления
 
-### "It's going to take my job"
+### "Это заберёт мою работу"
 
-**The concern:** Engineers fear obsolescence.
+**Опасение:** Инженеры боятся устареть.
 
-**The reality:** Tools change what engineers do, not whether engineers are needed. But the fear is real and affects adoption.
+**Реальность:** Инструменты меняют то, что делают инженеры, а не то, нужны ли инженеры. Но страх реален и влияет на внедрение.
 
-**What to do:**
+**Что делать:**
 
-- Be honest: roles will evolve, not disappear
-- Reframe: these tools amplify your value
-- Invest in upskilling so engineers feel empowered, not threatened
-- Avoid automation-replacement language
+- Будьте честны: роли эволюционируют, не исчезают
+- Переосмыслите: эти инструменты усиливают вашу ценность
+- Инвестируйте в повышение квалификации, чтобы инженеры чувствовали себя уполномоченными, а не угрожаемыми
+- Избегайте языка автоматизации-замены
 
-### "The output quality isn't good enough"
+### "Качество вывода недостаточно хорошее"
 
-**The concern:** Code quality will suffer. Technical debt will accumulate.
+**Опасение:** Качество кода пострадает. Технический долг накопится.
 
-**The reality:** Valid concern. AI output needs review. But quality depends on usage, not just tools.
+**Реальность:** Обоснованное опасение. Вывод ИИ требует проверки. Но качество зависит от использования, а не только от инструментов.
 
-**What to do:**
+**Что делать:**
 
-- Establish review standards for AI-generated code
-- Start with low-risk applications
-- Track quality metrics to show actual impact (positive or negative)
-- Empower teams to reject agents where they don't help
+- Установите стандарты проверки кода, сгенерированного ИИ
+- Начните с низкорисковых применений
+- Отслеживайте метрики качества, чтобы показать фактическое влияние (позитивное или негативное)
+- Уполномочьте команды отклонять агентов там, где они не помогают
 
-### "It's too slow / disrupts my flow"
+### "Слишком медленно / нарушает мой поток"
 
-**The concern:** Context switching to an agent breaks concentration.
+**Опасение:** Переключение контекста на агента ломает концентрацию.
 
-**The reality:** For some developers and some tasks, this is true. Workflow fit matters.
+**Реальность:** Для некоторых разработчиков и некоторых задач это верно. Соответствие рабочему процессу важно.
 
-**What to do:**
+**Что делать:**
 
-- Don't mandate universal usage
-- Let developers find their own integration points
-- Recognize that optimal usage varies by person
-- Share techniques that minimize disruption
+- Не требуйте универсального использования
+- Позвольте разработчикам находить свои точки интеграции
+- Признайте, что оптимальное использование варьируется от человека к человеку
+- Делитесь техниками, минимизирующими нарушение
 
-### "Security and IP risk is too high"
+### "Риск для безопасности и ИС слишком высок"
 
-**The concern:** Sending code to external APIs exposes proprietary information.
+**Опасение:** Отправка кода во внешние API раскрывает собственную информацию.
 
-**The reality:** This is a legitimate concern for some organizations and some code.
+**Реальность:** Это законное опасение для некоторых организаций и некоторого кода.
 
-**What to do:**
+**Что делать:**
 
-- Understand exactly what data flows where
-- Use enterprise plans with appropriate data handling
-- Consider self-hosted or local models for sensitive work
-- Define clear policies about what can/cannot be shared
+- Точно понимайте, какие данные куда уходят
+- Используйте enterprise-планы с соответствующей обработкой данных
+- Рассмотрите self-hosted или локальные модели для чувствительной работы
+- Определите чёткие политики о том, что можно/нельзя передавать
 
-### "We don't have time to learn new tools"
+### "У нас нет времени учить новые инструменты"
 
-**The concern:** Learning curve is a distraction from traditional work.
+**Опасение:** Кривая обучения — это отвлечение от реальной работы.
 
-**The reality:** There's always "real work." But capability investments compound.
+**Реальность:** Всегда есть "реальная работа". Но инвестиции в возможности накапливаются.
 
-**What to do:**
+**Что делать:**
 
-- Acknowledge the short-term cost
-- Start with volunteers, not mandates
-- Build in dedicated learning time
-- Show early wins to build momentum
+- Признайте краткосрочную стоимость
+- Начните с добровольцев, не с указаний
+- Встройте выделенное время на обучение
+- Покажите ранние победы для создания движения
 
-## Process mismatches
+## Несоответствия процессов
 
-### Change control resistance
+### Сопротивление контролю изменений
 
-**The problem:** Existing change processes weren't designed for AI-assisted development.
+**Проблема:** Существующие процессы изменений не были спроектированы для AI-ассистируемой разработки.
 
-**Solution:** Adapt processes rather than abandoning them. Define how AI code fits existing controls.
+**Решение:** Адаптируйте，超前而不是放弃。 Определите, как ИИ-код вписывается в существующие контроли.
 
-### Toolchain integration
+### Интеграция в toolchain
 
-**The problem:** AI tools don't integrate cleanly with existing IDE, CI/CD, review systems.
+**Проблема:** Инструменты ИИ не интегрируются чисто с существующими IDE, CI/CD, системами проверки.
 
-**Solution:** Accept some friction initially. Prioritize integration investments based on pain.
+**Решение:** Примите некоторое трение изначально. Приоритизируйте инвестиции в интеграцию на основе болевых точек.
 
-### Metrics disruption
+### Нарушение метрик
 
-**The problem:** Existing metrics (lines of code, commit frequency) become misleading.
+**Проблема:** Существующие метрики (строки кода, частота коммитов) становятся вводящими в заблуждение.
 
-**Solution:** Update metrics to reflect outcomes, not activity. Accept a metrics gap during transition.
+**Решение:** Обновите метрики, чтобы отражать результаты, а не активность. Примите пробел в метриках во время перехода.
 
-## Undefined success criteria
+## Неопределённые критерии успеха
 
-**The problem:** No one agrees on what "successful adoption" means.
+**Проблема:** Никто не согласен с тем, что означает "успешное внедрение".
 
-**What happens:** Different stakeholders judge success differently. Same data, different conclusions.
+**Что происходит:** Разные заинтересованные стороны оценивают успех по-разному. Одни данные, разные выводы.
 
-**Solution:** Define success criteria before rolling out:
+**Решение:** Определите критерии успеха до развёртывания:
 
-- What adoption rate do we expect at 3/6/12 months?
-- What productivity indicators would show value?
-- How will we measure quality impact?
-- What developer satisfaction target matters?
+- Какой коэффициент внедрения мы ожидаем через 3/6/12 месяцев?
+- Какие индикаторы производительности покажут ценность?
+- Как мы будем измерять влияние на качество?
+- Какая целевая удовлетворённость разработчиков важна?
 
-## The adoption playbook
+## Playbook внедрения
 
-### Phase 1: Enable (Months 1-2)
+### Фаза 1: Включение (Месяцы 1-2)
 
-- **Make tools available** to volunteers
-- **Provide basic training** (2-4 hours)
-- **Gather feedback** actively
-- **No pressure, no mandates**
+- **Сделайте инструменты доступными** для добровольцев
+- **Обеспечьте базовое обучение** (2-4 часа)
+- **Активно собирайте обратную связь**
+- **Без давления, без указаний**
 
-### Phase 2: Learn (Months 2-4)
+### Фаза 2: Обучение (Месяцы 2-4)
 
-- **Expand access** based on demand
-- **Identify internal champions**
-- **Document what works** in your context
-- **Address concerns** as they surface
+- **Расширяйте доступ** по запросу
+- **Определите внутренних чемпионов**
+- **Документируйте, что работает** в вашем контексте
+- **Устраняйте опасения** по мере их возникновения
 
-### Phase 3: Integrate (Months 4-8)
+### Фаза 3: Интеграция (Месяцы 4-8)
 
-- **Update processes** to accommodate AI workflows
-- **Train more deeply** on advanced techniques
-- **Measure outcomes** against baseline
-- **Scale support** resources
+- **Обновляйте процессы** для размещения AI-рабочих процессов
+- **Обучайте глубже** продвинутым техникам
+- **Измеряйте результаты** против базового уровня
+- **Масштабируйте ресурсы поддержки**
 
-### Phase 4: Optimize (Ongoing)
+### Фаза 4: Оптимизация (Непрерывно)
 
-- **Refine practices** based on experience
-- **Track evolving tools** and capabilities
-- **Share learnings** across teams
-- **Plan next integration level**
+- **Уточняйте практики** на основе опыта
+- **Отслеживайте развивающиеся инструменты** и возможности
+- **Делитесь знаниями** между командами
+- **Планируйте следующий уровень интеграции**
 
-## Resources
+## Ресурсы
 
-### Essential
+### Основные
 
-- [Stop Peanut Buttering AI Onto Your Organization](https://blog.kilo.ai/p/stop-peanut-buttering-ai) - Why surface-level adoption fails
+- [Stop Peanut Buttering AI Onto Your Organization](https://blog.kilo.ai/p/stop-peanut-buttering-ai) - Почему поверхностное внедрение проваливается
 
-### Videos
+### Видео
 
-- [Leadership in AI Assisted Engineering – Justin Reock, DX](https://www.youtube.com/watch?v=PmZdupFP3UM) - Leading AI-enabled engineering organizations
-- [Moving away from Agile – Martin Harrysson, McKinsey](https://www.youtube.com/watch?v=SZStlIhyTCY) - Why operating model changes are required
+- [Leadership in AI Assisted Engineering – Justin Reock, DX](https://www.youtube.com/watch?v=PmZdupFP3UM) - Лидерство в AI-enable-инженерных организациях
+- [Moving away from Agile – Martin Harrysson, McKinsey](https://www.youtube.com/watch?v=SZStlIhyTCY) - Почему требуются изменения операционной модели
