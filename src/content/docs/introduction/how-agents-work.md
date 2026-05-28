@@ -1,97 +1,97 @@
 ---
-title: How Agents Work
-description: The technical foundations of AI agents - the ReAct loop, tool use, context windows, and common failure modes.
+title: Как работают агенты
+description: Технические основы AI-агентов — цикл ReAct, использование инструментов, контекстные окна и типичные режимы отказа.
 sidebar:
   order: 2
 ---
 
-Understanding what's happening under the hood helps you work with agents more effectively. You don't need to be an ML engineer, but knowing the basics transforms how you collaborate with these systems.
+Понимание того, что происходит \"под капотом\", помогает вам более эффективно работать с агентами. Не обязательно быть ML-инженером, но знание основ трансформирует то, как вы взаимодействуете с этими системами.
 
-## The ReAct Loop
+## Цикл ReAct
 
-Every AI agent follows the same core pattern: **Reason → Act → Observe**. This cycle, called ReAct (Reason + Act—not the frontend framework), is how agents turn your request into working code.
+Каждый AI-агент следует одному и тому же базовому паттерну: **Reason → Act → Observe** (_reasoning — действие — наблюдение_). Этот цикл, называемый ReAct (Reason + Act — не фронтенд-фреймворк), позволяет агентам превращать ваш запрос в работающий код.
 
-Here's what happens with each iteration:
+Вот что происходит на каждой итерации:
 
-1. **Observe**: Read the current state (code, errors, file system)
-2. **Reason**: Decide what action will move toward the goal
-3. **Act**: Execute that action (write code, run a command, ask for clarification)
-4. **Evaluate**: Check if it worked, then repeat
+1. **Observe (Наблюдение)**: Чтение текущего состояния (код, ошибки, файловая система)
+2. **Reason (Рассуждение)**: Принятие решения о том, какое действие приблизит к цели
+3. **Act (Действие)**: Выполнение этого действия (написание кода, запуск команды, запрос уточнений)
+4. **Evaluate (Оценка)**: Проверка результата, затем повторение цикла
 
-The quality of each step determines the quality of the output. When an agent seems stuck, it's usually failing at one specific step in this loop.
+Качество каждого шага определяет качество итогового результата. Когда агент как будто \"застревает\", обычно это означает, что он не справляется с одним конкретным шагом в этом цикле.
 
-## What LLMs Can and Can't Do
+## Что LLMs могут и чего не могут
 
-The **Large Language Model (LLM)** is the "brain" of an agent—a neural network trained on massive amounts of text and code. Understanding its strengths and limitations helps you work with it, not against it.
+**Большая языковая модель (Large Language Model, LLM)** — это \"мозг\" агента, нейронная сеть, обученная на огромных объёмах текста и кода. Понимание её сильных и слабых сторон помогает работать с ней, а не против неё.
 
-**What LLMs do well:**
+**Что LLMs делают хорошо:**
 
-- Pattern recognition and code completion
-- Following structured instructions
-- Generating syntactically correct code
-- Explaining concepts and reasoning through problems
+- Распознавание паттернов и автодополнение кода
+- Следование структурированным инструкциям
+- Генерация синтаксически корректного кода
+- Объяснение концепций и рассуждение над проблемами
 
-**What LLMs struggle with:**
+**С чем LLMs справляются плохо:**
 
-- No persistent memory between sessions: each conversation starts fresh
-- No system access without tools: they can only generate text by default
-- Probabilistic, not deterministic: the same input may produce different output
-- Limited long-horizon planning: they work best with clear, bounded tasks
+- Нет постоянной памяти между сессиями: каждая беседа начинается с чистого листа
+- Нет доступа к системе без инструментов: по умолчанию они могут только генерировать текст
+- Вероятностный, а не детерминированный подход: одни и те же входные данные могут дать разный результат
+- Ограниченное долгосрочное планирование: они лучше всего работают с чёткими, ограниченными задачами
 
-## Closed vs Open Weight Models
+## Закрытые и открытые модели
 
-The models powering AI agents come in two flavors: **closed** and **open weight**. Each has tradeoffs that affect how you build and deploy agents.
+Модели, лежащие в основе AI-агентов, бывают двух типов: **закрытые** и **открытые** (open weight). У каждого есть свои компромиссы, влияющие на то, как вы строите и развёртываете агентов.
 
-**Closed models** (Claude, GPT, Gemini, Grok, etc.) are accessed through APIs. You send requests to the provider's servers and pay per token.
+**Закрытые модели** (Claude, GPT, Gemini, Grok и др.) доступны через API. Вы отправляете запросы на серверы провайдера и платите за каждый токен.
 
-- **Pros:** State-of-the-art performance, no infrastructure to manage, continuous improvements
-- **Cons:** Data leaves your network, usage costs scale with volume, dependent on provider availability
+- **Плюсы:** Самая современная производительность, не нужно управлять инфраструктурой, постоянные улучшения
+- **Минусы:** Данные покидают вашу сеть, затраты масштабируются с объёмом, зависимость от доступности провайдера
 
-**Open weight models** (Llama, Mistral, DeepSeek, Qwen) can be downloaded and run on your own hardware _or_ accessed through APIs.
+**Открытые модели** (Llama, Mistral, DeepSeek, Qwen) можно скачать и запустить на своём оборудовании _или_ получить к ним доступ через API.
 
-- **Pros:** Full data control, predictable costs at scale, customizable through fine-tuning
-- **Cons:** Requires GPU infrastructure and you managing updates and security, with generally lower capability than frontier closed models
+- **Плюсы:** Полный контроль над данными, предсказуемые затраты при масштабировании, возможность кастомизации через дообучение
+- **Минусы:** Требуется GPU-инфраструктура, самостоятельное управление обновлениями и безопасностью, обычно более низкая производительность по сравнению с передовыми закрытыми моделями
 
-**Choosing between them:**
+**Выбор между ними:**
 
-- **Start with closed models.** They're easier to integrate and currently more capable. Most teams should begin here.
-- **Consider open weight when:** You have strict data residency requirements, predictable high-volume workloads where self-hosting is cheaper, or need to fine-tune for specialized domains.
-- **Hybrid approaches work.** Use closed models for complex reasoning tasks and open weight for high-volume, simpler operations like code formatting or basic classification.
+- **Начните с закрытых моделей.** Их проще интегрировать, и сейчас они более способны. Большинству команд стоит начинать именно с них.
+- **Рассмотрите открытые модели, когда:** У вас строгие требования к локализации данных, предсказуемые высоконагруженные рабочие процессы, где самостоятельный хостинг обходится дешевле, или вам нужно дообучение под специализированные домены.
+- **Гибридные подходы работают.** Используйте закрытые модели для сложных задач рассуждения и открытые модели для высоконагруженных, более простых операций, таких как форматирование кода или базовая классификация.
 
-The gap between closed and open weight models continues to narrow. What requires a closed model today may be achievable with open weight next year. Design your systems to swap models as the landscape evolves.
+Разрыв между закрытыми и открытыми моделями продолжает сокращаться. То, что сегодня требует закрытую модель, возможно через год будет достижимо с открытой. Проектируйте свои системы так, чтобы можно было подменять модели по мере развития ландшафта.
 
-## Tool Use
+## Использование инструментов
 
-Raw LLMs can only generate text. **Tools** are what transform them into agents that can actually do things in the world.
+Стандартные LLMs могут только генерировать текст. **Инструменты** — это то, что превращает их в агентов, способных реально действовать.
 
-Common tools include:
+Типичные инструменты:
 
-- **File operations**: These read, write, and search code files
-- **Terminal commands**: These run builds, tests, linters, and deployments
-- **API calls**: These interact with external services and databases
-- **Code execution**: These run and verify generated code
+- **Операции с файлами**: Чтение, запись и поиск в файлах кода
+- **Терминальные команды**: Запуск сборок, тестов, линтеров и деплоев
+- **API-вызовы**: Взаимодействие с внешними сервисами и базами данных
+- **Выполнение кода**: Запуск и проверка сгенерированного кода
 
-Each tool extends what the agent can do. The quality of tool integration—how reliably tools work and how well the agent knows when to use them—matters as much as the underlying model.
+Каждый инструмент расширяет возможности агента. Качество интеграции инструментов — насколько надёжно они работают и насколько хорошо агент знает, когда их использовать — имеет значение не меньше, чем базовая модель.
 
-## Context Windows
+## Контекстные окна
 
-The **context window** is everything an agent can "see" at once: your instructions, the code, previous conversation, and tool results. It's measured in **tokens** (roughly 4 characters each).
+**Контекстное окно** — это всё, что агент может \"видеть\" одновременно: ваши инструкции, код, предыдущая беседа и результаты инструментов. Оно измеряется в **токенах** (примерно 4 символа каждый).
 
-Larger windows let agents work with more code simultaneously. But there's a tradeoff: more context means slower responses and higher costs.
+Более широкие окна позволяют агентам работать с большим объёмом кода одновременно. Но есть компромисс: больший контекст означает более медленные ответы и более высокие затраты.
 
-When context fills up, older content gets **truncated**—the agent literally forgets it. Smart agents manage this by loading only what's relevant and summarizing when necessary. You can help by keeping tasks focused and providing only the context that matters.
+Когда контекст заполняется, старый контент **усекается** — агент буквально забывает его. Умные агенты управляют этим, загружая только релевантное и суммаризируя при необходимости. Вы можете помочь, сохраняя задачи сфокусированными и предоставляя только тот контекст, который важен.
 
-## Common Failure Modes
+## Типичные режимы отказа
 
-Agents fail in predictable ways. Knowing these patterns helps you catch problems early:
+Агенты отказывают предсказуемым образом. Знание этих паттернов помогает выявлять проблемы на ранней стадии:
 
-- **Hallucination**: Generating plausible but incorrect information, like APIs or functions that don't exist
-- **Context drift**: Gradually losing track of the original goal as steps accumulate
-- **Infinite loops**: Getting stuck repeating the same failed approach without trying something new
-- **Overconfidence**: Asserting that code works without actually verifying it runs
+- **Галлюцинация**: Генерация правдоподобной, но неверной информации, например несуществующих API или функций
+- **Дрейф контекста**: Постепенная потеря отслеживания изначальной цели по мере накопления шагов
+- **Бесконечные циклы**: Застревание в повторении одного и того же неудачного подхода без попытки чего-то нового
+- **Чрезмерная уверенность**: Утверждение, что код работает, без реальной проверки его выполнения
 
-When you see these patterns, intervene. Reset the context, clarify the goal, or break the task into smaller pieces. The agent isn't being stubborn—it's hitting a limitation you can work around.
+Когда вы видите эти паттерны, вмешайтесь. Сбросьте контекст, уточните цель или разбейте задачу на более мелкие части. Агент не проявляет упрямство — он наткнулся на ограничение, с которым можно работать.
 
 ---
 
-**Did we miss a failure mode?** This guide is community-driven. [Share your experience](/community/contributing/) so others can learn from it.
+**Мы пропустили режим отказа?** Это руководство основано на сообществе. [Поделитесь своим опытом](/community/contributing/), чтобы другие могли учиться на нём.
