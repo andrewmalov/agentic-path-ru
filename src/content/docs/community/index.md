@@ -1,119 +1,119 @@
 ---
-title: Join the Community
-description: Connect with others learning agentic engineering—we're all figuring this out together
+title: Присоединяйтесь к сообществу
+description: Общайтесь с другими, кто изучает агентную инженерию — мы все вместе разбираемся в этом
 sidebar:
   order: 0
 ---
 
-Agentic engineering is new territory. Nobody has all the answers. The best way to learn is together.
+Агентная инженерия — это новая территория. Никто не знает всех ответов. Лучший способ учиться — вместе.
 
-## Why community matters
+## Почему сообщество важно
 
-AI tools change weekly. What worked last month might be obsolete. What you discovered yesterday might help someone today.
+AI-инструменты меняются еженедельно. То, что работало в прошлом месяце, может устареть. То, что вы обнаружили вчера, может помочь кому-то сегодня.
 
-**This isn't just documentation—it's a conversation.** We're building shared knowledge about a field that's still being invented.
+**Это не просто документация — это разговор.** Мы создаём общие знания о области, которая всё ещё изобретается.
 
-## Where to connect
+## Где общаться
 
 ### Discord
 
-**[Join our Discord →](https://kilo.love/discord)**
+**[Присоединяйтесь к нашему Discord →](https://kilo.love/discord)**
 
-The fastest way to get help and share what you're learning:
+Самый быстрый способ получить помощь и поделиться тем, что вы изучаете:
 
-- Ask questions (no question is too basic)
-- Share wins and failures
-- Discuss new tools and techniques
-- Get feedback on your approach
+- Задавайте вопросы (никакой вопрос не бывает слишком простым)
+- Делитесь успехами и неудачами
+- Обсуждайте новые инструменты и техники
+- Получайте обратную связь по вашему подходу
 
 ### GitHub Discussions
 
-**[Browse discussions →](https://github.com/Kilo-Org/agentic-path/discussions)**
+**[Просмотр обсуждений →](https://github.com/Kilo-Org/agentic-path/discussions)**
 
-For longer-form conversations:
+Для более развёрнутых разговоров:
 
-- Propose new content or features
-- Debate best practices
-- Share detailed case studies
-- Discuss the future of agentic engineering
+- Предлагайте новый контент или функции
+- Обсуждайте лучшие практики
+- Делитесь подробными примерами из практики
+- Обсуждайте будущее агентной инженерии
 
 ### GitHub Issues
 
-**[View issues →](https://github.com/Kilo-Org/agentic-path/issues)**
+**[Просмотр задач →](https://github.com/Kilo-Org/agentic-path/issues)**
 
-For specific improvements:
+Для конкретных улучшений:
 
-- Report bugs or broken links
-- Request new topics
-- Track work in progress
+- Сообщайте об ошибках или битых ссылках
+- Запрашивайте новые темы
+- Отслеживайте работу в процессе
 
-## How to participate
+## Как участвовать
 
-### Share your experience
+### Поделитесь своим опытом
 
-The most valuable contributions are real stories:
+Самые ценные вклады — это реальные истории:
 
-- What worked when you tried a new approach?
-- What failed spectacularly?
-- What do you wish you'd known earlier?
-- What's different about your context (language, team size, industry)?
+- Что сработало, когда вы попробовали новый подход?
+- Что провалилось spectacularly?
+- Что бы вы хотели знать раньше?
+- Что отличается в вашем контексте (язык, размер команды, индустрия)?
 
-### Ask questions
+### Задавайте вопросы
 
-Seriously. Your questions help everyone:
+Серьёзно. Ваши вопросы помогают всем:
 
-- They reveal gaps in the documentation
-- They surface common confusion points
-- They often lead to better explanations
+- Они выявляют пробелы в документации
+- Они обнаруживают общие точки непонимания
+- Они часто приводят к лучшим объяснениям
 
-### Help others
+### Помогайте другим
 
-When you figure something out, share it:
+Когда вы разберётесь с чем-то, поделитесь этим:
 
-- Answer questions in Discord
-- Add resources to relevant pages
-- Write up your experience as a case study
+- Отвечайте на вопросы в Discord
+- Добавляйте ресурсы на соответствующие страницы
+- Описывайте свой опыт как пример из практики
 
-## Community guidelines
+## Правила сообщества
 
-### Be excellent to each other
+### Будьте прекрасны друг к другу
 
-- Assume good intent
-- Respectful disagreement is welcome
-- Personal attacks are not
-- Help newcomers feel welcome
+- Исходите из добрых намерений
+- Уважительные разногласия приветствуются
+- Личные нападки не приемлемы
+- Помогайте новичкам чувствовать себя желанными
 
-### Share honestly
+### Делитесь честно
 
-- Admit when you don't know
-- Include failures, not just successes
-- Cite sources when sharing others' work
-- No marketing or self-promotion
+- Признавайте, когда не знаете
+- Включайте неудачи, не только успехи
+- Указывайте источники при использовании работ других
+- Никакого маркетинга или самопродвижения
 
-### Stay practical
+### Оставайтесь практичными
 
-- Focus on what actually works
-- Share specific examples
-- Avoid hype and buzzwords
-- Question claims that sound too good
+- Сосредоточьтесь на том, что реально работает
+- Делитесь конкретными примерами
+- Избегайте хайпа и модных словечек
+- Ставьте под сомнение утверждения, которые звучат слишком хорошо
 
-## What we're building together
+## Что мы строим вместе
 
-This guide is open source. Every page can be improved. Every section can be expanded.
+Это руководство имеет открытый исходный код. Каждую страницу можно улучшить. Каждый раздел можно расширить.
 
-**Your experience is the content.** We're not writing theory—we're documenting what works in practice. That requires input from people doing the work.
+**Ваш опыт — это контент.** Мы не пишем теорию — мы документируем то, что работает на практике. Это требует вклада от людей, которые занимаются реальной работой.
 
-See [Contributing](/community/contributing/) to get started.
+См. [Содействие](/community/contributing/) чтобы начать.
 
-## Recognition
+## Признание
 
-We recognize contributors through:
+Мы признаём вклад через:
 
-- Git history (your commits are permanent)
+- Git history (ваши коммиты постоянны)
 - GitHub contributors page
-- Shoutouts for significant contributions
-- Community spotlights in Discord
+- Упоминания за значительный вклад
+- Обзоры сообщества в Discord
 
-## Questions?
+## Есть вопросы?
 
-Not sure where to start? Drop into [Discord](https://kilo.love/discord) and say hi. We're friendly.
+Не знаете, с чего начать? Загляните в [Discord](https://kilo.love/discord) и поздоровайтесь. Мы дружелюбны.

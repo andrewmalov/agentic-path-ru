@@ -1,89 +1,89 @@
 # Agentic Engineering for Humans
 
-Real-world guides and resources for learning how software engineering and leadership works in a post-AI world.
+Практические руководства и ресурсы для понимания того, как программная инженерия и лидерство работают в мире после AI.
 
-🌐 **Live site:** [path.kilo.ai](https://path.kilo.ai)
+🌐 **Живой сайт:** [path.kilo.ai](https://path.kilo.ai)
 
-## What is this?
+## Что это?
 
-This is a comprehensive guide to agentic engineering—the practice of working effectively with AI coding agents. Whether you're an engineer learning to prompt effectively, a team lead integrating agents into workflows, or an executive building an adoption strategy, there's a path for you.
+Это комплексное руководство по агентной инженерии — практике эффективной работы с AI-кодинг агентами. Независимо от того, инженер ли вы, который учится эффективно формулировать промпты, лид команды, интегрирующий агентов в рабочие процессы, или руководитель, выстраивающий стратегию внедрения — для вас есть путь.
 
-**This is a community project.** We're building this together because the field moves fast and no single perspective captures everything. Your experience matters—whether you've been using AI tools for years or just started last week.
+**Это общественный проект.** Мы создаём это вместе, потому что сфера развивается быстро, и ни одна перспектива не охватывает всё. Ваш опыт важен — независимо от того, используете ли вы AI-инструменты годами или начали только на прошлой неделе.
 
-## Content
+## Содержание
 
-- **Introduction** — What agentic engineering is, how agents work, and emerging trends
-- **For Engineers** — Getting started, task decomposition, and best practices
-- **For Team Leads** — Adopting tools, measuring impact, and quality assurance
-- **For Executives** — Strategic vision, ROI frameworks, and security compliance
-- **Use Cases** — Planning, implementation, deployment, and documentation
-- **Governance** — Security review, accountability, and quality gates
-- **Appendices** — Glossary, reading list, and prompt templates
+- **Введение** — Что такое агентная инженерия, как работают агенты, и возникающие тренды
+- **Для инженеров** — Начало работы, декомпозиция задач и лучшие практики
+- **Для лидов команд** — Внедрение инструментов, измерение влияния и обеспечение качества
+- **Для руководителей** — Стратегическое видение, ROI-фреймворки и безопасность
+- **Кейсы** — Планирование, внедрение, деплой и документация
+- **Управление** — Проверка безопасности, подотчётность и контроль качества
+- **Приложения** — Глоссарий, список для чтения и шаблоны промптов
 
-## Tech Stack
+## Технологический стек
 
-Built with [Astro](https://astro.build) and [Starlight](https://starlight.astro.build), styled with [Catppuccin](https://github.com/catppuccin/starlight).
+Создано с [Astro](https://astro.build) и [Starlight](https://starlight.astro.build), стилизовано с [Catppuccin](https://github.com/catppuccin/starlight).
 
-## Development
+## Разработка
 
 ```bash
-# Install dependencies
+# Установите зависимости
 bun install
 
-# Start dev server
+# Запустите dev server
 bun dev
 
-# Build for production
+# Сборка для production
 bun build
 
-# Preview production build
+# Просмотр production сборки
 bun preview
 ```
 
-## Contributing
+## Вклад
 
-We'd love your help making this resource better. There are many ways to contribute:
+Мы будем рады вашей помощи в улучшении этого ресурса. Есть много способов внести вклад:
 
-### Quick contributions
+### Быстрые улучшения
 
-- **Found a typo or broken link?** Open a PR directly—no issue needed
-- **Have a resource to share?** Add it to the relevant page's Resources section
-- **Spotted outdated info?** Let us know or fix it yourself
+- **Нашли опечатку или битую ссылку?** Откройте PR напрямую — задача не нужна
+- **Хотите поделиться ресурсом?** Добавьте его в раздел Ресурсы соответствующей страницы
+- **Заметили устаревшую информацию?** Сообщите нам или исправьте сами
 
-### Bigger contributions
+### Большие вклады
 
-- **New content** — Have expertise in an area we haven't covered? We want it
-- **Real-world examples** — Case studies, war stories, and lessons learned are gold
-- **Translations** — Help make this accessible to more people
-- **Tooling improvements** — Better search, navigation, or accessibility
+- **Новый контент** — Есть экспертиза в области, которую мы не покрыли? Мы хотим её
+- **Примеры из реального мира** — Примеры из практики, боевые истории и уроки — это золото
+- **Переводы** — Помогите сделать это доступным для большего числа людей
+- **Улучшения инструментов** — Лучший поиск, навигация или доступность
 
-### How to contribute
+### Как внести вклад
 
-1. **Check existing issues** — Someone might already be working on it
-2. **Open an issue first** for larger changes—let's discuss before you invest time
-3. **Fork and PR** — Standard GitHub flow
-4. **Keep it practical** — We value real-world experience over theory
+1. **Проверьте существующие задачи** — Кто-то уже может работать над этим
+2. **Сначала откройте задачу** для больших изменений — давайте обсудим, прежде чем вы потратите время
+3. **Fork и PR** — Стандартный GitHub flow
+4. **Оставайтесь практичными** — Мы ценим реальный опыт выше теории
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed guidelines.
+См. [CONTRIBUTING.md](CONTRIBUTING.md) для детальных рекомендаций.
 
-## Community
+## Сообщество
 
-This isn't just documentation—it's a conversation. Join us:
+Это не просто документация — это разговор. Присоединяйтесь к нам:
 
-- **[Discord](https://kilo.love/discord)** — Ask questions, share wins, discuss what's working
-- **[GitHub Discussions](https://github.com/Kilo-Org/agentic-path/discussions)** — Longer-form conversations and proposals
-- **[GitHub Issues](https://github.com/Kilo-Org/agentic-path/issues)** — Bug reports and feature requests
+- **[Discord](https://kilo.love/discord)** — Задавайте вопросы, делитесь успехами, обсуждайте, что работает
+- **[GitHub Discussions](https://github.com/Kilo-Org/agentic-path/discussions)** — Более развёрнутые разговоры и предложения
+- **[GitHub Issues](https://github.com/Kilo-Org/agentic-path/issues)** — Сообщения об ошибках и запросы функций
 
-### Code of conduct
+### Кодекс поведения
 
-Be excellent to each other. We're all figuring this out together. Respectful disagreement is welcome; personal attacks are not.
+Будьте прекрасны друг к другу. Мы все вместе разбираемся. Уважительные разногласия приветствуются; личные нападки не приемлемы.
 
-## License
+## Лицензия
 
-[Apache 2.0](LICENSE) — Use it, build on it, share it.
+[Apache 2.0](LICENSE) — Используйте, стройте на этом, делитесь.
 
-## Links
+## Ссылки
 
 - [Discord](https://kilo.love/discord)
 - [GitHub](https://github.com/Kilo-Org/agentic-path)
-- [Kilo Code](https://kilo.ai) — The team behind this guide
+- [Kilo Code](https://kilo.ai) — Команда, стоящая за этим руководством
