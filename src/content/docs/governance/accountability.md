@@ -1,128 +1,128 @@
 ---
-title: Accountability & Provenance
-description: Who owns AI-generated code, and how to track it
+title: Ответственность и происхождение
+description: Кто владеет кодом, сгенерированным ИИ, и как его отслеживать
 sidebar:
   order: 1
 ---
 
-**Humans are accountable for the code they commit.** This remains true regardless of how code was generated. "The AI did it" is not a defense.
+**Люди несут ответственность за код, который они фиксируют.** Это остаётся верным независимо от способа генерации кода. "ИИ это сделал" — не оправдание.
 
-## Accountability by role
+## Ответственность по ролям
 
-### Individual contributor
+### Индивидуальный участник
 
-**Responsible for:**
+**Отвечает за:**
 
-- Quality of code they commit (regardless of origin)
-- Appropriate use of AI tools per policy
-- Validating AI output before committing
-- Understanding code they submit
+- Качество кода, который он фиксирует (независимо от источника)
+- Правильное использование ИИ-инструментов согласно политике
+- Проверку вывода ИИ перед фиксацией
+- Понимание кода, который он отправляет
 
-### Code reviewer
+### Рецензент кода
 
-**Responsible for:**
+**Отвечает за:**
 
-- Reviewing to established standards
-- Catching issues regardless of origin
-- Raising concerns about quality or patterns
+- Рецензирование по установленным стандартам
+- Выявление проблем независимо от источника
+- Поднятие вопросов о качестве или паттернах
 
-### Team lead
+### Лидер команды
 
-**Responsible for:**
+**Отвечает за:**
 
-- Team practices around AI use
-- Ensuring appropriate training
-- Addressing patterns of issues
+- Практики команды в использовании ИИ
+- Обеспечение соответствующего обучения
+- Работу с паттернами проблем
 
-### Engineering leadership
+### Руководство инженерного отдела
 
-**Responsible for:**
+**Отвечает за:**
 
-- Organizational AI policy
-- Tool decisions and procurement
-- Risk acceptance at org level
+- Организационную политику в отношении ИИ
+- Решения о инструментах и закупках
+- Принятие рисков на уровне организации
 
-## When things go wrong
+## Когда что-то идёт не так
 
-### Production incident from AI code
+### Производственный инцидент из-за кода ИИ
 
-1. Treat like any incident—resolution first
-2. Post-mortem includes AI involvement as context
-3. Process improvements may involve AI practices
+1. Относиться как к любому инциденту — сначала разрешение
+2. Post-mortem включает участие ИИ как контекст
+3. Улучшения процесса могут касаться практик ИИ
 
-**Don't:** Blame the AI, create special "AI incident" categories, or exempt individuals from accountability.
+**Не следует:** Обвинять ИИ, создавать специальные категории "ИИ-инцидентов" или освобождать людей от ответственности.
 
-### Security vulnerability from AI code
+### Уязвимость безопасности из-за кода ИИ
 
-1. Standard security response
-2. Document AI involvement for learning
-3. Review: would our process have caught this?
+1. Стандартное реагирование на проблему безопасности
+2. Документировать участие ИИ для обучения
+3. Анализ: наш процесс должен был это выявить?
 
-**Accountability flows to:** Developer who committed it, reviewers who approved it—NOT the AI tool.
+**Ответственность несёт:** Разработчик, который зафиксировал код, рецензенты, которые одобрили — НЕ ИИ-инструмент.
 
-## Code provenance
+## Происхождение кода
 
-Where does AI-generated code come from? Models train on vast public code with various licenses. Output is statistically influenced by training data but typically isn't direct copying. **Legal uncertainty exists**—courts haven't fully resolved how copyright applies to AI output.
+Откуда берётся код, сгенерированный ИИ? Модели обучаются на огромном количестве публичного кода с различными лицензиями. Вывод статистически зависит от обучающих данных, но обычно не является прямым копированием. **Существует правовая неопределённость** — суды ещё не полностью решили, как авторское право применяется к результатам ИИ.
 
-### What we know
+### Что мы знаем
 
-- **Training legality:** Ongoing lawsuits testing fair use; no resolution yet
-- **Output ownership:** Person/org prompting is treated as author practically, but not legally settled
-- **Verbatim reproduction:** If AI outputs exact copies, original copyright likely applies
+- **Легальность обучения:** Идут судебные процессы о добросовестном использовании; решения пока нет
+- **Владение результатом:** Человек/организация, формирующая промпт, практически рассматривается как автор, но юридически это не урегулировано
+- **Дословное воспроизведение:** Если ИИ выводит точные копии, применяется оригинальное авторское право
 
-### Risk management
+### Управление рисками
 
-**Low-risk scenarios:**
+**Сценарии низкого риска:**
 
-- Boilerplate code anyone would write the same way
-- Internal tools with no external distribution
-- Code you heavily modify after generation
+- Boilerplate код, который любой напишет так же
+- Внутренние инструменты без внешнего распространения
+- Код, который вы активно модифицируете после генерации
 
-**Higher-risk scenarios:**
+**Сценарии более высокого риска:**
 
-- Distributing generated code in products
-- Open-source contributions with copyleft licenses
-- Unique or distinctive algorithms
+- Распространение сгенерированного кода в продуктах
+- Вклад в open-source с копилефтными лицензиями
+- Уникальные или отличительные алгоритмы
 
-## Tracking AI involvement
+## Отслеживание участия ИИ
 
-### What to track
+### Что отслеживать
 
-- Which files/commits involved AI assistance
-- Which tool was used
-- Human review performed
+- Какие файлы/коммиты использовали помощь ИИ
+- Какой инструмент использовался
+- Проводилась ли человеческая проверка
 
-### How to track
+### Как отслеживать
 
-- **Git commit conventions:** Tags in commit messages
-- **Code review annotations:** Note AI involvement in review
-- **Tooling:** Some tools log AI interactions
+- **Git-конвенции коммитов:** Теги в сообщениях коммитов
+- **Аннотации в рецензиях:** Отмечать участие ИИ в проверке
+- **Инструменты:** Некоторые инструменты логируют взаимодействия с ИИ
 
-### Why track
+### Зачем отслеживать
 
-- Future legal compliance may require it
-- Incident response if issues arise
-- Regulatory compliance in some industries
+- Будущее соответствие нормативным требованиям может это потребовать
+- Реагирование на инциденты при возникновении проблем
+- Нормативное соответствие в некоторых отраслях
 
-## Edge cases
+## Граничные случаи
 
-**Automated AI changes (CI/CD, bots):** Person who configured automation owns the output. Don't automate consequential changes without human approval.
+**Автоматизированные изменения ИИ (CI/CD, боты):** Человек, настроивший автоматизацию, несёт ответственность за результат. Не автоматизируйте значимые изменения без одобрения человека.
 
-**Multi-person AI sessions:** Committer takes responsibility. Should review/understand before committing.
+**Многопользовательские сессии ИИ:** Фиксирующий берёт ответственность. Должен проверить/понять перед фиксацией.
 
-**AI-assisted review:** Human reviewer still accountable. AI findings must be human-validated.
+**ИИ-помощь в рецензировании:** Человек-рецензент всё ещё несёт ответственность. Находки ИИ должны быть проверены человеком.
 
-## Policy checklist
+## Чек-лист политики
 
-1. **Scope:** What activities are covered
-2. **Roles:** Who has what accountability
-3. **Requirements:** What must happen before commit/merge
-4. **Documentation:** What must be recorded
-5. **Exceptions:** How to handle special cases
-6. **Enforcement:** What happens when policy is violated
+1. **Область применения:** Какие виды деятельности охватываются
+2. **Роли:** Кто за что отвечает
+3. **Требования:** Что должно произойти перед фиксацией/слиянием
+4. **Документация:** Что должно быть записано
+5. **Исключения:** Как обрабатывать особые случаи
+6. **Принуждение:** Что происходит при нарушении политики
 
-## Resources
+## Ресурсы
 
-### Essential
+### Обязательно к прочтению
 
-- [Your job is to deliver code you have proven to work](https://simonwillison.net/2025/Dec/18/code-proven-to-work/) - Accountability for AI-generated code
+- [Your job is to deliver code you have proven to work](https://simonwillison.net/2025/Dec/18/code-proven-to-work/) - Ответственность за код, сгенерированный ИИ
