@@ -1,138 +1,138 @@
 ---
-title: Strategic Vision for AI Integration
-description: Thinking beyond tools to end-to-end transformation
+title: Стратегическое видение интеграции ИИ
+description: Мыслить за пределами инструментов к сквозной трансформации
 sidebar:
   order: 1
 ---
 
-AI coding tools are just the beginning. The strategic question isn't whether to adopt, but how deeply to integrate AI across your entire software development lifecycle.
+Инструменты AI-кодинга — это только начало. Стратегический вопрос не в том, внедрять ли, а в том, насколько глубоко интегрировать ИИ во весь жизненный цикл разработки ПО.
 
-## Beyond point solutions
+## За пределами точечных решений
 
-Most organizations start with individual tools: a copilot here, a chatbot there. This is natural but limited.
+Большинство организаций начинают с отдельных инструментов: здесь копилота, там чат-бота. Это естественно, но ограниченно.
 
-The end-game is different: AI woven through every phase of development, from requirements to production monitoring. Organizations that get there first will have structural advantages.
+Конечная цель другая: ИИ, пронизывающий каждую фазу разработки — от требований до мониторинга продакшна. Организации, которые первыми достигнут этого, получат структурные преимущества.
 
-## The integration spectrum
+## Спектр интеграции
 
-The [o16g Manifesto](https://o16g.com/) argues for a fundamental reframe: with AI removing human bandwidth constraints, we should manage to *cost* (tokens) instead of *capacity* (engineer-hours). The backlog, in this view, is "a relic of human limitation" — never reject an idea for lack of time, only for lack of budget.
+[Манифест o16g](https://o16g.com/) утверждает фундаментальный пересмотр: поскольку ИИ снимает ограничения человеческой пропускной способности, мы должны управлять *стоимостью* (токенами), а не *ёмкостью* (человеко-часами инженера). Бэклог в этом понимании — «пережиток человеческих ограничений» — никогда не отклоняйте идею из-за нехватки времени, только из-за нехватки бюджета.
 
-This reframing changes how you think about each integration level:
+Этот пересмотр меняет то, как вы думаете о каждом уровне интеграции:
 
-### Level 1: Tool adoption
+### Уровень 1: Внедрение инструментов
 
-Individual developers use AI tools. No organizational change.
+Отдельные разработчики используют инструменты ИИ. Без организационных изменений.
 
-**Status:** Most companies are here.
-**Value:** 10-30% productivity improvement for adopters.
-**Risk:** Fragmented, inconsistent, no compounding benefits.
+**Статус:** Большинство компаний находится здесь.
+**Ценность:** 10-30% повышения производительности для внедряющих.
+**Риск:** Разрозненность, непоследовательность, отсутствие кумулятивных преимуществ.
 
-### Level 2: Process integration
+### Уровень 2: Интеграция в процессы
 
-Agents integrated into workflows. Code review, CI/CD, documentation.
+Агенты интегрированы в рабочие процессы. Code review, CI/CD, документация.
 
-**Status:** Leading companies are implementing.
-**Value:** Systematic efficiency gains. Quality improvements.
-**Risk:** Requires process changes. Some resistance.
+**Статус:** Ведущие компании внедряют.
+**Ценность:** Систематическое повышение эффективности. Улучшение качества.
+**Риск:** Требует изменения процессов. Некоторое сопротивление.
 
-### Level 3: Development transformation
+### Уровень 3: Трансформация разработки
 
-AI in every phase: planning, architecture, implementation, testing, deployment, monitoring.
+ИИ на каждом этапе: планирование, архитектура, реализация, тестирование, деплой, мониторинг.
 
-**Status:** Experimental. Early pioneers.
-**Value:** Fundamental capability expansion. New things become possible.
-**Risk:** Significant investment. Unknown failure modes.
+**Статус:** Экспериментальный. Ранние пионеры.
+**Ценность:** Фундаментальное расширение возможностей. Становятся возможными новые вещи.
+**Риск:** Значительные инвестиции. Неизвестные режимы отказа.
 
-### Level 4: AI-native development
+### Уровень 4: AI-нативная разработка
 
-Humans orchestrate AI systems that handle most implementation. Focus shifts to strategy, design, and judgment.
+Люди управляют системами ИИ, которые выполняют большую часть реализации. Фокус смещается на стратегию, дизайн и оценку.
 
-**Status:** Theoretical. Research territory.
-**Value:** Massive leverage if achieved.
-**Risk:** Unknown timeline. Uncertain path.
+**Статус:** Теоретический. Исследовательская территория.
+**Ценность:** Массивный рычаг при достижении.
+**Риск:** Неизвестные сроки. Неопределённый путь.
 
-## Strategic questions
+## Стратегические вопросы
 
-As an executive, you need answers to:
+Как руководителю, вам нужны ответы на:
 
-**Where are we on this spectrum?** Honest assessment, not aspirational.
+**Где мы находимся на этом спектре?** Честная оценка, не предположительная.
 
-**Where should we be in 12/24/36 months?** Based on competitive landscape and capability.
+**Где мы должны быть через 12/24/36 месяцев?** На основе конкурентного ландшафта и возможностей.
 
-**What's blocking progress?** Skills, tools, process, culture, investment?
+**Что блокирует прогресс?** Навыки, инструменты, процессы, культура, инвестиции?
 
-**What's the cost of moving too slow?** Competitive risk, talent retention, opportunity cost.
+**Какова стоимость слишком медленного движения?** Конкурентный риск, удержание талантов, альтернативная стоимость.
 
-**What's the risk of moving too fast?** Quality issues, security exposure, team burnout.
+**Каков риск слишком быстрого движения?** Проблемы качества, угрозы безопасности, выгорание команды.
 
-## Building vs. buying
+## Строить vs. покупать
 
-### Buy (use off-the-shelf tools)
+### Купить (использовать готовые инструменты)
 
-**Pros:**
+**Плюсы:**
 
-- Fast adoption
-- Low upfront investment
-- Benefit from vendor R&D
+- Быстрое внедрение
+- Низкие начальные инвестиции
+- Выгода от R&D вендора
 
-**Cons:**
+**Минусы:**
 
-- Same tools as competitors
-- Limited customization
-- Dependency on vendor roadmap
+- Инструменты как у конкурентов
+- Ограниченная кастомизация
+- Зависимость от дорожной карты вендора
 
-### Build (custom AI solutions)
+### Строить (кастомные решения ИИ)
 
-**Pros:**
+**Плюсы:**
 
-- Competitive differentiation
-- Tailored to your domain
-- Control over roadmap
+- Конкурентное преимущество
+- Адаптация под вашу предметную область
+- Контроль над дорожной картой
 
-**Cons:**
+**Минусы:**
 
-- Significant investment
-- Talent requirements
-- Slower to start
+- Значительные инвестиции
+- Требования к талантам
+- Медленный старт
 
-### Hybrid (the common path)
+### Гибрид (распространённый путь)
 
-- Use off-the-shelf tools for general tasks
-- Build custom solutions for domain-specific advantages
-- Integrate both into cohesive workflows
+- Используйте готовые инструменты для общих задач
+- Стройте кастомные решения для преимуществ в предметной области
+- Интегрируйте оба в согласованные рабочие процессы
 
-Most organizations will follow this path. The question is what to build and when.
+Большинство организаций пойдут по этому пути. Вопрос в том, что строить и когда.
 
-## The talent equation
+## Уравнение талантов
 
-AI tools don't reduce headcount need—they change what headcount does.
+Инструменты ИИ не уменьшают потребность в персонале — они меняют то, что этот персонал делает.
 
-**More valuable:**
+**Более ценное:**
 
-- Engineers who can orchestrate AI effectively
-- People who understand architecture and systems
-- Domain experts who can guide AI output
+- Инженеры, способные эффективно управлять ИИ
+- Люди, понимающие архитектуру и системы
+- Эксперты предметной области, способные направлять вывод ИИ
 
-**Less differentiated:**
+**Менее дифференцированное:**
 
-- Raw coding speed
-- Syntax memorization
-- Boilerplate generation
+- Скорость raw-кодинга
+- Запоминание синтаксиса
+- Генерация шаблонного кода
 
-Your talent strategy needs to evolve accordingly.
+Ваша стратегия работы с талантами должна развиваться соответствующим образом.
 
-## Resources
+## Ресурсы
 
-### Essential
+### Основные
 
-- [Dispatch from the Future – Dan Shipper, Every](https://www.youtube.com/watch?v=MGzymaYBiss) - "Compounding Engineering" and organizational transformation
-- [The o16g Manifesto](https://o16g.com/) - "Outcome Engineering" — 16 principles for managing to cost instead of capacity
+- [Dispatch from the Future – Dan Shipper, Every](https://www.youtube.com/watch?v=MGzymaYBiss) - "Compounding Engineering" и организационная трансформация
+- [The o16g Manifesto](https://o16g.com/) - "Outcome Engineering" — 16 принципов управления стоимостью вместо ёмкости
 
-### Deep dives
+### Глубокие погружения
 
-- [AI in Product Development: Netflix, BMW, PepsiCo](https://www.virtasant.com/ai-today/ai-in-product-development-netflix-bmw) - Enterprise case studies
-- [AI Product Development: Why Founders Are Fascinated](https://www.techmagic.co/blog/ai-product-development) - AI reshaping product development
+- [AI in Product Development: Netflix, BMW, PepsiCo](https://www.virtasant.com/ai-today/ai-in-product-development-netflix-bmw) - Кейсы enterprise-компаний
+- [AI Product Development: Why Founders Are Fascinated](https://www.techmagic.co/blog/ai-product-development) - ИИ меняет разработку продуктов
 
-### Papers & research
+### Статьи и исследования
 
-- [AI-assisted Code Authoring at Scale – Meta](https://arxiv.org/abs/2305.12050) - Meta's CodeCompose deployment experience
+- [AI-assisted Code Authoring at Scale – Meta](https://arxiv.org/abs/2305.12050) - Опыт развёртывания CodeCompose в Meta
