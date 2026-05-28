@@ -1,95 +1,95 @@
 ---
-title: What is Agentic Engineering?
-description: The practice of orchestrating AI agents to accomplish software development tasks with varying degrees of autonomy.
+title: Что такое агентная инженерия?
+description: Практика оркестрации AI-агентов для выполнения задач разработки программного обеспечения с различной степенью автономии.
 sidebar:
   order: 1
 ---
 
-**Agentic engineering** is the practice of orchestrating AI agents to accomplish software development tasks—shifting your role from writing every line to directing a team of intelligent assistants.
+**Агентная инженерия** — это практика оркестрации AI-агентов для выполнения задач разработки программного обеспечения, которая смещает вашу роль от написания каждой строки кода к руководству командой интеллектуальных помощников.
 
-## The core concept
+## Основная концепция
 
-With agentic engineering, you become a general contractor, not a bricklayer. Instead of typing all the code yourself, you define requirements, coordinate AI agents, and ensure the final result meets spec. The best practitioners know _how_ to do the work—they choose to delegate most of it.
+В агентной инженерии вы становитесь генеральным подрядчиком, а не каменщиком. Вместо того чтобы самостоятельно писать весь код, вы определяете требования, координируете AI-агентов и обеспечиваете соответствие результата спецификации. Лучшие практики знают, _как_ выполняется работа — они выбирают делегирование большей её части.
 
-**Your job shifts from production to direction.** You spend less time typing and more time on:
+**Ваша работа смещается от производства к руководству.** Вы тратите меньше времени на набор и больше времени на:
 
-- Defining clear requirements
-- Breaking problems into agent-sized tasks
-- Reviewing and validating output
-- Catching what agents miss
+- Определение чётких требований
+- Разбиение проблем на задачи, подходящие для агентов
+- Проверку и валидацию результатов
+- Выявление того, что упустили агенты
 
-**Communication becomes your primary skill.** Agents do what you tell them, not what you mean (just like computers!). Precision in task definition determines output quality.
+**Коммуникация становится вашим основным навыком.** Агенты делают то, что вы им говорите, а не то, что вы имеете в виду (как и компьютеры!). Точность в определении задач определяет качество результата.
 
-## What hasn't changed
+## Что не изменилось
 
-You still need to understand code deeply. Agents make mistakes—sometimes subtle ones. If you can't read code critically, you'll ship bugs faster than ever. AI is the ultimate force multiplier—and that includes multiplying all your mistakes.
+Вам по-прежнему нужно глубоко понимать код. Агенты допускают ошибки — иногда незаметные. Если вы не можете критически читать код, вы будете отправлять баги быстрее, чем когда-либо. AI — это ultimate force multiplier (максимальный усилитель) — и это включает умножение всех ваших ошибок.
 
-You still own the architecture. Agents excel at local changes but struggle with system-level thinking.
+Вы по-прежнему несёте ответственность за архитектуру. Агенты отлично справляются с локальными изменениями, но испытывают трудности с системным мышлением.
 
-You still need domain knowledge. Agents don't know your users, constraints, or business logic. You bring the context they lack.
+Вам по-прежнему нужны предметные знания. Агенты не знают ваших пользователей, ограничений или бизнес-логики. Вы привносите контекст, которого им не хватает.
 
-## The autonomy spectrum
+## Спектр автономии
 
-**Choose your level of AI involvement based on the clarity of your task and risk.** Not all AI assistance is equal—the right level depends on how well-defined your task is and how much oversight you need.
+**Выбирайте уровень вовлечённости AI в зависимости от ясности вашей задачи и риска.** Не вся помощь AI одинакова — правильный уровень зависит от того, насколько хорошо определена ваша задача и какой надзор вам нужен.
 
-### AI as Copilot
+### AI как Copilot
 
-At this level, AI suggests, and you approve every change.
+На этом уровне AI предлагает, а вы одобряете каждое изменение.
 
-- **What it does:** Generates code blocks based on context and comments
-- **You control:** When to invoke, what context to provide, what to accept
-- **Best for:** Writing functions from descriptions, explaining code, generating tests
+- **Что он делает:** Генерирует блоки кода на основе контекста и комментариев
+- **Вы контролируете:** Когда вызывать, какой контекст предоставить, что принимать
+- **Лучше всего для:** Написания функций по описанию, объяснения кода, генерации тестов
 
-### AI as Task Agent
+### AI как Task Agent
 
-At this level, AI executes defined tasks autonomously, and you review the results.
+На этом уровне AI автономно выполняет определённые задачи, а вы проверяете результаты.
 
-- **What it does:** Takes a defined task and executes multiple steps to complete it
-- **You control:** The goal, constraints, and validation criteria
-- **Best for:** Features spanning multiple files, refactoring, bug fixes with clear repro steps
+- **Что он делает:** Берёт определённую задачу и выполняет несколько шагов для её завершения
+- **Вы контролируете:** Цель, ограничения и критерии валидации
+- **Лучше всего для:** Функций, затрагивающих несколько файлов, рефакторинга, исправления багов с чёткими шагами воспроизведения
 
-### AI as Workflow Agent
+### AI как Workflow Agent
 
-At the far end of the spectrum, AI manages multi-step workflows, while you set goals and constraints.
+На дальнем конце спектра AI управляет многошаговыми рабочими процессами, а вы задаёте цели и ограничения.
 
-- **What it does:** Handles entire workflows including planning, implementation, testing, and iteration
-- **You control:** High-level objectives and guardrails
-- **Best for:** Well-defined projects with clear acceptance criteria, prototypes, exploration
+- **Что он делает:** Управляет целыми рабочими процессами, включая планирование, реализацию, тестирование и итерации
+- **Вы контролируете:** Высокоуровневые цели и границы
+- **Лучше всего для:** Хорошо определённых проектов с чёткими критериями приёмки, прототипов, исследований
 
-### Choosing the right level
+### Выбор правильного уровня
 
-Higher autonomy doesn't necessarily mean better, so you want to match the level to your situation. Here are some factors to consider:
+Более высокая автономия не обязательно означает лучше, поэтому вам нужно подобрать уровень под вашу ситуацию. Вот несколько факторов, которые стоит учесть:
 
-- **Task clarity:** Ambiguous tasks fail at higher autonomy levels.
-- **Risk tolerance:** Critical code paths deserve more human oversight.
-- **Your familiarity:** In unfamiliar territory, stick to lower autonomy.
-- **Iteration speed:** Sometimes writing it yourself is faster than going through the prompt-debug-reprompt loop.
+- **Ясность задачи:** Неопределённые задачи проваливаются на более высоких уровнях автономии.
+- **Толерантность к риску:** Критические участки кода заслуживают большего человеческого надзора.
+- **Ваша familiarity (знакомство):** На незнакомой территории придерживайтесь более низкой автономии.
+- **Скорость итераций:** Иногда проще написать самому, чем проходить цикл подсказка-отладка-переподсказка.
 
-Think of autonomy as a slider, not a fixed setting. Start at Copilot for exploration, move to Task Agent for well-understood work, and always be ready to take manual control.
+Думайте об автономии как о слайдере, а не фиксированной настройке. Начинайте с Copilot для исследования, переходите к Task Agent для хорошо понятой работы и всегда будьте готовы взять ручное управление.
 
-## Why now?
+## Почему сейчас?
 
-**AI coding tools crossed a usefulness threshold in 2023-2024.** Three capabilities converged: context windows expanded to handle entire codebases, tool use became reliable enough for agents to read files and run commands, and reasoning improved enough for multi-step planning. Models stopped being chatbots and became actors.
+**AI-инструменты для программирования перешли порог полезности в 2023-2024 годах.** Три возможности сошлись: контекстные окна расширились для обработки целых кодовых баз, использование инструментов стало достаточно надёжным, чтобы агенты могли читать файлы и выполнять команды, а улучшение reasoning (рассуждений) стало достаточным для многошагового планирования. Модели перестали быть чатботами и стали акторами.
 
-## Who this guide is for
+## Для кого это руководство
 
-Different roles have different concerns. Jump to what matters most for your role, or read through for the complete picture.
+У разных ролей разные интересы. Переходите к тому, что наиболее важно для вашей роли, или читайте полную картину.
 
-- **Engineers:** Learn how to work effectively with agents without losing your edge. See the [Getting Started](/engineers/getting-started/) guide for practical workflows.
-- **Team leads:** Learn how to integrate these tools into existing workflows and train your teams. Start with [Adopting Agentic Tools](/team-leads/adopting-agentic-tools/).
-- **Executives:** Learn how to make strategic decisions about AI adoption, budget, and risk. The [Strategic Vision](/executives/strategic-vision/) section covers the business case.
+- **Инженеры:** Узнайте, как эффективно работать с агентами, не теряя своего преимущества. См. руководство [Начало работы](/engineers/getting-started/) для практических рабочих процессов.
+- **Руководители команд:** Узнайте, как интегрировать эти инструменты в существующие рабочие процессы и обучать свои команды. Начните с [Внедрение агентных инструментов](/team-leads/adopting-agentic-tools/).
+- **Руководители:** Узнайте, как принимать стратегические решения об AI-внедрении, бюджете и рисках. Раздел [Стратегическое видение](/executives/strategic-vision/) охватывает бизнес-обоснование.
 
-**This guide is community-driven.** We're all learning together. If you have experience to share or gaps to fill, [join us](/community/).
+**Это руководство основано на сообществе.** Мы все учимся вместе. Если у вас есть опыт для обмена или пробелы для заполнения, [присоединяйтесь к нам](/community/).
 
-## Resources
+## Ресурсы
 
-### Essential
+### Основные
 
-- READ: [The Space Between AI Hype and AI Denial](https://blog.kilo.ai/p/between-ai-hype-and-ai-denial) - Finding the productive middle ground for AI adoption
-- WATCH: [The 3 Pillars of Autonomy – Michele Catasta, Replit](https://www.youtube.com/watch?v=MLhAA9yguwM) - Core framework for agent autonomy
-- READ: [The o16g Manifesto](https://o16g.com/) - "Outcome Engineering" — reframing development around outcomes, not code
+- READ: [The Space Between AI Hype and AI Denial](https://blog.kilo.ai/p/between-ai-hype-and-ai-denial) — Поиск продуктивной середины для внедрения AI
+- WATCH: [The 3 Pillars of Autonomy – Michele Catasta, Replit](https://www.youtube.com/watch?v=MLhAA9yguwM) — Основной фреймворк для автономии агентов
+- READ: [The o16g Manifesto](https://o16g.com/) — "Outcome Engineering" — переосмысление разработки вокруг результатов, а не кода
 
-### Deep dives
+### Глубокие погружения
 
-- WATCH: [From Vibe Coding To Vibe Engineering – Kitze, Sizzy](https://www.youtube.com/watch?v=JV-wY5pxXLo) - How AI collaboration redefines development
-- READ: [Vibe engineering](https://simonwillison.net/2025/Oct/7/vibe-engineering/) - Defining responsible AI-assisted development
+- WATCH: [From Vibe Coding To Vibe Engineering – Kitze, Sizzy](https://www.youtube.com/watch?v=JV-wY5pxXLo) — Как AI-коллаборация переопределяет разработку
+- READ: [Vibe engineering](https://simonwillison.net/2025/Oct/7/vibe-engineering/) — Определение ответственной AI-assisted разработки
