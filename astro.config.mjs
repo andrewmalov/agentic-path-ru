@@ -120,139 +120,8 @@ const enSidebar = [
   },
 ];
 
-const ruSidebar = [
-  {
-    label: "Введение",
-    items: [
-      {
-        label: "Что такое агентная инженерия?",
-        slug: "introduction/what-is-agentic-engineering",
-      },
-      {
-        label: "Как работают агенты",
-        slug: "introduction/how-agents-work",
-      },
-      {
-        label: "Работа с агентами",
-        slug: "introduction/working-with-agents",
-      },
-      {
-        label: "Тенденции и закономерности",
-        slug: "introduction/trends-patterns",
-      },
-    ],
-  },
-  {
-    label: "Для инженеров",
-    items: [
-      { label: "Начало работы", slug: "engineers/getting-started" },
-      {
-        label: "Декомпозиция задач",
-        slug: "engineers/task-decomposition",
-      },
-      { label: "Лучшие практики", slug: "engineers/best-practices" },
-    ],
-  },
-  {
-    label: "Для тимлидов",
-    items: [
-      {
-        label: "Внедрение агентных инструментов",
-        slug: "team-leads/adopting-agentic-tools",
-      },
-      {
-        label: "Измерение влияния",
-        slug: "team-leads/measuring-impact",
-      },
-      {
-        label: "Обеспечение качества",
-        slug: "team-leads/quality-assurance",
-      },
-      {
-        label: "Команда из одной пиццы",
-        slug: "team-leads/1-pizza-teams",
-      },
-    ],
-  },
-  {
-    label: "Для руководителей",
-    items: [
-      { label: "Стратегическая visión", slug: "executives/strategic-vision" },
-      { label: "Фреймворки ROI", slug: "executives/roi-frameworks" },
-      {
-        label: "Плейбук внедрения",
-        slug: "executives/adoption-playbook",
-      },
-      {
-        label: "Безопасность и соблюдение норм",
-        slug: "executives/security-compliance",
-      },
-      {
-        label: "Искусственный интеллект в нативной экономике",
-        slug: "executives/ai-native-economics",
-      },
-    ],
-  },
-  {
-    label: "Прецеденты использования по этапам",
-    items: [
-      {
-        label: "Планирование и дизайн",
-        slug: "use-cases/planning-design",
-      },
-      { label: "Реализация", slug: "use-cases/implementation" },
-      {
-        label: "Развертывание и эксплуатация",
-        slug: "use-cases/deployment-operations",
-      },
-      {
-        label: "Качество и документация",
-        slug: "use-cases/quality-documentation",
-      },
-    ],
-  },
-  {
-    label: "Управление и риски",
-    items: [
-      { label: "Проверка безопасности", slug: "governance/security-review" },
-      { label: "Ответственность", slug: "governance/accountability" },
-      { label: "Качество контрольных точек", slug: "governance/quality-gates" },
-    ],
-  },
-  {
-    label: "Приложения",
-    items: [
-      { label: "Глоссарий", slug: "appendices/glossary" },
-      { label: "Рекомендуемая литература", slug: "appendices/reading-list" },
-      { label: "Шаблоны запросов", slug: "appendices/prompt-templates" },
-    ],
-  },
-  {
-    label: "Сообщество",
-    items: [
-      { label: "Присоединиться к сообществу", slug: "community" },
-      { label: "Вклад в проект", slug: "community/contributing" },
-    ],
-  },
-];
-
 export default defineConfig({
   site: "https://path.kilo.ai",
-  i18n: {
-    // The default locale code drives both Astro’s i18n middleware and,
-    // via Starlight’s auto-generation, the Starlight locale map.
-    defaultLocale: "en",
-    // Simple string array is fully supported by Astro 5.x. Each entry
-    // becomes a locale code in the Starlight auto-generated config:
-    //   "en" → "root" (available at / because prefixDefaultLocale is false)
-    //   "ru" → "ru"   (available at /ru/)
-    locales: ["en", "ru"],
-    routing: {
-      // English (default) pages live at / — do not add an /en/ prefix.
-      prefixDefaultLocale: false,
-      redirectToDefaultLocale: false,
-    },
-  },
   integrations: [
     starlight({
       title: "Agentic Engineering",
@@ -292,35 +161,121 @@ export default defineConfig({
         baseUrl: "https://github.com/Kilo-Org/agentic-path/edit/main/",
       },
       defaultLocale: "en",
-      locales: {
-        en: {
-          label: "English",
-          lang: "en",
-        },
-        ru: {
-          label: "Русский",
-          lang: "ru",
-          sidebar: ruSidebar,
-          // Translations for UI components
-          translations: {
-            footer: {
-              communityDriven: "Это руководство создано сообществом.",
-              contribute: "Внести вклад",
-              joinConversation: "присоединиться к дискуссии"
+      sidebar: [
+        {
+          label: "Введение",
+          items: [
+            {
+              label: "Что такое агентная инженерия?",
+              slug: "introduction/what-is-agentic-engineering",
             },
-            contributeBanner: {
-              helpUsGrow: "Помогите нам расти!",
-              foundResource: "Нашли отличный ресурс? Поделитесь им с сообществом.",
-              contributeOnGitHub: "Внести вклад на GitHub →",
-              dismissBanner: "Закрыть баннер"
+            {
+              label: "Как работают агенты",
+              slug: "introduction/how-agents-work",
             },
-            shareButtons: {
-              shareThisPage: "Поделитесь этой страницей",
-              description: "Узнайте об агентной инженерии"
-            }
-          }
+            {
+              label: "Работа с агентами",
+              slug: "introduction/working-with-agents",
+            },
+            {
+              label: "Тенденции и закономерности",
+              slug: "introduction/trends-patterns",
+            },
+          ],
         },
-      },
+        {
+          label: "Для инженеров",
+          items: [
+            { label: "Начало работы", slug: "engineers/getting-started" },
+            {
+              label: "Декомпозиция задач",
+              slug: "engineers/task-decomposition",
+            },
+            { label: "Лучшие практики", slug: "engineers/best-practices" },
+          ],
+        },
+        {
+          label: "Для тимлидов",
+          items: [
+            {
+              label: "Внедрение агентных инструментов",
+              slug: "team-leads/adopting-agentic-tools",
+            },
+            {
+              label: "Измерение влияния",
+              slug: "team-leads/measuring-impact",
+            },
+            {
+              label: "Обеспечение качества",
+              slug: "team-leads/quality-assurance",
+            },
+            {
+              label: "Команда из одной пиццы",
+              slug: "team-leads/1-pizza-teams",
+            },
+          ],
+        },
+        {
+          label: "Для руководителей",
+          items: [
+            { label: "Стратегическая visión", slug: "executives/strategic-vision" },
+            { label: "Фреймворки ROI", slug: "executives/roi-frameworks" },
+            {
+              label: "Плейбук внедрения",
+              slug: "executives/adoption-playbook",
+            },
+            {
+              label: "Безопасность и соблюдение норм",
+              slug: "executives/security-compliance",
+            },
+            {
+              label: "Искусственный интеллект в нативной экономике",
+              slug: "executives/ai-native-economics",
+            },
+          ],
+        },
+        {
+          label: "Прецеденты использования по этапам",
+          items: [
+            {
+              label: "Планирование и дизайн",
+              slug: "use-cases/planning-design",
+            },
+            { label: "Реализация", slug: "use-cases/implementation" },
+            {
+              label: "Развертывание и эксплуатация",
+              slug: "use-cases/deployment-operations",
+            },
+            {
+              label: "Качество и документация",
+              slug: "use-cases/quality-documentation",
+            },
+          ],
+        },
+        {
+          label: "Управление и риски",
+          items: [
+            { label: "Проверка безопасности", slug: "governance/security-review" },
+            { label: "Ответственность", slug: "governance/accountability" },
+            { label: "Качество контрольных точек", slug: "governance/quality-gates" },
+          ],
+        },
+        {
+          label: "Приложения",
+          items: [
+            { label: "Глоссарий", slug: "appendices/glossary" },
+            { label: "Рекомендуемая литература", slug: "appendices/reading-list" },
+            { label: "Шаблоны запросов", slug: "appendices/prompt-templates" },
+          ],
+        },
+        {
+          label: "Сообщество",
+          items: [
+            { label: "Присоединиться к сообществу", slug: "community" },
+            { label: "Вклад в проект", slug: "community/contributing" },
+          ],
+        },
+      ],
     }),
     sitemap(),
   ],
