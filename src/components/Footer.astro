@@ -12,8 +12,9 @@ const locale = starlightRoute?.lang || "en";
 const t = getTranslations(locale as "en" | "ru");
 // Only show share buttons if we have an entry (not 404 or other special pages)
 const showShareButtons = starlightRoute?.entry?.data;
+// Locale-aware base path: prepend /ru/ when viewing the Russian locale
+const localeBase = Astro.url.pathname.startsWith("/ru/") ? "/ru" : "";
 ---
-
 {
   showShareButtons && (
     <div class="share-section">
