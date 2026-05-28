@@ -1,143 +1,143 @@
 ---
-title: ROI Frameworks and Realistic Expectations
-description: Understanding what returns are actually achievable
+title: ROI-фреймворки и реалистичные ожидания
+description: Понимание того, какие результаты на самом деле достижимы
 sidebar:
   order: 2
 ---
 
-The marketing says 10x. The reality is more nuanced. Here's how to think about returns—and set expectations that survive contact with reality.
+Маркетинг говорит 10x. Реальность более нюансированная. Вот как думать о возврате — и устанавливать ожидания, которые выживают при контакте с реальностью.
 
-## The productivity claim landscape
+## Ландшафт заявлений о производительности
 
-Vendors claim:
+Вендоры заявляют:
 
-- "10x developer productivity"
-- "Replace half your engineering team"
-- "Ship in days what used to take months"
+- "10x производительность разработчиков"
+- "Замените половину инженерной команды"
+- "Выпускайте за дни то, что раньше занимало месяцы"
 
-Research shows:
+Исследования показывают:
 
-- 10-30% improvement in task completion time
-- Higher satisfaction among developers
-- Significant variation by task type and individual
+- 10-30% улучшение времени выполнения задач
+- Более высокая удовлетворённость разработчиков
+- Значительная вариация по типу задач и индивидуальным особенностям
 
-The gap between claims and evidence is worth understanding.
+Разрыв между заявлениями и доказательствами стоит понять.
 
-## Where gains actually come from
+## Откуда на самом деле берутся выгоды
 
-### Direct productivity
+### Прямая производительность
 
-**Time savings on specific tasks:**
+**Экономия времени на конкретных задачах:**
 
-- Boilerplate generation: 50-80% faster
-- Test writing: 30-50% faster
-- Documentation: 40-60% faster
-- Bug fixes with clear repro: 20-40% faster
+- Генерация шаблонного кода: 50-80% быстрее
+- Написание тестов: 30-50% быстрее
+- Документация: 40-60% быстрее
+- Исправление багов с чётким воспроизведением: 20-40% быстрее
 
-**Complex implementation:** Minimal measurable improvement, sometimes negative (time spent prompting > time saved).
+**Сложная реализация:** Минимальное измеримое улучшение, иногда негативное (время на промптинг > сэкономленное время).
 
-### Indirect benefits
+### Косвенные выгоды
 
-**Capability expansion:** Engineers tackle tasks they wouldn't have attempted.
+**Расширение возможностей:** Инженеры берутся за задачи, за которые раньше не брались.
 
-**Onboarding acceleration:** New hires reach productivity faster with agent assistance.
+**Ускорение онбординга:** Новые сотрудники быстрее достигают продуктивности с помощью агентской помощи.
 
-**Knowledge democratization:** Junior developers access expertise embedded in AI training.
+**Демократизация знаний:** Джуниоры получают доступ к экспертизе, встроенной в обучение ИИ.
 
-**Developer satisfaction:** People often prefer agent-assisted work (though not universally).
+**Удовлетворённость разработчиков:** Люди часто предпочитают работу с агентской помощью (хотя не все).
 
-### What doesn't change
+### Что не меняется
 
-**Architecture decisions:** Still human.
-**Complex debugging:** Often slower with agents.
-**Domain expertise:** Can't be delegated.
-**Integration work:** High-context, agent-hostile.
+**Архитектурные решения:** По-прежнему человеческие.
+**Сложная отладка:** Часто медленнее с агентами.
+**Экспертиза предметной области:** Нельзя делегировать.
+**Интеграционная работа:** Требует много контекста, агент-враждебна.
 
-## Building an ROI model
+## Построение ROI-модели
 
-### Costs
+### Затраты
 
-**Tool costs:**
+**Затраты на инструменты:**
 
-- Per-seat licensing
-- API usage (for custom solutions)
-- Infrastructure for self-hosted options
+- Лицензирование на место
+- Использование API (для кастомных решений)
+- Инфраструктура для self-hosted вариантов
 
-**Adoption costs:**
+**Затраты на внедрение:**
 
-- Training time
-- Process change management
-- Initial productivity dip
+- Время на обучение
+- Управление изменениями процессов
+- Начальное падение продуктивности
 
-**Oversight costs:**
+**Затраты на контроль:**
 
-- Additional code review time
-- Security review requirements
-- Quality assurance expansion
+- Дополнительное время на code review
+- Требования к проверке безопасности
+- Расширение обеспечения качества
 
-### Benefits
+### Выгоды
 
-**Time savings:**
+**Экономия времени:**
 
-- Employee hours × improvement % × adoption rate
-- Be conservative: assume 15-20% improvement on applicable tasks
+- Человеко-часы × % улучшения × коэффициент внедрения
+- Будьте консервативны: предполагайте 15-20% улучшение на применимых задачах
 
-**Quality improvements:**
+**Улучшения качества:**
 
-- Reduced bugs? (Data unclear—may go either direction)
-- Better documentation? (Usually yes)
-- Higher test coverage? (Usually yes, if prioritized)
+- Меньше багов? (Данные неоднозначны — могут быть в любую сторону)
+- Лучше документация? (Обычно да)
+- Более высокое тестовое покрытие? (Обычно да, если в приоритете)
 
-**Capability gains:**
+**Прирост возможностей:**
 
-- New projects possible with existing headcount
-- Faster exploration and prototyping
-- Competitive responsiveness
+- Новые проекты возможны с существующей численностью
+- Более быстрое исследование и прототипирование
+- Конкурентная отзывчивость
 
-### The honest math
+### Честная математика
 
-For a 50-person engineering team:
+Для команды из 50 инженеров:
 
-- Tool cost: ~$500-2000/seat/year = $25k-100k annually
-- Adoption investment: 20-40 hours/person = $200-400k one-time equivalent
-- Realistic productivity gain: 15% on 60% of work = 9% overall
-- Value of 9% on $10M engineering spend = $900k
+- Затраты на инструменты: ~$500-2000/место/год = $25k-100k ежегодно
+- Инвестиция во внедрение: 20-40 часов/человека = $200-400k одноразовый эквивалент
+- Реалистичный прирост производительности: 15% на 60% работы = 9% общего
+- Ценность 9% на $10M инженерных затрат = $900k
 
-Payback period: 3-12 months depending on assumptions.
+Период окупаемости: 3-12 месяцев в зависимости от допущений.
 
-Not transformational. But clearly positive.
+Не трансформационно. Но явно положительно.
 
-## Setting expectations
+## Установление ожиданий
 
-### What to tell the board
+### Что сказать совету директоров
 
-"We expect 10-30% productivity improvement on applicable tasks, translating to single-digit overall efficiency gains. More importantly, we're building capability for a future where these tools are essential."
+"Мы ожидаем 10-30% улучшения производительности на применимых задачах, что выражается в одноцифровом общем повышении эффективности. Что более важно, мы создаём возможность для будущего, где эти инструменты необходимы."
 
-### What to tell engineering
+### Что сказать инженерам
 
-"Start using these tools where they help. Don't force it where they don't. We're investing in learning, not mandating universal adoption."
+"Начните использовать эти инструменты там, где они помогают. Не навязывайте там, где не помогают. Мы инвестируем в обучение, а не требуем универсального внедрения."
 
-### What to tell yourself
+### Что сказать себе
 
-"This is a capability investment, not a cost-cutting exercise. The real value emerges over 2-3 years as the technology improves and our skills compound."
+"Это инвестиция в возможности, а не упражнение по сокращению затрат. Реальная ценность проявляется за 2-3 года по мере улучшения технологии и роста наших навыков."
 
-### The o16g reframe
+### Переосмысление o16g
 
-The [Outcome Engineering manifesto](https://o16g.com/) suggests an alternative mental model: stop measuring employee-hours entirely. If an outcome is worth the compute cost, build it. The traditional backlog exists because human bandwidth was the constraint—with agents, that constraint lifts. Stack rank by expected value per token, not by available employee-hours.
+[Манифест Outcome Engineering](https://o16g.com/) предлагает альтернативную ментальную модель: перестаньте измерять человеко-часы вообще. Если результат стоит стоимости вычислений — создайте его. Традиционный бэклог существует потому, что человеческая пропускная способность была ограничением — с агентами это ограничение снимается. Ранжируйте по ожидаемой ценности на токен, а не по доступным человеко-часам.
 
-## Warning signs in ROI projections
+## Красные флаги в ROI-проекциях
 
-Be skeptical of projections that:
+Будьте скептичны к проекциям, которые:
 
-- Assume universal adoption
-- Use vendor productivity claims without adjustment
-- Ignore adoption costs
-- Assume immediate full benefit without learning curve
-- Don't account for tasks where agents don't help
+- Предполагают универсальное внедрение
+- Используют заявления вендоров о производительности без корректировки
+- Игнорируют затраты на внедрение
+- Предполагают немедленную полную выгоду без кривой обучения
+- Не учитывают задачи, где агенты не помогают
 
-## Resources
+## Ресурсы
 
-### Essential
+### Основные
 
-- [Stop Looking for AI Coding Spending Caps](https://blog.kilo.ai/p/stop-looking-for-ai-coding-spending) - Why spending caps are counter-productive
-- [Does AI Actually Boost Developer Productivity? – Stanford](https://www.youtube.com/watch?v=tbDDYKRFjhk) - Data-driven productivity analysis from 100k developers
+- [Stop Looking for AI Coding Spending Caps](https://blog.kilo.ai/p/stop-looking-for-ai-coding-spending) - Почему потолки расходов на ИИ контрпродуктивны
+- [Does AI Actually Boost Developer Productivity? – Stanford](https://www.youtube.com/watch?v=tbDDYKRFjhk) - Анализ данных о производительности от 100k разработчиков
