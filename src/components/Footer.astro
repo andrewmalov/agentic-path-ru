@@ -5,8 +5,11 @@ import Pagination from "virtual:starlight/components/Pagination";
 import config from "virtual:starlight/user-config";
 import { Icon } from "@astrojs/starlight/components";
 import ShareButtons from "./ShareButtons.astro";
+import { getTranslations } from "../lib/translations";
 
 const { starlightRoute } = Astro.locals;
+const locale = starlightRoute?.lang || "en";
+const t = getTranslations(locale as "en" | "ru");
 // Only show share buttons if we have an entry (not 404 or other special pages)
 const showShareButtons = starlightRoute?.entry?.data;
 ---
@@ -28,9 +31,7 @@ const showShareButtons = starlightRoute?.entry?.data;
 
   <div class="community-cta">
     <p>
-      This guide is community-driven. <a href="/community/contributing/"
-        >Contribute</a
-      > or <a href="https://kilo.love/discord">join the conversation</a>.
+      {t.footer.communityText} <a href="/community/contributing/">{t.footer.contributeLink}</a> {t.footer.separator} <a href="https://kilo.love/discord">{t.footer.discordLink}</a>.
     </p>
   </div>
 
