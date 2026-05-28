@@ -1,137 +1,137 @@
 ---
-title: Adopting Agentic Tools
-description: Introducing agents to your team and building competency
+title: Внедрение агентных инструментов
+description: Введение агентов в команду и развитие компетенций
 sidebar:
   order: 1
 ---
 
-Adding agents to your team isn't just installing a tool—it's changing how work flows. Here's how to do it without disrupting what already works.
+Добавление агентов в команду — это не просто установка инструмента — это изменение того, как работает flow. Вот как сделать это без disruption того, что уже работает.
 
-## Start with Pain Points
+## Начните с болевых точек
 
-Don't introduce agents everywhere at once. Pick one friction point:
+Не внедряйте агентов сразу везде. Выберите одну точку трения:
 
-- **Slow code reviews?** Agents can pre-review for style and obvious issues
-- **Test coverage gaps?** Agents excel at generating test cases
-- **Documentation rot?** Agents can help keep docs in sync
-- **Onboarding struggles?** Agents help new devs understand unfamiliar codebases
+- **Медленные code reviews?** Агенты могут предварительно проверять стиль и очевидные проблемы
+- **Пробелы в тестовом покрытии?** Агенты отлично генерируют тестовые случаи
+- **Документация в упадке?** Агенты могут помочь держать docs в синхронизации
+- **Трудности при онбординге?** Агенты помогают новым разработчикам понимать незнакомые кодовые базы
 
-Solve that one problem. Then expand.
+Решите эту одну проблему. Затем расширяйтесь.
 
-## Run a Pilot
+## Запустите пилот
 
-Before rolling out broadly:
+Перед широким rollout:
 
-**Choose 2-3 willing engineers.** Include enthusiasts and skeptics—you want diverse feedback.
+**Выберите 2-3 willing инженеров.** Включите энтузиастов и скептиков — вам нужна разнообразная обратная связь.
 
-**Define bounded scope.** "Use agents for test generation on the payments service for two weeks."
+**Определите ограниченную область.** "Используйте агентов для генерации тестов в payments-сервисе в течение двух недель."
 
-**Measure something.** Test coverage, time to complete tasks, developer satisfaction.
+**Измерьте что-то.** Покрытие тестами, время на выполнение задач, удовлетворённость разработчиков.
 
-**Gather feedback.** What worked? What surprised you?
+**Соберите feedback.** Что сработало? Что удивило?
 
-## Integration Patterns
+## Паттерны интеграции
 
-| Pattern                 | Pros                              | Cons                        | Best for          |
+| Паттерн                 | Плюсы                              | Минусы                        | Подходит для     |
 | ----------------------- | --------------------------------- | --------------------------- | ----------------- |
-| **Individual**          | Low coordination, experimentation | Inconsistent practices      | Early exploration |
-| **Review-integrated**   | Maintains quality gates           | Potential review bottleneck | Most teams        |
-| **Pair programming**    | High quality, skill building      | Time intensive              | Complex tasks     |
-| **Automation pipeline** | Consistent, no adoption effort    | Needs careful guardrails    | Mature teams      |
+| **Индивидуальный**      | Низкая координация, эксперименты | Непоследовательные практики  | Раннее исследование |
+| **Интегрированный в ревью** | Сохраняет quality gates       | Потенциальное узкое место в ревью | Большинство команд |
+| **Парное программирование** | Высокое качество, развитие навыков | Времяемко              | Сложные задачи    |
+| **Автоматизация в pipeline** | Последовательность, не требует усилий по adoption | Нужны тщательные guardrails | Зрелые команды    |
 
-## Workflow Adjustments
+## Корректировка рабочих процессов
 
-**Daily standup:** Include agent-assisted work in updates. Share prompts that worked.
+**Daily standup:** Включайте работу с агентной поддержкой в обновления. Делитесь промптами, которые сработали.
 
-**Sprint planning:** Factor in 10-30% improvement for agent-friendly tasks—not 10x. Account for learning curves initially.
+**Sprint planning:** Учитывайте 10-30% улучшение для agent-friendly задач — не 10x. Учитывайте кривые обучения изначально.
 
-**Retrospectives:** Include agent effectiveness as a topic. Capture learnings.
+**Ретроспективы:** Включайте эффективность агентов как тему. Фиксируйте выводы.
 
-## The Skill Distribution
+## Распределение навыков
 
-Expect three groups on your team:
+Ожидайте три группы в команде:
 
-- **Early adopters (10-20%):** Already experimenting. Use them as resources and mentors.
-- **Curious middle (50-60%):** Open but need guidance. This is your main training audience.
-- **Skeptics (20-30%):** Range from cautious to resistant. Some have valid concerns.
+- **Ранние последователи (10-20%):** Уже экспериментируют. Используйте их как ресурсы и менторов.
+- **Любопытные середины (50-60%):** Открыты, но нуждаются в наставлении. Это ваша основная аудитория для обучения.
+- **Скептики (20-30%):** От осторожных до сопротивляющихся. У некоторых есть обоснованные опасения.
 
-Each group needs a different approach.
+Каждая группа нуждается в разном подходе.
 
-## Training Early Adopters
+## Обучение ранних последователей
 
-They don't need convincing. Give them:
+Им не нужно убеждение. Дайте им:
 
-- **Time and permission** to experiment
-- **Hard problems** to push boundaries
-- **Platform to share** what works
-- **Guardrails** when enthusiasm outpaces judgment
+- **Время и разрешение** экспериментировать
+- **Сложные проблемы** чтобы расширять границы
+- **Площадку для обмена** тем, что работает
+- **Guardrails** когда энтузиазм опережает рассудительность
 
-## Training the Curious Middle
+## Обучение любопытных середин
 
-Don't lecture. Do.
+Не читайте лекции. Делайте.
 
-**Hands-on workshops (90 min, 70% hands-on):**
+**Практические воркшопы (90 мин, 70% практики):**
 
-1. First prompt to working code
-2. Task decomposition practice
-3. Validating and fixing agent output
-4. Real project work with support
+1. От первого промпта до рабочего кода
+2. Практика декомпозиции задач
+3. Валидация и исправление output агентов
+4. Реальная проектная работа с поддержкой
 
-**Pairing and shadowing:** Pair curious engineers with early adopters for real tasks, not demos.
+**Пары и shadowing:** Объединяйте любопытных инженеров с early adopters для реальных задач, не демо.
 
-**Curated resources:** Create a team guide with recommended tools, prompt templates for your stack, examples from your codebase, and common pitfalls.
+**Подобранные ресурсы:** Создайте командный гайд с рекомендуемыми инструментами, шаблонами промптов для вашего стека, примерами из вашей кодовой базы и типичными ошибками.
 
-## Training Skeptics
+## Обучение скептикам
 
-Don't force it. Address concerns legitimately.
+Не заставляйте. Решайте опасения обоснованно.
 
-| Concern                        | Response                                                   |
+| Опасение                         | Ответ                                                     |
 | ------------------------------ | ---------------------------------------------------------- |
-| "Makes engineers less skilled" | Agents amplify skill—weak engineers struggle with them too |
-| "Output quality is poor"       | Quality comes from good prompts, not just tools            |
-| "It's a fad"                   | Major companies are standardizing on these tools           |
-| "Not worth the learning curve" | Start with high-ROI, low-risk: tests, docs, boilerplate    |
+| "Делает инженеров менее квалифицированными" | Агенты усиливают навык — слабые инженеры тоже с трудом справляются с ними |
+| "Качество output плохое"       | Качество приходит от хороших промптов, а не просто от инструментов |
+| "Это мода"                       | Крупные компании стандартизируют эти инструменты           |
+| "Не стоит кривой обучения" | Начните с высокого ROI, низкого риска: тесты, документы, boilerplate |
 
-Give them space. Some need to watch peers succeed first.
+Дайте им пространство. Некоторым нужно сначала увидеть, как у коллег получается.
 
-## Building a Curriculum
+## Построение учебной программы
 
-**Beginner:** Agent concepts → First experience workshop → Daily copilot use → Supervised task-level work
+**Начинающий:** Концепции агентов → Первый опытный воркшоп → Ежедневное использование copilot → Контролируемая работа на уровне задач
 
-**Intermediate:** Task decomposition mastery → Failure mode case studies → Multi-file tasks → Code review for AI code
+**Средний:** Мастерство декомпозиции задач → Кейсы неудачных режимов → Многофайловые задачи → Code review для AI-кода
 
-**Advanced:** Custom prompts and workflows → Evaluating new tools → Teaching others → Shaping team practices
+**Продвинутый:** Кастомные промпты и workflows → Оценка новых инструментов → Обучение других → Формирование командных практик
 
-## Common Mistakes
+## Типичные ошибки
 
-- **Mandating usage** breeds resentment—let adoption grow organically
-- **Expecting immediate ROI** ignores real learning curves
-- **Ignoring resistance** dismisses valid concerns
-- **One-size-fits-all** ignores different working styles
+- **Обязывание использования** вызывает негодование — пусть adoption растёт органически
+- **Ожидание немедленного ROI** игнорирует реальные кривые обучения
+- **Игнорирование сопротивления** отвергает обоснованные опасения
+- **Один размер подходит всем** игнорирует разные стили работы
 
-## Measuring Training Effectiveness
+## Измерение эффективности обучения
 
-**Before:** Survey confidence, track adoption rates, note existing competencies.
+**До:** Опросите уверенность, отслеживайте adoption rates, отмечайте существующие компетенции.
 
-**After:** Survey again, track skill application, gather qualitative feedback.
+**После:** Опросите снова, отслеживайте применение навыков, собирайте качественную обратную связь.
 
-**Long-term:** Watch for adoption persistence, quality of agent use, and peer mentoring emergence.
+**Долгосрочно:** Следите за persistence adoption, качеством использования агентов и появлением менторства среди коллег.
 
-## Resources
+## Ресурсы
 
-### Essential
+### Обязательное
 
-- [Your Team Is Already Using AI. Now What?](https://blog.kilo.ai/p/your-team-is-already-using-ai-now) - Practical guide for leading teams already using AI
-- [Stop Peanut Buttering AI Onto Your Organization](https://blog.kilo.ai/p/stop-peanut-buttering-ai) - Why adding AI without restructuring fails
-- [Leadership in AI Assisted Engineering – Justin Reock, DX](https://www.youtube.com/watch?v=PmZDupFP3UM) - Data-driven framework for top-down AI adoption
-- [Early adoption is the key to AI coding success](https://blog.kilo.ai/p/early-adoption-ai-coding) - Why early-adopting teams compound their advantages
+- [Your Team Is Already Using AI. Now What?](https://blog.kilo.ai/p/your-team-is-already-using-ai-now) - Практический гайд для лидеров команд, уже использующих ИИ
+- [Stop Peanut Buttering AI Onto Your Organization](https://blog.kilo.ai/p/stop-peanut-buttering-ai) - Почему добавление ИИ без реструктуризации не работает
+- [Leadership in AI Assisted Engineering – Justin Reock, DX](https://www.youtube.com/watch?v=PmZDupFP3UM) - Data-driven фреймворк для top-down adoption ИИ
+- [Early adoption is the key to AI coding success](https://blog.kilo.ai/p/early-adoption-ai-coding) - Почему ранее внедряющие команды накапливают преимущества
 
-### Videos
+### Видео
 
-- [Dispatch from the Future – Dan Shipper, Every](https://www.youtube.com/watch?v=MGzymaYBiss) - How 100% AI adoption changes organizational physics
-- [Moving away from Agile – Martin Harrysson, McKinsey](https://www.youtube.com/watch?v=SZStlIhyTCY) - Why unchanged operating models limit AI value
+- [Dispatch from the Future – Dan Shipper, Every](https://www.youtube.com/watch?v=MGzymaYBiss) - Как 100% adoption ИИ меняет организационную физику
+- [Moving away from Agile – Martin Harrysson, McKinsey](https://www.youtube.com/watch?v=SZStlIhyTCY) - Почему неизменённые операционные модели ограничивают ценность ИИ
 
-### Courses
+### Курсы
 
-- [Prompt Engineering Specialization – Vanderbilt University](https://www.coursera.org/specializations/prompt-engineering) - Comprehensive team training resource
-- [The Complete AI Coding Course (2025)](https://www.udemy.com/course/the-complete-ai-coding-course-2025-cursor-ai-v0-vercel/) - Hands-on Cursor and Claude Code training
+- [Prompt Engineering Specialization – Vanderbilt University](https://www.coursera.org/specializations/prompt-engineering) - Комплексный ресурс для обучения команд
+- [The Complete AI Coding Course (2025)](https://www.udemy.com/course/the-complete-ai-coding-course-2025-cursor-ai-v0-vercel/) - Практическое обучение Cursor и Claude Code
