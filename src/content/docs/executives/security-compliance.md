@@ -1,145 +1,145 @@
 ---
-title: Security, IP, and Compliance
-description: Managing risk in AI-assisted development
+title: Безопасность, ИС и соответствие нормативным требованиям
+description: Управление рисками при разработке с поддержкой ИИ
 sidebar:
   order: 5
 ---
 
-AI tools introduce new risk vectors. Understanding and managing them is essential for responsible adoption.
+ИИ-инструменты introduce новые векторы риска. Понимание и управление ими essential для ответственного внедрения.
 
-## Data flow risks
+## Риски потока данных
 
-### What data goes where?
+### Какие данные куда идут?
 
-When developers use AI tools, code and context flow to external services:
+Когда разработчики используют ИИ-инструменты, код и контекст flowing к внешним сервисам:
 
-**Prompts include:**
+**Prompts включают:**
 
-- Code snippets (sometimes entire files)
-- Error messages and stack traces
-- File names and structure
-- Comments (which may contain sensitive info)
+- Фрагменты кода (иногда целые файлы)
+- Сообщения об ошибках и stack traces
+- Имена файлов и структуру
+- Комментарии (которые могут содержать sensitive info)
 
-**Know your data flow:**
+**Знайте свой поток данных:**
 
-- What leaves your network?
-- Where is it processed?
-- Is it stored? For how long?
-- Is it used for model training?
+- Что покидает вашу сеть?
+- Где это обрабатывается?
+- Хранится ли это? Как долго?
+- Используется ли это для обучения модели?
 
-### Mitigation strategies
+### Стратегии смягчения
 
-**Enterprise agreements:** Most vendors offer enterprise plans with data handling guarantees. Review them carefully.
+**Корпоративные соглашения:** Большинство вендоров предлагают корпоративные планы с гарантиями по обработке данных. Внимательно их review.
 
-**Data classification:** Define what can/cannot be shared with external AI services.
+**Классификация данных:** Определите, что можно/нельзя передавать внешним ИИ-сервисам.
 
-**Local models:** For highly sensitive work, consider local or self-hosted models.
+**Локальные модели:** Для highly sensitive работы рассмотрите локальные или self-hosted модели.
 
-**Code filtering:** Some tools allow excluding sensitive paths/patterns.
+**Фильтрация кода:** Некоторые инструменты позволяют исключать sensitive paths/patterns.
 
-## Intellectual property considerations
+## Соображения интеллектуальной собственности
 
-### The training data question
+### Вопрос о данных обучения
 
-AI models were trained on public code. This raises questions:
+ИИ-модели обучались на публичном коде. Это raises вопросы:
 
-**License contamination:** Could AI-generated code introduce license obligations?
+**Contamination лицензий:** Может ли код, сгенерированный ИИ, introduce лицензионные обязательства?
 
-**Copyright status:** Who owns AI-generated code?
+**Статус авторского права:** Кому принадлежит код, сгенерированный ИИ?
 
-**Patent implications:** Could AI output infringe patents?
+**Патентные последствия:** Может ли вывод ИИ нарушать патенты?
 
-**Current legal status:** Uncertain and evolving. Courts are still deciding.
+**Текущий правовой статус:** Неопределённый и развивающийся. Суды still deciding.
 
-### Practical approach
+### Практический подход
 
-**Document AI usage:** Know where AI was involved in your codebase.
+**Документируйте использование ИИ:** Знайте, где ИИ был задействован в вашей кодовой базе.
 
-**Review for obvious copying:** Reject output that looks like verbatim reproduction.
+**Проверяйте на очевидное копирование:** Отвергайте вывод, который выглядит как verbatim reproduction.
 
-**Legal consultation:** For high-stakes situations, involve legal counsel.
+**Юридическая консультация:** Для high-stakes ситуаций привлекайте юридическую помощь.
 
-**Watch the legal landscape:** Precedents are being set now.
+**Следите за правовым ландшафтом:** Прецеденты устанавливаются сейчас.
 
-### Your proprietary code
+### Ваш proprietary код
 
-**The concern:** Code you share with AI tools could influence model training, potentially benefiting competitors.
+**Опасение:** Код, которым вы делитесь с ИИ-инструментами, может influence обучение модели, potentially benefiting конкурентов.
 
-**Mitigations:**
+**Смягчения:**
 
-- Enterprise agreements with training opt-out
-- Self-hosted models for sensitive code
-- Limiting what context is shared
+- Корпоративные соглашения с opt-out из обучения
+- Self-hosted модели для sensitive кода
+- Ограничение того, какой контекст shared
 
-## Compliance requirements
+## Требования соответствия
 
-### Regulated industries
+### Регулируемые отрасли
 
-Healthcare, finance, government, and other regulated sectors have specific requirements:
+Здравоохранение, финансы, правительство и другие регулируемые секторы have specific требования:
 
-**Data residency:** Where can code/data be processed?
+**Data residency:** Где может обрабатываться код/данные?
 
-**Audit trails:** Can you demonstrate what AI was used for?
+**Audit trails:** Можете ли вы продемонстрировать, для чего использовался ИИ?
 
-**Access controls:** Who can use AI tools? On what data?
+**Access controls:** Кто может использовать ИИ-инструменты? С какими данными?
 
-**Incident response:** What if AI exposes sensitive data?
+**Incident response:** Что делать, если ИИ раскроет sensitive данные?
 
-### Compliance checklist
+### Чеклист соответствия
 
-- [ ] Data handling agreements reviewed with legal
-- [ ] Data residency requirements checked
-- [ ] Audit logging in place for AI tool usage
-- [ ] Access controls appropriate for data sensitivity
-- [ ] Incident response plan updated for AI scenarios
-- [ ] Employee training on AI data handling
+- [ ] Соглашения об обработке данных reviewed с юристами
+- [ ] Требования к data residency проверены
+- [ ] Audit logging для использования ИИ-инструментов на месте
+- [ ] Access controls соответствуют чувствительности данных
+- [ ] План реагирования на инциденты обновлён для ИИ-сценариев
+- [ ] Обучение сотрудников по обработке данных ИИ
 
-## Security of AI-generated code
+## Безопасность кода, сгенерированного ИИ
 
-### New attack vectors
+### Новые векторы атак
 
-AI-generated code can introduce vulnerabilities:
+Код, сгенерированный ИИ, может introduce уязвимости:
 
-**Insecure patterns:** Models may generate code with known vulnerabilities.
+**Небезопасные паттерны:** Модели могут генерировать код с known vulnerabilities.
 
-**Dependency confusion:** Agents may suggest packages that don't exist (or malicious ones that do).
+**Dependency confusion:** Агенты могут предлагать пакеты, которые не существуют (или malicious ones, которые существуют).
 
-**Logic vulnerabilities:** Subtle security bugs in plausible-looking code.
+**Логические уязвимости:** Subtle security bugs в plausible-looking коде.
 
-### Mitigation
+### Смягчение
 
-**Security scanning:** Run SAST/DAST on all code, regardless of origin.
+**Security scanning:** Запускайте SAST/DAST на всём коде, независимо от origin.
 
-**Dependency verification:** Verify all packages suggested by AI exist and are legitimate.
+**Верификация зависимостей:** Проверяйте, что все пакеты, предложенные ИИ, существуют и legitimate.
 
-**Human review for security-sensitive code:** Don't let AI generate auth, encryption, or input validation unreviewed.
+**Human review для security-sensitive кода:** Не позволяйте ИИ генерировать auth, encryption или input validation без проверки.
 
-**Penetration testing:** Include AI-generated code in security assessments.
+**Penetration testing:** Включайте код, сгенерированный ИИ, в security assessments.
 
-## Governance structures
+## Структуры управления
 
-### Policy requirements
+### Требования к политике
 
-At minimum, define:
+Как минимум, определите:
 
-**Usage policy:** Who can use what tools, on what code.
+**Политика использования:** Кто может использовать какие инструменты, с каким кодом.
 
-**Data handling policy:** What can be shared with external AI.
+**Политика обработки данных:** Что можно передавать внешнему ИИ.
 
-**Review requirements:** How is AI code reviewed and approved.
+**Требования к проверке:** Как код ИИ проверяется и approve.
 
-**Incident handling:** What to do if AI causes a security issue.
+**Обработка инцидентов:** Что делать, если ИИ вызывает проблему безопасности.
 
-### Accountability
+### Ответственность
 
-**Clear ownership:** Humans own the code they commit, regardless of AI involvement.
+**Чёткое владение:** Люди владеют кодом, который они коммитят, независимо от involvement ИИ.
 
-**Audit capability:** Be able to identify AI involvement in code if needed.
+**Возможность аудита:** Умение identify involvement ИИ в коде при необходимости.
 
-**No blame-shifting:** "The AI did it" is not an excuse.
+**Никакого перекладывания вины:** "ИИ это сделал" — не оправдание.
 
-## Resources
+## Ресурсы
 
-### Essential
+### Основное
 
-- [Government Agents – Mark Myshatyn, Los Alamos](https://www.youtube.com/watch?v=TnSGx36Ly0Q) - AI agents in high-security regulated environments
+- [Government Agents – Mark Myshatyn, Los Alamos](https://www.youtube.com/watch?v=TnSGx36Ly0Q) - ИИ-агенты в высокобезопасных регулируемых средах
