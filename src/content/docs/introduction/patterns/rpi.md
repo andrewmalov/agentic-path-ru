@@ -1,219 +1,219 @@
 ---
-title: Research, Plan, Implement (RPI)
-description: A three-phase framework for transforming chaotic AI interactions into predictable, high-quality software delivery
+title: Исследование, План, Реализация (RPI)
+description: Трёхфазный фреймворк для превращения хаотичных AI-взаимодействий в предсказуемую высококачественную доставку ПО
 sidebar:
   order: 8
 ---
 
-You've been there. You ask an AI to "refactor this authentication module" and it generates 500 lines of code using libraries you don't have, invents methods that don't exist, and solves a problem you didn't actually have. Three hours later, you're untangling hallucinations and wondering if you should have just done it yourself.
+Вы бывали здесь. Просите AI "рефакторить этот модуль аутентификации", и он генерирует 500 строк кода с библиотеками, которых у вас нет, создаёт методы, которые не существуют, и решает проблему, которой у вас нет. Три часа спустя вы распутываете галлюцинации и думаете, не проще ли было сделать самому.
 
-The AI isn't broken. You're asking it to read your mind without giving it structure.
+AI не сломан. Вы просите его читать ваши мысли, не давая структуры.
 
-RPI (Research → Plan → Implement) fixes this. Instead of jumping straight to code generation, you break work into three focused phases with built-in validation. The AI researches what exists, plans the change systematically, then executes mechanically. It's slower than "just do it"—and that's the point.
+RPI (Исследование → План → Реализация) исправляет это. Вместо прыжка напрямую к генерации кода, вы разбиваете работу на три сфокусированные фазы со встроенной валидацией. AI исследует что существует, планирует изменение систематически, затем выполняет механически. Это медленнее, чем "просто сделай" — и в этом смысл.
 
-## The problem with direct prompting
+## Проблема прямого промптинга
 
-When you ask an AI agent to implement something without structure, you're gambling on several things going right simultaneously:
+Когда вы просите AI-агента реализовать что-то без структуры, вы играете в азартную игру на нескольких вещах сразу:
 
-- The AI correctly understands your intent
-- It discovers all relevant code and patterns
-- It makes architectural decisions you'd agree with
-- It doesn't hallucinate APIs or libraries
-- It stays within scope
+- AI правильно понимает ваше намерение
+- Он находит весь релевантный код и паттерны
+- Он принимает архитектурные решения, с которыми вы бы согласились
+- Он не галлюцинирует API или библиотеки
+- Он остаётся в рамках scope
 
-**What actually happens:**
+**Что происходит на самом деле:**
 
-- Context overflow: With too much information, AI loses focus.
-- Hallucination: AI invents code that doesn't exist.
-- Wrong problem solved: AI misunderstands your requirements.
-- Scope creep: Work expands beyond intended boundaries.
-- Untestable code: You have no clear success criteria.
+- Overflow контекста: При слишком большом количестве информации AI теряет фокус.
+- Галлюцинации: AI выдумывает код, который не существует.
+- Решена неправильная проблема: AI неправильно понимает требования.
+- Scope creep: Работа расширяется за пределы предполагаемых границ.
+- Нетестируемый код: У вас нет чётких критериев успеха.
 
-The insight: without structure, even brilliant AI assistants become expensive random code generators.
+Инсайт: без структуры даже блестящие AI-ассистенты становятся дорогими генераторами случайного кода.
 
-## What RPI actually is
+## Что RPI из себя представляет
 
-RPI is a three-phase framework with validation gates between each phase. Think of it as turning your AI from an eager intern into a seasoned developer with a GPS.
+RPI — это трёхфазный фреймворк с валидационными шлюзами между каждой фазой. Думайте о нём как о превращении вашего AI из стажера в опытного разработчика с GPS.
 
-**The phases:**
+**Фазы:**
 
-1. **Research**: Build context. Document what exists today—no opinions, no suggestions.
-2. **Plan**: Design the change. Use a phased approach with atomic tasks and success criteria.
-3. **Implement**. Execute mechanically. Follow the plan, and verify after each phase.
+1. **Исследование**: Постройте контекст. Документируйте что существует сегодня — без мнений, без предложений.
+2. **План**: Спроектируйте изменение. Используйте поэтапный подход с атомарными задачами и критериями успеха.
+3. **Реализация**. Выполняйте механически. Следуйте плану и верифицируйте после каждой фазы.
 
-**Core principles:**
+**Основные принципы:**
 
-- One goal per session: Keep the LLM laser-focused.
-- Validation before progression: Use scoring scales to verify readiness.
-- Human judgment preserved: AI doesn't make big decisions without validation.
-- Context management: Start with a fresh session for each phase.
+- Одна цель за сессию: Держите LLM лазерно сфокусированным.
+- Валидация перед продвижением: Используйте оценочные шкалы для верификации готовности.
+- Человеческое суждение сохранено: AI не принимает крупных решений без валидации.
+- Управление контекстом: Начинайте свежую сессию для каждой фазы.
 
-The framework trades speed for clarity, predictability, and correctness. You'll spend more time upfront, but you'll spend far less time debugging hallucinations and fixing architectural mistakes.
+Фреймворк торгует скорость на ясность, предсказуемость и корректность. Вы потратите больше времени впереди, но гораздо меньше времени на отладку галлюцинаций и исправление архитектурных ошибок.
 
-## Phase 1: Research
+## Фаза 1: Исследование
 
-The research phase builds context and insight. You're documenting what exists today—nothing more.
+Фаза исследования строит контекст и понимание. Вы документируете что существует сегодня — ничего больше.
 
-**Strict rules:**
+**Строгие правила:**
 
-- Document what exists
-- Do NOT suggest changes
-- Do NOT critique
-- Do NOT plan
-- Base everything on facts, not assumptions
+- Документируйте что существует
+- НЕ предлагайте изменения
+- НЕ критикуйте
+- НЕ планируйте
+- Базируйте всё на фактах, не на предположениях
 
-**In goose:**
+**В goose:**
 
 ```bash
 /research "look through the codebase and research how
 the LLM Tool Discovery is implemented"
 ```
 
-This spawns three parallel sub-agents:
+Это запускает три параллельных под-агента:
 
-| Sub-agent       | Purpose                                           |
-| --------------- | ------------------------------------------------- |
-| `find_files`    | Uses codebase locator to find relevant files      |
-| `analyze_code`  | Reads files fully and documents how they work     |
-| `find_patterns` | Looks for similar features or conventions in repo |
+| Под-агент         | Назначение                                              |
+| ----------------- | ------------------------------------------------------- |
+| `find_files`       | Использует локатор кодовой базы для поиска релевантных файлов |
+| `analyze_code`     | Полностью читает файлы и документирует как они работают     |
+| `find_patterns`    | Ищет похожие фичи или конвенции в репо                     |
 
-**Output:** A structured research document at `thoughts/research/YYYY-MM-DD-HHmm-topic.md`
+**Выход:** Структурированный исследовательский документ в `thoughts/research/YYYY-MM-DD-HHmm-topic.md`
 
-The document includes git metadata, file and line references, flow descriptions, key components, open questions, and a technical map of the feature as it exists today.
+Документ включает git-метаданные, ссылки на файлы и строки, описания потоков, ключевые компоненты, открытые вопросы и техническую карту фичи как она существует сегодня.
 
-### Reverse prompting
+### Обратный промптинг
 
-Here's where things get interesting. Instead of you explaining everything upfront, the AI asks _you_ clarifying questions one at a time:
+Вот где становится интересно. Вместо того чтобы вы объясняли всё заранее, AI задаёт вам уточняющие вопросы по одному:
 
-- "Should this work from the file manager or dashboard?"
-- "Any file type restrictions?"
-- "What happens to shared files?"
+- "Это должно работать из файлового менеджера или dashboard?"
+- "Какие ограничения на типы файлов?"
+- "Что происходит с общими файлами?"
 
-This reveals insights you hadn't considered, and prevents wrong assumptions from propagating through the entire workflow.
+Это раскрывает понимание, которое вы не учитывали, и предотвращает распространение неверных предположений через весь рабочий процесс.
 
-### Validating research: the FAR scale
+### Валидация исследования: шкала FAR
 
-Before moving to planning, validate your research against FAR criteria:
+Перед переходом к планированию, валидируйте своё исследование по критериям FAR:
 
-| Criterion      | Description                           | What it prevents     |
-| -------------- | ------------------------------------- | -------------------- |
-| **F**actual    | Based on actual code, not assumptions | Hallucination        |
-| **A**ctionable | You know exactly what to build        | Vague requirements   |
-| **R**elevant   | Solves the real user need             | Wrong problem solved |
+| Критерий     | Описание                                  | Что это предотвращает |
+| ----------- | ----------------------------------------- | --------------------- |
+| **F**actual  | Базируется на реальном коде, не на предположениях | Галлюцинации           |
+| **A**ctionable | Вы точно знаете что строить                 | Нечёткие требования     |
+| **R**elevant | Решает реальную потребность пользователя      | Решена неправильная проблема |
 
-**Critical:** A human must review the research document before proceeding. This informs everything downstream.
+**Критично:** Человек должен просмотреть исследовательский документ перед продвижением. Это информирует всё последующее.
 
-## Phase 2: Plan
+## Фаза 2: План
 
-The planning phase translates research into a phased implementation plan. You're designing the change with clear success criteria.
+Фаза планирования переводит исследование в поэтапный план реализации. Вы проектируете изменение с чёткими критериями успеха.
 
-**In goose:**
+**В goose:**
 
 ```bash
 /plan a removal of the Tool Selection Strategy feature
 ```
 
-**AI's Process:**
+**Процесс AI:**
 
-1. Read the research document from the previous phase
-2. Ask clarifying questions (full removal vs deprecation? config cleanup behavior?)
-3. Present design options where multiple approaches exist
-4. Produce a phased implementation plan
+1. Читает исследовательский документ из предыдущей фазы
+2. Askит уточняющие вопросы (полное удаление vs декомпозиция? поведение очистки конфига?)
+3. Представляет варианты дизайна там, где существуют несколько подходов
+4. Производит поэтапный план реализации
 
-**Output:** A detailed plan at `thoughts/plans/YYYY-MM-DD-HHmm-description.md`
+**Выход:** Детализированный план в `thoughts/plans/YYYY-MM-DD-HHmm-description.md`
 
-The plan includes:
+План включает:
 
-- Explicit phases (e.g., 10 phases)
-- Exact file paths
-- Code snippets showing what to change
-- Automated success criteria
-- Manual verification steps
-- Checkboxes for tracking progress
-- Atomic tasks per phase
+- Явные фазы (например, 10 фаз)
+- Точные пути к файлам
+- Сниппеты кода показывающие что менять
+- Автоматизированные критерии успеха
+- Ручные шаги верификации
+- Чекбоксы для отслеживания прогресса
+- Атомарные задачи на фазу
 
-### Why atomic tasks matter
+### Почему атомарные задачи важны
 
-Each task should be a single, focused unit of work—one command call or file edit. This keeps the AI on track with simple instructions, makes progress easy to verify, prevents context overflow, and allows recovery if the context window fills.
+Каждая задача должна быть единицей работы одной сфокусированной единицы — один вызов команды или редактирование файла. Это держит AI на треке с простыми инструкциями, делает прогресс легко верифицируемым, предотвращает переполнение контекста и позволяет восстановление если контекстное окно заполняется.
 
-The plan must be explicit enough that someone else (or a fresh AI session) could execute it without additional context.
+План должен быть достаточно явным, чтобы кто-то другой (или свежая AI-сессия) мог выполнить его без дополнительного контекста.
 
-### Validating plans: the FACTS scale
+### Валидация планов: шкала FACTS
 
-Validate each task against FACTS criteria:
+Валидируйте каждую задачу по критериям FACTS:
 
-| Criterion    | Description                                    | What it prevents              |
-| ------------ | ---------------------------------------------- | ----------------------------- |
-| **F**easible | Can actually be done with available tools/APIs | Impossible tasks              |
-| **A**tomic   | Single, focused unit of work                   | Context overflow, scope creep |
-| **C**lear    | Unambiguous instructions                       | Misinterpretation             |
-| **T**estable | Has clear success criteria                     | Untestable code               |
-| **S**coped   | Properly bounded                               | Runaway execution             |
+| Критерий    | Описание                                      | Что это предотвращает            |
+| ---------- | --------------------------------------------- | ------------------------------ |
+| **F**easible | Может быть реально сделано с доступными инструментами/APIs | Невозможные задачи              |
+| **A**tomic   | Единица, сфокусированная единица работы            | Переполнение контекста, scope creep |
+| **C**lear    | Недвусмысленные инструкции                      | Неправильное толкование          |
+| **T**estable | Имеет чёткие критерии успеха                    | Нетестируемый код               |
+| **S**coped   | Правильно ограничено                           | Неконтролируемое выполнение       |
 
-## Phase 3: Implement
+## Фаза 3: Реализация
 
-The implementation phase executes the plan step-by-step with verification. This should feel intentionally boring and mechanical. If it feels creative, something upstream is missing.
+Фаза реализации выполняет план шаг за шагом с верификацией. Это должно ощущаться намеренно скучным и механическим. Если ощущается творчески — чего-то не хватает на предыдущем этапе.
 
-**In goose:**
+**В goose:**
 
 ```bash
 /implement thoughts/plans/2025-12-23-remove-tool-selection-strategy.md
 ```
 
-**AI's Process:**
+**Процесс AI:**
 
-1. Read the plan completely
-2. Execute phases in order
-3. Run verification after each phase
-4. Update checkboxes directly in the plan file as you go
+1. Полностью читает план
+2. Выполняет фазы по порядку
+3. Запускает верификацию после каждой фазы
+4. Обновляет чекбоксы напрямую в файле плана по ходу
 
-### Feedback loop options
+### Опции цикла обратной связи
 
-Choose your control level based on confidence in the plan:
+Выбирайте уровень контроля на основе уверенности в плане:
 
-| Loop type                 | When to use               | Control level                           |
-| ------------------------- | ------------------------- | --------------------------------------- |
-| Task-by-task validation   | Maximum control needed    | High—validate after each atomic task    |
-| Phase-by-phase validation | Balance speed and control | Medium—validate after completing phase  |
-| Full plan validation      | High confidence in plan   | Low—execute everything, validate at the end |
+| Тип цикла                        | Когда использовать                    | Уровень контроля                          |
+| -------------------------------- | ------------------------------------- | ----------------------------------------- |
+| Повальная валидация задач         | Макогда нужен максимальный контроль    | Высокий — валидируйте после каждой атомарной задачи |
+| Повальная валидация фаз           | Баланс скорости и контроля             | Средний — валидируйте после завершения фазы     |
+| Полная валидация плана             | Высокая уверенность в плане           | Низкий — выполняйте всё, валидируйте в конце        |
 
-### Verification gates
+### Верификационные шлюзы
 
-Every phase must pass quality gates:
+Каждая фаза должна пройти качественные шлюзы:
 
-- Tests must pass
-- Builds must succeed
-- Linters must pass
-- No regressions introduced
+- Тесты должны пройти
+- Сборки должны успешно завершиться
+- Линтеры должны пройти
+- Регрессий не введено
 
-If any gate fails, the implementation pauses. Fix the issue before proceeding.
+Если любой шлюз падает, реализация приостанавливается. Исправьте проблему перед продвижением.
 
-### Recovery mechanism
+### Механизм восстановления
 
-If the context window fills mid-implementation, the checkboxes in the plan allow the AI to compact and pick up exactly where it left off. This is why atomic tasks and progress tracking matter—they enable graceful recovery.
+Если контекстное окно заполняется посреди реализации, чекбоксы в плане позволяют AI сжать и продолжить точно с того места, где остановился. Вот почему атомарные задачи и отслеживание прогресса важны — они позволяют элегантное восстановление.
 
-## Optional: Iterate
+## Опционально: Итерация
 
-Sometimes plans need adjustment after review or during implementation.
+Иногда планы нуждаются в корректировке после ревью или во время реализации.
 
-**In goose:**
+**В goose:**
 
 ```bash
 /iterate "plan path" + feedback
 ```
 
-**AI's Process:**
+**Процесс AI:**
 
-1. Read the existing plan
-2. Research only what needs rethinking
-3. Propose targeted updates
-4. Edit the plan surgically (doesn't start over)
+1. Читает существующий план
+2. Исследует только то, что нужно переосмыслить
+3. Предлагает точечные обновления
+4. Хирургически редактирует план (не начинает заново)
 
-This enables refinement without discarding good work. Changed sections must pass FACTS validation again.
+Это позволяет уточнение без отбрасывания хорошей работы. Изменённые секции должны снова пройти FACTS-валидацию.
 
-## File structure
+## Структура файлов
 
-All RPI outputs live in predictable locations:
+Все выходные данные RPI живут в предсказуемых местах:
 
 ```
 thoughts/
@@ -223,185 +223,185 @@ thoughts/
     └── YYYY-MM-DD-HHmm-description.md
 ```
 
-## A Real-world example
+## Реальный пример
 
-Let's walk through an actual RPI execution: removing the "Tool Selection Strategy" feature from a large codebase.
+Давайте пройдём через реальное выполнение RPI: удаление фичи "Tool Selection Strategy" из крупной кодовой базы.
 
-**Complexity:**
+**Сложность:**
 
-- Spans 32 files
-- Touches Rust core code
-- Affects TypeScript
-- Changes configuration
-- Modifies tests
-- Updates documentation
+- Затрагивает 32 файла
+- Касается Rust core-кода
+- Влияет на TypeScript
+- Изменяет конфигурацию
+- Модифицирует тесты
+- Обновляет документацию
 
-### Research phase (9 minutes)
+### Фаза исследования (9 минут)
 
-Started with `/research "LLM Tool Discovery"`. Realized scope was too broad—course corrected and reran: `/research "Tool Selection Strategy feature specifically"`.
+Начали с `/research "LLM Tool Discovery"`. Поняли что scope слишком широкий — скорректировали курс и перезапустили: `/research "Tool Selection Strategy feature specifically"`.
 
-Output: detailed technical map of the feature.
+Результат: детализированная техническая карта фичи.
 
-Human review: validated research accuracy before proceeding.
+Человеческое ревью: валидировали точность исследования перед продвижением.
 
-### Plan phase (4 minutes)
+### Фаза планирования (4 минуты)
 
-Ran `/plan a removal of the Tool Selection Strategy feature`.
+Запустили `/plan a removal of the Tool Selection Strategy feature`.
 
-AI asked clarifying questions:
+AI задал уточняющие вопросы:
 
-- Full removal vs deprecation?
-- How should config cleanup behave?
-- Should artifacts be regenerated?
-- Where do related tests live?
+- Полное удаление или декомпозиция?
+- Как должно вести себя очистка конфига?
+- Должны ли артефакты регенерироваться?
+- Где живут связанные тесты?
 
-Presented design options. Generated 10-phase plan with atomic tasks.
+Представил варианты дизайна. Сгенерировал 10-фазный план с атомарными задачами.
 
-Human review: validated plan feasibility.
+Человеческое ревью: валидировали осуществимость плана.
 
-### Implement phase (39 minutes)
+### Фаза реализации (39 минут)
 
-Ran `/implement thoughts/plans/2025-12-23-remove-tool-selection-strategy.md`.
+Запустили `/implement thoughts/plans/2025-12-23-remove-tool-selection-strategy.md`.
 
-AI executed mechanically phase by phase. Context window filled mid-way—AI compacted and resumed from checkboxes.
+AI выполнил механически фазу за фазой. Контекстное окно заполнилось на полпути — AI сжал и возобновил с чекбоксов.
 
-Human activity during this phase: "I fell asleep." Intentionally boring and reliable.
+Человеческая активность во время этой фазы: "Я уснул." Намеренно скучно и надёжно.
 
-### Results
+### Результаты
 
-- **Total time:** 52 minutes (including AI work, testing, human Q&A)
-- **PR submitted:** Build passed on first try
-- **Code review agent:** Zero comments
-- **Quality:** Top-notch
+- **Общее время:** 52 минуты (включая AI-работу, тестирование, человеческие Q&A)
+- **PR подан:** Сборка прошла с первой попытки
+- **Агент код-ревью:** Ноль комментариев
+- **Качество:** Отличное
 
-**Comparison:**
+**Сравнение:**
 
-| Approach       | Outcome                                                        |
-| -------------- | -------------------------------------------------------------- |
-| Without AI     | Several hours of manual work                                   |
-| AI without RPI | Drift, bugs, rework cycles                                     |
-| RPI            | Slower than direct implementation, but predictable and correct |
+| Подход              | Результат                                                    |
+| ------------------ | ------------------------------------------------------------ |
+| Без AI             | Несколько часов ручной работы                                  |
+| AI без RPI         | Дрифт, баги, циклы доработки                                  |
+| RPI                | Медленнее прямой реализации, но предсказуемо и корректно       |
 
-## When to use RPI
+## Когда использовать RPI
 
-### Ideal scenarios
+### Идеальные сценарии
 
-**Complex tasks spanning multiple files:**
+**Сложные задачи, затрагивающие несколько файлов:**
 
-- Refactors
-- Migrations
-- Feature additions
-- Large upgrades
-- Incident cleanup
-- Documentation overhauls
+- Рефакторинги
+- Миграции
+- Добавления фичей
+- Крупные обновления
+- Очистка после инцидентов
+- Переработки документации
 
-**Characteristics that signal RPI is worth it:**
+**Характеристики, сигнализирующие что RPI стоит того:**
 
-- Complex integration
-- Multiple touchpoints
-- High consequences of errors
-- Need for systematic approach
-- Require clear validation
+- Сложная интеграция
+- Множественные точки соприкосновения
+- Высокие последствия ошибок
+- Нужда в систематическом подходе
+- Требуется чёткая валидация
 
-### When to skip it
+### Когда пропустить
 
-**Simple, basic tasks:**
+**Простые, базовые задачи:**
 
-- Single file changes
-- Obvious bug fixes
-- Simple feature additions
-- Quick prototypes
+- Изменения в одном файле
+- Очевидные исправления багов
+- Простые добавления фичей
+- Быстрые прототипы
 
-RPI is deliberately slower. The validation overhead isn't worth it for trivial work.
+RPI намеренно медленнее. Накладные расходы валидации не стоят того для тривиальной работы.
 
-## Why RPI works
+## Почему RPI работает
 
-### Prevents common AI failures
+### Предотвращает распространённые AI-неудачи
 
-| Failure mode         | How RPI prevents it                                   |
+| Режим неудачи         | Как RPI предотвращает это                               |
 | -------------------- | ----------------------------------------------------- |
-| Context overflow     | Atomic tasks keep work focused and bounded            |
-| Hallucination        | FAR validation requires factual evidence              |
-| Wrong problem solved | Research validates relevance before planning          |
-| Untestable code      | FACTS validation ensures clear success criteria       |
-| Scope creep          | Atomic tasks and validation gates maintain boundaries |
+| Переполнение контекста | Атомарные задачи держат работу сфокусированной и ограниченной  |
+| Галлюцинации          | FAR-валидация требует фактических доказательств              |
+| Решена неправильная проблема | Исследование валидирует релевантность перед планированием     |
+| Нетестируемый код     | FACTS-валидация обеспечивает чёткие критерии успеха         |
+| Scope creep          | Атомарные задачи и валидационные шлюзы держат границы        |
 
-### Leverages AI strengths
+### Использует сильные стороны AI
 
-- **Pattern matching:** AI excels at finding similar code
-- **Code generation:** AI writes boilerplate efficiently
-- **Systematic execution:** AI follows checklists perfectly
+- **Паттерн-матчинг:** AI превосходен в поиске похожего кода
+- **Генерация кода:** AI эффективно пишет boilerplate
+- **Систематическое выполнение:** AI идеально следует чеклистам
 
-### Preserves human judgment
+### Сохраняет человеческое суждение
 
-- Humans handle strategy and validation
-- Humans make architectural decisions
-- Humans verify relevance and correctness
-- AI doesn't make big decisions without validation
+- Люди занимаются стратегией и валидацией
+- Люди принимают архитектурные решения
+- Люди верифицируют релевантность и корректность
+- AI не принимает крупных решений без валидации
 
-### Built-in quality gates
+# Встроенные качественные шлюзы
 
-Every phase has checkpoints:
+Каждая фаза имеет контрольные точки:
 
-- Research: FAR validation
-- Plan: FACTS validation
-- Implement: Tests, builds, lints must pass
+- Исследование: FAR-валидация
+- План: FACTS-валидация
+- Реализация: Тесты, сборки, линты должны пройти
 
-### Context management
+### Управление контекстом
 
-- Fresh sessions per phase—LLM stays focused
-- Explicit handoffs—plan has all context for implementation
-- Checkpoint system—can resume after interruptions
+- Свежие сессии на фазу — LLM остаётся сфокусированным
+- Явные передачи — план имеет весь контекст для реализации
+- Система контрольных точек — можно продолжить после прерываний
 
-## Integration with AI tools
+## Интеграция с AI-инструментами
 
-### Tool agnostic
+### Не зависит от инструментов
 
-RPI works with any AI coding assistant:
+RPI работает с любым AI-кодинг ассистентом:
 
 - Claude
 - GitHub Copilot
 - Cursor
 - OpenAI
 - Gemini
-- Any agent that can follow structured prompts
+- Любым агентом, который может следовать структурированным промптам
 
-The framework is about structure, not specific tooling.
+Фреймворк о структуре, а не о конкретном инструменте.
 
-### goose implementation
+### Реализация в goose
 
-Block's goose tool provides built-in RPI support with slash commands:
+Инструмент goose от Block обеспечивает встроенную поддержку RPI со слэш-командами:
 
-| Command                           | Purpose              |
+| Команда                            | Назначение              |
 | --------------------------------- | -------------------- |
-| `/research "topic"`               | Research phase       |
-| `/plan "feature/task"`            | Planning phase       |
-| `/implement "plan path"`          | Implementation phase |
-| `/iterate "plan path" + feedback` | Plan refinement      |
+| `/research "topic"`               | Фаза исследования      |
+| `/plan "feature/task"`            | Фаза планирования      |
+| `/implement "plan path"`          | Фаза реализации        |
+| `/iterate "plan path" + feedback` | Уточнение плана        |
 
-**Recipes used:**
+**Используемые рецепты:**
 
-- `rpi-codebase-locator` — Find relevant files
-- `rpi-codebase-analyzer` — Analyze code
-- `rpi-pattern-finder` — Find patterns
-- `rpi-create-plan` — Generate plan
-- `rpi-implement-plan` — Execute implementation
-- `rpi-iterate-plan` — Refine plan
+- `rpi-codebase-locator` — Найти релевантные файлы
+- `rpi-codebase-analyzer` — Анализировать код
+- `rpi-pattern-finder` — Найти паттерны
+- `rpi-create-plan` — Сгенерировать план
+- `rpi-implement-plan` — Выполнить реализацию
+- `rpi-iterate-plan` — Уточнить план
 
-### Without goose
+### Без goose
 
-You can implement RPI manually:
+Вы можете реализовать RPI вручную:
 
-1. Create `thoughts/research/` and `thoughts/plans/` directories
-2. Use structured prompts for each phase
-3. Manually validate with FAR and FACTS scales
-4. Track progress with checkboxes in markdown
+1. Создайте директории `thoughts/research/` и `thoughts/plans/`
+2. Используйте структурированные промпты для каждой фазы
+3. Валидируйте вручную по шкалам FAR и FACTS
+4. Отслеживайте прогресс с чекбоксами в markdown
 
-The tooling helps, but the framework works without it.
+Инструментарий помогает, но фреймворк работает без него.
 
-## Common patterns
+## Распространённые паттерны
 
-### Feature addition
+### Добавление фичи
 
 ```bash
 1. /research "current authentication system"
@@ -409,7 +409,7 @@ The tooling helps, but the framework works without it.
 3. /implement [plan path]
 ```
 
-### Bug fix
+### Исправление бага
 
 ```bash
 1. /research "payment processing error handling"
@@ -417,7 +417,7 @@ The tooling helps, but the framework works without it.
 3. /implement [plan path]
 ```
 
-### Refactor
+### Рефакторинг
 
 ```bash
 1. /research "current data access layer"
@@ -426,7 +426,7 @@ The tooling helps, but the framework works without it.
 4. /iterate [plan path] "need to handle edge case in migrations"
 ```
 
-### Migration
+### Миграция
 
 ```bash
 1. /research "React class components in codebase"
@@ -434,34 +434,34 @@ The tooling helps, but the framework works without it.
 3. /implement [plan path]
 ```
 
-## The skill shift
+## Сдвиг в навыках
 
-Traditional AI coding asks: "How do I get the perfect prompt?"
+Традиционный AI-кодинг спрашивает: "Как мне написать идеальный промпт?"
 
-RPI asks: "How do I structure work so AI can execute reliably?"
+RPI спрашивает: "Как мне структурировать работу чтобы AI мог надёжно выполнять?"
 
-You stop directing the AI step-by-step and start designing workflows that converge on correct solutions. The AI's job is systematic execution. Your job is defining what "done" looks like and validating at checkpoints.
+Вы перестаёте направлять AI пошагово и начинаете проектировать рабочие процессы, которые сходятся к корректным решениям. Работа AI — систематическое выполнение. Ваша работа — определить, как выглядит "готово" и валидировать на контрольных точках.
 
-**The mindset shift:**
+**Сдвиг в мышлении:**
 
-- **From:** "AI, build this feature"
-- **To:** "AI, help me understand what exists, plan the change systematically, then execute with validation"
+- **От:** "AI, построй эту фичу"
+- **К:** "AI, помоги мне понять что существует, спланируй изменение систематически, затем выполни с валидацией"
 
-## Resources
+## Ресурсы
 
-### Official
+### Официальные
 
-- READ: [Research → Plan → Implement Pattern | goose](https://block.github.io/goose/docs/tutorials/rpi/) — Official tutorial with demonstrations
-- READ: [Introducing the RPI Strategy](https://patrickarobinson.com/blog/introducing-rpi-strategy/) — Creator's blog post explaining the approach
+- ЧИТАТЬ: [Research → Plan → Implement Паттерн | goose](https://block.github.io/goose/docs/tutorials/rpi/) — Официальный туториал с демонстрациями
+- ЧИТАТЬ: [Introducing the RPI Strategy](https://patrickarobinson.com/blog/introducing-rpi-strategy/) — Пост блога создателя, объясняющий подход
 
-### Community
+### Сообщество
 
-- LISTEN: [The RPI workflow - Build Wiz AI Show (Podcast)](https://open.spotify.com/episode/1OdIYj0SZzhyzFGGoVuELP) — Audio discussion on advanced AI coding
+- СЛУШАТЬ: [The RPI workflow - Build Wiz AI Show (Podcast)](https://open.spotify.com/episode/1OdIYj0SZzhyzFGGoVuELP) — Аудио-обсуждение продвинутого AI-кодинга
 
-### Origins
+### Истоки
 
-Originally inspired by a YouTube video that sparked the idea for systematic AI development. Developed and popularized by HumanLayer (framework creators), Block's goose team (implementation and tooling), and Patrick Robinson (documentation and evangelism).
+Изначально вдохновлено видео на YouTube, которое породило идею систематической AI-разработки. Разработано и популяризировано HumanLayer (создатели фреймворка), командой goose в Block (реализация и инструментарий) и Patrick Robinson (документация и евангелизм).
 
 ---
 
-**Using RPI in production?** [Share your experience](/community/contributing/)—what worked, what didn't, and what you learned along the way.
+**Используете RPI в продакшене?** [Поделитесь своим опытом](/community/contributing/)—что сработало, что нет и что вы узнали.

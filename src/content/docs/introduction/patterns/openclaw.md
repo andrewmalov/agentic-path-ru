@@ -1,166 +1,168 @@
 ---
 title: OpenClaw
-description: An open-source AI agent runtime that connects to your existing tools and services
+description: Открытая среда выполнения AI-агентов, которая подключается к вашим существующим инструментам и сервисам
 sidebar:
   order: 9
 ---
 
-Most AI coding tools assume you're at a terminal, copying prompts and pasting responses. The agent exists in a browser tab, disconnected from everything else you use. You're the integration layer.
+Большинство AI-инструментов для программирования предполагают, что вы работаете в терминале, копируя промпты и вставляя ответы. Агент существует в отдельной вкладке браузера, оторванный от всего остального, чем вы пользуетесь. Вы — это уровень интеграции.
 
-OpenClaw takes a different approach: the agent lives in your infrastructure. It connects to your messaging apps, calendar, email, filesystem, and whatever else you wire up. Instead of context-switching to AI, the AI has context about you.
+OpenClaw использует другой подход: агент живёт в вашей инфраструктуре. Он подключается к вашим мессенджерам, календарю, почте, файловой системе и всему остальному, что вы подключите. Вместо того чтобы переключаться на AI, AI получает контекст о вас.
 
-## The core idea
+## Основная идея
 
-OpenClaw is an open-source runtime that gives AI agents persistent access to your tools. It runs locally or on a VPS you control. Your data stays yours.
+OpenClaw — это открытая среда выполнения, которая даёт AI-агентам постоянный доступ к вашим инструментам. Она работает локально или на VPS, который вы контролируете. Ваши данные остаются вашими.
 
 ```bash
-# Install
+# Установка
 npm install -g openclaw
 
-# Setup (interactive)
+# Настройка (интерактивная)
 openclaw onboard
 
-# Start the daemon
+# Запуск демона
 openclaw gateway start
 ```
 
-Once running, you can reach your agent via Telegram, Discord, Signal, Slack, CLI, or web dashboard. One agent, multiple surfaces.
+После запуска вы можете связаться с агентом через Telegram, Discord, Signal, Slack, CLI или веб-панель. Один агент — несколько интерфейсов.
 
-**The philosophy:** AI should adapt to your workflow, not the other way around. Persistent context beats fresh starts.
+**Философия:** AI должен адаптироваться к вашему рабочему процессу, а не наоборот. Постоянный контекст важнее, чем начинать каждый раз заново.
 
-## How it works
+## Как это работает
 
-OpenClaw connects three things:
+OpenClaw соединяет три компонента:
 
 ```
 ┌─────────────────────────────────────────────────────┐
-│ Channels (how you talk to it)                       │
-│ Telegram, Discord, Signal, Slack, CLI, Web         │
+│ Каналы (как вы с ним взаимодействуете)              │
+│ Telegram, Discord, Signal, Slack, CLI, Web          │
 └─────────────────────────────────────────────────────┘
-                          ↓
+                           ↓
 ┌─────────────────────────────────────────────────────┐
-│ Gateway (the runtime)                               │
-│ Routes messages, manages sessions, runs tools       │
+│ Шлюз (среда выполнения)                            │
+│ Маршрутизация сообщений, управление сессиями,       │
+│ выполнение инструментов                             │
 └─────────────────────────────────────────────────────┘
-                          ↓
+                           ↓
 ┌─────────────────────────────────────────────────────┐
-│ Tools & Skills                                      │
-│ Shell, browser, files, MCP servers, custom skills   │
+│ Инструменты и навыки                                │
+│ Shell, браузер, файлы, MCP-серверы, пользовательские │
+│ навыки                                             │
 └─────────────────────────────────────────────────────┘
 ```
 
-The agent maintains context through workspace files:
+Агент поддерживает контекст через файлы рабочего пространства:
 
-- `AGENTS.md` — How the agent should behave
-- `SOUL.md` — Personality and tone  
-- `USER.md` — Context about who it's helping
-- `MEMORY.md` — Long-term curated memory
-- `memory/YYYY-MM-DD.md` — Daily session notes
+- `AGENTS.md` — Как агент должен себя вести
+- `SOUL.md` — Личность и тон
+- `USER.md` — Контекст о том, кому он помогает
+- `MEMORY.md` — Долгосрочная курируемая память
+- `memory/YYYY-MM-DD.md` — Заметки о ежедневных сессиях
 
-These files are injected into every conversation. The agent builds understanding over time, like a colleague who's been paying attention.
+Эти файлы внедряются в каждую беседу. Агент накапливает понимание со временем, как коллега, который внимателен.
 
-## Key capabilities
+## Ключевые возможности
 
-### Proactive behavior
+### Проактивное поведение
 
-Unlike chat-only tools, OpenClaw can reach out to you:
+В отличие от инструментов, работающих только в чате, OpenClaw может обращаться к вам:
 
 ```markdown
-# HEARTBEAT.md - checked every 30 minutes
-- Check inbox for urgent emails
-- Review calendar for upcoming meetings
-- Monitor GitHub notifications
+# HEARTBEAT.md - проверяется каждые 30 минут
+- Проверить почту на предмет срочных писем
+- Просмотреть календарь на предстоящие встречи
+- Мониторить уведомления GitHub
 ```
 
-The agent polls on a schedule. When something needs attention, it messages you. No need to remember to ask.
+Агент опрашивает по расписанию. Когда что-то требует внимания, он пишет вам. Не нужно помнить, чтобы спрашивать.
 
-### Background tasks
+### Фоновые задачи
 
-Spawn sub-agents for parallel work:
+Запускайте под-агентов для параллельной работы:
 
 ```
-You: "Research competitors while I focus on the pitch deck"
-Agent: [spawns research sub-agent, continues helping with deck]
-Sub-agent: [works independently, reports back when done]
+Вы: "Исследуй конкурентов, пока я готовлю презентацию"
+Агент: [запускает исследовательского под-агента, продолжает помогать с презентацией]
+Под-агент: [работает независимо, докладывает по завершении]
 ```
 
-Long-running tasks don't block the conversation.
+Долгие задачи не блокируют беседу.
 
-### Tool integration
+### Интеграция инструментов
 
-Built-in tools cover common needs:
+Встроенные инструменты покрывают основные потребности:
 
-- **Shell execution** — Run commands, scripts, builds
-- **Browser automation** — Navigate, scrape, interact with web apps
-- **File operations** — Read, write, edit, organize
-- **Web search** — Research without leaving the conversation
+- **Выполнение Shell-команд** — Запуск команд, скриптов, сборок
+- **Автоматизация браузера** — Навигация, извлечение данных, взаимодействие с веб-приложениями
+- **Операции с файлами** — Чтение, запись, редактирование, организация
+- **Веб-поиск** — Исследование без выхода из беседы
 
-Extend with skills for specific workflows:
+Расширяйте с помощью навыков для конкретных рабочих процессов:
 
 ```bash
-# Install a skill
+# Установить навык
 clawhub install trello
 
-# Now the agent can manage your boards
-"Move the 'API redesign' card to Done"
+# Теперь агент может управлять вашими досками
+"Перемести карточку 'Редизайн API' в Done"
 ```
 
-### Multi-channel presence
+### Присутствие на нескольких каналах
 
-Same agent, multiple ways to reach it:
+Один агент, несколько способов связи:
 
-- Quick question via Telegram while mobile
-- Deep work session via CLI at your desk
-- Team collaboration via Discord or Slack
-- Dashboard for reviewing history
+- Быстрый вопрос через Telegram в дороге
+- Глубокая работа через CLI за рабочим столом
+- Командное взаимодействие через Discord или Slack
+- Панель для просмотра истории
 
-Context carries across channels. The agent knows what you discussed on Telegram when you continue on CLI.
+Контекст сохраняется между каналами. Агент помнит, что вы обсуждали в Telegram, когда продолжаете через CLI.
 
-## When to use it
+## Когда использовать
 
-OpenClaw works well for:
+OpenClaw хорошо подходит для:
 
-- **Personal AI assistant** — Inbox triage, calendar management, task tracking
-- **Development workflows** — Code review, PR monitoring, CI/CD notifications  
-- **Research and writing** — Web research, drafting, editing with persistent context
-- **Automation** — Scheduled tasks, monitoring, proactive alerts
+- **Персональный AI-ассистент** — Сортировка почты, управление календарём, отслеживание задач
+- **Рабочие процессы разработки** — Рецензирование кода, мониторинг PR, уведомления CI/CD
+- **Исследование и написание** — Веб-исследования, черновики, редактирование с постоянным контекстом
+- **Автоматизация** — Запланированные задачи, мониторинг, проактивные оповещения
 
-It's less suited for:
+Менее подходит для:
 
-- One-off coding questions (just use ChatGPT)
-- Team-wide deployment (designed for personal/small team use)
-- Environments where local installation isn't possible
+- Разовых вопросов по коду (просто используйте ChatGPT)
+- Командного развёртывания (разработано для личного использования/небольших команд)
+- Сред, где локальная установка невозможна
 
-## Getting started
+## Начало работы
 
 ```bash
-# Install globally
+# Глобальная установка
 npm install -g openclaw
 
-# Interactive setup - configures model, channels, workspace
+# Интерактивная настройка - настраивает модель, каналы, рабочее пространство
 openclaw onboard
 
-# Start the gateway daemon
+# Запуск демона шлюза
 openclaw gateway start
 
-# Check status
+# Проверить статус
 openclaw status
 ```
 
-The onboarding wizard walks through:
-1. Choosing an AI provider (OpenRouter, Anthropic, OpenAI, etc.)
-2. Setting up channels (Telegram bot, Discord, etc.)
-3. Configuring your workspace
+Мастер настройки проведёт через:
+1. Выбор AI-провайдера (OpenRouter, Anthropic, OpenAI и т.д.)
+2. Настройку каналов (Telegram-бот, Discord и т.д.)
+3. Настройку рабочего пространства
 
-## Resources
+## Ресурсы
 
-- [GitHub Repository](https://github.com/openclaw/openclaw) — Source code
-- [Documentation](https://docs.openclaw.ai) — Full docs
-- [ClawHub](https://clawhub.com) — Find and share skills
-- [Discord Community](https://discord.com/invite/clawd) — Support and discussion
+- [GitHub-репозиторий](https://github.com/openclaw/openclaw) — Исходный код
+- [Документация](https://docs.openclaw.ai) — Полная документация
+- [ClawHub](https://clawhub.com) — Найти и поделиться навыками
+- [Discord-сообщество](https://discord.com/invite/clawd) — Поддержка и обсуждение
 
 ---
 
-*OpenClaw is open source and actively developed. The project welcomes contributions.*
+*OpenClaw имеет открытый исходный код и активно развивается. Проект приветствует contributions.*
 
-*Note: OpenClaw was originally called "ClawdBot", then "MoltBot", before landing on "OpenClaw".*
+*Примечание: OpenClaw изначально назывался "ClawdBot", затем "MoltBot", прежде чем получить название "OpenClaw".
