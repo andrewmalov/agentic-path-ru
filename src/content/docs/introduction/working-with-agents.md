@@ -1,65 +1,65 @@
 ---
-title: Working with Agents
-description: Practical patterns for human-AI collaboration - when to intervene, how to review, and structuring code for agent effectiveness.
+title: Работа с агентами
+description: Практические паттерны взаимодействия человека и AI — когда вмешиваться, как проводить ревью и структурировать код для эффективной работы агентов.
 sidebar:
   order: 3
 ---
 
-## The Collaboration Spectrum
+## Спектр сотрудничества
 
-Maximizing AI involvement isn't the point—effective agentic engineering is about finding the right balance for each task. Neither doing everything yourself nor delegating everything works well.
+Максимальное вовлечение AI — не самоцель. Эффективная агентная инженерия — это поиск правильного баланса для каждой задачи. Делать всё самостоятельно так же плохо, как и делегировать всё.
 
-**Hands-off** works best for well-defined tasks: 
-- Boilerplate generation
-- Test writing
-- Documentation
-- Refactoring established patterns
+**Автономный режим** лучше всего подходит для чётко определённых задач:
+- Генерация шаблонного кода
+- Написание тестов
+- Документация
+- Рефакторинг устоявшихся паттернов
 
-**Hands-on** is essential for: 
-- Architecture decisions
-- Security-sensitive code
-- Requirements clarification 
-- Domain-specific logic
+**Ручной режим** необходим для:
+- Архитектурных решений
+- Кода, связанного с безопасностью
+- Уточнения требований
+- Логики, специфичной для предметной области
 
-Most real work falls somewhere in between. Feature implementation, debugging, and API design benefit from active collaboration where you guide while the agent executes.
+Большинство реальных задач находятся где-то посередине. Реализация функций, отладка и проектирование API выигрывают от активного сотрудничества, когда вы направляете, а агент выполняет.
 
-## When to Intervene
+## Когда вмешиваться
 
-Watch for these signals that it's time to step in:
+Обратите внимание на эти сигналы, указывающие на необходимость вмешаться:
 
-- **Agent looping**: Repeating similar attempts without progress
-- **Quality declining**: Output getting worse, not better
-- **Scope creep**: Drifting beyond the original task boundaries
-- **Irreversible actions**: About to delete data, push to production, or make breaking changes
+- **Зацикливание агента**: Повторение похожих попыток без прогресса
+- **Снижение качества**: Результат ухудшается, а не улучшается
+- **Разрастание области**: Отклонение от исходных границ задачи
+- **Необратимые действия**: Вот-вот удалят данные, запушат в продакшн или сделают ломающие изменения
 
-When the agent is making steady progress and errors are getting corrected, let it continue. Intervene when you see circular patterns or diminishing returns after 2-3 reprompts.
+Когда агент стабильно продвигается и ошибки исправляются, дайте ему продолжить. Вмешивайтесь, когда видите круговые паттерны или снижение отдачи после 2-3 повторных промтов.
 
-## The Review Mindset
+## Ревью-мышление
 
-Reviewing agent output differs fundamentally from reviewing human code. Focus on **intent and correctness**, not style preferences—the agent won't learn from your feedback anyway.
+Ревью результатов агента фундаментально отличается от ревью кода человека. Сосредоточьтесь на **намерении и корректности**, а не на стилевых предпочтениях — агент всё равно не извлечёт урок из вашей обратной связи.
 
-**Always verify:**
+**Всегда проверяйте:**
 
-- Does the output actually solve the stated problem?
-- Are edge cases and error conditions handled?
-- Is the approach reasonable, not just functional?
-- Any security implications?
+- Решает ли результат поставленную проблему?
+- Обработаны ли граничные случаи и условия ошибок?
+- Разумен ли подход, а не просто функционален?
+- Есть ли проблемы с безопасностью?
 
-Don't assume passing tests mean correctness or that confident explanations reflect accuracy. Treat agent output like code from a skilled contractor: technically competent but unfamiliar with your specific context.
+Не предполагайте, что пройденные тесты означают корректность или что уверенные объяснения отражают точность. Относитесь к результатам агента как к коду от квалифицированного подрядчика: технически компетентного, но не знакомого с вашим конкретным контекстом.
 
-## Building AI-Ready Codebases
+## Создание AI-готовых кодовых баз
 
-The Unix philosophy—small tools, clear interfaces, composability—is exactly what agents need to work effectively. Structure your code with agents in mind.
+Философия Unix — маленькие инструменты, чёткие интерфейсы, компонуемость — это именно то, что нужно агентам для эффективной работы. Структурируйте код с учётом агентов.
 
-- **Small, focused functions**: A 20-line function is far easier for an agent to understand and modify correctly than a 200-line one. Smaller scope means fewer errors.
-- **Clear interfaces**: Explicit inputs and outputs help agents reason about dependencies and chain operations together. Ambiguous interfaces cause integration bugs.
-- **Consistent patterns**: Predictable structure reduces agent errors. When similar problems are solved similarly, agents can apply patterns reliably.
-- **Good naming**: `getUserById(id)` beats `get(x)`. Descriptive names are context that helps agents understand code without extensive exploration.
+- **Маленькие, сфокусированные функции**: Функция в 20 строк гораздо легче для понимания и корректного изменения агентом, чем функция в 200 строк. Меньшая область — меньше ошибок.
+- **Чёткие интерфейсы**: Явные входы и выходы помогают агентам рассуждать о зависимостях и связывать операции. Неоднозначные интерфейсы вызывают ошибки интеграции.
+- **Последовательные паттерны**: Предсказуемая структура снижает ошибки агентов. Когда похожие проблемы решаются похожим образом, агенты могут надёжно применять паттерны.
+- **Хорошие имена**: `getUserById(id)` лучше чем `get(x)`. Описательные имена — это контекст, который помогает агентам понимать код без глубокого исследования.
 
-You don't need to rewrite everything. As you touch code, nudge it toward these patterns—the benefits compound over time.
+Не нужно переписывать всё. Когда вы касаетесь кода, направляйте его к этим паттернам — выигрыш накапливается со временем.
 
-## Effective Feedback
+## Эффективная обратная связь
 
-When course-correcting, be specific about what's wrong and what you want instead. "The error handling is missing—add try/catch blocks that log failures and return graceful fallbacks" will get far better results than "Fix the error handling."
+Когда корректируете курс, будьте конкретны в том, что не так и что вы хотите вместо этого. «Не хватает обработки ошибок — добавьте блоки try/catch, которые логируют сбои и возвращают корректные резервные значения» даст гораздо лучший результат, чем «Исправь обработку ошибок».
 
-Keep corrections focused. A single clear direction works better than multiple vague complaints.
+Делайте корректировки сфокусированными. Одна чёткая директива работает лучше, чем несколько расплывчатых жалоб.

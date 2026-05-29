@@ -1,235 +1,235 @@
 ---
-title: Best Practices
-description: Context engineering, common failure modes, and building AI-compatible codebases
+title: Лучшие практики
+description: Контекстная инженерия, типичные режимы отказов и создание AI-совместимых кодовых баз
 sidebar:
   order: 3
 ---
 
-The difference between agents that reliably ship code and agents that spin their wheels? Context. Learning to engineer context—and structure your code to help agents succeed—makes agentic development predictable.
+Разница между агентами, которые надёжно выпускают код, и агентами, которые крутят колёса? Контекст. Умение проектировать контекст и структурировать код так, чтобы помочь агентам succeed — делает агентную разработку предсказуемой.
 
-## Context engineering
+## Контекстная инженерия
 
-Context engineering is the discipline of providing AI agents with the right information at the right time. It's not just prompt engineering—it's the entire system of what an agent knows when it makes decisions.
+Контекстная инженерия — это дисциплина предоставления AI-агентам правильной информации в правильное время. Это не просто промт-инженерия — это вся система того, что агент знает, когда принимает решения.
 
-Think of it this way: an agent's context window is its entire working memory. Everything it can "see" at once—your instructions, the code, conversation history, tool outputs—shapes every decision it makes. Engineer that context poorly, and even the smartest model produces garbage.
+Думайте об этом так: контекстное окно агента — это вся его рабочая память. Всё, что он может «видеть» одновременно — ваши инструкции, код, историю разговора, выводы инструментов — формирует каждое его решение. Плохо спроектируйте этот контекст, и даже самый умный код模型的 производит мусор.
 
-### Why context matters more than prompts
+### Почему контекст важнее промтов
 
-A perfect prompt with bad context fails. A mediocre prompt with excellent context often succeeds.
+Идеальный промт с плохим контекстом проваливается. Средний промт с отличным контекстом часто succeed.
 
-**Context includes:**
+**Контекст включает:**
 
-- **System instructions** — The agent's baseline behavior and constraints
-- **Codebase knowledge** — Files, patterns, conventions the agent can reference
-- **Conversation history** — What's been discussed and decided
-- **Tool outputs** — Results from file reads, command execution, searches
-- **External documentation** — API docs, specs, requirements
+- **Системные инструкции** — Базовое поведение и ограничения агента
+- **Знание кодовой базы** — Файлы, паттерны, конвенции, на которые агент может ссылаться
+- **История разговора** — Что обсуждалось и было решено
+- **Выводы инструментов** — Результаты чтения файлов, выполнения команд, поисков
+- **Внешняя документация** — API-документация, спеки, требования
 
-**Prompts are just one piece.** The agent's entire context window determines output quality.
+**Промты — лишь одна часть.** Всё контекстное окно агента определяет качество вывода.
 
-### The context engineering workflow
+### Рабочий процесс контекстной инженерии
 
-**1. Curate what goes in**
+**1. Отбирайте, что войдёт**
 
-Not everything belongs in context. More isn't better—it's often worse. Irrelevant context dilutes signal and wastes tokens.
+Не всё принадлежит в контекст. Больше — не лучше — часто хуже. Нерелевантный контекст разбавляет сигнал и тратит токены.
 
-Ask: What does the agent _need_ to complete this task? Include that. Exclude everything else.
+Спросите: Что агенту **нужно** для выполнения этой задачи? Включите это. Исключите всё остальное.
 
-**2. Structure for retrieval**
+**2. Структурируйте для извлечения**
 
-Agents scan context looking for relevant information. Make it findable:
+Агенты сканируют контекст в поисках релевантной информации. Сделайте её находимой:
 
-- Use clear headings and sections
-- Put critical constraints early
-- Group related information together
-- Use consistent formatting
+- Используйте чёткие заголовки и секции
+- Помещайте критичные ограничения рано
+- Группируйте связанную информацию вместе
+- Используйте последовательное форматирование
 
-**3. Manage context lifecycle**
+**3. Управляйте жизненным циклом контекста**
 
-Context windows fill up. When they do, older content gets truncated—the agent literally forgets it.
+Контекстные окна заполняются. Когда это происходит, более старый контент обрезается — агент буквально забывает его.
 
-- Start fresh conversations for new tasks
-- Summarize long discussions before continuing
-- Re-state critical constraints when context is getting full
-- Use tools like AGENTS.md to persist important context across sessions
+- Начинайте свежие разговоры для новых задач
+- Суммаризируйте длинные обсуждения перед продолжением
+- Повторно формулируйте критичные ограничения, когда контекст заполняется
+- Используйте инструменты вроде AGENTS.md для сохранения важного контекста между сессиями
 
-### Practical context techniques
+### Практические техники работы с контекстом
 
-**Include relevant code, not all code.** If you're modifying a function, include that function and its direct dependencies. Don't dump the entire codebase.
+**Включайте релевантный код, не весь код.** Если модифицируете функцию, включите эту функцию и её прямые зависимости. Не сваливайте всю кодовую базу.
 
-**Provide examples of desired output.** Show the agent what good looks like. A single example often beats paragraphs of description.
+**Предоставляйте примеры желаемого вывода.** Покажите агенту, как выглядит хороший результат. Один пример часто лучше абзацев описания.
 
-**State constraints explicitly.** "Don't modify the public API" is context. "Follow the error handling pattern in auth.ts" is context. Make implicit knowledge explicit.
+**Формулируйте ограничения явно.** «Не меняй публичный API» — это контекст. «Следуй паттерну обработки ошибок в auth.ts» — это контекст. Делайте неявное знание явным.
 
-**Use documentation as context.** When working with unfamiliar APIs, paste relevant docs into the conversation. The agent can't hallucinate what's right in front of it.
+**Используйте документацию как контекст.** Работая с незнакомыми API, вставляйте релевантные документы в разговор. Агент не может галлюцинировать то, что прямо перед ним.
 
-**Leverage persistent context files.** AGENTS.md, README files, and similar documents provide context that persists across sessions. Keep them current.
+**Используйте персистентные файлы контекста.** AGENTS.md, README файлы и подобные документы предоставляют контекст, сохраняющийся между сессиями. Держите их актуальными.
 
-### Context anti-patterns
+### Антипаттерны контекста
 
-**Kitchen sink context** — Dumping everything "just in case." Dilutes signal, wastes tokens, confuses the agent.
+**Контекст-мусорка** — Сваливать всё «на всякий случай». Разбавляет сигнал, тратит токены, сбивает агента с толку.
 
-**Stale context** — Outdated documentation or code that contradicts current state. Leads to hallucinations and wrong assumptions.
+**Устаревший контекст** — Устаревшая документация или код, противоречащий текущему состоянию. Приводит к галлюцинациям и неверным предположениям.
 
-**Implicit context** — Assuming the agent knows things you haven't told it. Your mental model isn't in the context window.
+**Неявный контекст** — Предполагать, что агент знает то, что вы ему не сказали. Ваша ментальная модель не в контекстном окне.
 
-**Context fragmentation** — Spreading related information across many messages. Group related context together.
+**Фрагментация контекста** — Распространение связанной информации по множеству сообщений. Группируйте связанный контекст вместе.
 
-## Failure modes to watch
+## Режимы отказов, на которые стоит обратить внимание
 
-Agents fail in predictable ways. Learning these patterns helps you catch problems early.
+Агенты отказывают предсказуемым образом. Изучение этих паттернов помогает ловить проблемы рано.
 
-### Hallucinations
+### Галлюцинации
 
-Agents use APIs, methods, or parameters that don't exist. Code looks right but fails at runtime.
+Агенты используют API, методы или параметры, которые не существуют. Код выглядит правильно, но падает в рантайме.
 
-**Triggers:** Less popular libraries, recently changed APIs, domain-specific tools.
+**Триггеры:** Менее популярные библиотеки, недавно изменённые API, специфичные для предметной области инструменты.
 
-**Catch it:** Be suspicious of unfamiliar method names. Verify imports exist. Run the code—don't just read it.
+**Обнаружение:** Будьте подозрительны к незнакомым именам методов. Проверяйте существование импортов. Запускайте код — не просто читайте.
 
-**Prevent it:** Include relevant docs in your context. Use well-known patterns. Ask the agent to explain its reasoning.
+**Предотвращение:** Включайте релевантные документы в контекст. Используйте хорошо известные паттерны. Просите агента объяснить его рассуждения.
 
-### Drift
+### Дрифт
 
-The agent starts solving your problem but gradually shifts to a different, easier problem.
+Агент начинает решать вашу проблему, но постепенно смещается к другой, более лёгкой.
 
-**Triggers:** Long prompts with multiple objectives. Ambiguous requirements.
+**Триггеры:** Длинные промты с множеством целей. Неоднозначные требования.
 
-**Catch it:** Re-read the original requirement after each iteration. Ask: "Does this still address my actual problem?"
+**Обнаружение:** Перечитывайте исходное требование после каждой итерации. Спрашивайте: «Это всё ещё решает мою реальную проблему?»
 
-**Prevent it:** Break into smaller, focused pieces. State success criteria explicitly.
+**Предотвращение:** Разбивайте на более мелкие, сфокусированные части. Формулируйте критерии успеха явно.
 
-### Looping
+### Зацикливание
 
-The agent tries the same failing approach repeatedly with minor variations.
+Агент повторяет один и тот же неработающий подход с небольшими вариациями.
 
-**Triggers:** Errors the agent doesn't understand. Tasks beyond capability. Missing context.
+**Триггеры:** Ошибки, которые агент не понимает. Задачи за пределами возможностей. недостающий контекст.
 
-**Catch it:** Track iterations—if you're past 3-4, something's wrong.
+**Обнаружение:** Отслеживайте итерации — если их больше 3-4, что-то не так.
 
-**Prevent it:** Provide error context. Break out manually and try a different approach.
+**Предотвращение:** Предоставляйте контекст ошибки. Берите вручную и пробуйте другой подход.
 
-### Overconfidence
+### Переоценка
 
-The agent declares success when code doesn't work, or claims certainty about incorrect information.
+Агент объявляет успех, когда код не работает, или заявляет уверенность в неверной информации.
 
-**Catch it:** Never trust self-assessment. Run the code yourself. Write tests for actual requirements.
+**Обнаружение:** Никогда не доверяйте самооценке. Запускайте код сами. Пишите тесты для реальных требований.
 
-**Prevent it:** Ask how it verified correctness. Request specific edge case tests.
+**Предотвращение:** Спрашивайте, как он проверил корректность. Запрашивайте конкретные тесты граничных случаев.
 
-### Context overflow
+### Переполнение контекста
 
-Early context gets "forgotten" as conversations grow. Agent contradicts earlier decisions or ignores constraints.
+Ранний контекст «забывается» по мере роста разговора. Агент противоречит более ранним решениям или игнорирует ограничения.
 
-**Triggers:** Long conversations. Large codebases in context. Complex multi-step tasks.
+**Триггеры:** Длинные разговоры. Большие кодовые базы в контексте. Сложные многошаговые задачи.
 
-**Catch it:** Watch for inconsistencies. Notice when agent asks for info you already provided.
+**Обнаружение:** Следите за несоответствиями. Замечайте, когда агент спрашивает информацию, которую вы уже давали.
 
-**Prevent it:** Keep conversations focused and short. Start fresh for new tasks. Re-state critical context.
+**Предотвращение:** Держите разговоры сфокусированными и короткими. Начинайте заново для новых задач. Повторяйте критичный контекст.
 
-### Plausible nonsense
+### Правдоподобная чушь
 
-Code looks sophisticated but fundamentally misunderstands the problem or domain.
+Код выглядит изощрённо, но фундаментально не понимает проблему или предметную область.
 
-**Catch it:** Trace logic mentally—does it make sense? Get domain expert review.
+**Обнаружение:** Трассируйте логику мысленно — имеет ли это смысл? Получите ревью от эксперта предметной области.
 
-**Prevent it:** Provide domain context explicitly. Include examples of correct solutions.
+**Предотвращение:** Предоставляйте контекст предметной области явно. Включайте примеры корректных решений.
 
-## Building AI-compatible code
+## Создание AI-совместимого кода
 
-The same patterns that help new developers help agents: clear structure, explicit types, good documentation, consistent patterns.
+Те же паттерны, которые помогают новым разработчикам, помогают агентам: чёткая структура, явные типы, хорошая документация, последовательные паттерны.
 
-### Structure
+### Структура
 
-**Keep files focused.** One concept per file. Agents request specific files—make those requests useful.
+**Держите файлы сфокусированными.** Одна концепция на файл. Агенты запрашивают конкретные файлы — делайте эти запросы полезными.
 
-**Use descriptive names.** `UserAuthenticationService.ts` beats `uas.ts`. Agents infer purpose from names.
+**Используйте описательные имена.** `UserAuthenticationService.ts` лучше чем `uas.ts`. Агенты делают вывод о назначении из имён.
 
-**Flatten when possible.** Deep nesting forces agents to understand hierarchy.
+**Разворачивайте где возможно.** Глубокая вложенность заставляет агентов понимать иерархию.
 
-**Keep functions short.** Under 50 lines. Single responsibility. Clear inputs and outputs.
+**Держите функции короткими.** До 50 строк. Единая ответственность. Чёткие входы и выходы.
 
-### Types and contracts
+### Типы и контракты
 
-**Use types generously.** TypeScript, Python type hints. Types are machine-readable documentation.
+**Используйте типы щедро.** TypeScript, type hints в Python. Типы — это машиночитаемая документация.
 
 ```typescript
-// Harder for agents
+// Сложнее для агентов
 function process(data) {
-  /* what's data? */
+  /* что такое data? */
 }
 
-// Easier for agents
+// Легче для агентов
 function processOrder(order: Order): ProcessedResult {
-  /* clear context */
+  /* чёткий контекст */
 }
 ```
 
-**Define interfaces at boundaries.** Explicit interfaces prevent integration bugs.
+**Определяйте интерфейсы на границах.** Явные интерфейсы предотвращают ошибки интеграции.
 
-**Avoid any/unknown.** More type information enables better inference.
+**Избегайте any/unknown.** Больше информации о типах позволяет лучше делать выводы.
 
-### Documentation
+### Документация
 
-**Document the "why," not the "what."** Agents read what code does. They can't read your mind.
+**Документируйте «почему», не «что».** Агенты читают, что код делает. Они не могут прочитать ваши мысли.
 
 ```typescript
-// Less useful
-// This function calculates the discount
+// Менее полезно
+// Эта функция вычисляет скидку
 function calculateDiscount(order: Order): number;
 
-// More useful
-// Business rule: Premium customers get 10% off orders over $100
-// This discount stacks with promotional codes
+// Более полезно
+// Бизнес-правило: Премиум-клиенты получают 10% скидку на заказы от $100
+// Эта скидка суммируется с промо-кодами
 function calculateDiscount(order: Order): number;
 ```
 
-**Keep READMEs current.** Agents often start by reading them. Outdated docs mislead.
+**Держите README актуальными.** Агенты часто начинают с их чтения. Устаревшая документация вводит в заблуждение.
 
-**Document non-obvious constraints.** Rate limits, known limitations, things that "just work that way."
+**Документируйте неочевидные ограничения.** Rate limits, известные ограничения, вещи, которые «просто так работают».
 
-### Testing
+### Тестирование
 
-**Write tests as specification.** Tests tell agents what code should do.
+**Пишите тесты как спецификацию.** Тесты говорят агентам, что код должен делать.
 
-**Keep tests fast.** Agents run tests frequently. Slow tests break feedback loops.
+**Держите тесты быстрыми.** Агенты запускают тесты часто. Медленные тесты ломают циклы обратной связи.
 
-**Test edge cases explicitly.** Tests covering edges tell agents about edges they might miss.
+**Тестируйте граничные случаи явно.** Тесты, покрывающие края, сообщают агентам о краях, которые они могут пропустить.
 
-**Use descriptive names.** `test_user_creation_fails_with_duplicate_email` beats `test_user_3`.
+**Используйте описательные имена.** `test_user_creation_fails_with_duplicate_email` лучше чем `test_user_3`.
 
-### Patterns to avoid
+### Паттерны, которых стоит избегать
 
-- **Magic and metaprogramming** — Dynamic method generation, heavy reflection confuse agents
-- **Implicit dependencies** — Service locators, ambient context hide needed information
-- **Circular dependencies** — Confuse agents about what depends on what
-- **Inconsistent patterns** — If you do the same thing three ways, agents won't know which to follow
+- **Магия и метапрограммирование** — Динамическая генерация методов, heavy reflection сбивают агентов с толку
+- **Неявные зависимости** — Service locators, ambient context скрывают нужную информацию
+- **Циклические зависимости** — Сбивают агентов с толку относительно того, что от чего зависит
+- **Непоследовательные паттерны** — Если вы делаете одно и то же тремя способами, агенты не будут знать, какому следовать
 
-## Incremental improvement
+## Инкрементальное улучшение
 
-You don't need to rewrite everything. As you touch code:
+Не нужно переписывать всё. Касаясь кода:
 
-- Improve the file you're modifying
-- Add types where you add code
-- Write a test when you fix a bug
-- Update docs when you discover they're wrong
+- Улучшайте файл, который модифицируете
+- Добавляйте типы там, где добавляете код
+- Пишите тест, когда исправляете баг
+- Обновляйте документы, когда обнаруживаете, что они неверны
 
-Over time, the codebase becomes more agent-friendly—and more human-friendly.
+Со временем кодовая база становится более дружелюбной к агентам — и более дружелюбной к людям.
 
-## Resources
+## Ресурсы
 
-### Context engineering
+### Контекстная инженерия
 
-- [Context Engineering for AI Agents – Tobi Lutke](https://x.com/tolobi/status/1935533391175041359) - Shopify CEO on why context engineering is the new skill
-- [Context Engineering – Andrej Karpathy](https://x.com/karpathy/status/1937902205765607626) - "Prompt engineering is dead, context engineering is king"
-- [AGENTS.md](https://agents.md/) - Open format for persistent agent context, used by 60k+ open-source projects
+- [Context Engineering for AI Agents – Tobi Lutke](https://x.com/tolobi/status/1935533391175041359) - CEO Shopify о том, почему контекстная инженерия — новый навык
+- [Context Engineering – Andrej Karpathy](https://x.com/karpathy/status/1937902205765607626) - «Промт-инженерия мертва, контекстная инженерия — король»
+- [AGENTS.md](https://agents.md/) - Открытый формат для персистентного контекста агентов, используется в 60k+ open-source проектах
 
-### Failure modes and recovery
+### Режимы отказов и восстановление
 
-- ["I shipped code I don't understand" – Jake Nations, Netflix](https://www.youtube.com/watch?v=eIoohUmYpGI) - The "Infinite Software Crisis" and how to avoid it
-- [Agent Readiness – Eno Reyes, Factory AI](https://www.youtube.com/watch?v=ShuJ_CN6zr4) - Eight categories for agent-ready codebases
+- ["I shipped code I don't understand" – Jake Nations, Netflix](https://www.youtube.com/watch?v=eIoohUmYpGI) - «Бесконечный кризис ПО» и как его избежать
+- [Agent Readiness – Eno Reyes, Factory AI](https://www.youtube.com/watch?v=ShuJ_CN6zr4) - Восемь категорий для AI-готовых кодовых баз
 
-### Deep dives
+### Углублённые
 
-- [No Vibes Allowed – Dex Horthy, HumanLayer](https://www.youtube.com/watch?v=rmvDxxNubIg) - Making agents work in 300k LOC codebases
-- [RepoCoder: Repository-Level Code Completion](https://arxiv.org/abs/2303.12570) - Framework for leveraging repository context
+- [No Vibes Allowed – Dex Horthy, HumanLayer](https://www.youtube.com/watch?v=rmvDxxNubIg) - Заставляем агентов работать в кодовых базах с 300k LOC
+- [RepoCoder: Repository-Level Code Completion](https://arxiv.org/abs/2303.12570) - Фреймворк для использования контекста репозитория

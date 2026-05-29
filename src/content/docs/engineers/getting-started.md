@@ -1,108 +1,108 @@
 ---
-title: Getting Started with Agentic Tools
-description: Your first steps into AI-assisted development and when to delegate
+title: Начало работы с агентными инструментами
+description: Первые шаги в AI-сопровождаемой разработке и когда делегировать
 sidebar:
   order: 1
 ---
 
-Pick one tool and learn it well before trying everything.
+Выберите один инструмент и хорошо его изучите, прежде чем пробовать всё.
 
-## Choose your first tool
+## Выберите первый инструмент
 
-**New to AI coding?** Start with GitHub Copilot or similar. Low risk, immediate value.
+**Впервые работаете с AI-кодингом?** Начните с GitHub Copilot или аналога. Низкий риск, немедленная польза.
 
-**Ready for more autonomy?** Try a task-level agent like Cursor, Cline, or Kilo Code for multi-file changes.
+**Готовы к большей автономии?** Попробуйте агента уровня задач, такого как Cursor, Cline или Kilo Code для изменений в нескольких файлах.
 
-**Exploring?** Most tools have free tiers. Try a few, commit to one for deep learning.
+**Исследуете?** У большинства инструментов есть бесплатные тарифы. Попробуйте несколько, остановитесь на одном для глубокого изучения.
 
-## Your first session
+## Первая сессия
 
-Start small—don't generate your whole project.
+Начните с малого — не генерируйте весь проект.
 
-**Good first tasks:**
+**Хорошие первые задачи:**
 
-- Generate a single function from a clear description
-- Write tests for existing code
-- Add documentation to confusing code
-- Refactor a small, messy piece
+- Сгенерировать одну функцию по чёткому описанию
+- Написать тесты для существующего кода
+- Добавить документацию к запутанному коду
+- Рефакторить маленький, беспорядочный кусок
 
-**Watch how it works:** Notice what context it uses, how it handles ambiguity, where it makes mistakes.
+**Наблюдайте, как это работает:** Замечайте, какой контекст используется, как обрабатывается неоднозначность, где делаются ошибки.
 
-## Build prompting intuition
+## Развивайте интуицию промтинга
 
-**Be explicit:** Instead of "fix this bug," try "The function `calculateTotal` returns NaN when items array is empty. Add a check that returns 0."
+**Будьте явными:** Вместо «исправь этот баг» попробуйте «Функция `calculateTotal` возвращает NaN, когда массив items пуст. Добавьте проверку, возвращающую 0.»
 
-**Provide context:** "This is a React component using TypeScript. Follow the pattern in other components in this folder."
+**Предоставляйте контекст:** «Это React-компонент на TypeScript. Следуй паттерну других компонентов в этой папке.»
 
-**Set constraints:** "Don't modify the public API. Keep backward compatibility."
+**Устанавливайте ограничения:** «Не меняй публичный API. Сохрани обратную совместимость.»
 
-## When to delegate
+## Когда делегировать
 
-Not every task should go to an agent. Ask yourself:
+Не каждую задачу стоит отдавать агенту. Спросите себя:
 
-1. **How clear is the task?** Vague tasks fail. Clear tasks succeed.
-2. **How much context is needed?** Deep domain knowledge is risky to delegate.
-3. **What's the blast radius?** Mistakes in critical paths cost more to fix.
-4. **How long would I take?** If it's 5 minutes manually, prompting might not be worth it.
+1. **Насколько задача ясна?** Расплывчатые задачи проваливаются. Чёткие — succeed.
+2. **Сколько контекста нужно?** Глубокие знания предметной области рискованно делегировать.
+3. **Каков радиус поражения?** Ошибки на критических путях дороже исправлять.
+4. **Сколько времени это займёт?** Если вручную 5 минут, промтинг может не стоить усилий.
 
-### Good candidates
+### Хорошие кандидаты
 
-| Task type                            | Why it works                                       |
+| Тип задачи                            | Почему работает                                    |
 | ------------------------------------ | -------------------------------------------------- |
-| **Boilerplate** (CRUD, DTOs, config) | Repetitive, well-defined, low-risk                 |
-| **Tests**                            | Self-validating—you know immediately if they work  |
-| **Documentation**                    | Easy to verify accuracy                            |
-| **Mechanical refactoring**           | Renaming, extracting functions, syntax conversions |
-| **Bug fixes with clear repro**       | "When X happens, Y occurs, but should be Z"        |
+| **Шаблонный код** (CRUD, DTO, конфиг) | Повторяющийся, хорошо определённый, низкий риск    |
+| **Тесты**                            | Самопроверяющиеся — вы сразу знаете, работают ли   |
+| **Документация**                    | Легко проверить точность                          |
+| **Механический рефакторинг**          | Переименование, извлечение функций, конверсия синтаксиса |
+| **Исправление багов с чётким воспроизведением** | «Когда происходит X, получается Y, но должно быть Z» |
 
-### Keep for yourself
+### Оставьте себе
 
-- **Architectural decisions** — Agents don't understand your system's history or future
-- **Security-sensitive code** — Cost of subtle errors is too high
-- **Performance-critical paths** — Agents optimize for correctness, not speed
-- **Novel algorithms** — Agents pattern-match; new problems need human creativity
-- **Ambiguous requirements** — Clarify before delegating
+- **Архитектурные решения** — Агенты не понимают историю и будущее вашей системы
+- **Код, связанный с безопасностью** — Стоимость тонких ошибок слишком высока
+- **Критичные по производительности участки** — Агенты оптимизируют корректность, не скорость
+- **Новые алгоритмы** — Агенты ищут паттерны; новые проблемы требуют человеческой креативности
+- **Неоднозначные требования** — Уточните перед делегированием
 
-### The gray zone
+### Серые зоны
 
-For tasks that don't fit cleanly: **start with the agent, prepare to take over.** Get initial structure from the agent, then refine manually.
+Для задач, которые не вписываются чётко: **начните с агента, будьте готовы перехватить.** Получите от агента начальную структуру, затем доработайте вручную.
 
-## Build habits
+## Выработайте привычки
 
-**Week 1:** Boilerplate and tests only  
-**Week 2:** Add documentation and refactoring  
-**Week 3:** Feature implementation with clear specs  
-**Week 4:** Complex, multi-step tasks
+**Неделя 1:** Только шаблонный код и тесты
+**Неделя 2:** Добавьте документацию и рефакторинг
+**Неделя 3:** Реализация фич с чёткими спецификациями
+**Неделя 4:** Сложные, многошаговые задачи
 
-## Know when to stop
+## Знайте, когда остановиться
 
-Signs you should code it yourself:
+Признаки того, что стоит написать самому:
 
-- You've reprompted 3+ times without progress
-- The task requires deep context the agent doesn't have
-- You could finish manually in the time spent prompting
+- Вы перепромтили 3+ раз без прогресса
+- Задача требует глубокого контекста, которого у агента нет
+- Вы бы закончили вручную быстрее, чем потратили на промтинг
 
-There's no shame in manual coding. The goal is productivity, not agent usage.
+В написании кода вручную нет ничего постыдного. Цель — продуктивность, а не использование агента.
 
-## Resources
+## Ресурсы
 
-### Essential
+### Основные
 
-- [Research → Plan → Implement Framework](https://www.alexkurkin.com/guides/claude-code-framework) - Systematic approach to AI-assisted development
-- [AGENTS.md](https://agents.md/) - Open format for guiding agents, used by 60k+ projects
-- [The Minimum Every Developer Must Know About AI Models](https://blog.kilo.ai/p/minimum-every-developer-must-know-about-ai-models) - Baseline knowledge to avoid breaking things
+- [Research → Plan → Implement Framework](https://www.alexkurkin.com/guides/claude-code-framework) - Систематический подход к AI-сопровождаемой разработке
+- [AGENTS.md](https://agents.md/) - Открытый формат для направления агентов, используется в 60k+ проектах
+- [The Minimum Every Developer Must Know About AI Models](https://blog.kilo.ai/p/minimum-every-developer-must-know-about-ai-models) - Базовые знания, чтобы не сломать ничего
 
-### Deep dives
+### Углублённые
 
-- [AI Engineering at Jane Street – John Crepezzi](https://www.youtube.com/watch?v=0ML7ZLMdcl4) - Building custom AI tools for specialized languages
-- [What is Model Context Protocol (MCP)](https://modelcontextprotocol.io/docs/getting-started/intro) - The standard for AI integrations
-- [Code research projects with async coding agents](https://simonwillison.net/2025/Nov/6/async-code-research/) - Practical pattern for asynchronous agent research
+- [AI Engineering at Jane Street – John Crepezzi](https://www.youtube.com/watch?v=0ML7ZLMdcl4) - Создание кастомных AI-инструментов для специализированных языков
+- [What is Model Context Protocol (MCP)](https://modelcontextprotocol.io/docs/getting-started/intro) - Стандарт для AI-интеграций
+- [Code research projects with async coding agents](https://simonwillison.net/2025/Nov/6/async-code-research/) - Практический паттерн для асинхронного агентного исследования
 
-### Courses
+### Курсы
 
-- [Prompt Engineering Specialization – Vanderbilt University](https://www.coursera.org/specializations/prompt-engineering) - Comprehensive prompt engineering course
-- [Understanding Prompt Engineering – DataCamp](https://www.datacamp.com/courses/understanding-prompt-engineering) - Beginner prompt engineering fundamentals
+- [Prompt Engineering Specialization – Vanderbilt University](https://www.coursera.org/specializations/prompt-engineering) - Комплексный курс по промтингу
+- [Understanding Prompt Engineering – DataCamp](https://www.datacamp.com/courses/understanding-prompt-engineering) - Основы промтинга для начинающих
 
 ---
 
-**Found a resource that helped you get started?** [Add it to this page](/community/contributing/)—your recommendation might be exactly what someone else needs.
+**Нашли ресурс, который помог вам начать?** [Добавьте его на эту страницу](/community/contributing/) — ваша рекомендация может быть именно тем, что нужно другому.

@@ -1,154 +1,154 @@
 ---
-title: Working with Agents
-description: Task decomposition and validating output
+title: Работа с агентами
+description: Декомпозиция задач и валидация результатов
 sidebar:
   order: 2
 ---
 
-The biggest mistake new agentic engineers make: asking for too much at once.
+Главная ошибка начинающих агентных инженеров: запрашивать слишком много за раз.
 
-## Why decomposition matters
+## Почему декомпозиция важна
 
-Agents work best with bounded, clear tasks. When you ask for too much:
+Агенты лучше всего работают с ограниченными, чёткими задачами. Когда вы запрашиваете слишком много:
 
-- Context overflows and early details get lost
-- Errors compound as later steps build on earlier mistakes
-- Recovery from failures wastes everything before
+- Контекст переполняется, и ранние детали теряются
+- Ошибки накапливаются, поскольку последующие шаги строятся на ранних ошибках
+- Восстановление после сбоев тратит всё, что было сделано до
 
-Small tasks mean faster feedback, easier debugging, better results.
+Маленькие задачи означают более быструю обратную связь, проще отладку, лучшие результаты.
 
-## The three-part rule
+## Правило трёх частей
 
-Before prompting, ask: Can I describe this in three parts?
+Перед промтом спросите: Могу ли я описать это в трёх частях?
 
-1. **What** — The specific outcome I want
-2. **Where** — Which files/functions to touch
-3. **Constraints** — What not to change
+1. **Что** — Конкретный результат, который я хочу
+2. **Где** — Какие файлы/функции затронуть
+3. **Ограничения** — Что не менять
 
-If you can't articulate all three, the task is probably too big.
+Если вы не можете сформулировать все три, задача, вероятно, слишком большая.
 
-## Decomposition strategies
+## Стратегии декомпозиции
 
-### Vertical slicing
+### Вертикальное разрезание
 
-Cut by feature path, not technical layer.
+Режьте по пути фичи, а не по техническому слою.
 
-**Instead of:**
+**Вместо:**
 
-- "Create the database schema"
-- "Build the API endpoints"
-- "Create the frontend forms"
+- «Создать схему базы данных»
+- «Построить API-эндпоинты»
+- «Создать фронтенд-формы»
 
-**Try:**
+**Попробуйте:**
 
-- "Create user creation flow: schema, endpoint, and basic form"
-- "Add user editing: update endpoint and form"
-- "Add user deletion: endpoint with confirmation"
+- «Создать поток создания пользователя: схема, эндпоинт и базовая форма»
+- «Добавить редактирование пользователя: эндпоинт обновления и форма»
+- «Добавить удаление пользователя: эндпоинт с подтверждением»
 
-Each slice is complete and testable.
+Каждый срез закончен и тестируем.
 
-### Dependency ordering
+### Порядок по зависимостям
 
-When tasks have dependencies, make them explicit:
+Когда у задач есть зависимости, сделайте их явными:
 
-1. Define the data model types (no external deps)
-2. Build the storage layer (depends on types)
-3. Create the API (depends on storage)
-4. Build the UI (depends on API)
+1. Определите типы модели данных (без внешних зависимостей)
+2. Постройте слой хранилища (зависит от типов)
+3. Создайте API (зависит от хранилища)
+4. Постройте UI (зависит от API)
 
-Each step should work in isolation before moving on.
+Каждый шаг должен работать изолированно, прежде чем переходить к следующему.
 
-## Sizing tasks
+## Размер задач
 
-**Too small:** "Add a semicolon to line 47" — faster to do yourself
+**Слишком маленькая:** «Добавь точку с запятой в строке 47» — быстрее сделать самому
 
-**Too big:** "Build the authentication system" — too many decisions
+**Слишком большая:** «Построй систему аутентификации» — слишком много решений
 
-**Just right:** "Create a login form that posts to /api/auth/login and stores the token in localStorage" — clear scope, testable result
+**В самый раз:** «Создай форму логина, которая отправляет POST на /api/auth/login и сохраняет токен в localStorage» — чёткая область, тестируемый результат
 
-## The prompt template
+## Шаблон промта
 
 ```
-Task: [What you want done]
+Задача: [Что нужно сделать]
 
-Context:
-- [Relevant background]
-- [Related files or patterns to follow]
+Контекст:
+- [Релевантный фон]
+- [Связанные файлы или паттерны для следования]
 
-Constraints:
-- [What not to change]
-- [Patterns to follow]
+Ограничения:
+- [Что не менять]
+- [Паттерны для следования]
 
-Success criteria:
-- [How you'll know it's done]
+Критерии успеха:
+- [Как вы поймёте, что готово]
 ```
 
-## Validating output
+## Валидация результатов
 
-Agent output looks plausible. That's the danger. Treat agent code like code from a talented junior: probably works for the happy path, might miss edge cases, may not follow your conventions.
+Результат агента выглядит правдоподобно. В этом и опасность. Относитесь к коду агента как к коду от талантливого junior: скорее всего работает для happy path, может пропустить граничные случаи, может не следовать вашим конвенциям.
 
-### Validation checklist
+### Чеклист валидации
 
-**1. Does it solve the problem?**
-Read the code—don't just run it. Does it address the actual requirement, not just the prompt?
+**1. Решает ли это проблему?**
+Прочитайте код — не просто запускайте. Адресует ли он реальное требование, а не только промт?
 
-**2. Check the edges:**
+**2. Проверьте края:**
 
-- Empty inputs
-- Null/undefined values
-- Boundary conditions (off-by-one, max values)
-- Error cases
-- Concurrent access
+- Пустые входные данные
+- Null/undefined значения
+- Граничные условия (off-by-one, макс. значения)
+- Случаи ошибок
+- Параллельный доступ
 
-**3. Look for hallucinations:**
+**3. Ищите галлюцинации:**
 
-- API methods that don't exist
-- Parameters that don't work as assumed
-- Functions called with wrong signatures
+- API-методы, которые не существуют
+- Параметры, которые работают не так, как предполагалось
+- Функции, вызванные с неправильными сигнатурами
 
-If something's unfamiliar, verify it exists.
+Если что-то незнакомо — проверьте, существует ли это.
 
-**4. Security review:**
+**4. Проверка безопасности:**
 
-- Input validation present?
-- No SQL/command injection?
-- Auth/authorization checked?
-- Sensitive data not logged?
-- No hardcoded secrets?
+- Есть валидация входных данных?
+- Нет SQL/command injection?
+- Проверка auth/authorization?
+- sensitive данные не логируются?
+- Нет захардкоженных секретов?
 
-**5. Style and conventions:**
+**5. Стиль и конвенции:**
 
-- Follows existing patterns?
-- Names clear and consistent?
-- Error messages helpful?
+- Следует существующим паттернам?
+- Имена понятные и последовательные?
+- Сообщения об ошибках полезны?
 
-### When to reject
+### Когда отклонять
 
-**Reject when:**
+**Отклоняйте, когда:**
 
-- Approach is fundamentally wrong (even if it works)
-- Too much refactoring needed to meet standards
-- Security issues requiring redesign
+- Подход принципиально неверен (даже если работает)
+- Нужно слишком много рефакторинга для соответствия стандартам
+- Проблемы с безопасностью, требующие переработки
 
-**Accept with modifications when:**
+**Принимайте с модификациями, когда:**
 
-- Logic sound but style needs adjustment
-- Minor edge case handling needed
+- Логика верна, но нужен стилистический рефакторинг
+- Нужна обработка мелких граничных случаев
 
-**Accept as-is when:**
+**Принимайте как есть, когда:**
 
-- Meets requirements, handles edges, follows conventions, passes security check
+- Удовлетворяет требованиям, обрабатывает края, следует конвенциям, проходит проверку безопасности
 
-## Resources
+## Ресурсы
 
-### Essential
+### Основные
 
-- [Embracing the parallel coding agent lifestyle](https://simonwillison.net/2025/Oct/5/parallel-coding-agents/) - Running multiple agents simultaneously
-- [Spec-Driven Development – Al Harris, Amazon Kiro](https://www.youtube.com/watch?v=HY_JyxAZsiE) - How specs enable reproducible AI delivery
-- [Your job is to deliver code you have proven to work](https://simonwillison.net/2025/Dec/18/code-proven-to-work/) - Why testing AI code is non-negotiable
+- [Embracing the parallel coding agent lifestyle](https://simonwillison.net/2025/Oct/5/parallel-coding-agents/) - Запуск нескольких агентов одновременно
+- [Spec-Driven Development – Al Harris, Amazon Kiro](https://www.youtube.com/watch?v=HY_JyxAZsiE) - Как спеки позволяют воспроизводимую AI-доставку
+- [Your job is to deliver code you have proven to work](https://simonwillison.net/2025/Dec/18/code-proven-to-work/) - Почему тестирование AI-кода обязательно
 
-### Deep dives
+### Углублённые
 
-- [Spec Kit](https://github.com/github/spec-kit) - GitHub's framework for spec-driven development
-- ["I shipped code I don't understand" – Jake Nations, Netflix](https://www.youtube.com/watch?v=eIoohUmYpGI) - Three-phase methodology to avoid "vibecoding to disaster"
-- [No Vibes Allowed – Dex Horthy, HumanLayer](https://www.youtube.com/watch?v=rmvDxxNubIg) - Frequent intentional compaction for large codebases
+- [Spec Kit](https://github.com/github/spec-kit) - Фреймворк GitHub для spec-driven development
+- ["I shipped code I don't understand" – Jake Nations, Netflix](https://www.youtube.com/watch?v=eIoohUmYpGI) - Трёхфазная методология, чтобы избежать «vibecoding to disaster»
+- [No Vibes Allowed – Dex Horthy, HumanLayer](https://www.youtube.com/watch?v=rmvDxxNubIg) - Частая осознанная декомпозиция для больших кодовых баз
