@@ -180,11 +180,7 @@ export default defineConfig({
       editLink: {
         baseUrl: "https://github.com/Kilo-Org/agentic-path/edit/main/",
       },
-      defaultLocale: "en",
-      locales: {
-        en: { label: "English", lang: "en" },
-        ru: { label: "Русский", lang: "ru", sidebar: ruSidebar },
-      },
+      sidebar: ruSidebar,
     }),
     sitemap(),
   ],
