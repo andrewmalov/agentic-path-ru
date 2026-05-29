@@ -1,143 +1,143 @@
 ---
-title: Glossary
-description: Key terms in agentic engineering
+title: Глоссарий
+description: Ключевые термины в агентной инженерии
 sidebar:
   order: 1
 ---
 
-A reference for terminology used throughout this guide and in the broader agentic engineering ecosystem.
+Справочник терминологии, используемой в этом руководстве и в более широкой экосистеме агентной инженерии.
 
 ## A
 
-**Agent**
-An AI system capable of taking actions in an environment. Unlike chatbots that only generate text, agents can read/write files, execute commands, and interact with systems.
+**Agent (Агент)**
+AI-система, способная выполнять действия в окружении. В отличие от чат-ботов, которые только генерируют текст, агенты могут читать/писать файлы, выполнять команды и взаимодействовать с системами.
 
-**Agentic engineering**
-The discipline of building software primarily by orchestrating AI agents rather than writing code directly.
+**Agentic engineering (Агентная инженерия)**
+Дисциплина создания программного обеспечения в основном путём оркестрации AI-агентов, а не прямого написания кода.
 
-**Agentic workflow**
-A development process where AI agents handle significant portions of implementation, with human oversight and direction.
+**Agentic workflow (Агентный рабочий процесс)**
+Процесс разработки, где AI-агенты обрабатывают значительные части реализации, с человеческим надзором и направлением.
 
-**Autonomy**
-The degree to which an agent operates independently. Higher autonomy means less human intervention required.
+**Autonomy (Автономия)**
+Степень, в которой агент работает независимо. Более высокая автономия означает меньше требуемого человеческого вмешательства.
 
-**Acceptance rate**
-The percentage of agent-generated suggestions accepted without modification.
+**Acceptance rate (Коэффициент принятия)**
+Процент предложений агента, принятых без изменений.
 
 ## C
 
-**Chain-of-thought (CoT)**
-A prompting technique where the model shows its reasoning step-by-step, often improving accuracy.
+**Chain-of-thought (CoT) (Цепочка мысли)**
+Техника промптинга, при которой модель демонстрирует свои рассуждения шаг за шагом, часто улучшая точность.
 
-**Context engineering**
-The discipline of providing AI agents with the right information at the right time. Goes beyond prompt engineering to encompass the entire system of what an agent knows when making decisions—including system instructions, codebase knowledge, conversation history, tool outputs, and external documentation.
+**Context engineering (Контекстная инженерия)**
+Дисциплина предоставления AI-агентам правильной информации в правильное время. Выходит за рамки промптинга и охватывает всю систему того, что агент знает при принятии решений — включая системные инструкции, знания о кодовой базе, историю диалога, выводы инструментов и внешнюю документацию.
 
-**Context window**
-The maximum amount of text (measured in tokens) that a model can process at once.
+**Context window (Контекстное окно)**
+Максимальный объём текста (измеряемый в токенах), который модель может обработать за один раз.
 
-**Copilot**
-A category of AI coding assistants that provide suggestions and completions within development environments. Originally a GitHub product name, now often used generically.
+**Copilot (Копайлот)**
+Категория AI-помощников по кодингу, которые предоставляют предложения и автодополнения в средах разработки. Изначально название продукта GitHub, теперь часто используется обобщённо.
 
 ## D
 
-**Decomposition**
-Breaking a complex task into smaller, agent-manageable pieces.
+**Decomposition (Декомпозиция)**
+Разбиение сложной задачи на меньшие части, с которыми может справиться агент.
 
-**Drift**
-When an agent gradually moves away from the original task objective during multi-step execution.
+**Drift (Дрейф)**
+Когда агент постепенно отклоняется от исходной цели задачи во время многошагового выполнения.
 
 ## F
 
-**Few-shot prompting**
-Including examples in a prompt to demonstrate the desired output format or behavior.
+**Few-shot prompting (Промптинг с несколькими примерами)**
+Включение примеров в промпт для демонстрации желаемого формата вывода или поведения.
 
-**Fine-tuning**
-Training a model on specific data to specialize its behavior for particular tasks or domains.
+**Fine-tuning (Тонкая настройка)**
+Обучение модели на специфических данных для специализации её поведения для конкретных задач или доменов.
 
 ## G
 
-**Guardrails**
-Rules or checks that prevent agents from taking harmful or unauthorized actions.
+**Guardrails (Ограждения)**
+Правила или проверки, которые предотвращают действия агентов, которые могут быть вредными или неавторизованными.
 
 ## H
 
-**Hallucination**
-When a model generates plausible-sounding but incorrect information, such as non-existent APIs or functions.
+**Hallucination (Галлюцинация)**
+Когда модель генерирует правдоподобно звучащую, но неверную информацию, такую как несуществующие API или функции.
 
-**Human-in-the-loop (HITL)**
-A design pattern where humans review and approve agent actions at key points.
+**Human-in-the-loop (HITL) (Человек в цикле)**
+Паттерн проектирования, при котором люди проверяют и одобряют действия агентов в ключевых точках.
 
 ## I
 
-**Inference**
-The process of generating output from a model. Running inference = asking the model to respond.
+**Inference (Инференс)**
+Процесс генерации вывода из модели. Запуск инференса = запрос ответа модели.
 
-**Iteration count**
-The number of prompt-response cycles needed to complete a task.
+**Iteration count (Счётчик итераций)**
+Количество циклов промпт-ответ, необходимых для выполнения задачи.
 
 ## L
 
-**Large Language Model (LLM)**
-The neural network (like GPT-4, Claude, Gemini) that powers most AI agents. Trained on massive text corpora.
+**Large Language Model (LLM) (Большая языковая модель)**
+Нейронная сеть (как GPT-4, Claude, Gemini), которая питает большинство AI-агентов. Обучена на огромных корпусах текста.
 
-**Looping**
-When an agent gets stuck repeating the same failed approach.
+**Looping (Зацикливание)**
+Когда агент застревает, повторяя один и тот же неудачный подход.
 
 ## M
 
-**Multi-agent system**
-Multiple specialized agents collaborating to complete complex tasks.
+**Multi-agent system (Мультиагентная система)**
+Несколько специализированных агентов, сотрудничающих для выполнения сложных задач.
 
 ## O
 
-**Outcome Engineering (o16g)**
-A development philosophy that reorients work around outcomes rather than code. Core tenets: manage to cost (tokens) instead of capacity (engineer-hours), measure success by verified impact rather than lines written, and treat the backlog as a relic of human limitation. See the [o16g Manifesto](https://o16g.com/).
+**Outcome Engineering (o16g) (Инженерия результатов)**
+Философия разработки, переориентирующая работу вокруг результатов, а не кода. Основные тезисы: управляйте стоимостью (токенами), а не мощностью (человеко-часами), измеряйте успех проверенным влиянием, а не строками кода, и рассматривайте бэклог как пережиток человеческих ограничений. См. [Манифест o16g](https://o16g.com/).
 
 ## P
 
-**Prompt**
-The input given to an agent or model, including instructions, context, and constraints.
+**Prompt (Промпт)**
+Входные данные, данные агенту или модели, включая инструкции, контекст и ограничения.
 
-**Prompt engineering**
-The practice of crafting effective prompts to get desired outputs from AI models.
+**Prompt engineering (Промпт-инженерия)**
+Практика создания эффективных промптов для получения желаемых выводов от AI-моделей.
 
 ## R
 
-**ReAct (Reason + Act)**
-A pattern where agents alternate between reasoning about what to do and taking actions. Foundation of most agentic systems.
+**ReAct (Reason + Act) (Разум + Действие)**
+Паттерн, при котором агенты чередуются между рассуждениями о том, что делать, и действиями. Основа большинства агентных систем.
 
 **RAG (Retrieval Augmented Generation)**
-A technique where relevant information is retrieved and added to prompts to improve response accuracy.
+Техника, при которой релевантная информация извлекается и добавляется к промптам для улучшения точности ответов.
 
 ## S
 
-**Scaffolding**
-Providing structure, examples, or constraints to guide agent behavior.
+**Scaffolding (Каркас)**
+Предоставление структуры, примеров или ограничений для направления поведения агента.
 
-**System prompt**
-Background instructions that set an agent's behavior, usually hidden from users.
+**System prompt (Системный промпт)**
+Фоновые инструкции, задающие поведение агента, обычно скрытые от пользователей.
 
 ## T
 
-**Task decomposition**
-Breaking a large task into smaller, independently completable subtasks.
+**Task decomposition (Декомпозиция задачи)**
+Разбиение большой задачи на меньшие, независимо выполнимые подзадачи.
 
-**Token**
-A chunk of text processed by a model. Roughly 4 characters in English. Models process tokens, not characters.
+**Token (Токен)**
+Фрагмент текста, обрабатываемый моделью. Примерно 4 символа в английском. Модели обрабатывают токены, а не символы.
 
-**Tool use**
-An agent's ability to invoke external functions: reading files, running commands, accessing APIs.
+**Tool use (Использование инструментов)**
+Способность агента вызывать внешние функции: чтение файлов, выполнение команд, доступ к API.
 
 ## V
 
-**Validation**
-The process of verifying that agent output is correct, secure, and meets requirements.
+**Validation (Валидация)**
+Процесс проверки того, что вывод агента корректен, безопасен и соответствует требованиям.
 
 ## Z
 
-**Zero-shot**
-Prompting a model without providing examples of desired output.
+**Zero-shot (Нуль-shot)**
+Промптинг модели без предоставления примеров желаемого вывода.
 
 ---
 
-_This glossary will be expanded as terminology evolves._
+_Этот глоссарий будет расширяться по мере развития терминологии._

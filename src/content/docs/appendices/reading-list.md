@@ -1,138 +1,138 @@
 ---
-title: Recommended Reading
-description: Books, papers, and resources for deeper learning
+title: Рекомендуемое чтение
+description: Книги, статьи и ресурсы для углублённого изучения
 sidebar:
   order: 2
 ---
 
-Curated resources for going deeper on agentic engineering topics. This list will be updated as the field evolves.
+Отобранные ресурсы для углубления в темы агентной инженерии. Этот список будет обновляться по мере развития области.
 
-## Books
+## Книги
 
-### Foundations
+### Основы
 
-_Foundational books on AI, machine learning systems, and data architecture._
+_Фундаментальные книги по AI, ML-системам и архитектуре данных._
 
-- [Artificial Intelligence: A Modern Approach (4th ed.)](https://aima.cs.berkeley.edu/) – Stuart Russell & Peter Norvig (2020). The authoritative AI textbook covering intelligent agent principles, search algorithms, reasoning, and machine learning fundamentals.
-- [Software Engineering at Google](https://abseil.io/resources/swe-book) – Titus Winters, Tom Manshreck & Hyrum Wright (2020). Practical engineering practices for sustaining large codebases—highly relevant for teams adopting AI-assisted workflows.
-- [The Pragmatic Programmer (20th Anniversary Edition)](https://pragprog.com/titles/tpp20/the-pragmatic-programmer-20th-anniversary-edition/) – Andrew Hunt & David Thomas (2019). Timeless advice on writing clean, flexible code that remains vital even as AI tools enter the mix.
-- [Designing Machine Learning Systems](https://huyenchip.com/books/) – Chip Huyen (2022). Holistic guide to building reliable ML-powered applications, from data processing to deployment and monitoring.
-- [AI Engineering](https://huyenchip.com/books/) – Chip Huyen (2025). Practical framework for building applications with foundation models, bridging traditional engineering and modern AI development.
-- [Designing Data-Intensive Applications](https://martin.kleppmann.com/2017/03/27/designing-data-intensive-applications.html) – Martin Kleppmann (2017). Deep dive into reliable, scalable systems—crucial architectural knowledge before layering on AI features.
+- [Artificial Intelligence: A Modern Approach (4th ed.)](https://aima.cs.berkeley.edu/) – Stuart Russell & Peter Norvig (2020). Авторитетный учебник по AI, охватывающий принципы интеллектуальных агентов, алгоритмы поиска, рассуждение и основы машинного обучения.
+- [Software Engineering at Google](https://abseil.io/resources/swe-book) – Titus Winters, Tom Manshreck & Hyrum Wright (2020). Практические инженерные практики для поддержания больших кодовых баз — актуально для команд, внедряющих AI-ассистированные рабочие процессы.
+- [The Pragmatic Programmer (20th Anniversary Edition)](https://pragprog.com/titles/tpp20/the-pragmatic-programmer-20th-anniversary-edition/) – Andrew Hunt & David Thomas (2019). Вечные советы по написанию чистого, гибкого кода, которые остаются актуальными даже с появлением AI-инструментов.
+- [Designing Machine Learning Systems](https://huyenchip.com/books/) – Chip Huyen (2022). Холистический гид по построению надёжных ML-приложений — от обработки данных до развёртывания и мониторинга.
+- [AI Engineering](https://huyenchip.com/books/) – Chip Huyen (2025). Практический фреймворк для построения приложений с базовыми моделями, связывающий традиционную инженерию и современную AI-разработку.
+- [Designing Data-Intensive Applications](https://martin.kleppmann.com/2017/03/27/designing-data-intensive-applications.html) – Martin Kleppmann (2017). Глубокое погружение в надёжные, масштабируемые системы — критически важные архитектурные знания перед добавлением AI-функций.
 
-### Manifestos and philosophy
+### Манифесты и философия
 
-_Frameworks for thinking about AI-assisted development at a higher level._
+_Фреймворки для мышления об AI-ассистированной разработке на более высоком уровне._
 
-- [The o16g Manifesto](https://o16g.com/) – Cory Ondrejka (2025). "Outcome Engineering" — 16 principles for reorienting development around outcomes rather than code. Argues for managing to cost (tokens) instead of capacity (engineer-hours), measuring success by verified impact, and treating the backlog as a relic of human limitation. From the CTO of Onebrief, co-creator of Second Life, and former engineering leader at Google and Meta.
+- [The o16g Manifesto](https://o16g.com/) – Cory Ondrejka (2025). "Инженерия результатов" — 16 принципов для переориентации разработки вокруг результатов, а не кода. Аргументирует управление стоимостью (токенами), а не мощностью (человеко-часами), измерение успеха проверенным влиянием и рассмотрение бэклога как пережитка человеческих ограничений. От CTO Onebrief, со-создателя Second Life и бывшего руководителя инженерии в Google и Meta.
 
-### Context engineering
+### Контекстная инженерия
 
-_The emerging discipline of providing agents with the right information at the right time._
+_Появляющаяся дисциплина предоставления агентам правильной информации в правильное время._
 
-- [Context Engineering for AI Agents – Tobi Lutke](https://x.com/tolobi/status/1935533391175041359) - Shopify CEO on why context engineering is the new skill
-- [Context Engineering – Andrej Karpathy](https://x.com/karpathy/status/1937902205765607626) - "Prompt engineering is dead, context engineering is king"
-- [AGENTS.md](https://agents.md/) - Open format for persistent agent context, used by 60k+ open-source projects
+- [Context Engineering for AI Agents – Tobi Lutke](https://x.com/tolobi/status/1935533391175041359) - CEO Shopify о том, почему контекстная инженерия — новый навык
+- [Context Engineering – Andrej Karpathy](https://x.com/karpathy/status/1937902205765607626) - "Промпт-инженерия мертва, контекстная инженерия — король"
+- [AGENTS.md](https://agents.md/) - Открытый формат для постоянного контекста агентов, используется 60k+ open-source проектами
 
-### Prompt engineering
+### Промпт-инженерия
 
-_Guides to effective prompting and AI interaction._
+_Гиды по эффективному промптингу и взаимодействию с AI._
 
-- [Google Cloud Prompt Engineering Guide](https://cloud.google.com/discover/what-is-prompt-engineering) – Comprehensive official guide covering prompt format, examples, multi-turn interactions, and best practices.
-- [DAIR Prompt Engineering Guide](https://www.promptingguide.ai/) – Mostafa Samir et al. Extensive open-source guide aggregating the latest techniques, from basic design to advanced strategies like multi-step reasoning and tool use.
-- [Learn Prompting](https://learnprompting.org/docs/introduction) – Sander Schulhoff et al. (2024). Free course covering fundamentals to advanced techniques, used by 3M+ users including Fortune 500 teams.
-- [The Ultimate Guide to Prompt Engineering](https://www.lakera.ai/blog/prompt-engineering-guide) – Lakera (2025). Modern best practices with focus on real-world usage and security, including defense against prompt injections.
-- **Prompt Engineering for Generative AI** – James Phoenix & Mike Taylor (2023). Practical book on principles and patterns across domains—NLP, image generation, and code generation.
-- **Prompt Engineering for LLMs** – John Berryman & Albert Ziegler (2024). Advanced strategies from GitHub Copilot developers covering token management, few-shot prompting, and workflow patterns.
+- [Google Cloud Prompt Engineering Guide](https://cloud.google.com/discover/what-is-prompt-engineering) – Комплексный официальный гид, охватывающий формат промптов, примеры, мульти-turn взаимодействия и лучшие практики.
+- [DAIR Prompt Engineering Guide](https://www.promptingguide.ai/) – Mostafa Samir et al. Обширный open-source гид, агрегирующий последние техники — от базового дизайна до продвинутых стратегий типа многошагового рассуждения и использования инструментов.
+- [Learn Prompting](https://learnprompting.org/docs/introduction) – Sander Schulhoff et al. (2024). Бесплатный курс, охватывающий основы и продвинутые техники, используется 3M+ пользователями, включая команды Fortune 500.
+- [The Ultimate Guide to Prompt Engineering](https://www.lakera.ai/blog/prompt-engineering-guide) – Lakera (2025). Современные лучшие практики с фокусом на реальное использование и безопасность, включая защиту от prompt injection.
+- **Prompt Engineering for Generative AI** – James Phoenix & Mike Taylor (2023). Практическая книга о принципах и паттернах в разных доменах — NLP, генерация изображений и генерация кода.
+- **Prompt Engineering for LLMs** – John Berryman & Albert Ziegler (2024). Продвинутые стратегии от разработчиков GitHub Copilot, охватывающие управление токенами, few-shot промптинг и рабочие паттерны.
 
-### Software engineering
+### Программная инженерия
 
-_Classic and modern software engineering texts relevant to AI-assisted development._
+_Классические и современные тексты по software engineering, релевантные AI-ассистированной разработке._
 
-- [Clean Code](https://gerlacdt.github.io/blog/posts/clean_code/) – Robert C. Martin (2008). Classic manual on maintainable code—crucial for recognizing and refactoring AI-generated code into well-structured designs.
-- [Refactoring (2nd ed.)](https://martinfowler.com/tags/refactoring.html) – Martin Fowler (2018). Seminal guide to systematically restructuring code, invaluable for continuously improving AI-written code.
-- [Accelerate](https://itrevolution.com/product/accelerate/) – Nicole Forsgren, Jez Humble & Gene Kim (2018). Data-driven research on high-performing teams, introducing DORA metrics—essential baseline when integrating AI into workflows.
-- [Agentic AI Engineering](https://mitpressbookstore.mit.edu/book/9798989357789) – Yi Zhou (2025). Forward-looking guide reframing software engineering for AI agents, covering the Agentic Stack and maturity models for scaling agents to production.
-- **The LLM Engineering Handbook** – Paul Iusztin & Maxime Labonne (2024). Operations guide covering prompt engineering, fine-tuning, RAG, and patterns for putting LLMs into production.
-- [A Philosophy of Software Design (2nd ed.)](https://web.stanford.edu/~ouster/cgi-bin/book.php) – John Ousterhout (2021). Concise essays on managing complexity—lessons that complement AI tools by helping developers shape architecture and keep complexity under control.
+- [Clean Code](https://gerlacdt.github.io/blog/posts/clean_code/) – Robert C. Martin (2008). Классический мануал по поддерживаемому коду — критичен для распознавания и рефакторинга AI-сгенерированного кода в хорошо структурированные дизайны.
+- [Refactoring (2nd ed.)](https://martinfowler.com/tags/refactoring.html) – Martin Fowler (2018). Семейный гид по систематическому реструктурированию кода, незаменимый для постоянного улучшения AI-написанного кода.
+- [Accelerate](https://itrevolution.com/product/accelerate/) – Nicole Forsgren, Jez Humble & Gene Kim (2018). Data-driven исследование высокопроизводительных команд, представляющее DORA-метрики — важная базовая линия при интеграции AI в рабочие процессы.
+- [Agentic AI Engineering](https://mitpressbookstore.mit.edu/book/9798989357789) – Yi Zhou (2025). Футуристический гид, переосмысливающий software engineering для AI-агентов, охватывающий Agentic Stack и модели зрелости для масштабирования агентов до продакшена.
+- **The LLM Engineering Handbook** – Paul Iusztin & Maxime Labonne (2024). Операционный гид, охватывающий промпт-инженерию, fine-tuning, RAG и паттерны для внедрения LLM в продакшен.
+- [A Philosophy of Software Design (2nd ed.)](https://web.stanford.edu/~ouster/cgi-bin/book.php) – John Ousterhout (2021). Лаконичные эссе об управлении сложностью — уроки, которые дополняют AI-инструменты, помогая разработчикам формировать архитектуру и держать сложность под контролем.
 
-## Research papers
+## Исследовательские статьи
 
-### Key papers on agents
+### Ключевые статьи об агентах
 
-_Academic papers defining agentic systems and patterns._
+_Академические статьи, определяющие агентные системы и паттерны._
 
-- [ReAct: Synergizing Reasoning and Acting in Language Models](https://arxiv.org/abs/2210.03629) – Yao et al. (2022). Introduced the paradigm of interleaving reasoning traces with actions, enabling LLMs to gather information and adjust plans mid-stream. Foundation for many agent frameworks.
-- [HuggingGPT: Solving AI Tasks with ChatGPT and its Friends](https://arxiv.org/abs/2303.17580) – Shen et al. (2023). LLM-powered controller that orchestrates specialized models for complex multi-modal tasks, using natural language as the glue between tools.
-- [Toolformer: Language Models Can Teach Themselves to Use Tools](https://arxiv.org/abs/2302.04761) – Schick et al. (2023). Meta AI's method for LLMs to self-train on API usage, learning when and how to call external tools strategically.
-- [Generative Agents: Interactive Simulacra of Human Behavior](https://arxiv.org/abs/2304.03442) – Park et al. (2023). Architecture for believable simulated agents with long-term memory and planning, demonstrating human-like behavior over extended periods.
-- [Voyager: An Open-Ended Embodied Agent with Large Language Models](https://arxiv.org/abs/2305.16291) – Wang et al. (2023). First LLM-driven lifelong learning agent in Minecraft, continuously exploring and accumulating skills without human intervention.
-- [Reflexion: Language Agents with Verbal Reinforcement Learning](https://arxiv.org/abs/2303.11366) – Shinn et al. (2023). Framework enabling agents to learn from mistakes through self-reflection in natural language, without formal fine-tuning.
+- [ReAct: Synergizing Reasoning and Acting in Language Models](https://arxiv.org/abs/2210.03629) – Yao et al. (2022). Представила парадигму чередования рассуждений с действиями, позволяя LLMs собирать информацию и корректировать планы на лету. Основа для многих агентных фреймворков.
+- [HuggingGPT: Solving AI Tasks with ChatGPT and its Friends](https://arxiv.org/abs/2303.17580) – Shen et al. (2023). LLM-powered контроллер, оркестрирующий специализированные модели для сложных мультимодальных задач, используя естественный язык как связующее звено между инструментами.
+- [Toolformer: Language Models Can Teach Themselves to Use Tools](https://arxiv.org/abs/2302.04761) – Schick et al. (2023). Метод Meta AI для LLMs самообучаться на использовании API, учась когда и как стратегически вызывать внешние инструменты.
+- [Generative Agents: Interactive Simulacra of Human Behavior](https://arxiv.org/abs/2304.03442) – Park et al. (2023). Архитектура для правдоподобных симулированных агентов с долгосрочной памятью и планированием, демонстрирующая человеческое поведение в течение extended периодов.
+- [Voyager: An Open-Ended Embodied Agent with Large Language Models](https://arxiv.org/abs/2305.16291) – Wang et al. (2023). Первый LLM-driven агент с непрерывным обучением в Minecraft, непрерывно исследующий и накапливающий навыки без человеческого вмешательства.
+- [Reflexion: Language Agents with Verbal Reinforcement Learning](https://arxiv.org/abs/2303.11366) – Shinn et al. (2023). Фреймворк, позволяющий агентам учиться на ошибках через саморефлексию на естественном языке, без формального fine-tuning.
 
-### Language models for code
+### Языковые модели для кода
 
-_Research on code generation, understanding, and synthesis._
+_Исследования по генерации, пониманию и синтезу кода._
 
-- [StarCoder: may the source be with you!](https://arxiv.org/abs/2305.06161) - Open-source Code LLM with 8K context and infilling capabilities
+- [StarCoder: may the source be with you!](https://arxiv.org/abs/2305.06161) - Open-source Code LLM с 8K контекстом и возможностями infilling
 
-### Human-AI collaboration
+### Человеко-AI коллаборация
 
-_Studies on how humans and AI systems work together effectively._
+_Исследования о том, как люди и AI-системы эффективно работают вместе._
 
-- [Experimental Evidence on the Productivity Effects of Generative AI](https://www.science.org/doi/10.1126/science.adh2586) – Noy & Zhang (2023, Science). Landmark study showing ChatGPT users completed tasks ~40% faster with 18% higher quality—lower-skilled participants benefited most.
-- [The Productivity Effects of Generative AI: Evidence from GitHub Copilot](https://mit-genai.pubpub.org/pub/v5iixksv/release/2) – Cui et al. (2024). Field experiment at Microsoft/Accenture showing 12–22% more PRs completed per week with Copilot access.
-- [When Humans and AI Work Best Together](https://mitsloan.mit.edu/ideas-made-to-matter/when-humans-and-ai-work-best-together-and-when-each-better-alone) – MIT Sloan (2025). Meta-analysis finding collaboration shines when humans are individually better than AI—success requires calibrating when to trust AI.
-- [Coding on Copilot: Data Suggests Downward Pressure on Code Quality](https://www.gitclear.com/coding_on_copilot_data_shows_ais_downward_pressure_on_code_quality) – GitClear (2023). Analysis of 153M lines showing code churn doubled with AI use—teams need practices to keep quality in check.
-- [GitHub Copilot: Asset or Liability?](https://www.sciencedirect.com/science/article/abs/pii/S0164121223001292) – Moradi Dakhel et al. (2023). Copilot valuable for experts who can vet output, but potential liability for novices who accept faulty suggestions.
+- [Experimental Evidence on the Productivity Effects of Generative AI](https://www.science.org/doi/10.1126/science.adh2586) – Noy & Zhang (2023, Science). Переломное исследование, показывающее, что пользователи ChatGPT завершали задачи примерно на 40% быстрее с качеством на 18% выше — наименее квалифицированные участники получили больше всего пользы.
+- [The Productivity Effects of Generative AI: Evidence from GitHub Copilot](https://mit-genai.pubpub.org/pub/v5iixksv/release/2) – Cui et al. (2024). Полевой эксперимент в Microsoft/Accenture, показывающий на 12–22% больше PR в неделю с доступом к Copilot.
+- [When Humans and AI Work Best Together](https://mitsloan.mit.edu/ideas-made-to-matter/when-humans-and-ai-work-best-together-and-when-each-better-alone) – MIT Sloan (2025). Мета-анализ, находящий, что коллаборация сияет, когда люди превосходят AI по отдельности — успех требует калибровки, когда доверять AI.
+- [Coding on Copilot: Data Suggests Downward Pressure on Code Quality](https://www.gitclear.com/coding_on_copilot_data_shows_ais_downward_pressure_on_code_quality) – GitClear (2023). Анализ 153M строк, показывающий, что code churn удвоился с использованием AI — командам нужны практики для поддержания качества.
+- [GitHub Copilot: Asset or Liability?](https://www.sciencedirect.com/science/article/abs/pii/S0164121223001292) – Moradi Dakhel et al. (2023). Copilot ценен для экспертов, которые могут проверять вывод, но потенциальная ответственность для новичков, которые принимают неисправные предложения.
 
-## Online resources
+## Онлайн-ресурсы
 
-### Blogs and newsletters
+### Блоги и рассылки
 
-_Regular sources of insight on AI and development._
+_Регулярные источники понимания AI и разработки._
 
-- [2025: The year in LLMs – Simon Willison](https://simonwillison.net/2025/Dec/31/the-year-in-llms/) - Comprehensive annual review of LLM developments
+- [2025: The year in LLMs – Simon Willison](https://simonwillison.net/2025/Dec/31/the-year-in-llms/) - Комплексный ежегодный обзор LLM-разработок
 
-### Podcasts
+### Подкасты
 
-_Audio content covering agentic development._
+_Аудиоконтент об агентной разработке._
 
-- [The RPI workflow - Build Wiz AI Show (Podcast)](https://open.spotify.com/episode/1OdIYj0SZzhyzFGGoVuELP) - Audio discussion on advanced AI coding
+- [The RPI workflow - Build Wiz AI Show (Podcast)](https://open.spotify.com/episode/1OdIYj0SZzhyzFGGoVuELP) - Аудиообсуждение продвинутого AI-кодинга
 
-### Video content
+### Видеоконтент
 
-_Tutorials, talks, and demonstrations._
+_Туториалы, выступления и демонстрации._
 
-- [The Complete AI Coding Course (2025)](https://www.udemy.com/course/the-complete-ai-coding-course-2025-cursor-ai-v0-vercel/) - Hands-on course covering Cursor and Claude Code
+- [The Complete AI Coding Course (2025)](https://www.udemy.com/course/the-complete-ai-coding-course-2025-cursor-ai-v0-vercel/) - Практический курс по Cursor и Claude Code
 
-### Communities
+### Сообщества
 
-_Places to connect with others working in this space._
+_Места для связи с другими, работающими в этом пространстве._
 
-- [Kilo Code Discord](https://kilo.love/discord) - Our community for discussing agentic engineering
-- [GitHub Discussions](https://github.com/Kilo-Org/agentic-path/discussions) - Longer-form conversations about this guide
-
----
-
-## Contributing resources
-
-Know a great resource we should include? This list grows through community contributions.
-
-**How to add a resource:**
-
-1. [Open a PR](/community/contributing/) with your addition
-2. Include a brief description of why it's valuable
-3. Place it in the appropriate section
-
-We're especially looking for:
-
-- Books and papers that shaped your understanding
-- Tutorials that actually helped you get started
-- Communities where you've found good discussions
-- Case studies from real implementations
-
-[Join the conversation on Discord](https://kilo.love/discord) if you want to discuss what should be included.
+- [Kilo Code Discord](https://kilo.love/discord) - Наше сообщество для обсуждения агентной инженерии
+- [GitHub Discussions](https://github.com/Kilo-Org/agentic-path/discussions) - Более длинные разговоры об этом руководстве
 
 ---
 
-_This list is actively maintained by the community. Your recommendations help others learn faster._
+## Добавление ресурсов
+
+Знаете отличный ресурс, который мы должны включить? Этот список растёт через вклад сообщества.
+
+**Как добавить ресурс:**
+
+1. [Откройте PR](/community/contributing/) с вашим дополнением
+2. Включите краткое описание, почему это ценно
+3. Поместите его в соответствующую секцию
+
+Мы особенно ищем:
+
+- Книги и статьи, которые сформировали ваше понимание
+- Туториалы, которые реально помогли вам начать
+- Сообщества, где вы нашли хорошие обсуждения
+- Примеры из практики реальных реализаций
+
+[Присоединяйтесь к разговору в Discord](https://kilo.love/discord), если хотите обсудить, что должно быть включено.
+
+---
+
+_Этот список активно поддерживается сообществом. Ваши рекомендации помогают другим учиться быстрее._

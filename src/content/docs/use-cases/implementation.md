@@ -1,81 +1,81 @@
 ---
-title: Implementation
-description: Writing code with agents—the core use case
+title: Реализация
+description: Написание кода с агентами — основной вариант использования
 sidebar:
   order: 2
 ---
 
-Implementation is where most engineers first encounter agents. Success depends on approach, not just prompting.
+Реализация — это место, где большинство инженеров впервые сталкиваются с агентами. Успех зависит от подхода, а не только от промптинга.
 
-## High-value tasks
+## Высокоценные задачи
 
-**Boilerplate generation** — CRUD operations, API scaffolding, form components, DTOs, configs. Agents handle these quickly and reliably. This is where "10x" claims are almost true.
+**Генерация шаблонного кода** — CRUD-операции, API-каркасы, компоненты форм, DTO, конфигурации. Агенты справляются с этим быстро и надёжно. Здесь утверждения о "10x" почти верны.
 
-**Feature implementation** — Best when requirements are clear, patterns exist in your codebase to follow, and scope is bounded (single PR, few files).
+**Реализация функций** — Лучше всего, когда требования ясны, паттерны существуют в вашей кодовой базе, и область ограничена (один PR, несколько файлов).
 
-**Bug fixes** — Clear bugs are excellent agent tasks. "User login fails with null pointer when email contains '+'" beats "fix the login flow."
+**Исправление багов** — Явные баги — отличные задачи для агентов. "Вход пользователя завершается с null pointer, когда email содержит '+'" лучше, чем "исправьте процесс входа".
 
-**Refactoring** — Mechanical refactoring is ideal: rename across codebase, extract function/class, convert patterns. Complex restructuring is harder.
+**Рефакторинг** — Механический рефакторинг идеален: переименование по кодовой базе, извлечение функции/класса, конвертация паттернов. Сложное переструктурирование даётся труднее.
 
-**Data transformations** — Migration scripts, format conversions, ETL logic. Well-defined inputs and outputs make these agent-friendly.
+**Трансформации данных** — Миграционные скрипты, конвертации форматов, ETL-логика. Чёткие входы и выходы делают их удобными для агентов.
 
-## The workflow
+## Рабочий процесс
 
-1. **Plan** — Know what files will change, the desired end state, and what should NOT change.
+1. **Планируйте** — Знайте, какие файлы изменятся, желаемое конечное состояние, и что НЕ должно измениться.
 
-2. **Set context** — Provide relevant code, existing patterns to follow, and constraints.
+2. **Установите контекст** — Предоставьте релевантный код, существующие паттерны для следования и ограничения.
 
-3. **Generate** — For complex tasks, ask for the plan first: "Describe how you would implement [feature]. Don't write code yet."
+3. **Генерируйте** — Для сложных задач сначала запросите план: "Опишите, как бы вы реализовали [функцию]. Пока не пишите код."
 
-4. **Validate** — Does it work? Handle edges? Follow conventions? Have security issues?
+4. **Валидируйте** — Работает ли? Обрабатывает ли граничные случаи? Следует ли конвенциям? Есть ли проблемы безопасности?
 
-5. **Refine** — "This doesn't handle the case where..." or "Follow the pattern in [file] instead."
+5. **Доработайте** — "Это не обрабатывает случай, когда..." или "Следуйте паттерну из [файла] вместо этого."
 
-## What slows you down
+## Что замедляет
 
-- **Overcomplicated prompts** — Start simple, add detail as needed
-- **Under-constrained asks** — "Build the feature" leaves too many decisions to the agent
-- **Fighting the agent** — After 3+ reprompts without progress, re-think or do it yourself
-- **Insufficient context** — Missing context leads to invalid output
-- **Wrong tool** — Some code is faster to write manually
+- **Слишком сложные промпты** — Начните просто, добавляйте детали по необходимости
+- **Недостаточно ограниченные запросы** — "Создайте функцию" оставляет слишком много решений агенту
+- **Сопротивление агенту** — После 3+ перепромптов без прогресса — переосмыслите или сделайте сами
+- **Недостаточный контекст** — Отсутствие контекста приводит к неверному результату
+- **Неправильный инструмент** — Некоторый код быстрее написать вручную
 
-## Prompt patterns
+## Паттерны промптов
 
-**Feature implementation:**
-
-```
-Implement [feature] in [file/module].
-
-Requirements:
-- [Specific requirement 1]
-- [Specific requirement 2]
-
-Follow the pattern used in [existing example].
-Don't modify [things to preserve].
-```
-
-**Bug fix:**
+**Реализация функций:**
 
 ```
-Bug: [description]
-Reproduction: [steps or code]
-Expected: [behavior]
-Actual: [behavior]
+Реализуйте [функцию] в [файл/модуль].
 
-Fix this in [file]. The root cause is [if known].
+Требования:
+- [Конкретное требование 1]
+- [Конкретное требование 2]
+
+Следуйте паттерну, используемому в [существующий пример].
+Не изменяйте [что сохранить].
 ```
 
-**Refactor:**
+**Исправление бага:**
 
 ```
-Refactor [module/function] to [desired change].
+Баг: [описание]
+Воспроизведение: [шаги или код]
+Ожидаемое: [поведение]
+Фактическое: [поведение]
 
-Keep the public API unchanged.
-Maintain all existing functionality.
-[Additional constraints]
+Исправьте это в [файл]. корневая причина — [если известна].
 ```
 
-## Resources
+**Рефакторинг:**
 
-- [Embracing the parallel coding agent lifestyle](https://simonwillison.net/2025/Oct/5/parallel-coding-agents/) - Running multiple agents simultaneously
-- [Code research projects with async coding agents](https://simonwillison.net/2025/Nov/6/async-code-research/) - Async research task patterns
+```
+Рефакторинг [модуль/функция] к [желаемое изменение].
+
+Сохраните публичный API неизменным.
+Поддержите всю существующую функциональность.
+[Дополнительные ограничения]
+```
+
+## Ресурсы
+
+- [Embracing the parallel coding agent lifestyle](https://simonwillison.net/2025/Oct/5/parallel-coding-agents/) - Запуск нескольких агентов одновременно
+- [Code research projects with async coding agents](https://simonwillison.net/2025/Nov/6/async-code-research/) - Паттерны асинхронного исследования задач
