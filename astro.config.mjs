@@ -4,118 +4,138 @@ import starlight from "@astrojs/starlight";
 import catppuccin from "@catppuccin/starlight";
 import sitemap from "@astrojs/sitemap";
 
-const enSidebar = [
+const ruSidebar = [
   {
-    label: "Introduction",
+    label: "Введение",
     items: [
       {
-        label: "What is Agentic Engineering?",
+        label: "Что такое агентная инженерия?",
         slug: "introduction/what-is-agentic-engineering",
       },
       {
-        label: "How Agents Work",
+        label: "Как работают агенты",
         slug: "introduction/how-agents-work",
       },
       {
-        label: "Working with Agents",
+        label: "Работа с агентами",
         slug: "introduction/working-with-agents",
       },
       {
-        label: "Trends & Patterns",
+        label: "Тенденции и паттерны",
         slug: "introduction/trends-patterns",
       },
+      {
+        label: "Разработка на основе спецификаций",
+        slug: "introduction/patterns/spec-driven-development",
+      },
+      {
+        label: "Ralph Wiggum",
+        slug: "introduction/patterns/ralph-wiggum",
+      },
+      {
+        label: "Исследование, План, Реализация (RPI)",
+        slug: "introduction/patterns/rpi",
+      },
+      {
+        label: "Инжиниринг результатов (o16g)",
+        slug: "introduction/patterns/outcome-engineering",
+      },
+      {
+        label: "OpenClaw",
+        slug: "introduction/patterns/openclaw",
+      },
     ],
   },
   {
-    label: "For Engineers",
+    label: "Для инженеров",
     items: [
-      { label: "Getting Started", slug: "engineers/getting-started" },
+      { label: "Начало работы", slug: "engineers/getting-started" },
       {
-        label: "Task Decomposition",
+        label: "Декомпозиция задач",
         slug: "engineers/task-decomposition",
       },
-      { label: "Best Practices", slug: "engineers/best-practices" },
+      { label: "Лучшие практики", slug: "engineers/best-practices" },
     ],
   },
   {
-    label: "For Team Leads",
+    label: "Для тимлидов",
     items: [
       {
-        label: "Adopting Agentic Tools",
+        label: "Внедрение агентных инструментов",
         slug: "team-leads/adopting-agentic-tools",
       },
       {
-        label: "Measuring Impact",
+        label: "Измерение влияния",
         slug: "team-leads/measuring-impact",
       },
       {
-        label: "Quality Assurance",
+        label: "Обеспечение качества",
         slug: "team-leads/quality-assurance",
       },
       {
-        label: "The 1-Pizza Team",
+        label: "Команда из одной пиццы",
         slug: "team-leads/1-pizza-teams",
       },
     ],
   },
   {
-    label: "For Executives",
+    label: "Для руководителей",
     items: [
-      { label: "Strategic Vision", slug: "executives/strategic-vision" },
-      { label: "ROI Frameworks", slug: "executives/roi-frameworks" },
+      { label: "Стратегическое видение", slug: "executives/strategic-vision" },
+      { label: "ROI фреймворки", slug: "executives/roi-frameworks" },
       {
-        label: "Adoption Playbook",
+        label: "Плейбук внедрения",
         slug: "executives/adoption-playbook",
       },
       {
-        label: "Security & Compliance",
+        label: "Безопасность и соблюдение норм",
         slug: "executives/security-compliance",
       },
       {
-        label: "AI-Native Economics",
+        label: "AI-Native экономика",
         slug: "executives/ai-native-economics",
       },
     ],
   },
   {
-    label: "Use Cases by Phase",
+    label: "Прецеденты использования",
     items: [
       {
-        label: "Planning & Design",
+        label: "Планирование и дизайн",
         slug: "use-cases/planning-design",
       },
-      { label: "Implementation", slug: "use-cases/implementation" },
+      { label: "Реализация", slug: "use-cases/implementation" },
       {
-        label: "Deployment & Operations",
+        label: "Развёртывание и эксплуатация",
         slug: "use-cases/deployment-operations",
       },
       {
-        label: "Quality & Documentation",
+        label: "Качество и документация",
         slug: "use-cases/quality-documentation",
       },
     ],
   },
   {
-    label: "Governance & Risk",
+    label: "Управление и риски",
     items: [
-      { label: "Security Review", slug: "governance/security-review" },
-      { label: "Accountability", slug: "governance/accountability" },
-      { label: "Quality Gates", slug: "governance/quality-gates" },
+      { label: "Проверка безопасности", slug: "governance/security-review" },
+      { label: "Ответственность", slug: "governance/accountability" },
+      { label: "Контрольные точки качества", slug: "governance/quality-gates" },
     ],
   },
   {
-    label: "Appendices",
+    label: "Приложения",
     items: [
-      { label: "Glossary", slug: "appendices/glossary" },
-      { label: "Recommended Reading", slug: "appendices/reading-list" },
-      { label: "Prompt Templates", slug: "appendices/prompt-templates" },
+      { label: "Глоссарий", slug: "appendices/glossary" },
+      { label: "Рекомендуемая литература", slug: "appendices/reading-list" },
+      { label: "Шаблоны запросов", slug: "appendices/prompt-templates" },
     ],
   },
   {
-    label: "Community",
+    label: "Сообщество",
     items: [
-      { label: "Join the Community", slug: "community" },
-      { label: "Contributing", slug: "community/contributing" },
+      { label: "Присоединиться к сообществу", slug: "community" },
+      { label: "Внесение вклада", slug: "community/contributing" },
     ],
   },
 ];
@@ -161,6 +181,10 @@ export default defineConfig({
         baseUrl: "https://github.com/Kilo-Org/agentic-path/edit/main/",
       },
       defaultLocale: "en",
+      locales: {
+        en: { label: "English", lang: "en" },
+        ru: { label: "Русский", lang: "ru", sidebar: ruSidebar },
+      },
     }),
     sitemap(),
   ],
