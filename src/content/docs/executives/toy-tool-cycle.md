@@ -1,104 +1,104 @@
 ---
-title: The Toy-Tool Cycle
-description: Understanding AI maturity phases to time your adoption
+title: Цикл «Игрушка — Инструмент»
+description: Понимание фаз зрелости ИИ для выбора времени внедрения
 sidebar:
   order: 5
 ---
 
-Every AI capability goes through predictable phases. Understanding this cycle helps you time investments and set realistic expectations.
+У каждой возможности ИИ есть предсказуемые фазы. Понимание этого цикла помогает выбирать время для инвестиций и устанавливать реалистичные ожидания.
 
-## The pattern
+## Паттерн
 
-New AI capabilities follow a recurring swing:
+Новые возможности ИИ следуют recurring swing:
 
-1. **Toy phase**: Limited, weird, mostly good for demos and viral content. Obvious failures. Easy to dismiss.
-2. **Tool phase**: Someone figures out practical applications. Novelty fades. Becomes infrastructure.
-3. **New toy phase**: Mature capability enables unexpected use cases. New frontiers open. Cycle repeats.
+1. **Фаза игрушки**: Limited, странное, mostly good для demos и viral content. Очевидные неудачи. Легко dismiss.
+2. **Фаза инструмента**: Кто-то находит практические применения. Новизна угасает. Становится infrastructure.
+3. **Новая фаза игрушки**: Зрелая возможность enable unexpected use cases. Новые frontiers открываются. Цикл повторяется.
 
-This isn't hype-to-disappointment. It's exploration-to-exploitation-to-exploration.
+Это не hype-to-disappointment. Это exploration-to-exploitation-to-exploration.
 
-## Examples
+## Примеры
 
-### Text generation
+### Генерация текста
 
-- **Toy (2019)**: GPT-2 writes Harry Potter in various styles. Fun experiment.
-- **Tool (2021-2023)**: Customer service bots, email drafters, content automation.
-- **New toy (2024+)**: Autonomous agents, multi-step reasoning, agentic coding experiments.
+- **Игрушка (2019)**: GPT-2 пишет Гарри Поттера в разных стилях. Забавный эксперимент.
+- **Инструмент (2021-2023)**: Боты поддержки клиентов, генераторы черновиков email, автоматизация контента.
+- **Новая игрушка (2024+)**: Автономные агенты, многошаговое рассуждение, agentic coding эксперименты.
 
-### Image generation
+### Генерация изображений
 
-- **Toy (2022)**: Pope in a puffer jacket, Balenciaga memes.
-- **Tool (2023-2024)**: Marketing concept art, product mockups, design iteration.
-- **New toy (2024+)**: Video generation, consistent characters, real-time generation.
+- **Игрушка (2022)**: Папа в пуховике, мемы Balenciaga.
+- **Инструмент (2023-2024)**: Концепт-арт для маркетинга, mockups продуктов, итерация дизайна.
+- **Новая игрушка (2024+)**: Генерация видео, consistent characters, real-time generation.
 
-### Video generation
+### Генерация видео
 
-- **Toy (2023)**: Will Smith eating spaghetti—horrifying, broken, viral.
-- **Tool (2025)**: Ads, B-roll, synthetic footage for production use.
-- **New toy (emerging)**: Interactive video, personalized content, real-time generation.
+- **Игрушка (2023)**: Уилл Смит ест спагетти — жутко, сломано, viral.
+- **Инструмент (2025)**: Реклама, B-roll, synthetic footage для production использования.
+- **Новая игрушка (появляется)**: Интерактивное видео, персонализированный контент, real-time generation.
 
-### Coding assistance
+### Помощь с кодингом
 
-- **Toy (2021)**: "Look, it can write fizzbuzz!"
-- **Tool (2023-2024)**: Copilots shipping real code. Measurable productivity gains.
-- **New toy (2025+)**: Vibe coding, autonomous agents, multi-hour unsupervised runs.
+- **Игрушка (2021)**: "Смотри, оно может fizzbuzz!"
+- **Инструмент (2023-2024)**: Copilots shipping реальный код. Измеримые gains продуктивности.
+- **Новая игрушка (2025+)**: Vibe coding, автономные агенты, многочасовые unsupervised запуски.
 
-## Strategic implications
+## Стратегические последствия
 
-### Don't dismiss the toy phase
+### Не dismiss фазу игрушки
 
-The silly demos are reconnaissance. Will Smith eating spaghetti became an actual benchmark—researchers track progress against it. The Pope deepfake raised awareness of risks before bad actors exploited them.
+Смешные demos — это reconnaissance. Уилл Смит, поедающий спагетти, стал actual benchmark — исследователи отслеживают прогресс относительно него. Дипфейк Папы поднял awareness о рисках до того, как bad actors их эксплуатировали.
 
-When you see people doing ridiculous things with new AI capabilities, they're scouting the frontier. The silly use case today often becomes serious infrastructure in 18-24 months.
+Когда вы видите людей, делающих ridiculous вещи с новыми возможностями ИИ, они scouting the frontier. Смешный use case сегодня often becomes серьёзная infrastructure через 18-24 месяца.
 
-### Don't over-invest in the toy phase
+### Не over-invest в фазу игрушки
 
-Toys are for learning, not production. When a capability is still producing obvious failures, treat it as R&D. Small experiments. Low stakes. Learning-oriented.
+Игрушки — для обучения, не для production. Когда возможность still produces очевидные неудачи, относитесь к ней как к R&D. Small experiments. Low stakes. Learning-oriented.
 
-Premature production deployment burns credibility and resources.
+ преждевременное развёртывание в production сжигает credibility и ресурсы.
 
-### Recognize the tool transition
+### Распознавайте переход к инструменту
 
-The signal: boring reliability replaces exciting failures. When the demos stop being impressive because the capability just works, you're entering tool phase.
+Сигнал: скучная надёжность заменяет exciting неудачи. Когда demos перестают быть impressive, потому что возможность просто работает, вы входите в фазу инструмента.
 
-This is when serious investment makes sense. The learning curve flattens. Best practices emerge. Integration paths become clear.
+Это когда имеет смысл serious investment. Кривая обучения flattening. Best practices emerge. Integration paths становятся clear.
 
-### Watch for the next toy phase
+### Следите за следующей фазой игрушки
 
-Mature tools enable new experiments. When something becomes reliable infrastructure, creative applications emerge that push it somewhere unexpected.
+Зрелые инструменты enable новые эксперименты. Когда что-то становится надёжной infrastructure, creative применения emerge, которые pushят это куда-то unexpected.
 
-Stay connected to practitioners. The next toy phase often starts with someone asking "what if we tried..." on a mature capability.
+Оставайтесь connected к практикам. Следующая фаза игрушки часто начинается с того, что кто-то спрашивает "что если мы попробуем..." на зрелой возможности.
 
-## Timing your adoption
+## Timing вашего внедрения
 
-| Phase | Appropriate investment | Goal |
+| Фаза | Уместная инвестиция | Цель |
 |-------|----------------------|------|
-| Early toy | Minimal. Observation. | Learn what's possible |
-| Late toy | Small experiments | Build internal knowledge |
-| Early tool | Pilot programs | Validate value proposition |
-| Mature tool | Scaled deployment | Capture efficiency gains |
-| New toy | Exploration budget | Scout next opportunities |
+| Early игрушка | Minimal. Наблюдение. | Узнать, что возможно |
+| Late игрушка | Small experiments | Построить internal знание |
+| Early инструмент | Pilot программы | Validate value proposition |
+| Зрелый инструмент | Scaled deployment | Capture efficiency gains |
+| Новая игрушка | Exploration бюджет | Scout следующие возможности |
 
-The gap from "horrifying demo" to "boring infrastructure" averages about two years. Plan accordingly.
+Разрыв от "жуткого demo" до "скучной infrastructure" в среднем about two years. Планируйте accordingly.
 
-## Red flags
+## Красные флаги
 
-**Dismissing toy-phase capabilities entirely.** "That's just a gimmick" is how companies miss transitions.
+**Полностью dismiss возможности в фазе игрушки.** "Это просто gimmick" — как компании miss transitions.
 
-**Deploying toy-phase capabilities at scale.** Premature scaling burns trust and resources.
+**Развёртывание возможностей в фазе игрушки в масштабе.** Преждевременное масштабирование сжигает trust и ресурсы.
 
-**Treating tool-phase capabilities as finished.** The next frontier is always opening.
+**Относиться к возможностям в фазе инструмента как к finished.** Следующий frontier всегда открывается.
 
-**Ignoring practitioner experiments.** The people doing weird things with your tools are showing you the future.
+**Игнорировать эксперименты практиков.** Люди, делающие странные вещи с вашими инструментами, показывают вам будущее.
 
-## Questions for your organization
+## Вопросы для вашей организации
 
-- Where is each AI capability you're using on this cycle?
-- Are you appropriately matching investment to phase?
-- Who's doing toy-phase exploration? Is anyone?
-- What tool-phase capabilities are you under-utilizing?
-- What's the next toy phase you should be watching?
+- Где каждая возможность ИИ, которую вы используете, находится на этом цикле?
+- Соответствуют ли ваши инвестиции фазе?
+- Кто занимается exploration в фазе игрушки? Есть ли кто-то?
+- Какие возможности в фазе инструмента вы under-utilize?
+- Какую следующую фазу игрушки вы должны отслеживать?
 
 ---
 
-*The executives who time this well don't predict the future—they watch the cycle and position accordingly.*
+*Руководители, которые правильно выбирают время, не предсказывают будущее — они наблюдают цикл и позиционируются соответственно.*
