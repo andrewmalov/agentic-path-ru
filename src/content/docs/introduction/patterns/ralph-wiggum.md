@@ -1,165 +1,165 @@
 ---
 title: Ralph Wiggum
-description: A technique for running AI agents in continuous loops until the job is actually done
+description: Техника запуска AI-агентов в непрерывных циклах до тех пор, пока работа не будет действительно завершена
 sidebar:
   order: 6
 ---
 
-You've probably been here: you ask an AI agent to implement a feature, it writes some code, declares victory, and... the tests fail. You prompt again. It tries a different approach. Still broken. Three iterations later, you're doing it yourself.
+Вы наверняка бывали здесь: просите AI-агента реализовать фичу, он пишет код, объявляет победу, и... тесты падают. Промптите снова. Он пытается другой подход. Всё ещё сломано. Три итерации спустя вы делаете это сами.
 
-Ralph Wiggum flips this dynamic. Instead of hoping for first-try perfection, you design for iteration. The agent keeps running until the work is actually complete—tests pass, types check, linting clears. No premature exits. No false victories.
+Ralph Wiggum переворачивает эту динамику. Вместо надежды на совершенство с первой попытки, вы проектируете для итерации. Агент продолжает работать пока работа не будет действительно завершена — тесты проходят, типы проверяются, линтинг чист. Никаких преждевременных выходов. Никаких ложных побед.
 
-## The core idea
+## Основная идея
 
-At its simplest, Ralph is a bash loop:
+В простейшем случае Ralph — это bash-цикл:
 
 ```bash
 while :; do cat PROMPT.md | claude ; done
 ```
 
-That's it. Feed the agent the same task repeatedly. Each iteration builds on the last through git history and progress tracking. The agent doesn't need to be perfect—it just needs to be persistent.
+Вот и всё. передавайте агенту одну и ту же задачу повторно. Каждая итерация строится на основе предыдущей через git-историю и отслеживание прогресса. Агенту не нужно быть идеальным — ему нужно быть настойчивым.
 
-**The philosophy:** Iteration beats perfection. Deterministic failures are data. Keep trying until success.
+**Философия:** Итерация побеждает перфекционизм. Детерминистические неудачи — это данные. Продолжайте пока не успех.
 
-## How it works
+## Как это работает
 
-Ralph wraps the standard AI tool loop with an outer verification layer:
+Ralph оборачивает стандартный цикл AI-инструмента внешним слоем верификации:
 
 ```
 ┌──────────────────────────────────────────────────────┐
-│ Ralph Loop (outer)                                    │
+│ Ralph Loop (внешний)                                 │
 │ ┌────────────────────────────────────────────────┐   │
-│ │ AI SDK Tool Loop (inner)                       │   │
-│ │ LLM ↔ tools ↔ LLM ↔ tools ... until done      │   │
+│ │ AI SDK Tool Loop (внутренний)                   │   │
+│ │ LLM ↔ tools ↔ LLM ↔ tools ... пока не готово   │   │
 │ └────────────────────────────────────────────────┘   │
-│ ↓                                                     │
-│ verifyCompletion: "Is the TASK actually complete?"   │
-│ ↓                                                     │
-│ No? → Inject feedback → Run another iteration        │
-│ Yes? → Return final result                           │
+│ ↓                                                    │
+│ verifyCompletion: "Задача действительно завершена?"   │
+│ ↓                                                    │
+│ Нет? → Внедрить обратную связь → Запустить ещё итерацию│
+│ Да? → Вернуть финальный результат                    │
 └──────────────────────────────────────────────────────┘
 ```
 
-The key mechanisms:
+Ключевые механизмы:
 
-- **Stop hook**: This intercepts exit attempts and checks completion criteria before allowing the agent to stop.
-- **Progress tracking**: A `progress.txt` file tracks what's been done, decisions made, and blockers encountered.
-- **Git commits**: Each iteration commits work, creating context for future iterations.
-- **Feedback loops**: Types, tests, and linting verify quality before continuing.
-- **Verification**: Custom completion criteria determine when the task is truly done.
+- **Стоп-хук**: Перехватывает попытки выхода и проверяет критерии завершения перед тем как позволить агенту остановиться.
+- **Отслеживание прогресса**: Файл `progress.txt` отслеживает что сделано, какие решения приняты и какие блокеры встречены.
+- **Git-коммиты**: Каждая итерация коммитит работу, создавая контекст для будущих итераций.
+- **Циклы обратной связи**: Типы, тесты и линтинг верифицируют качество перед продолжением.
+- **Верификация**: Пользовательские критерии завершения определяют когда задача действительно выполнена.
 
-## Two operating modes
+## Два режима работы
 
 ### HITL (Human-In-The-Loop)
 
-Run one iteration at a time. Watch the agent work. Intervene when needed.
+Запускайте одну итерацию за раз. Наблюдайте за работой агента. Вмешивайтесь когда нужно.
 
-This is pair programming with AI. You see every decision, catch mistakes early, and guide the direction. 
+Это парное программирование с AI. Вы видите каждое решение, ловите ошибки рано и направляете курс.
 
-Best for: 
+Лучше всего для:
 
-- Learning the technique 
-- Refining prompts 
-- Working on risky tasks where you want eyes on every change
+- Изучения техники
+- Уточнения промптов
+- Рискованных задач, где вы хотите глаз на каждое изменение
 
 ### AFK (Away From Keyboard)
 
-Set a maximum iteration count and let it run. Come back to results.
+Установите максимальное количество итераций и позвольте работать. Вернитесь к результатам.
 
-This is overnight work. You define clear success criteria, cap the iterations, and let the agent grind through mechanical tasks while you sleep. 
+Это ночная работа. Вы определяете чёткие критерии успеха, ограничиваете итерации и позволяете агенту выполнять механические задачи пока вы спите.
 
-Best for well-defined work like: 
+Лучше всего для чётко определённой работы:
 
-- Test migrations
-- Coverage improvements
-- Large refactors with clear patterns
+- Миграции тестов
+- Улучшения покрытия
+- Крупных рефакторингов с чёткими паттернами
 
-**Critical for AFK mode:** Use Docker sandboxes. You're giving an agent autonomous access to your system. Contain it.
+**Критично для режима AFK:** Используйте Docker-песочницы. Вы даёте агенту автономный доступ к вашей системе. Изолируйте его.
 
 ```bash
 docker sandbox run claude
 ```
 
-## When Ralph works
+## Когда Ralph работает
 
-Ralph excels at tasks with clear completion criteria:
+Ralph превосходен в задачах с чёткими критериями завершения:
 
-| Task type                | Why it works                                             |
-| ------------------------ | -------------------------------------------------------- |
-| **Large refactors**      | Converting class components to hooks, Jest to Vitest     |
-| **Framework migrations** | Test suite conversions with clear before/after states    |
-| **TDD workflows**        | Implement features until tests pass                      |
-| **Test coverage**        | Add tests to uncovered code until coverage threshold met |
-| **Greenfield builds**    | REST APIs, complete features with defined specs          |
-| **Mechanical cleanup**   | Linting fixes, duplicate removal, code smell elimination |
+| Тип задачи                | Почему это работает                                          |
+| ------------------------ | ----------------------------------------------------------- |
+| **Крупные рефакторинги**  | Конвертация class-компонентов в hooks, Jest в Vitest           |
+| **Миграции фреймворков**  | Конвертации тестовых наборов с чёткими состояниями до/после    |
+| **TDD-рабочие процессы** | Реализация фичей пока тесты не пройдут                      |
+| **Покрытие тестами**      | Добавление тестов к непокрытому коду пока порог покрытия не достигнут |
+| **Greenfield-сборки**    | REST API, полные фичи с определёнными спецификациями          |
+| **Механическая очистка**  | Исправления линтинга, удаление дубликатов, устранение code smell |
 
-## When Ralph doesn't work
+## Когда Ralph не работает
 
-Some tasks resist iteration:
+Некоторые задачи сопротивляются итерации:
 
-- **Ambiguous requirements**: If you can't define "done," the loop can't verify completion.
-- **Architectural decisions**: These need human judgment, not persistence.
-- **Security-sensitive code**: Auth, payments, and crypto require human review regardless of test results.
-- **Exploration tasks**: "Figure out why the app is slow" has no clear stopping point.
-- **One-shot operations**: If you need immediate results, the loop overhead isn't worth it.
+- **Неоднозначные требования**: Если вы не можете определить "готово", цикл не может верифицировать завершение.
+- **Архитектурные решения**: Эти требуют человеческого суждения, а не настойчивости.
+- **Код, чувствительный к безопасности**: Auth, платежи и криптография требуют человеческого ревью независимо от результатов тестов.
+- **Задачи исследования**: "Разобраться почему приложение тормозит" не имеет чёткой точки остановки.
+- **Одноразовые операции**: Если вам нужны немедленные результаты, накладные расходы цикла не стоят того.
 
-## Practical tips
+## Практические советы
 
-### Define clear scope
+### Определите чёткий scope
 
-Use structured completion criteria:
+Используйте структурированные критерии завершения:
 
 ```json
 {
   "category": "functional",
-  "description": "New chat button creates conversation",
-  "steps": ["Click button", "Verify conversation", "Check welcome state"],
+  "description": "Новая кнопка чата создаёт беседу",
+  "steps": ["Нажать кнопку", "Верифицировать беседу", "Проверить состояние приветствия"],
   "passes": false
 }
 ```
 
-The agent knows exactly what "done" means.
+Агент точно знает что значит "готово".
 
-### Track progress
+### Отслеживайте прогресс
 
-Maintain a `progress.txt` with:
+Ведите `progress.txt` с:
 
-- Tasks completed
-- Decisions made and why
-- Blockers encountered
-- Files changed
+- Завершёнными задачами
+- Принятыми решениями и почему
+- Встреченными блокерами
+- Изменёнными файлами
 
-This gives future iterations context about past work.
+Это даёт будущим итерациям контекст о прошлой работе.
 
-### Use feedback loops
+### Используйте циклы обратной связи
 
-Block commits unless ALL feedback loops pass:
+Блокируйте коммиты если ВСЕ циклы обратной связи не пройдены:
 
-- TypeScript type checking
-- Unit tests
-- E2E tests (Playwright, Cypress)
-- Linting
-- Pre-commit hooks
+- Проверка типов TypeScript
+- Юнит-тесты
+- E2E-тесты (Playwright, Cypress)
+- Линтинг
+- Pre-commit хуки
 
-If any check fails, the iteration isn't complete.
+Если любая проверка падает, итерация не завершена.
 
-### Take small steps
+### Делайте маленькие шаги
 
-Keep it to one logical change per commit. Break large tasks into subtasks, and run feedback loops after each change. You want quality over speed.
+Держите одно логическое изменение на коммит. Разбивайте крупные задачи на подзадачи и запускайте циклы обратной связи после каждого изменения. Вам важно качество, а не скорость.
 
-### Cap iterations
+### Ограничивайте итерации
 
-- **HITL:** Watch every iteration
-- **AFK:** Set max-iterations (10-20 for small tasks, 30-50 for large)
-- **Never use unlimited iterations**
+- **HITL:** Наблюдайте каждую итерацию
+- **AFK:** Установите max-iterations (10-20 для маленьких задач, 30-50 для крупных)
+- **Никогда не используйте бесконечные итерации**
 
-A 50-iteration loop on a large codebase can cost $50-100+ in API credits. Start with 10-20 iterations to understand token consumption before scaling up.
+50-итерационный цикл на большой кодовой базе может стоить $50-100+ в API-кредитах. Начните с 10-20 итераций чтобы понять потребление токенов перед масштабированием.
 
-### Commit after each feature
+### Коммитьте после каждой фичи
 
-Good git hygiene creates a clean git history and clear rollback points. If iteration 15 breaks something, you can revert to iteration 14.
+Хорошая git-гигиена создаёт чистую git-историю и чёткие точки отката. Если итерация 15 сломала что-то, вы можете откатиться к итерации 14.
 
-## Getting started
+## Начало работы
 
 ### Claude Code Plugin
 
@@ -168,7 +168,7 @@ Good git hygiene creates a clean git history and clear rollback points. If itera
 /ralph-loop "Add JSDoc comments to all exported functions" --max-iterations 10
 ```
 
-### NPM Package
+### NPM-пакет
 
 ```bash
 npm install ralph-loop-agent ai zod
@@ -186,34 +186,34 @@ const agent = new RalphLoopAgent({
 });
 ```
 
-## The skill shift
+## Сдвиг в навыках
 
-Traditional AI coding asks: "How do I get the perfect prompt?"
+Традиционный AI-кодинг спрашивает: "Как мне написать идеальный промпт?"
 
-Ralph asks: "How do I design conditions where iteration leads to success?"
+Ralph спрашивает: "Как мне спроектировать условия при которых итерация ведёт к успеху?"
 
-You stop directing the AI step-by-step and start designing loops that converge on solutions. The agent's job is persistence. Your job is defining what "done" looks like and ensuring the feedback loops catch failures.
+Вы перестаёте направлять AI пошагово и начинаете проектировать циклы, которые сходятся к решениям. Работа агента — настойчивость. Ваша работа — определить что значит "готово" и обеспечить чтобы циклы обратной связи ловили неудачи.
 
-This is continuous autonomy—the agent works until the job is actually done, not just until the LLM stops calling tools.
+Это непрерывная автономия — агент работает пока работа не будет действительно завершена, а не просто пока LLM не перестанет вызывать инструменты.
 
-## Resources
+## Ресурсы
 
-### Official
+### Официальные
 
 - [Ralph Wiggum as a Software Engineer](https://ghuntley.com/ralph/)
-- [GitHub - vercel-labs/ralph-loop-agent](https://github.com/vercel-labs/ralph-loop-agent) — Core NPM package
-- [Ralph Wiggum - AI Loop Technique for Claude Code](https://awesomeclaude.ai/ralph-wiggum) — Complete guide and examples
+- [GitHub - vercel-labs/ralph-loop-agent](https://github.com/vercel-labs/ralph-loop-agent) — Основной NPM-пакет
+- [Ralph Wiggum - AI Loop Technique for Claude Code](https://awesomeclaude.ai/ralph-wiggum) — Полный гайд и примеры
 
-### Tutorials
+### Туториалы
 
-- [11 Tips For AI Coding With Ralph Wiggum](https://www.aihero.dev/tips-for-ai-coding-with-ralph-wiggum) — Practical tips for autonomous loops
-- [The Ralph Wiggum Approach: Running AI Coding Agents for Hours](https://dev.to/sivarampg/the-ralph-wiggum-approach-running-ai-coding-agents-for-hours-not-minutes-57c1) — DEV Community tutorial
+- [11 Tips For AI Coding With Ralph Wiggum](https://www.aihero.dev/tips-for-ai-coding-with-ralph-wiggum) — Практические советы для автономных циклов
+- [The Ralph Wiggum Approach: Running AI Coding Agents for Hours](https://dev.to/sivarampg/the-ralph-wiggum-approach-running-ai-coding-agents-for-hours-not-minutes-57c1) — DEV Community туториал
 
-### Community tools
+### Инструменты сообщества
 
 - **ralph-claude-code** — Rate limiting, tmux dashboards, circuit breakers
-- **ralph-orchestrator** — Token tracking, spending limits, checkpointing
+- **ralph-orchestrator** — Отслеживание токенов, лимиты расходов, контрольные точки
 
 ---
 
-**Using Ralph in production?** [Share your experience](/community/contributing/)—what worked, what didn't, and what you learned along the way.
+**Используете Ralph в продакшене?** [Поделитесь своим опытом](/community/contributing/)—что сработало, что не сработало и что вы узнали.

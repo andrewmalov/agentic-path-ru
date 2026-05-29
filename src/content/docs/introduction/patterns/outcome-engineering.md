@@ -1,192 +1,192 @@
 ---
-title: Outcome Engineering (o16g)
-description: A manifesto for moving beyond code to outcomes in the age of AI agents
+title: Инжиниринг результатов (o16g)
+description: Манифест о переходе от кода к результатам в эпоху AI-агентов
 sidebar:
   order: 8
 ---
 
-Software engineering has always been about outcomes, not code. Code is just the incantation that transforms computation into magic—the mechanism that delivers an idea. With AI agents removing the constraints of time and human bandwidth, we can finally treat code as what it is: a means to an end, not the end itself.
+Программная инженерия всегда была о результатах, а не о коде. Код — это просто заклинание, которое превращает вычисления в магию — механизм, доставляющий идею. С AI-агентами, снимающими ограничения времени и человеческой пропускной способности, мы наконец можем относиться к коду как к тому, что он есть: средству достижения цели, а не самой цели.
 
-**Outcome Engineering** (o16g) is a framework for reorienting development around delivered impact rather than lines written. It's a set of principles for making agentic development vastly more capable, faster, and trustworthy than either vibe coding or hand-coding alone.
+**Инжиниринг результатов** (o16g) — это фреймворк для переориентации разработки на доставленный эффект, а не на написанные строки. Это набор принципов, делающих агентную разработку значительно более способной, быстрой и надёжной, чем как кодинг по настроению, так и ручное кодирование по отдельности.
 
-## The core insight
+## Ключевая идея
 
-> "It was never about the code."
+> "Дело никогда не было в коде."
 
-The traditional backlog exists because human bandwidth was the limiting factor. You rejected ideas for lack of time, not lack of value. With agents, creation is limited only by the cost of compute, not capacity.
+Традиционный бэклог существует потому, что человеческая пропускная способность была ограничивающим фактором. Вы отклоняли идеи из-за нехватки времени, а не ценности. С агентами создание ограничено только стоимостью вычислений, а не мощностью.
 
-This changes everything:
+Это меняет всё:
 
-- **Creation, not code** — Focus on what you're building, not how you're typing it.
-- **Cost, not time** — Manage to budget, not capacity. If the outcome is worth the tokens, it gets built.
-- **Capacity, not backlog** — Never reject an idea for lack of time, only for lack of budget.
-- **Certainty, not vibes** — The only truth is the rate of positive change delivered to the customer.
+- **Создание, а не код** — Фокус на том, что вы строите, а не на том, как вы это набираете.
+- **Стоимость, а не время** — Управляйте по бюджету, а не по мощности. Если результат стоит токенов — он будет построен.
+- **Мощность, а не бэклог** — Никогда не отклоняйте идею из-за нехватки времени, только из-за нехватки бюджета.
+- **Определённость, а не настроение** — Единственная правда — это скорость положительных изменений, доставленных клиенту.
 
-## The 16 principles
+## 16 принципов
 
-O16g starts with 16 principles that guide agentic development.
+O16g начинается с 16 принципов, направляющих агентную разработку.
 
-### Human Intent
+### Человеческое намерение
 
-> Agents explore paths; humans choose the destination.
+> Агенты исследуют пути; люди выбирают цель.
 
-Do not abdicate vision to the machine. Create with mission, goals, and authorial intent. You decide where you're going; agents get you there.
+Не передавайте видение машине. Создавайте с миссией, целями и авторским намерением. Вы решаете, куда идёте; агенты доставят вас туда.
 
-### Verified Reality is the Only Truth
+### Верифицированная реальность — единственная правда
 
-> Code is a vanity metric; vibes are not tests.
+> Код — это показатель тщеславия; настроение — не тесты.
 
-The only truth is the rate of positive change delivered to the customer. Grade agents not on the lines they write, but on the binary reality they verify. If you cannot predict, measure, and prove it worked, you failed.
+Единственная правда — это скорость положительных изменений, доставленных клиенту. Оценивайте агентов не по строкам, которые они пишут, а по бинарной реальности, которую они верифицируют. Если вы не можете предсказать, измерить и доказать, что это сработало — вы провалились.
 
-### No More Single Player Mode
+### Больше никакого одиночного режима
 
-> Chat is a bottleneck, not an API.
+> Чат — это узкое место, а не API.
 
-Whether humans or agents, outcome engineering is a team sport. Define the protocol for debate, decision, and delivery. Ambiguity in coordination is a system failure. Surface all the debates formerly hidden by the backlog.
+Будь то люди или агенты, инжиниринг результатов — это командный спорт. Определите протокол для дебатов, решений и доставки. Неоднозначность в координации — это системный сбой. Выведите на поверхность все дебаты, ранее скрытые бэклогом.
 
-### The Backlog is Dead
+### Бэклог мёртв
 
-> The backlog is a relic of human limitation.
+> Бэклог — это пережиток человеческого ограничения.
 
-Never reject an idea for lack of time, only for lack of budget. If the outcome is worth the tokens, it gets built.
+Никогда не отклоняйте идею из-за нехватки времени, только из-за нехватки бюджета. Этот результат того стоит —他会 будет построен.
 
-### Unleash the Builders
+### Раскройте строителей
 
-> We are architects of reality, not typewriters.
+> Мы — архитекторы реальности, а не печатные машинки.
 
-Write code only when it brings joy. Delegate the toil. Never let implementation details, integration, or time block exploration and creation.
+Пишите код только когда это приносит радость. Делегируйте рутину. Никогда не позволяйте деталям реализации, интеграции или времени блокировать исследование и создание.
 
-### No Wandering in the Dark
+### Не блуждайте в темноте
 
-> Never dispatch an agent without context.
+> Никогда не отправляйте агента без контекста.
 
-Map the territory before building. If you don't know where you stand, you cannot calculate the path to the destination.
+Наметьте территорию перед строительством. Если вы не знаете, где стоите, вы не можете рассчитать путь к цели.
 
-### Build It All
+### Постройте всё
 
-> In an agentic world, code is the cheapest resource.
+> В агентном мире код — самый дешёвый ресурс.
 
-Build to answer questions. Build to test hypotheses. Build to inform debates openly. Build the things you used to buy so you can prove they work perfectly for you. Take every opportunity to get better at knowing you can deliver the outcomes you want.
+Стройте для ответа на вопросы. Стройте для проверки гипотез. Стройте для информирования дебатов открыто. Стройте то, что раньше покупали, чтобы доказать, что это работает для вас идеально. Используйте каждую возможность, чтобы стать лучше в способности доставлять желаемые результаты.
 
-### Failures are Artifacts
+### Неудачи — это артефакты
 
-> Opinions are conjecture; outcomes are data.
+> Мнения — это предположения; результаты — это данные.
 
-When an outcome fails, do not simply rollback. Dissect the failure. Understand why the hypothesis was wrong. Debug the decision, not just the code.
+Когда результат не удался, не просто откатывайтесь. Вскройте неудачу. Поймите, почему гипотеза была неверной. Отлаживайте решение, а не только код.
 
-### Agentic Coordination is a New Org
+### Агентная координация — это новая организация
 
-> Scaling agents mirrors scaling people, but faster, weirder, and harder.
+> Масштабирование агентов отражает масштабирование людей, но быстрее, страньше и сложнее.
 
-Design the organization chart and employee handbook for the swarm. Engineer against the infinite spins of indecision and the echo chambers of model groupthink. Build the structures that keep a massive, tireless workforce aligned, decisive, and sane.
+Спроектируйте организационную диаграмму и справочник сотрудников для роя. Проектируйте против бесконечных оборотов нерешительности и эхо-камер группового мышления модели. Стройте структуры, которые держат огромную, неутомимую рабочую силу согласованной, решительной и здоровой.
 
-### Code the Constitution
+### Кодируйте конституцию
 
-> Don't fall victim to decision fatigue.
+> Не поддавайтесь усталости от решений.
 
-Don't paper over poor architecture with checkpoints. Encode laws into the environment. Codify mission, vision, and goals. If the agent cannot parse the intent, it cannot provably deliver the outcome. Ambiguity is the enemy of alignment.
+Не маскируйте плохую архитектуру контрольными точками. Кодируйте законы в среду. Кодифицируйте миссию, видение и цели. Если агент не может распарсить намерение, он не может доказательно доставить результат. Неоднозначность — враг согласования.
 
-### All the Context, Everywhere
+### Весь контекст, везде
 
-> Agents cannot reason in a vacuum.
+> Агенты не могут рассуждать в вакууме.
 
-Embed context into the infrastructure, not just the prompt. Build the knowledge graph so the agent understands the world before it attempts to change it.
+Встраивайте контекст в инфраструктуру, а не только в промпт. Стройте граф знаний так, чтобы агент понимал мир до того, как попытается его изменить.
 
-### Priorities Drive Compute
+### Приоритеты управляют вычислениями
 
-> No matter how scalable, compute is still a cost.
+> Как бы ни был масштабируем, вычисления — это всё ещё стоимость.
 
-Always know the next most important task, what would most benefit from compute and attention. Do the hard work to align. Optimize for outcomes. Everything you learn informs your priorities.
+Всегда знайте следующую самую важную задачу, что больше всего выиграет от вычислений и внимания. Делайте тяжёлую работу по согласованию. Оптимизируйте для результатов. Всё, что вы узнаёте, информирует ваши приоритеты.
 
-### Show Your Work
+### Покажите свою работу
 
-> Code is the what; reasoning is the why.
+> Код — это что; рассуждение — это почему.
 
-Do not accept a black box. Agents must record their discoveries, their rejected paths, and their logic. Pay the compute cost to understand the machine.
+Не принимайте чёрный ящик. Агенты должны записывать свои открытия, свои отклонённые пути и свою логику. Платите стоимость вычислений, чтобы понять машину.
 
-### Continuous Improvement
+### Непрерывное улучшение
 
-> Repeating a mistake is a system failure.
+> Повторение ошибки — это системный сбой.
 
-Spend compute on the post-mortem. Automate the analysis of what went wrong. Inoculate the system so the error never happens again.
+Тратьте вычисления на посмертный анализ. Автоматизируйте анализ того, что пошло не так. Иммунизируйте систему так, чтобы ошибка никогда не повторялась.
 
-### Risk Stops the Line
+### Риск останавливает линию
 
-> Speed is dangerous without brakes.
+> Скорость опасна без тормозов.
 
-Make risk a blocking function. If the risk is unknown or unmitigated, the line stops. Do not hide danger in a report; encode it as a gate.
+Сделайте риск блокирующей функцией. Если риск неизвестен или не смягчён, линия останавливается. Не прячьте опасность в отчёте; кодируйте её как шлюз.
 
-### Audit the Outcomes
+### Аудит результатов
 
-> Trust is a vulnerability.
+> Доверие — это уязвимость.
 
-Models drift. Prompts break. Capabilities change overnight. Continuously audit the agent against the domain. Verify the tool is sharp before you use it.
+Модели дрейфуют. Промпты ломаются. Возможности меняются за ночь. Постоянно аудируйте агента against the domain. Верифицируйте, что инструмент острый, перед тем как использовать его.
 
-## Applying o16g in practice
+## Применение o16g на практике
 
-### Managing to cost, not capacity
+### Управление по стоимости, а не по мощности
 
-The traditional question: "Do we have bandwidth for this feature?"
+Традиционный вопрос: "Есть ли у нас мощность для этой фичи?"
 
-The o16g question: "Is this feature worth the compute cost?"
+Вопрос o16g: "Стоит ли эта фича стоимости вычислений?"
 
-This reframing has practical implications:
+Это переформулирование имеет практические последствия:
 
-- **Exploration becomes cheap** — Spin up variants to test hypotheses rather than debating in meetings.
-- **Technical debt becomes a budget line** — Instead of accumulating debt because "we don't have time," you decide whether paying it down is worth the tokens.
-- **Prioritization becomes economics** — Stack rank by expected value per token, not by available engineer-hours.
+- **Исследование становится дешёвым** — Запускайте варианты для проверки гипотез вместо дебатов на встречах.
+- **Технический долг становится бюджетной строкой** — Вместо накопления долга потому что "у нас нет времени", вы решаете, стоит ли его погашать токенами.
+- **Приоритизация становится экономикой** — Ранжируйте по ожидаемой стоимости за токен, а не по доступным человеко-часам.
 
-### Encoding intent as infrastructure
+### Кодирование намерения как инфраструктуры
 
-O16g emphasizes codifying intent where agents can actually use it:
+O16g подчёркивает кодифицирование намерения там, где агенты могут его реально использовать:
 
-- **Constitutions** — Non-negotiable principles encoded as guardrails (similar to [Spec-Driven Development's](/introduction/patterns/spec-driven-development/) constitution phase).
-- **Knowledge graphs** — Context embedded in infrastructure, not scattered across prompts.
-- **Verification gates** — Risk encoded as blocking functions, not post-hoc reports.
+- **Конституции** — Некоторые принципы, кодированные как ограждения (аналогично этапу конституции [Spec-Driven Development](/introduction/patterns/spec-driven-development/)).
+- **Графы знаний** — Контекст, встроенный в инфраструктуру, а не разбросанный по промптам.
+- **Верификационные шлюзы** — Риск, кодированный как блокирующие функции, а не пост-хок отчёты.
 
-### Treating failures as data
+### Обращение с неудачами как с данными
 
-When an agent fails, o16g prescribes:
+Когда агент неудаётся, o16g предписывает:
 
-1. Don't just rollback — dissect the failure.
-2. Debug the decision, not just the code.
-3. Automate the post-mortem analysis.
-4. Inoculate the system against repeat failures.
+1. Не просто откатывайтесь — вскройте неудачу.
+2. Отлаживайте решение, а не только код.
+3. Автоматизируйте посмертный анализ.
+4. Иммунизируйте систему против повторных неудач.
 
-This mirrors the [RPI pattern's](/introduction/patterns/rpi/) emphasis on research before implementation, but extends it to continuous learning from production outcomes.
+Это отражает акцент [паттерна RPI](/introduction/patterns/rpi/) на исследовании перед реализацией, но расширяет его до непрерывного обучения из производственных результатов.
 
-## Relationship to other patterns
+## Связь с другими паттернами
 
-O16g is a philosophical framework that complements tactical patterns:
+O16g — это философский фреймворк, который дополняет тактические паттерны:
 
-| Pattern | Focus | O16g connection |
-|---------|-------|-----------------|
-| [Spec-Driven Development](/introduction/patterns/spec-driven-development/) | Capturing intent before code | "Code the Constitution" — encode laws into the environment |
-| [RPI](/introduction/patterns/rpi/) | Research → Plan → Implement | "No Wandering in the Dark" — map territory before building |
-| [Ralph Wiggum](/introduction/patterns/ralph-wiggum/) | Autonomous iteration loops | "Build It All" — let agents iterate until outcomes are verified |
+| Паттерн                              | Фокус                        | Связь с O16g                                            |
+| ------------------------------------ | ---------------------------- | ------------------------------------------------------- |
+| [Spec-Driven Development](/introduction/patterns/spec-driven-development/) | Захват намерения до кода     | "Кодируйте конституцию" — кодируйте законы в среду       |
+| [RPI](/introduction/patterns/rpi/)   | Исследование → План → Реализация | "Не блуждайте в темноте" — наметьте территорию перед строительством |
+| [Ralph Wiggum](/introduction/patterns/ralph-wiggum/) | Автономные итерационные циклы | "Постройте всё" — позвольте агентам итерировать пока результаты не верифицированы |
 
-While these patterns provide the *how*, o16g provides the *why*: measuring success by outcomes delivered, not code written.
+В то время как эти паттерны обеспечивают *как*, o16g обеспечивает *почему*: измерение успеха по доставленным результатам, а не по написанному коду.
 
-## Who this is for
+## Для кого это
 
-O16g emerged from practitioners building real systems with agents. The author, Cory Ondrejka, was CTO of Onebrief, co-creator of Second Life, an engineering leader at Google, and is credited with [saving Meta](https://www.businessinsider.com/meet-the-engineer-who-saved-facebook-2013-1) during a critical period.
+O16g возникла от практиков, строящих реальные системы с агентами. Автор, Cory Ondrejka, был CTO Onebrief, со-создателем Second Life, руководителем инженерии в Google, и ему приписывают [спасение Meta](https://www.businessinsider.com/meet-the-engineer-who-saved-facebook-2013-1) в критический период.
 
-The framework is particularly relevant for:
+Фреймворк особенно релевантен для:
 
-- **Teams scaling agentic workflows** — The "Agentic Coordination is a New Org" principle addresses the organizational challenges of agent swarms.
-- **Leaders setting strategy** — Cost-based prioritization changes how you think about roadmaps.
-- **Engineers questioning fundamentals** — If you sense that vibe coding isn't enough but aren't sure what comes next.
+- **Команд, масштабирующих агентные рабочие процессы** — Принцип "Агентная координация — это новая организация" адресует организационные вызовы роя агентов.
+- **Лидеров, определяющих стратегию** — Приоритизация на основе стоимости меняет то, как вы думаете о роадмапах.
+- **Инженеров, ставящих под вопрос основы** — Если вы чувствуете, что кодинг по настроению недостаточен, но не уверены, что будет дальше.
 
-## Resources
+## Ресурсы
 
-### Official
+### Официальные
 
-- READ: [The o16g Manifesto](https://o16g.com/) — The complete manifesto with all 16 principles
+- ЧИТАТЬ: [Манифест o16g](https://o16g.com/) — Полный манифест со всеми 16 принципами
 
-### Author
+### Автор
 
-- Cory Ondrejka — CTO of Onebrief, co-creator of Second Life, former engineering leader at Google and Meta
+- Cory Ondrejka — CTO Onebrief, со-создатель Second Life, бывший руководитель инженерии в Google и Meta
 
 ---
 
-**Practicing outcome engineering?** [Share your experience](/community/contributing/)—how measuring outcomes instead of output has changed your team's approach.
+**Практикуете инжиниринг результатов?** [Поделитесь своим опытом](/community/contributing/)—как измерение результатов вместо выхода изменило подход вашей команды.

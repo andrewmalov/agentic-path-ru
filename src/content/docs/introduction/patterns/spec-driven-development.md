@@ -1,79 +1,79 @@
 ---
-title: Spec-Driven Development
-description: Using specifications as executable contracts that drive AI agent implementation
+title: Разработка на основе спецификаций
+description: Использование спецификаций как исполняемых контрактов, управляющих реализацией AI-агентов
 sidebar:
   order: 7
 ---
 
-You've watched it happen: you ask an AI agent to "add photo sharing to the app" and it builds something. The code compiles. Tests pass. But the architecture doesn't match what you'd choose. The data model makes assumptions you'd never make. And now you're three days into a feature that needs a rewrite.
+Вы наблюдали это: просите AI агента "добавить фотошеринг в приложение", и он что-то строит. Код компилируется. Тесты проходят. Но архитектура не соответствует тому, что бы вы выбрали. Модель данных делает предположения, которые вы бы никогда не сделали. И вот вы три дня в фиче, которая нуждается в переписывании.
 
-This is the vibe coding trap. The agent isn't broken—it's doing exactly what you asked. The problem is you asked for code when you should have asked for clarity first.
+Это ловушка vibe coding. Агент не сломан — он делает именно то, что вы просили. Проблема в том, что вы просили код, когда должны были сначала попросить ясность.
 
-Spec-Driven Development (SDD) flips the script. Instead of jumping straight to implementation, you define what you want in a specification that becomes the source of truth. The spec isn't documentation written after the fact—it's an executable contract that determines what gets built.
+Разработка на основе спецификаций (SDD) переворачивает сценарий. Вместо прыжка напрямую к реализации, вы определяете чего хотите в спецификации, которая становится источником истины. Спецификация — это не документация, написанная после факта — это исполняемый контракт, определяющий что будет построено.
 
-## The problem with code-first
+## Проблема code-first
 
-When you prompt an AI agent without clear specifications, you're asking it to read your mind. And language models are exceptional at pattern completion, not mind reading.
+Когда вы промптите AI-агента без чётких спецификаций, вы просите его читать ваши мысли. А языковые модели исключительны в завершении паттернов, а не в чтении мыслей.
 
-**What happens with vague prompts:**
+**Что происходит с расплывчатыми промптами:**
 
-- The agent makes reasonable assumptions—some will be wrong.
-- Requirements emerge incrementally, locking you into early decisions.
-- The codebase becomes the de-facto specification.
-- Crucial decisions get trapped in Slack threads or people's heads.
-- Major rewrites require enormous effort because code is inherently binding.
+- Агент делает разумные предположения — некоторые будут неверными.
+- Требования проявляются инкрементально, запирая вас в ранних решениях.
+- Кодовая база становится de-facto спецификацией.
+- Ключевые решения застревают в Slack-тreads или в головах людей.
+- Крупные переписывания требуют огромных усилий, потому что код по своей сути связывающий.
 
-You discover issues deep into implementation when they're expensive to fix. The agent built what you said, not what you meant.
+Вы обнаруживаете проблемы глубоко в реализации, когда они дороги в исправлении. Агент построил то, что вы сказали, а не то, что вы имели в виду.
 
-## What SDD actually is
+## Что SDD из себя представляет
 
-Let's be clear about what SDD isn't:
+Будем честны о том, чем SDD не является:
 
-- **Not waterfall planning**: You're not writing exhaustive documentation before touching code.
-- **Not bureaucracy**: This shouldn't slow you down; it should prevent expensive rework.
-- **Not predicting the future**: You're capturing current understanding, which evolves.
+- **Не waterfall-планирование**: Вы не пишете исчерпывающую документацию перед касанием кода.
+- **Не бюрократия**: Это не должно вас замедлять; это должно предотвращать дорогую доработку.
+- **Не предсказание будущего**: Вы захватываете текущее понимание, которое эволюционирует.
 
-SDD is making technical decisions explicit, reviewable, and evolvable. It's version control for your thinking.
+SDD — это делание технических решений явными, ревьюуемыми и эволюционирующими. Это version control для вашего мышления.
 
-**The core insight:** Specifications become living documents that evolve alongside code. They're active tools that help you think through edge cases, coordinate across teams, and enable multi-variant implementations.
+**Ключевой инсайт:** Спецификации становятся живыми документами, которые развиваются вместе с кодом. Они являются активными инструментами, которые помогают вам продумывать edge cases, координировать команды и включать мульти-вариантные реализации.
 
-When your spec turns into working code automatically, intent becomes the source of truth—not the code itself.
+Когда ваша спецификация превращается в работающий код автоматически, намерение становится источником истины — а не сам код.
 
-## The SDD workflow
+## Рабочий процесс SDD
 
-SDD breaks development into distinct phases. Each phase has a specific purpose and produces artifacts that feed the next phase.
+SDD разбивает разработку на отдельные фазы. Каждая фаза имеет определённое назначение и производит артефакты, которые питают следующую фазу.
 
-### Phase 0: Constitution (optional but recommended)
+### Фаза 0: Конституция (опционально, но рекомендуется)
 
-Before any iteration begins, establish the rules of the game. What are your non-negotiable principles?
+Перед любой итерацией установите правила игры. Каковы ваши некогда-negotiable принципы?
 
-**What goes in a constitution:**
+**Что входит в конституцию:**
 
-- Testing approaches and standards
-- Security policies and compliance rules
-- Design system constraints
-- Tech stack conventions (CLI-first, API-first, etc.)
-- Engineering practices
-- Integration requirements
+- Подходы и стандарты тестирования
+- Политики безопасности и правила соответствия
+- Ограничения дизайн-системы
+- Конвенции tech stack (CLI-first, API-first и т.д.)
+- Инженерные практики
+- Требования к интеграции
 
-This becomes the guardrails that guide all development. The agent knows what's off-limits before it writes a single line of code.
+Это становится ограждениями, которые направляют всю разработку. Агент знает что запрещено ещё до того как напишет первую строку кода.
 
-### Phase 1: Specify
+### Фаза 1: Спецификация
 
-Define the "what" and "why": the problem, users, scope, and success criteria.
+Определите "что" и "почему": проблему, пользователей, scope и критерии успеха.
 
-**Focus on:**
+**Фокус на:**
 
-- Problem statement
-- User personas and cohorts
-- Key user flows and experiences
-- Success metrics
-- Constraints (performance, privacy, security)
-- What's explicitly out of scope
+- Формулировка проблемы
+- Персоны пользователей и когорты
+- Ключевые пользовательские потоки и опыт
+- Метрики успеха
+- Ограничения (производительность, приватность, безопасность)
+- Что явно вне scope
 
-**Avoid:** Technical implementation details, stack choices, architecture (that comes later).
+**Избегайте:** Деталей технической реализации, выбора стека, архитектуры (это приходит позже).
 
-**Example specification prompt:**
+**Пример промпта спецификации:**
 
 ```
 Build a trip planner that generates day-by-day itineraries for multi-city trips.
@@ -85,23 +85,23 @@ Non-functional: P95 itinerary generation under 4 seconds for 7-day trips
 Out of scope: airline booking, hotel payments
 ```
 
-The output is a structured `SPEC.md` that captures requirements. The agent may flag `[NEEDS CLARIFICATION]` sections—resolve these before proceeding.
+Выход — структурированный `SPEC.md`, который захватывает требования. Агент может пометить секции как `[NEEDS CLARIFICATION]` — разрешите их перед продвижением.
 
-### Phase 2: Plan
+### Фаза 2: План
 
-Translate the product spec into technical implementation. Now you're defining the "how".
+Переведите продуктовую спецификацию в техническую реализацию. Теперь вы определяете "как".
 
-**Focus on:**
+**Фокус на:**
 
-- Tech stack selection
-- Architecture and design patterns
-- Integration boundaries
-- Data contracts and schemas
-- Performance targets
-- Security approach
-- Identified risks
+- Выбор tech stack
+- Архитектура и дизайн-паттерны
+- Границы интеграции
+- Контракты данных и схемы
+- Цели производительности
+- Подход к безопасности
+- Идентифицированные риски
 
-**Example planning prompt:**
+**Пример промпта планирования:**
 
 ```
 Stack: FastAPI + Postgres + Redis; Next.js front end; mobile via Expo.
@@ -111,71 +111,71 @@ Performance: target end-to-end plan in under 4 seconds at P95.
 Security: redact PII in logs, encrypt at rest.
 ```
 
-The output is a `PLAN.md` with technical architecture. A key benefit: you can generate multiple plan variations to compare different approaches before committing.
+Выход — `PLAN.md` с технической архитектурой. Ключевая выгода: вы можете генерировать несколько вариантов плана для сравнения разных подходов перед коммитом.
 
-### Phase 3: Tasks
+### Фаза 3: Задачи
 
-Break the spec and plan into manageable, testable, ordered work items.
+Разбейте на спецификацию и план на управляемые, тестируемые, упорядоченные рабочие элементы.
 
-**Each task includes:**
+**Каждая задача включает:**
 
-- Clear description
-- Acceptance criteria
-- Dependencies
-- Links to spec sections
-- Test requirements
+- Чёткое описание
+- Критерии приёмки
+- Зависимости
+- Ссылки на секции спецификации
+- Требования к тестам
 
-**Example task breakdown:**
+**Пример разбивки на задачи:**
 
-- API contract for itinerary generation with schemas
-- Agent prompts and guardrails
-- Data loaders for POI metadata
-- Caching and rate-limit handling
-- Frontend flows: create trip, edit preferences, view itinerary
-- Observability: timing spans, cost tracking, error taxonomies
+- Контракт API для генерации маршрута со схемами
+- Промпты агента и ограждения
+- Загрузчики данных для POI-метаданных
+- Кеширование и обработка rate-limit
+- Фронтенд-потоки: создание поездки, редактирование предпочтений, просмотр маршрута
+- Наблюдаемость: тайминги, отслеживание стоимости, таксономия ошибок
 
-By default, test-related items are included and ordered before implementation—TDD structure baked in.
+По умолчанию элементы, связанные с тестами, включены и упорядочены перед реализацией — структура TDD встроена.
 
-### Phase 4: Implement
+### Фаза 4: Реализация
 
-Execute tasks in small slices while staying within constraints.
+Выполняйте задачи маленькими срезами, оставаясь в рамках ограничений.
 
-**Key practice:** Keep agents pointing back to `SPEC.md` and `PLAN.md` for every change. Work from the spec, plan, or task file rather than ad-hoc prompts. Execute in small, reviewable chunks.
+**Ключевая практика:** Держите агентов указывающими обратно на `SPEC.md` и `PLAN.md` для каждого изменения. Работайте из спецификации, плана или файла задач, а не из ad-hoc промптов. Выполняйте маленькими, ревьюуемыми частями.
 
-**Example implementation slice:**
+**Пример среза реализации:**
 
-- Implement POST /itinerary with schema validation
-- Add scheduler agent prompt respecting constraints
-- Cache lookups and transit matrices
-- Verify against acceptance criteria
+- Реализовать POST /itinerary с валидацией схемы
+- Добавить промпт агента-планировщика с учётом ограничений
+- Кешировать lookups и transit matrices
+- Верифицировать против критериев приёмки
 
-Each chunk should solve a specific piece of the puzzle.
+Каждый срез должен решать конкретный кусочек головоломки.
 
-### Phase 5: Testing
+### Фаза 5: Тестирование
 
-Testing isn't a separate phase—it's integrated throughout. Tests attach directly to requirements for traceability.
+Тестирование — это не отдельная фаза — оно интегрировано повсюду. Тесты привязываются напрямую к требованиям для трассируемости.
 
-**Types of tests:**
+**Типы тестов:**
 
-- **Contract tests:** API request/response validation
-- **Property tests:** Constraint verification (e.g., no day exceeds 10km walking)
-- **Performance tests:** P95 latency under target
-- **Security tests:** PII redaction, encryption verification
+- **Контрактные тесты:** Валидация запрос/ответ API
+- **Проперти-тесты:** Верификация ограничений (например, ни один день не превышает 10km пешком)
+- **Перформанс-тесты:** P95 латентность ниже цели
+- **Тесты безопасности:** Редaktion PII, верификация шифрования
 
-The trace from "what was promised" to "what was delivered" becomes auditable.
+Трасса от "что было обещано" к "что было доставлено" становится аудируемой.
 
-### Phase 6: Maintain
+### Фаза 6: Поддержка
 
-Requirements change. SDD handles this gracefully:
+Требования меняются. SDD элегантно это обрабатывает:
 
-1. Update spec first
-2. Regenerate plan
-3. Update tasks
-4. Let agents refactor within boundaries
-5. Extend tests for new rules
-6. Keep changelog of spec revisions
+1. Сначала обновите спецификацию
+2. Регенерируйте план
+3. Обновите задачи
+4. Позвольте агентам рефакторить в рамках
+5. Расширьте тесты для новых правил
+6. Ведите changelog ревизий спецификации
 
-**Example change request:**
+**Пример запроса на изменение:**
 
 ```
 Add "family mode" that favors kid-friendly POIs and shorter walking segments.
@@ -189,51 +189,51 @@ Process:
 - Document why trade-offs were made
 ```
 
-Human review is essential before accepting regenerated plans.
+Человеческое ревью необходимо перед принятием регенерированных планов.
 
 ## GitHub Spec Kit
 
-GitHub's [Spec Kit](https://github.com/github/spec-kit) is an open-source toolkit that operationalizes SDD across multiple AI coding agents.
+[Spec Kit](https://github.com/github/spec-kit) от GitHub — это open-source инструментарий, который переводит SDD в операционное состояние для множества AI-кодинг агентов.
 
-### What it provides
+### Что он предоставляет
 
-- **Specify CLI:** Python-based tool that bootstraps projects for SDD
-- **Templates:** Structured formats for specs, plans, tasks, and constitution
-- **Slash commands:** AI agent prompts for structured development workflow
-- **Helper scripts:** Automation for maintaining SDD scaffolding
+- **Specify CLI:** Инструмент на Python, который бутстрапит проекты для SDD
+- **Шаблонысты:** Структурированные форматы для спецификаций, планов, задач и конституции
+- **Слэш-команды:** Промпты AI-агентов для структурированного рабочего процесса разработки
+- **Вспомогательные скрипты:** Автоматизация для поддержания脚手架 SDD
 
-### Installation
+### Установка
 
 ```bash
-# Persistent installation (recommended)
+# Постоянная установка (рекомендуется)
 uv tool install specify-cli --from git+https://github.com/github/spec-kit.git
 
-# Initialize project
+# Инициализировать проект
 specify init <PROJECT_NAME>
 
-# Or in current directory
+# Или в текущей директории
 specify init . --ai claude
 ```
 
-### Supported agents
+### Поддерживаемые агенты
 
-Spec Kit works with most modern AI coding agents:
+Spec Kit работает с большинством современных AI-кодинг агентов:
 
-| Agent          | Support |
-| -------------- | ------- |
-| Claude Code    | ✅      |
-| GitHub Copilot | ✅      |
-| Cursor         | ✅      |
-| Gemini CLI     | ✅      |
-| Windsurf       | ✅      |
-| Kilo Code      | ✅      |
-| Roo Code       | ✅      |
-| Codex CLI      | ✅      |
-| opencode       | ✅      |
+| Агент           | Поддержка |
+| -------------- | --------- |
+| Claude Code    | ✅        |
+| GitHub Copilot | ✅        |
+| Cursor         | ✅        |
+| Gemini CLI     | ✅        |
+| Windsurf       | ✅        |
+| Kilo Code      | ✅        |
+| Roo Code       | ✅        |
+| Codex CLI      | ✅        |
+| opencode       | ✅        |
 
-The templates are designed to work across agents without tweaks.
+Шаблоны разработаны для работы между агентами без настроек.
 
-### Project structure
+### Структура проекта
 
 After running `specify init`, you'll see:
 
@@ -260,122 +260,122 @@ After running `specify init`, you'll see:
         tasks-template.md
 ```
 
-## When SDD works
+## Когда SDD работает
 
-### Ideal scenarios
+### Идеальные сценарии
 
-**Greenfield development (0-to-1):** Starting new projects from scratch. Small upfront work ensures AI builds actual intent, not generic solutions based on common patterns.
+**Greenfield разработка (0-to-1):** Starting new projects from scratch. Небольшая предварительная работа гарантирует что AI строит реальное намерение, а не generic решения на основе common паттернов.
 
-**Feature work in existing systems (N-to-N+1):** The most powerful use case. Adding features to complex, existing codebases. Forces clarity on how new features interact with existing systems. New code feels native, not bolted-on.
+**Работа над фичами в существующих системах (N-to-N+1):** Самая мощная область применения. Добавление фичей в complex, существующие кодовые базы. Принуждает к ясности how new фичи взаимодействуют с существующими системами. Новый код ощущается native, не прикрученным.
 
-**Legacy modernization:** Rebuilding legacy systems where original intent is lost to time. Capture essential business logic in a modern spec, design fresh architecture, and let AI rebuild without inherited debt.
+**Модернизация легаси:** Перестройка legacy systems где оригинальное намерение потеряно времени. Захватите essential business logic в современной спецификации, спроектируйте свежую архитектуру, и позвольте AI перестроить без унаследованного долга.
 
-**Complex systems with many contributors:** Microservice architectures, multi-repo frontends, AI-powered backends. Every boundary becomes explicit, enabling contract testing.
+**Complex системы со многими contributors:** Microservice архитектуры, multi-repo фронтенды, AI-powered бэкенды. Каждая граница становится явной, enabling contract testing.
 
-**High-stakes features:** Payment flows, healthcare diagnostics, safety-critical automation. Encode performance, security, and reliability thresholds.
+**High-stakes фичи:** Платёжные потоки, healthcare диагностика, safety-critical автоматизация. Кодируйте перформанс, безопасность и пороги надёжности.
 
-**Long-term projects:** When a project will outlive the founding team, SDD preserves design intent as institutional memory.
+**Долгосрочные проекты:** Когда проект переживёт founding team, SDD сохраняет дизайн-намерение как институциональную память.
 
-### When to skip it
+### Когда пропустить
 
-**Quick prototypes:** SDD might be overkill. Lighten the process—short spec, simple plan, manual notes.
+**Быстрые прототипы:** SDD может быть overkill. Облегчите процесс — короткая спецификация, простой план, ручные заметки.
 
-**Design experiments:** SDD's full structure slows momentum when you're exploring.
+**Дизайн-эксперименты:** Полная структура SDD замедляет momentum когда вы исследуете.
 
-**One-shot operations:** Sometimes you need immediate results without iteration.
+**Одноразовые операции:** Иногда вам нужны immediate результаты без итерации.
 
-**Simple, well-understood problems:** Overhead isn't justified for trivial tasks.
+**Простые, well-understood проблемы:** Overhead не оправдан для тривиальных задач.
 
-## Why this works
+## Почему это работает
 
-The core problem with vague prompting is that language models are exceptional at pattern completion, not mind reading.
+Ключевая проблема с расплывчатым промптингом в том, что языковые модели исключительны в паттерн-комплишн, а не в чтении мыслей.
 
-Vague prompt: "add photo sharing to my app"
+Расплывчатый промпт: "add photo sharing to my app"
 
-This forces the model to guess at thousands of unstated requirements. It makes reasonable assumptions—but some will be wrong. You discover issues deep into implementation when they're expensive to fix.
+Это заставляет модель гадать о тысячах незаявленных требований. Она делает разумные предположения — но некоторые будут неверными. Вы обнаруживаете проблемы глубоко в реализации, когда они дороги в исправлении.
 
-**With clear specification + technical plan + focused tasks = AI clarity**
+**С чёткой спецификацией + техническим планом + сфокусированными задачами = ясность AI**
 
-Now, instead of guessing, AI:
+Теперь, вместо угадывания, AI:
 
-- **Knows what to build:** From specification
-- **Knows how to build it:** From plan
-- **Knows sequence:** From tasks
-- **Knows constraints:** From constitution
+- **Знает что строить:** From specification
+- **Знает как строить:** From plan
+- **Знает последовательность:** From tasks
+- **Знает ограничения:** From constitution
 
-The approach works across different stacks because the fundamental challenge is the same: translating intent into working code. Your specification captures intent clearly. Your plan translates intent to technical decisions. And tasks break the work down into implementable pieces. AI just handles the actual coding.
+Подход работает across different stacks porque fundamental challenge is the same: translating intent into working code. Your specification captures intent clearly. Your plan translates intent to technical decisions. And tasks break the work down into implementable pieces. AI just handles the actual coding.
 
-## Common pitfalls
+## Распространённые ловушки
 
 ### Over-specifying too early
 
-**Problem:** Trying to capture every pixel before building.
+**Проблема:** Пытаться capture every pixel before building.
 
-**Solution:** Specs should evolve with insight. Aim for just-enough structure for test automation and AI generation, and iterate as you validate assumptions.
+**Решение:** Спеки должны эволюционировать с пониманием. Стремитесь к just-enough structure для test automation и AI generation, и итерируйте as you validate assumptions.
 
 ### Letting specs drift
 
-**Problem:** Changes sneak into production without spec updates.
+**Проблема:** Изменения проникают в production без обновления спецификации.
 
-**Solution:** Treat the document as your changelog's front line. Update the spec first, then merge code. This preserves traceability for audits.
+**Решение:** Treat the document as your changelog's front line. Сначала обновите спецификацию, затем мержите код. Это сохраняет трассируемость для аудитов.
 
 ### No clear ownership
 
-**Problem:** "Someone else will fix it later" syndrome.
+**Проблема:** "Кто-то другой исправит это позже" синдром.
 
-**Solution:** Appoint a "spec steward" (a role that rotates) to ensure that merge requests include spec updates. They should flag inconsistencies early.
+**Решение:** Назначьте "spec steward" (роль которая ротируется) чтобы гарантировать что merge requests включают обновления спецификации. Они должныn't flag inconsistencies early.
 
 ### Focusing on what instead of why
 
-**Problem:** Future teammates lack context for confident changes.
+**Проблема:** Future teammates lack context for confident changes.
 
-**Solution:** Capture rationale as well as requirements. Include business drivers ("reduce checkout time to under 2 seconds") and document risks mitigated ("meet SOC 2 audit log mandates").
+**Решение:** Capture rationale as well as requirements. Include business drivers ("сократить время checkout до менее 2 секунд") и документируйте смягчённые риски ("соответствовать SOC 2 audit log mandates").
 
 ### Treating as static document
 
-**Problem:** The spec becomes an outdated artifact.
+**Проблема:** Спецификация становится устаревшим артефактом.
 
-**Solution:** Keep your spec as living document that evolves alongside the code. Update during maintenance phase and keep a changelog of revisions.
+**Решение:** Держите вашу спецификацию как живой документ который эволюционирует вместе с кодом. Обновляйте во время фазы поддержки и ведите changelog ревизий.
 
-## Enterprise benefits
+## Enterprise преимущества
 
-**Centralized requirements:** Security policies, compliance rules, design system constraints, integration needs—these should all live in the specification and plan, where AI can actually use them. Not in someone's head, buried in a wiki nobody reads, or scattered across Slack conversations.
+**Централизованные требования:** Политики безопасности, правила соответствия, ограничения дизайн-системы, потребности интеграции — всё это должно жить в спецификации и плане, где AI может реально это использовать. Не в чьей-то голове, закопанное в wiki which nobody reads, или разбросанное across Slack conversations.
 
-**Auditability:** With a spec commit linked to every release, you have a provable chain from requirement to implementation, to satisfy auditors demanding due diligence.
+**Аудируемость:** Со спецификацией commit прилинкованной к каждому релизу, у вас есть доказуемая цепочка от требования к реализации, to satisfy auditors demanding due diligence.
 
-**Shared vocabulary:** One glossary of user flows, metrics, and error states. With no dueling definitions of "session", "tenant", or "SLA", you have less friction in cross-functional work.
+**Общий словарь:** Один глоссарий пользовательских потоков, метрик и состояний ошибок. С no dueling definitions of "session", "tenant", or "SLA", у вас меньше трения в кросс-функциональной работе.
 
-**Accelerated onboarding:** New hires skim change-tracked specs. They can see how requirements evolved and reach productive coding in days, not weeks.
+**Ускоренный онбординг:** New hires skim change-tracked спецификации. Они могут видеть как требования эволюционировали и reach productive coding за days, not weeks.
 
-**Safe parallel development:** With interfaces frozen in contract and mock servers generated from specification, you can surface integration issues early, before staging.
+**Безопасная параллельная разработка:** С интерфейсами замороженными в контракте и mock servers сгенерированными из спецификации, вы можете surface integration issues early, before staging.
 
-## The shift in thinking
+## Сдвиг в мышлении
 
-Traditional development: code is the source of truth.
+Традиционная разработка: код — источник истины.
 
-Spec-driven development: _intent_ is the source of truth.
+Разработка на основе спецификаций: _намерение_ — источник истины.
 
-You stop asking "How do I get the perfect prompt?" and start asking "How do I capture intent clearly enough that AI can execute it?"
+Вы перестаёте спрашивать "Как мне написать идеальный промпт?" и начинаете спрашивать "Как мне capture intent clearly enough that AI может его выполнить?"
 
-The agent's job is translating intent into working code. Your job is making that intent explicit, reviewable, and evolvable.
+Работа агента — переводить намерение в работающий код. Ваша работа — делать это намерение явным, ревьюуемым и эволюционирующим.
 
-## Resources
+## Ресурсы
 
-### Official
+### Официальные
 
-- TRY: [GitHub - github/spec-kit](https://github.com/github/spec-kit) — Official repository (62k+ stars, MIT license)
-- READ: [Spec-driven development with AI - GitHub Blog](https://github.blog/ai-and-ml/generative-ai/spec-driven-development-with-ai-get-started-with-a-new-open-source-toolkit/) — Official announcement and overview
+- ПРОБОВАТЬ: [GitHub - github/spec-kit](https://github.com/github/spec-kit) — Официальный репозиторий (62k+ звёзд, MIT лицензия)
+- ЧИТАТЬ: [Spec-driven development with AI - GitHub Blog](https://github.blog/ai-and-ml/generative-ai/spec-driven-development-with-ai-get-started-with-a-new-open-source-toolkit/) — Официальный анонс и обзор
 
-### Tutorials
+### Туториалы
 
-- READ: [Spec-Driven Development Tutorial using GitHub Spec Kit](https://www.scalablepath.com/machine-learning/spec-driven-development-workflow) — Real-world tutorial with examples
-- READ: [Diving Into Spec-Driven Development With GitHub Spec Kit](https://developer.microsoft.com/blog/spec-driven-development-spec-kit) — Microsoft Developer Blog
+- ЧИТАТЬ: [Spec-Driven Development Tutorial using GitHub Spec Kit](https://www.scalablepath.com/machine-learning/spec-driven-development-workflow) — Реальный туториал с примерами
+- ЧИТАТЬ: [Diving Into Spec-Driven Development With GitHub Spec Kit](https://developer.microsoft.com/blog/spec-driven-development-spec-kit) — Microsoft Developer Blog
 
-### Maintainers
+### Мейнтейнеры
 
 - Den Delimarsky (@localden)
 - John Lam (@jflam)
 
 ---
 
-**Using SDD in production?** [Share your experience](/community/contributing/)—what worked, what didn't, and what you learned along the way.
+**Используете SDD в продакшене?** [Поделитесь своим опытом](/community/contributing/)—что сработало, что нет и что вы узнали.
