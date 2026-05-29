@@ -1,85 +1,85 @@
 ---
-title: Planning & Design
-description: Using agents for requirements, architecture, and system design
+title: Планирование и проектирование
+description: Использование агентов для требований, архитектуры и проектирования систем
 sidebar:
   order: 1
 ---
 
-Agents accelerate planning by exploring options, surfacing patterns, and drafting specifications—without replacing stakeholder judgment.
+Агенты ускоряют планирование, исследуя варианты, выявляя паттерны и создавая спецификации — не заменяя при этом суждение заинтересованных сторон.
 
-## Requirements & Planning
+## Требования и планирование
 
-### Where agents help
+### Где помогают агенты
 
-**Breaking down ambiguity**
+**Разбивка неопределённости**
 
-- "What questions should we answer before implementing [feature]?"
-- "What edge cases should we consider for [requirement]?"
-- "Break down [epic] into implementable user stories"
+- "Какие вопросы нужно решить перед реализацией [функции]?"
+- "Какие граничные случаи следует учесть для [требования]?"
+- "Разбейте [эпик] на реализуемые пользовательские истории"
 
-**Research and exploration**
+**Исследование и изучение**
 
-- "What approaches exist for [problem]? Summarize pros and cons."
-- "What are common pitfalls when implementing [feature type]?"
+- "Какие подходы существуют для [проблемы]? Кратко опишите плюсы и минусы."
+- "Какие типичные ошибки допускаются при реализации [типа функции]?"
 
-Treat this as research assistance, not authoritative answers.
+Относитесь к этому как к исследовательской помощи, а не к авторитетным ответам.
 
-**Specification drafting:** API contracts, data models, interface definitions, acceptance criteria. These drafts need human refinement, but they accelerate the starting point.
+**Составление спецификаций:** API-контракты, модели данных, определения интерфейсов, критерии приёмки. Эти черновики требуют доработки человеком, но значительно ускоряют точку старта.
 
-**Estimation support:** "Based on this spec, what are the major implementation tasks?" Agents decompose work; estimation remains human judgment.
+**Помощь в оценке:** "На основе этой спецификации, каковы основные задачи по реализации?" Агенты разбивают работу на части; оценка остаётся человеческим суждением.
 
-### Where agents struggle
+### Где агенты испытывают трудности
 
-- **Stakeholder intent** — They can't replace stakeholder conversations
-- **Organizational context** — Team ownership, historical decisions, constraints
-- **Prioritization** — They enumerate options, but can't tell you what matters most
+- **Намерения заинтересованных сторон** — Они не могут заменить диалог со стейкхолдерами
+- **Организационный контекст** — Владение командой, исторические решения, ограничения
+- **Приоритизация** — Они перечисляют варианты, но не могут сказать, что важнее всего
 
-### Prompt patterns
+### Паттерны промптов
 
-**User story refinement:**
-"Given this requirement: [paste requirement]. Generate user stories in standard format (As a... I want... So that...). Include acceptance criteria for each."
+**Уточнение пользовательских историй:**
+"Учитывая это требование: [вставьте требование]. Создайте пользовательские истории в стандартном формате (Как пользователь... Я хочу... Чтобы...). Включите критерии приёмки для каждой."
 
-**Risk identification:**
-"We're planning to implement [feature]. What technical risks should we consider? What could go wrong?"
+**Выявление рисков:**
+"Мы планируем реализовать [функцию]. Какие технические риски следует учесть? Что может пойти не так?"
 
-## Architecture & Design
+## Архитектура и проектирование
 
-### What agents offer
+### Что предлагают агенты
 
-**Broad pattern knowledge:** Common approaches for your problem type, pattern variations and tradeoffs, anti-patterns to avoid. Doesn't replace experience, but accelerates exploration.
+**Широкие знания паттернов:** Типичные подходы для вашего типа проблемы, вариации паттернов и компромиссы, антипаттерны, которых следует избегать. Не заменяет опыт, но ускоряет исследование.
 
-**Articulation:** Generate diagrams from descriptions, document decisions, create viewpoints for different audiences.
+**Артикуляция:** Генерация диаграмм из описаний, документирование решений, создание точек зрения для разной аудитории.
 
-**Challenge and critique:** "What could go wrong with this design?" "What am I not considering?" They surface considerations you might miss.
+**Проверка и критика:** "Что может пойти не так с этим дизайном?" "Что я не рассматриваю?" Они выявляют аспекты, которые вы могли упустить.
 
-### What agents can't do
+### Что агенты не могут делать
 
-- **Make decisions** — They lack context about your team, constraints, and what you're optimizing for
-- **Understand evolution** — They see a snapshot, not trajectory (why things are the way they are)
-- **Navigate tradeoffs** — They enumerate options, not which tradeoff fits your situation
+- **Принимать решения** — Им не хватает контекста о вашей команде, ограничениях и том, что вы оптимизируете
+- **Понимать эволюцию** — Они видят снимок, а не траекторию (почему вещи устроены так, а не иначе)
+- **Перемещаться между компромиссами** — Они перечисляют варианты, но не какой компромисс подходит вашей ситуации
 
-### Prompt patterns
+### Паттерны промптов
 
-**Design exploration:**
-"I need to design [type of system]. What architectural patterns are commonly used? For each, what are the key tradeoffs?"
+**Исследование дизайна:**
+"Мне нужно спроектировать [тип системы]. Какие архитектурные паттерны обычно используются? Для каждого, каковы ключевые компромиссы?"
 
-**Design critique:**
-"Here's my proposed architecture for [system]: [description]. What potential issues should I consider? What am I missing?"
+**Критика дизайна:**
+"Вот моё предложение по архитектуре для [системы]: [описание]. Какие потенциальные проблемы мне следует учесть? Что я упускаю?"
 
-**ADR drafting:**
-"Help me write an ADR for deciding to use [approach] instead of [alternative]. Context: [provide context]."
+**Составление ADR:**
+"Помогите написать ADR о решении использовать [подход] вместо [альтернативы]. Контекст: [предоставьте контекст]."
 
-**Diagram generation:**
-"Create a [type] diagram showing [components and relationships]. Use [format, e.g., Mermaid syntax]."
+**Генерация диаграмм:**
+"Создайте [тип] диаграмму, показывающую [компоненты и связи]. Используйте [формат, например, синтаксис Mermaid]."
 
-## Resources
+## Ресурсы
 
-### Specifications & Planning
+### Спецификации и планирование
 
-- [Spec-Driven Development – Al Harris, Amazon Kiro](https://www.youtube.com/watch?v=HY_JyxAZsiE) - How specs enable reproducible AI delivery
-- [The New Code – Sean Grove, OpenAI](https://www.youtube.com/watch?v=8rABwKRsec4) - Why specifications are becoming the fundamental unit of programming
-- [Spec Kit](https://github.com/github/spec-kit) - GitHub's spec-driven development framework
+- [Spec-Driven Development – Al Harris, Amazon Kiro](https://www.youtube.com/watch?v=HY_JyxAZsiE) - Как спецификации обеспечивают воспроизводимую AI-доставку
+- [The New Code – Sean Grove, OpenAI](https://www.youtube.com/watch?v=8rABwKRsec4) - Почему спецификации становятся фундаментальной единицей программирования
+- [Spec Kit](https://github.com/github/spec-kit) - Фреймворк разработки через спецификации от GitHub
 
-### Case studies
+### Примеры из практики
 
-- [AI in Product Development: Netflix, BMW, PepsiCo](https://www.virtasant.com/ai-today/ai-in-product-development-netflix-bmw) - Case studies of AI in product planning
+- [AI in Product Development: Netflix, BMW, PepsiCo](https://www.virtasant.com/ai-today/ai-in-product-development-netflix-bmw) - Примеры использования AI в планировании продукта

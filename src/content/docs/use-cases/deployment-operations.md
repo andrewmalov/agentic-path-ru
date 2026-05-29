@@ -1,137 +1,137 @@
 ---
-title: Deployment & Operations
-description: CI/CD, monitoring, and maintenance with agent assistance
+title: Развёртывание и эксплуатация
+description: CI/CD, мониторинг и обслуживание с помощью агентов
 sidebar:
   order: 4
 ---
 
-CI/CD pipelines are configuration-heavy and well-suited for agents. Monitoring and maintenance are ongoing concerns where agents help with setup, incident response, and routine tasks.
+CI/CD-пайплайны основаны на конфигурации и хорошо подходят для агентов. Мониторинг и обслуживание — это постоянные задачи, где агенты помогают с настройкой, реагированием на инциденты и рутинными операциями.
 
-## CI/CD & Deployment
+## CI/CD и развёртывание
 
-### Where agents help
+### Где помогают агенты
 
-**Pipeline configuration:** GitHub Actions, GitLab CI, Jenkins, CircleCI. Agents know common patterns and adapt to your stack.
+**Конфигурация пайплайнов:** GitHub Actions, GitLab CI, Jenkins, CircleCI. Агенты знают типичные паттерны и адаптируются к вашему стеку.
 
-**Infrastructure as Code:** Terraform, CloudFormation, Pulumi—generate resources, modify existing infrastructure, create reusable modules.
+**Инфраструктура как код:** Terraform, CloudFormation, Pulumi — генерируйте ресурсы, изменяйте существующую инфраструктуру, создавайте переиспользуемые модули.
 
-**Deployment automation:** Dockerfiles, Kubernetes manifests, Helm charts, deploy scripts, rollback procedures.
+**Автоматизация развёртывания:** Dockerfiles, Kubernetes-манифесты, Helm-чарты, скрипты деплоя, процедуры отката.
 
-**Environment configuration:** Environment variables, secret management, configuration files.
+**Конфигурация окружения:** Переменные окружения, управление секретами, конфигурационные файлы.
 
-### What to watch for
+### На что обращать внимание
 
-**Security** — CI/CD is security-critical. Agent-generated pipelines may expose secrets in logs, use overly permissive permissions, or skip security scanning. Always security-review CI/CD changes.
+**Безопасность** — CI/CD критичен для безопасности. Сгенерированные агентами пайплайны могут раскрывать секреты в логах, использовать слишком широкие разрешения или пропускать проверку безопасности. Всегда проверяйте безопасность CI/CD-изменений.
 
-**Vendor quirks** — Each CI system has differences. Test generated pipelines thoroughly.
+**Особенности вендоров** — Каждая CI-система имеет различия. Тщательно тестируйте сгенерированные пайплайны.
 
-**Stateful resources** — Infrastructure changes can cause deletion, downtime, cost surprises, or data loss. Use plan/apply patterns.
+**Stateful-ресурсы** — Изменения инфраструктуры могут вызвать удаление, простой, неожиданные затраты или потерю данных. Используйте паттерны plan/apply.
 
-### Prompt patterns
+### Паттерны промптов
 
-**Pipeline generation:**
-
-```
-Create a GitHub Actions workflow for a [language/framework] project.
-
-Requirements:
-- Run tests on PR
-- Deploy to [environment] on merge to main
-- Use [specific services/tools]
-
-Follow security best practices.
-```
-
-**Infrastructure:**
+**Генерация пайплайна:**
 
 ```
-Generate Terraform for [resource type] with:
-- [Specific requirements]
-- [Constraints]
+Создайте workflow GitHub Actions для проекта на [язык/фреймворк].
 
-Follow the patterns in [existing file/module].
+Требования:
+- Запускать тесты на PR
+- Деплоить в [окружение] при мерже в main
+- Использовать [конкретные сервисы/инструменты]
+
+Следуйте лучшим практикам безопасности.
+```
+
+**Инфраструктура:**
+
+```
+Сгенерируйте Terraform для [тип ресурса] с:
+- [Конкретные требования]
+- [Ограничения]
+
+Следуйте паттернам в [существующий файл/модуль].
 ```
 
 **Dockerfile:**
 
 ```
-Create a Dockerfile for [application type].
+Создайте Dockerfile для [тип приложения].
 
-Requirements:
+Требования:
 - Multi-stage build
-- Minimal final image
-- Run as non-root
-- [Other requirements]
+- Минимальный финальный образ
+- Запуск от не-root пользователя
+- [Другие требования]
 ```
 
-## Monitoring & Maintenance
+## Мониторинг и обслуживание
 
-### Monitoring setup
+### Настройка мониторинга
 
-**Alert configuration:** Prometheus rules, CloudWatch alarms, Datadog monitors. Agents understand common patterns for what to monitor.
+**Конфигурация алертов:** Правила Prometheus, CloudWatch-алармы, Datadog-мониторы. Агенты понимают типичные паттерны того, что мониторить.
 
-**Dashboard creation:** Grafana dashboards, Kibana visualizations. Describe what you want to see; get a starting configuration.
+**Создание дашбордов:** Grafana-дашборды, Kibana-визуализации. Опишите, что хотите видеть; получите стартовую конфигурацию.
 
-**Log aggregation:** Parsing rules, search queries, anomaly detection.
+**Агрегация логов:** Правила парсинга, поисковые запросы, обнаружение аномалий.
 
-### Incident response
+### Реагирование на инциденты
 
-**Root cause analysis:** "Here's the error and recent changes. What could cause this? What should I check?"
+**Анализ корневой причины:** "Вот ошибка и недавние изменения. Что могло её вызвать? Что проверить?"
 
-**Debugging assistance:** Analyze logs, interpret stack traces, trace request flows, identify error patterns.
+**Помощь в отладке:** Анализ логов, интерпретация стектрейсов, трассировка потоков запросов, выявление паттернов ошибок.
 
-**Post-mortem drafting:** "Help me write a post-mortem for [incident]. Include: summary, timeline, root cause, impact, remediation, lessons learned."
+**Составление постмортемов:** "Помогите написать постмортем для [инцидент]. Включите: резюме, таймлайн, корневую причину, влияние, исправление, извлечённые уроки."
 
-### Maintenance tasks
+### Задачи обслуживания
 
-- **Dependency updates** — Analyze versions, identify breaking changes, generate update PRs
-- **Technical debt cleanup** — Identify improvement patterns, generate refactoring plans
-- **Performance optimization** — Analyze issues, suggest approaches, generate benchmarks
-- **Security maintenance** — Vulnerability remediation, patch application, configuration hardening
+- **Обновление зависимостей** — Анализ версий, выявление критических изменений, генерация PR для обновлений
+- **Очистка технического долга** — Выявление паттернов улучшений, генерация планов рефакторинга
+- **Оптимизация производительности** — Анализ проблем, предложение подходов, генерация бенчмарков
+- **Обслуживание безопасности** — Устранение уязвимостей, применение патчей, харденинг конфигурации
 
-### What to watch for
+### На что обращать внимание
 
-- **Alert fatigue** — Generated alerts may be too sensitive or poorly calibrated. Tune based on real experience.
-- **Dashboard overload** — More dashboards isn't better. Ask: What decision does each panel inform?
-- **Maintenance scope creep** — Bound tasks to the actual problem being solved.
+- **Усталость от алертов** — Сгенерированные алерты могут быть слишком чувствительными или плохо откалиброванными. Настраивайте на основе реального опыта.
+- **Переизбыток дашбордов** — Больше дашбордов — не значит лучше. Задавайте вопрос: Какое решение информирует каждая панель?
+- **Разрастание задач обслуживания** — Ограничивайте задачи реальной решаемой проблемой.
 
-### Prompt patterns
+### Паттерны промптов
 
-**Alert rules:**
-
-```
-Create Prometheus alerting rules for a [service type].
-
-Monitor:
-- Error rate exceeding [threshold]
-- Latency above [threshold]
-- Resource utilization above [threshold]
-
-Include appropriate severity levels and annotations.
-```
-
-**Incident investigation:**
+**Правила алертов:**
 
 ```
-I'm seeing [error/symptom] in production.
+Создайте правила алертинга Prometheus для [тип сервиса].
 
-Relevant context:
-- [Recent changes]
-- [Error logs]
-- [Metrics]
+Мониторить:
+- Частота ошибок, превышающая [порог]
+- Задержка выше [порог]
+- Использование ресурсов выше [порог]
 
-What could cause this? What should I check first?
+Включите соответствующие уровни серьёзности и анноты.
 ```
 
-**Runbook:**
+**Расследование инцидента:**
 
 ```
-Create a runbook for handling [type of incident].
+Я вижу [ошибка/симптом] в продакшене.
 
-Include:
-- Detection (how we know it's happening)
-- Triage (how to assess severity)
-- Mitigation (immediate actions)
-- Resolution (full fix)
-- Follow-up (post-incident)
+Релевантный контекст:
+- [Недавние изменения]
+- [Логи ошибок]
+- [Метрики]
+
+Что могло это вызвать? Что проверить в первую очередь?
+```
+
+**Ранбук:**
+
+```
+Создайте ранбук для обработки [тип инцидента].
+
+Включите:
+- Обнаружение (как мы узнаём, что это происходит)
+- Триаж (как оценить серьёзность)
+- Смягчение (немедленные действия)
+- Разрешение (полное исправление)
+- Последующие действия (послеинцидентные)
 ```

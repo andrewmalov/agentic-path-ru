@@ -1,127 +1,127 @@
 ---
-title: Quality & Documentation
-description: Testing, QA, and documentation with agent assistance
+title: Качество и документация
+description: Тестирование, QA и документация с помощью агентов
 sidebar:
   order: 3
 ---
 
-Testing and documentation are high-value agent use cases. Tests are self-validating—you immediately know if they work. Documentation is perpetually under-maintained—agents reduce the friction dramatically.
+Тестирование и документация — высокоценные варианты использования агентов. Тесты самопроверяются — вы сразу знаете, работают ли они. Документация вечно недорабатывается — агенты значительно снижают трение.
 
-## Testing
+## Тестирование
 
-### Where agents excel
+### Где агенты преуспевают
 
-**Unit test generation** — Given a function, agents generate comprehensive tests: happy path, edge cases (null, empty, boundaries), error conditions. This is probably the single highest-ROI application for most teams.
+**Генерация юнит-тестов** — Дан функцию, агенты генерируют комплексные тесты: счастливый путь, граничные случаи (null, пусто, границы), условия ошибок. Это, вероятно, единственное с самым высоким ROI для большинства команд.
 
-**Test case discovery** — "What test cases should I consider for this function? Focus on edge cases and error conditions." You'll often find cases you hadn't considered.
+**Обнаружение тест-кейсов** — "Какие тест-кейсы мне следует рассмотреть для этой функции? Сфокусируйтесь на граничных случаях и условиях ошибок." Вы часто обнаружите кейсы, которые не рассматривали.
 
-**Mock and fixture generation** — Test data structures, mock implementations, factory functions. Tedious setup is perfect for agents.
+**Генерация моков и фикстур** — Тестовые структуры данных, mock-реализации, фабричные функции. Утомительная настройка идеальна для агентов.
 
-**Regression tests** — "Create a test that would have caught this bug: [describe bug]"
+**Регрессионные тесты** — "Создайте тест, который поймал бы этот баг: [описание бага]"
 
-### What to watch for
+### На что обращать внимание
 
-- **Tests that pass for wrong reasons** — Tests that mock away the thing being tested, or have assertions that always pass
-- **Hallucinated assertions** — Agents may assert behavior that doesn't match reality
-- **Copy-paste tests** — Similar tests that don't add meaningful coverage
+- **Тесты, которые проходят по неправильным причинам** — Тесты, которые мокают то, что тестируется, или имеют断言, которые всегда проходят
+- **Выдуманные断言** — Агенты могут утверждать поведение, которое не соответствует реальности
+- **Копипаст-тесты** — Похожие тесты, которые не добавляют значимого покрытия
 
-Always verify tests can fail when they should.
+Всегда проверяйте, что тесты могут проваливаться, когда должны.
 
-### Test-first workflow
+### Рабочий процесс test-first
 
-1. **Write or generate tests first:** "Given this requirement [describe], write tests that would verify correct implementation."
-2. **Review and refine:** Ensure tests capture what you actually want.
-3. **Generate implementation:** "Here are the tests. Write code that makes them pass."
-4. **Verify everything:** Run tests, review implementation, check for gaps.
+1. **Напишите или сгенерируйте тесты первыми:** "Учитывая это требование [опишите], напишите тесты, которые проверят правильную реализацию."
+2. **Просмотрите и доработайте:** Убедитесь, что тесты captures то, что вы действительно хотите.
+3. **Сгенерируйте реализацию:** "Вот тесты. Напишите код, который их пройдёт."
+4. **Проверьте всё:** Запустите тесты, просмотрите реализацию, проверьте на пробелы.
 
-This produces better results than implementation-first because tests define the contract.
+Это даёт лучшие результаты, чем реализация first, потому что тесты определяют контракт.
 
-### Prompt patterns
+### Паттерны промптов
 
-**Unit tests:**
-
-```
-Write unit tests for this function:
-[paste function]
-
-Cover:
-- Normal operation
-- Edge cases (empty input, null, boundaries)
-- Error conditions
-
-Use [test framework]. Follow conventions in [example file].
-```
-
-**Regression test:**
+**Юнит-тесты:**
 
 ```
-Bug fixed: [description]
-Root cause: [explanation]
-Fix: [summary]
+Напишите юнит-тесты для этой функции:
+[вставьте функцию]
 
-Write a test that would catch this bug if it returns.
+Покройте:
+- Обычную работу
+- Граничные случаи (пустой ввод, null, границы)
+- Условия ошибок
+
+Используйте [тестовый фреймворк]. Следуйте конвенциям в [пример файла].
 ```
 
-## Documentation
-
-### Types and approaches
-
-**Code documentation:** Inline comments (explain the _why_), function/method docs, class/module docs. Agents excel here because they read code and infer what needs documenting.
-
-**API documentation:** Endpoints, SDKs, integration guides. Generate from code, OpenAPI specs, or examples.
-
-**Architecture documentation:** System overviews, decision records, diagrams. More human guidance needed, but agents help with generation.
-
-### What to watch for
-
-- **Hallucinated features** — APIs that don't exist, parameters that don't work. Verify all claims against actual code.
-- **Missing context** — Why decisions were made, gotchas, performance considerations. Add these manually—they're often most valuable.
-- **Staleness risk** — Easy to generate ≠ easy to maintain. Build update processes, not just generation.
-
-### Prompt patterns
-
-**README bootstrap:**
+**Регрессионный тест:**
 
 ```
-Create a README for this project.
+Баг исправлен: [описание]
+Корневая причина: [объяснение]
+Исправление: [краткое описание]
 
-Project: [describe project]
-Tech stack: [list technologies]
-Target audience: [who will use this]
-
-Include: installation, quick start, basic usage, contributing.
+Напишите тест, который поймает этот баг, если он вернётся.
 ```
 
-**API documentation:**
+## Документация
+
+### Типы и подходы
+
+**Документация кода:** Встроенные комментарии (объясняйте ПОЧЕМУ), docs для функций/методов, классов/модулей. Агенты здесь преуспевают, потому что читают код и делают вывод о том, что нужно документировать.
+
+**API-документация:** Эндпоинты, SDK, руководства по интеграции. Генерируйте из кода, OpenAPI-спецификаций или примеров.
+
+**Архитектурная документация:** Обзоры систем, записи решений, диаграммы. Требуется больше человеческого руководства, но агенты помогают с генерацией.
+
+### На что обращать внимание
+
+- **Выдуманные функции** — API, которых не существует, параметры, которые не работают. Проверяйте все утверждения против фактического кода.
+- **Отсутствующий контекст** — Почему были приняты решения, подводные камни, соображения производительности. Добавляйте их вручную — они часто самые ценные.
+- **Риск устаревания** — Легко сгенерировать ≠ легко поддерживать. Стройте процессы обновления, а не только генерации.
+
+### Паттерны промптов
+
+**README с нуля:**
 
 ```
-Generate API documentation for this endpoint:
+Создайте README для этого проекта.
 
-[paste endpoint code or OpenAPI spec]
+Проект: [опишите проект]
+Технологический стек: [перечислите технологии]
+Целевая аудитория: [кто будет это использовать]
 
-Include: description, parameters, request/response examples, error codes.
-Format as Markdown.
+Включите: установку, быстрый старт, базовое использование, содействие.
+```
+
+**API-документация:**
+
+```
+Сгенерируйте API-документацию для этого эндпоинта:
+
+[вставьте код эндпоинта или OpenAPI-спецификацию]
+
+Включите: описание, параметры, примеры запроса/ответа, коды ошибок.
+Отформатируйте как Markdown.
 ```
 
 **ADR:**
 
 ```
-Help me write an ADR for choosing [option].
+Помогите написать ADR для выбора [опция].
 
-Context: [describe situation]
-Decision: [what we decided]
-Consequences: [what this means]
+Контекст: [опишите ситуацию]
+Решение: [что мы решили]
+Последствия: [что это значит]
 
-Include alternatives considered.
+Включите рассмотренные альтернативы.
 ```
 
-## Resources
+## Ресурсы
 
-### Testing
+### Тестирование
 
-- [The 3 Pillars of Autonomy – Michele Catasta, Replit](https://www.youtube.com/watch?v=MLhAA9yguwM) - Automatic testing as foundation for agent autonomy
+- [The 3 Pillars of Autonomy – Michele Catasta, Replit](https://www.youtube.com/watch?v=MLhAA9yguwM) - Автоматическое тестирование как фундамент автономности агентов
 
-### Documentation
+### Документация
 
-- [AGENTS.md](https://agents.md/) - The emerging standard for agent-readable project documentation
-- [The New Code – Sean Grove, OpenAI](https://www.youtube.com/watch?v=8rABwKRsec4) - Specs as source of truth compiling to documentation
+- [AGENTS.md](https://agents.md/) - Появляющийся стандарт для документации проектов, читаемой агентами
+- [The New Code – Sean Grove, OpenAI](https://www.youtube.com/watch?v=8rABwKRsec4) - Спеки как источник правды, компилируемый в документацию

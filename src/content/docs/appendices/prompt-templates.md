@@ -1,331 +1,331 @@
 ---
-title: Prompt Templates by Use Case
-description: Ready-to-use prompt structures for common tasks
+title: Шаблоны промптов по вариантам использования
+description: Готовые к использованию структуры промптов для типичных задач
 sidebar:
   order: 4
 ---
 
-Copy and adapt these templates for your specific needs. Each template includes the key components that make prompts effective.
+Копируйте и адаптируйте эти шаблоны под ваши конкретные нужды. Каждый шаблон включает ключевые компоненты, которые делают промпты эффективными.
 
-## Implementation prompts
+## Промпты для реализации
 
-### New feature
-
-```
-Implement [feature name].
-
-## Requirements
-- [Functional requirement 1]
-- [Functional requirement 2]
-- [Non-functional requirement]
-
-## Technical context
-- Language/Framework: [specify]
-- Relevant files: [list files]
-- Pattern to follow: [reference file or describe]
-
-## Constraints
-- Don't modify: [files/functions to preserve]
-- Must maintain: [backward compatibility requirements]
-- Performance requirement: [if any]
-
-## Acceptance criteria
-- [ ] [Criterion 1]
-- [ ] [Criterion 2]
-- [ ] [Criterion 3]
-```
-
-### API endpoint
+### Новая функция
 
 ```
-Create an API endpoint for [purpose].
+Реализуйте [название функции].
 
-## Endpoint specification
-- Method: [GET/POST/PUT/DELETE]
-- Path: [/api/v1/...]
-- Authentication: [required/optional/none]
+## Требования
+- [Функциональное требование 1]
+- [Функциональное требование 2]
+- [Нефункциональное требование]
 
-## Request
-- Body: [describe structure or provide example]
-- Parameters: [query params, path params]
-- Headers: [required headers]
+## Технический контекст
+- Язык/Фреймворк: [указать]
+- Релевантные файлы: [список файлов]
+- Паттерн для следования: [reference файл или описание]
 
-## Response
-- Success (200): [describe/example]
-- Error cases: [list with status codes]
+## Ограничения
+- Не изменять: [файлы/функции для сохранения]
+- Поддерживать: [требования обратной совместимости]
+- Требование к производительности: [если есть]
 
-## Implementation details
-- Handler location: [file path]
-- Service to use: [service name]
-- Follow pattern in: [example file]
+## Критерии приёмки
+- [x] [Критерий 1]
+- [x] [Критерий 2]
+- [x] [Критерий 3]
 ```
 
-### Database migration
+### API-эндпоинт
 
 ```
-Create a database migration to [purpose].
+Создайте API-эндпоинт для [назначение].
 
-## Changes needed
-- [Change 1: add table/column/index]
-- [Change 2]
-- [Change 3]
+## Спецификация эндпоинта
+- Метод: [GET/POST/PUT/DELETE]
+- Путь: [/api/v1/...]
+- Аутентификация: [required/optional/none]
 
-## Schema details
-[Describe tables, columns, types, constraints]
+## Запрос
+- Body: [описать структуру или предоставить пример]
+- Параметры: [query params, path params]
+- Заголовки: [требуемые заголовки]
 
-## Considerations
-- Existing data: [how to handle]
-- Reversibility: [rollback requirements]
-- Performance: [large table considerations]
+## Ответ
+- Успех (200): [описать/пример]
+- Случаи ошибок: [список с кодами статусов]
 
-## Migration framework: [Prisma/Knex/etc.]
+## Детали реализации
+- Расположение обработчика: [путь к файлу]
+- Сервис для использования: [название сервиса]
+- Следовать паттерну в: [пример файла]
 ```
 
-## Bug fix prompts
-
-### With known cause
+### Миграция базы данных
 
 ```
-Fix bug: [one-line description]
+Создайте миграцию базы данных для [назначение].
 
-## Reproduction
-1. [Step 1]
-2. [Step 2]
-3. [Step 3]
+## Необходимые изменения
+- [Изменение 1: добавить таблицу/колонку/индекс]
+- [Изменение 2]
+- [Изменение 3]
 
-## Current behavior
-[What happens now]
+## Детали схемы
+[Опишите таблицы, колонки, типы, ограничения]
 
-## Expected behavior
-[What should happen]
+## Соображения
+- Существующие данные: [как обработать]
+- Обратимость: [требования к rollback]
+- Производительность: [соображения для больших таблиц]
 
-## Root cause
-[Your analysis of why this happens]
-
-## Constraints
-- Minimize changes
-- Don't modify [protected areas]
-- Add regression test
+## Фреймворк миграции: [Prisma/Knex/и т.д.]
 ```
 
-### Investigation needed
+## Промпты для исправления багов
+
+### С известной причиной
 
 ```
-Debug issue: [symptom description]
+Исправить баг: [однострочное описание]
 
-## Context
-- When it occurs: [conditions]
-- Error message: [if any]
-- Relevant logs: [paste relevant logs]
-- Recent changes: [what changed recently]
+## Воспроизведение
+1. [Шаг 1]
+2. [Шаг 2]
+3. [Шаг 3]
 
-## What I've tried
-- [Attempt 1 and result]
-- [Attempt 2 and result]
+## Текущее поведение
+[Что происходит сейчас]
 
-## Questions
-- What could cause this?
-- How can I verify the root cause?
-- What's the safest fix?
+## Ожидаемое поведение
+[Что должно происходить]
+
+## Корневая причина
+[Ваш анализ почему это происходит]
+
+## Ограничения
+- Минимизировать изменения
+- Не изменять [защищённые области]
+- Добавить регрессионный тест
 ```
 
-## Testing prompts
-
-### Unit tests
+### Требуется расследование
 
 ```
-Write unit tests for [function/class name] in [file].
+Отладить проблему: [описание симптома]
 
-## Test framework: [Jest/pytest/etc.]
+## Контекст
+- Когда возникает: [условия]
+- Сообщение об ошибке: [если есть]
+- Релевантные логи: [вставьте релевантные логи]
+- Недавние изменения: [что недавно изменилось]
 
-## Coverage requirements
-- Normal operation cases
-- Edge cases:
-  - Empty/null inputs
-  - Boundary values
-  - [Domain-specific edges]
-- Error conditions:
-  - [Error case 1]
-  - [Error case 2]
+## Что я пробовал
+- [Попытка 1 и результат]
+- [Попытка 2 и результат]
 
-## Style
-- Follow patterns in [example test file]
-- Use [describe/it or test naming convention]
-- Mock [specify what to mock]
+## Вопросы
+- Что могло это вызвать?
+- Как я могу проверить корневую причину?
+- Какое самое безопасное исправление?
 ```
 
-### Integration tests
+## Промпты для тестирования
+
+### Юнит-тесты
 
 ```
-Write integration tests for [component/feature].
+Напишите юнит-тесты для [имя функции/класса] в [файл].
 
-## Test scope
-- Test the interaction between [component A] and [component B]
-- Use [real/mocked] [database/external service]
+## Тестовый фреймворк: [Jest/pytest/и т.д.]
 
-## Scenarios
-1. [Happy path scenario]
-2. [Error scenario]
-3. [Edge case scenario]
+## Требования к покрытию
+- Случаи нормальной работы
+- Граничные случаи:
+  - Пустой/null ввод
+  - Граничные значения
+  - [Специфичные для домена границы]
+- Условия ошибок:
+  - [Случай ошибки 1]
+  - [Случай ошибки 2]
 
-## Setup requirements
-- [Prerequisites]
-- [Test data needed]
-
-## Framework: [specify]
+## Стиль
+- Следовать паттернам в [пример тестового файла]
+- Использовать [describe/it или соглашение об именовании тестов]
+- Мокать [указать что мокать]
 ```
 
-## Refactoring prompts
-
-### Extract function/class
+### Интеграционные тесты
 
 ```
-Refactor: Extract [description] into [function/class].
+Напишите интеграционные тесты для [компонент/функция].
 
-## Current code location: [file:lines]
+## Область тестирования
+- Тестировать взаимодействие между [компонент A] и [компонент B]
+- Использовать [real/mocked] [база данных/внешний сервис]
 
-## Desired outcome
-- New [function/class] name: [name]
-- New location: [file]
-- Parameters: [what it should accept]
-- Return value: [what it should return]
+## Сценарии
+1. [Сценарий счастливого пути]
+2. [Сценарий ошибки]
+3. [Граничный сценарий]
 
-## Constraints
-- Keep existing behavior unchanged
-- Update all callers
-- Maintain backward compatibility
+## Требования к настройке
+- [Пререквизиты]
+- [Необходимые тестовые данные]
+
+## Фреймворк: [указать]
 ```
 
-### Pattern migration
+## Промпты для рефакторинга
+
+### Извлечение функции/класса
 
 ```
-Refactor [file/module] from [old pattern] to [new pattern].
+Рефакторинг: Извлечь [описание] в [функция/класс].
 
-## Current state
-[Describe or show current implementation]
+## Текущее расположение кода: [файл:строки]
 
-## Target state
-[Describe or show example of new pattern]
+## Желаемый результат
+- Новое имя [функции/класса]: [название]
+- Новое расположение: [файл]
+- Параметры: [что должно приниматься]
+- Возвращаемое значение: [что должно возвращаться]
 
-## Migration rules
-- [Rule 1]
-- [Rule 2]
-- [Rule 3]
-
-## Files affected: [list]
-
-## Constraints
-- All tests must pass after change
-- Don't change public interfaces
+## Ограничения
+- Сохранить существующее поведение без изменений
+- Обновить все вызывающие стороны
+- Поддерживать обратную совместимость
 ```
 
-## Documentation prompts
-
-### Function/class documentation
+### Миграция паттерна
 
 ```
-Document [function/class name] in [file].
+Рефакторинг [файл/модуль] с [старый паттерн] на [новый паттерн].
 
-## Documentation format: [JSDoc/docstrings/etc.]
+## Текущее состояние
+[Описать или показать текущую реализацию]
 
-## Include
-- Purpose/description
-- Parameters (name, type, description)
-- Return value (type, description)
-- Exceptions/errors thrown
-- Usage example
+## Целевое состояние
+[Описать или показать пример нового паттерна]
 
-## Style
-- Follow conventions in [example file]
-- [Additional style requirements]
+## Правила миграции
+- [Правило 1]
+- [Правило 2]
+- [Правило 3]
+
+## Затронутые файлы: [список]
+
+## Ограничения
+- Все тесты должны пройти после изменения
+- Не изменять публичные интерфейсы
 ```
 
-### README generation
+## Промпты для документации
+
+### Документация функции/класса
 
 ```
-Create/update README for [project/module].
+Документируйте [имя функции/класса] в [файл].
 
-## Sections needed
-- Overview/description
-- Installation
-- Quick start
-- Configuration
-- API reference (summary)
-- Contributing
-- License
+## Формат документации: [JSDoc/docstrings/и т.д.]
 
-## Target audience: [developers/users/both]
+## Включить
+- Назначение/описание
+- Параметры (имя, тип, описание)
+- Возвращаемое значение (тип, описание)
+- Исключения/ошибки
+- Пример использования
 
-## Existing documentation: [what exists already]
+## Стиль
+- Следовать конвенциям в [пример файла]
+- [Дополнительные требования к стилю]
 ```
 
-## Code review prompts
-
-### Pre-commit review
+### Генерация README
 
 ```
-Review this code before I commit it.
+Создайте/обновите README для [проект/модуль].
 
-## Code
-[paste code]
+## Необходимые секции
+- Обзор/описание
+- Установка
+- Быстрый старт
+- Конфигурация
+- API-справочник (краткий)
+- Содействие
+- Лицензия
 
-## Context
-- Purpose: [what this code does]
-- Part of: [larger feature/PR]
+## Целевая аудитория: [разработчики/пользователи/оба]
 
-## Specific concerns
-- [Area 1 I'm uncertain about]
-- [Area 2 I want feedback on]
-
-## Check for
-- Bugs and logic errors
-- Security issues
-- Performance concerns
-- Code style
-- Edge cases
+## Существующая документация: [что уже существует]
 ```
 
-### Architecture review
+## Промпты для код-ревью
+
+### Ревью перед коммитом
 
 ```
-Review this proposed architecture.
+Просмотрите этот код перед коммитом.
 
-## Proposal
-[Describe or diagram the proposed architecture]
+## Код
+[вставьте код]
 
-## Problem being solved
-[What this architecture addresses]
+## Контекст
+- Назначение: [что делает этот код]
+- Часть: [большая функция/PR]
 
-## Constraints
-- [Technical constraints]
-- [Business constraints]
-- [Timeline]
+## Конкретные опасения
+- [Область 1, в которой я не уверен]
+- [Область 2, по которой хочу получить обратную связь]
 
-## Questions
-- Does this approach make sense?
-- What am I missing?
-- What alternatives should I consider?
-- What are the risks?
+## Проверить на
+- Баги и логические ошибки
+- Проблемы безопасности
+- Проблемы производительности
+- Стиль кода
+- Граничные случаи
 ```
 
-## Tips for using templates
+### Архитектурный ревью
 
-1. **Fill in specifics** - Replace all bracketed placeholders
-2. **Provide context** - More context = better output
-3. **Be explicit about constraints** - What NOT to do is as important as what to do
-4. **Include examples** - Show patterns to follow when possible
-5. **Iterate** - First response rarely perfect; refine with follow-ups
+```
+Просмотрите эту предложенную архитектуру.
 
-## Resources
+## Предложение
+[Описать или диаграрафировать предложенную архитектуру]
 
-### Essential
+## Решаемая проблема
+[Что адресует эта архитектура]
 
-- [Prompt Engineering Specialization – Vanderbilt University](https://www.coursera.org/specializations/prompt-engineering) - Comprehensive course on using LLMs as a "mind exoskeleton"
+## Ограничения
+- [Технические ограничения]
+- [Бизнес-ограничения]
+- [Таймлайн]
 
-### Deep dives
+## Вопросы
+- Имеет ли этот подход смысл?
+- Что я упускаю?
+- Какие альтернативы я должен рассмотреть?
+- Каковы риски?
+```
 
-- [Understanding Prompt Engineering – DataCamp](https://www.datacamp.com/courses/understanding-prompt-engineering) - Beginner course on prompt engineering fundamentals
+## Советы по использованию шаблонов
+
+1. **Заполняйте конкретику** - Заменяйте все placeholder'ы в скобках
+2. **Предоставляйте контекст** - Больше контекста = лучше вывод
+3. **Будьте явными в ограничениях** - Что НЕ делать так же важно, как что делать
+4. **Включайте примеры** - Показывайте паттерны для следования, когда возможно
+5. **Итерируйте** - Первый ответ редко идеален; дорабатывайте с follow-up'ами
+
+## Ресурсы
+
+### Основные
+
+- [Prompt Engineering Specialization – Vanderbilt University](https://www.coursera.org/specializations/prompt-engineering) - Комплексный курс по использованию LLMs как "экзоскелетон разума"
+
+### Углублённые материалы
+
+- [Understanding Prompt Engineering – DataCamp](https://www.datacamp.com/courses/understanding-prompt-engineering) - Начинающий курс по основам промпт-инженерии
 
 ---
 
-**Have a useful template?** [Share it with the community](/community/contributing/)—your prompt might save someone hours of trial and error.
+**Есть полезный шаблон?** [Поделитесь им с сообществом](/community/contributing/) — ваш промпт может сэкономить кому-то часы проб и ошибок.
