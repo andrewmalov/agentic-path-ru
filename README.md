@@ -2,7 +2,7 @@
 
 Практические руководства и ресурсы для понимания того, как программная инженерия и лидерство работают в мире после AI.
 
-🌐 **Живой сайт:** [path.kilo.ai](https://path.kilo.ai)
+🌐 **Живой сайт:** [agent.cloudttk.ru/agentic-path/](https://agent.cloudttk.ru/agentic-path/)
 
 ## Что это?
 
